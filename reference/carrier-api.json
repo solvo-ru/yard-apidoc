@@ -5,7 +5,9 @@
   },
   "info": {
     "title": "carrier-api",
-    "version": "1.0"
+    "version": "1.0",
+    "summary": "API Портала Перевозчика",
+    "description": ""
   },
   "servers": [
     {
@@ -13,173 +15,222 @@
     }
   ],
   "paths": {
-    "/users/{userId}": {
-      "parameters": [
-        {
-          "schema": {
-            "type": "integer"
-          },
-          "name": "userId",
-          "in": "path",
-          "required": true,
-          "description": "Id of an existing user."
-        }
-      ],
+    "/transportRequests": {
       "get": {
-        "summary": "Get User Info by User ID",
-        "tags": [],
+        "summary": "Получить список заявок на перевозку",
         "responses": {
           "200": {
-            "description": "User Found",
+            "description": "Список заявок на перевозку",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/User"
-                },
-                "examples": {
-                  "Get User Alice Smith": {
-                    "value": {
-                      "id": 142,
-                      "firstName": "Alice",
-                      "lastName": "Smith",
-                      "email": "alice.smith@gmail.com",
-                      "dateOfBirth": "1997-10-31",
-                      "emailVerified": true,
-                      "signUpDate": "2019-08-24"
-                    }
-                  }
+                  "$ref": "#/components/schemas/TransportRequestList"
                 }
               }
             }
-          },
-          "404": {
-            "description": "User Not Found"
           }
-        },
-        "operationId": "get-users-userId",
-        "description": "Retrieve the information of the user with the matching user ID.",
-        "x-stoplight": {
-          "id": "n6zz03z7fn531"
         }
       },
-      "patch": {
-        "summary": "Update User Information",
-        "operationId": "patch-users-userId",
+      "post": {
+        "summary": "Создать новую заявку на перевозку",
         "responses": {
-          "200": {
-            "description": "User Updated",
+          "201": {
+            "description": "Заявка на перевозку создана",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/User"
-                },
-                "examples": {
-                  "Updated User Rebecca Baker": {
-                    "value": {
-                      "id": 13,
-                      "firstName": "Rebecca",
-                      "lastName": "Baker",
-                      "email": "rebecca@gmail.com",
-                      "dateOfBirth": "1985-10-02",
-                      "emailVerified": false,
-                      "createDate": "2019-08-24"
-                    }
-                  }
+                  "$ref": "#/components/schemas/TransportRequest"
                 }
               }
             }
-          },
-          "404": {
-            "description": "User Not Found"
-          },
-          "409": {
-            "description": "Email Already Taken"
           }
         },
-        "description": "Update the information of an existing user.",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {
-                  "firstName": {
-                    "type": "string"
-                  },
-                  "lastName": {
-                    "type": "string"
-                  },
-                  "email": {
-                    "type": "string",
-                    "description": "If a new email is given, the user's email verified property will be set to false."
-                  },
-                  "dateOfBirth": {
-                    "type": "string"
-                  }
-                }
-              },
-              "examples": {
-                "Update First Name": {
-                  "value": {
-                    "firstName": "Rebecca"
-                  }
-                },
-                "Update Email": {
-                  "value": {
-                    "email": "rebecca@gmail.com"
-                  }
-                },
-                "Update Last Name & Date of Birth": {
-                  "value": {
-                    "lastName": "Baker",
-                    "dateOfBirth": "1985-10-02"
-                  }
-                }
+                "$ref": "#/components/schemas/TransportRequest"
               }
             }
-          },
-          "description": "Patch user properties to update."
-        },
-        "x-stoplight": {
-          "id": "4afv708f4a07z"
+          }
         }
       }
     },
-    "/user": {
-      "post": {
-        "summary": "Create New User",
-        "operationId": "post-user",
+    "/transportRequests/{id}": {
+      "get": {
+        "summary": "Получить детали заявки на перевозку",
         "responses": {
           "200": {
-            "description": "User Created",
+            "description": "Детали заявки на перевозку",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/User"
-                },
-                "examples": {
-                  "New User Bob Fellow": {
-                    "value": {
-                      "id": 12,
-                      "firstName": "Bob",
-                      "lastName": "Fellow",
-                      "email": "bob.fellow@gmail.com",
-                      "dateOfBirth": "1996-08-24",
-                      "emailVerified": false,
-                      "createDate": "2020-11-18"
-                    }
-                  }
+                  "$ref": "#/components/schemas/TransportRequest"
                 }
               }
             }
-          },
-          "400": {
-            "description": "Missing Required Information"
-          },
-          "409": {
-            "description": "Email Already Taken"
           }
         },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID заявки на перевозку",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ]
+      },
+      "put": {
+        "summary": "Обновить заявку на перевозку",
+        "responses": {
+          "200": {
+            "description": "Заявка на перевозку обновлена",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransportRequest"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID заявки на перевозку",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TransportRequest"
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Удалить заявку на перевозку",
+        "responses": {
+          "204": {
+            "description": "Заявка на перевозку удалена"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID заявки на перевозку",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ]
+      }
+    },
+    "/offers": {
+      "get": {
+        "summary": "Получить список предложений",
+        "responses": {
+          "200": {
+            "description": "Список предложений",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OfferList"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Создать новое предложение",
+        "responses": {
+          "201": {
+            "description": "Предложение создано",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Offer"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Offer"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/offers/{id}": {
+      "get": {
+        "summary": "Получить детали предложения",
+        "responses": {
+          "200": {
+            "description": "Детали предложения",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Offer"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID предложения",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ]
+      },
+      "put": {
+        "summary": "Обновить предложение",
+        "responses": {
+          "200": {
+            "description": "Предложение обновлено",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Offer"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID предложения",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -230,82 +281,288 @@
   },
   "components": {
     "schemas": {
-      "User": {
-        "title": "User",
+      "TransportRequest": {
         "type": "object",
-        "description": "",
-        "examples": [
-          {
-            "id": 142,
-            "firstName": "Alice",
-            "lastName": "Smith",
-            "email": "alice.smith@gmail.com",
-            "dateOfBirth": "1997-10-31",
-            "emailVerified": true,
-            "signUpDate": "2019-08-24"
-          }
-        ],
         "properties": {
-          "id": {
+          "Номер": {
+            "type": "string",
+            "description": "Идентификатор перевозки. Уникальное. Обязательный."
+          },
+          "Заказчик": {
+            "$ref": "#/components/schemas/Customer"
+          },
+          "Ожидаемый_тип_ТС": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TransportType"
+            }
+          },
+          "Комментарии": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Comment"
+            }
+          },
+          "Срок_действия_с": {
+            "type": "string",
+            "format": "date"
+          },
+          "Срок_действия_по": {
+            "type": "string",
+            "format": "date"
+          },
+          "Статус": {
+            "$ref": "#/components/schemas/TransportRequestStatus"
+          },
+          "Цели": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TransportRequestGoal"
+            }
+          },
+          "Приложения": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Attachment"
+            }
+          },
+          "Источник": {
+            "$ref": "#/components/schemas/TransportRequestSource"
+          },
+          "ID": {
             "type": "integer",
-            "description": "Unique identifier for the given user.",
-            "x-stoplight": {
-              "id": "y1b74grri9o0o"
-            }
+            "description": "Идентификатор заявки на перевозку в системе. Уникальное. Обязательный."
           },
-          "firstName": {
+          "Создано": {
             "type": "string",
-            "x-stoplight": {
-              "id": "f9vt4hqc1c6cg"
-            }
+            "format": "date-time"
           },
-          "lastName": {
+          "Создал": {
+            "$ref": "#/components/schemas/User"
+          },
+          "Изменено": {
             "type": "string",
-            "x-stoplight": {
-              "id": "7syvzke75n86e"
-            }
+            "format": "date-time"
           },
-          "email": {
-            "type": "string",
-            "format": "email",
-            "x-stoplight": {
-              "id": "2suwedew2t0zb"
-            }
-          },
-          "dateOfBirth": {
-            "type": "string",
-            "format": "date",
-            "example": "1997-10-31",
-            "x-stoplight": {
-              "id": "fh09iv9ushlot"
-            }
-          },
-          "emailVerified": {
-            "type": "boolean",
-            "description": "Set to true if the user's email has been verified.",
-            "x-stoplight": {
-              "id": "gkm3khoclivx7"
-            }
-          },
-          "createDate": {
-            "type": "string",
-            "format": "date",
-            "description": "The date that the user was created.",
-            "x-stoplight": {
-              "id": "wwqfk1y8jld2n"
-            }
+          "Изменил": {
+            "$ref": "#/components/schemas/User"
           }
-        },
-        "required": [
-          "id",
-          "firstName",
-          "lastName",
-          "email",
-          "emailVerified"
-        ],
-        "x-stoplight": {
-          "id": "18i7vtdqwl3p3"
         }
+      },
+      "TransportRequestList": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/TransportRequest"
+        }
+      },
+      "Customer": {
+        "type": "object",
+        "properties": {
+          "ID": {
+            "type": "integer"
+          },
+          "Название": {
+            "type": "string"
+          }
+        }
+      },
+      "TransportType": {
+        "type": "object",
+        "properties": {
+          "ID": {
+            "type": "integer"
+          },
+          "Название": {
+            "type": "string"
+          }
+        }
+      },
+      "Comment": {
+        "type": "object",
+        "properties": {
+          "ID": {
+            "type": "integer"
+          },
+          "Текст": {
+            "type": "string"
+          }
+        }
+      },
+      "TransportRequestStatus": {
+        "type": "string",
+        "enum": [
+          "Новая",
+          "Оформлена",
+          "Приём предложений начат",
+          "Приём предложений завершён",
+          "Выносится решение",
+          "Победитель не выбран",
+          "Победитель выбран",
+          "Отказ экспедитора",
+          "Отменена",
+          "Готова к выполнению",
+          "Отмена выполнения",
+          "Выполняется",
+          "Не выполнена",
+          "Выполнена"
+        ]
+      },
+      "TransportRequestGoal": {
+        "type": "object",
+        "properties": {
+          "ID": {
+            "type": "integer"
+          },
+          "Название": {
+            "type": "string"
+          }
+        }
+      },
+      "Attachment": {
+        "type": "object",
+        "properties": {
+          "ID": {
+            "type": "integer"
+          },
+          "Название": {
+            "type": "string"
+          },
+          "Размер": {
+            "type": "integer"
+          },
+          "Тип": {
+            "type": "string"
+          }
+        }
+      },
+      "TransportRequestSource": {
+        "type": "string",
+        "enum": [
+          "Внутренняя",
+          "Внешняя"
+        ]
+      },
+      "User": {
+        "type": "object",
+        "properties": {
+          "ID": {
+            "type": "integer"
+          },
+          "Логин": {
+            "type": "string"
+          }
+        }
+      },
+      "Offer": {
+        "type": "object",
+        "properties": {
+          "Заявка_на_перевозку": {
+            "$ref": "#/components/schemas/TransportRequest"
+          },
+          "Экспедитор": {
+            "$ref": "#/components/schemas/Contractor"
+          },
+          "Перевозчик": {
+            "$ref": "#/components/schemas/Contractor"
+          },
+          "ТС": {
+            "$ref": "#/components/schemas/Vehicle"
+          },
+          "Водитель": {
+            "$ref": "#/components/schemas/Driver"
+          },
+          "Телефон": {
+            "type": "string"
+          },
+          "Комментарии": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Comment"
+            }
+          },
+          "Приложения": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Attachment"
+            }
+          },
+          "Статус": {
+            "$ref": "#/components/schemas/OfferStatus"
+          },
+          "ID": {
+            "type": "integer"
+          },
+          "Создано": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "Создал": {
+            "$ref": "#/components/schemas/User"
+          },
+          "Изменено": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "Изменил": {
+            "$ref": "#/components/schemas/User"
+          }
+        }
+      },
+      "OfferList": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Offer"
+        }
+      },
+      "Contractor": {
+        "type": "object",
+        "properties": {
+          "ID": {
+            "type": "integer"
+          },
+          "Название": {
+            "type": "string"
+          }
+        }
+      },
+      "Vehicle": {
+        "type": "object",
+        "properties": {
+          "ID": {
+            "type": "integer"
+          },
+          "Название": {
+            "type": "string"
+          }
+        }
+      },
+      "Driver": {
+        "type": "object",
+        "properties": {
+          "ID": {
+            "type": "integer"
+          },
+          "ФИО": {
+            "type": "string"
+          }
+        }
+      },
+      "OfferStatus": {
+        "type": "string",
+        "enum": [
+          "Новое",
+          "Выдвинуто",
+          "Принято_на_рассмотрение",
+          "Запрошены_корректировки",
+          "Корректируется",
+          "Скорректировано",
+          "Предложение_снято",
+          "Выносится_решение",
+          "Отклонено",
+          "Выбрано_победителем",
+          "Отказ_от_выполнения",
+          "Исполняется"
+        ]
       }
     }
   }

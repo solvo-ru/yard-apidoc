@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:mdm",
+  "title": "MdmEntry",
+  "x-stoplight": {
+    "id": "zo3vrlqvcahd2"
+  },
+  "x-tags": [
+    "mdm",
+    "common"
+  ],
+  "type": "object",
+  "properties": {
+    "ID": {
+      "type": "string",
+      "description": "Идентификатор заявки на перевозку в системе. Уникальное. Обязательный.",
+      "x-stoplight": {
+        "id": "rmjwc5881kj1d"
+      },
+      "format": "uuid"
+    },
+    "Создано": {
+      "type": "string",
+      "format": "date-time",
+      "x-stoplight": {
+        "id": "b4t8i6jjrm8ab"
+      }
+    },
+    "Создал": {
+      "$ref": "./User.json",
+      "x-stoplight": {
+        "id": "8jyslwnh0n5oj"
+      }
+    },
+    "Изменено": {
+      "type": "string",
+      "format": "date-time",
+      "x-stoplight": {
+        "id": "za982a97wo35a"
+      }
+    },
+    "Изменил": {
+      "$ref": "./User.json",
+      "x-stoplight": {
+        "id": "m9n9jzwkxix8y"
+      }
+    }
+  }
+}

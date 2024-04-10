@@ -6,16 +6,29 @@
     "id": "grgfm51eatjaj"
   },
   "type": "object",
+  "description": "Схема перечислений",
   "required": [
-    "ID"
+    "ID",
+    "title"
   ],
   "properties": {
     "ID": {
-      "type": "integer"
+      "type": "string",
+      "format": "uuid"
     },
-    "Title": {
-      "type": "string"
+    "title": {
+      "type": "string",
+      "x-stoplight": {
+        "id": "6lh1fvimwuple"
+      },
+      "description": "Наименование"
+    },
+    "desc": {
+      "type": "string",
+      "x-stoplight": {
+        "id": "zanpdzpyoqxb9"
+      },
+      "description": "Описание"
     }
-  },
-  "description": "Схема перечислений"
+  }
 }

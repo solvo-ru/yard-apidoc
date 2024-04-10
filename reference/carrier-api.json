@@ -327,10 +327,10 @@
               "expectedVehicle": {
                 "type": "array",
                 "description": "Один или несколько типов ТС, которое должно выполнять перевозку ",
+                "minItems": 1,
                 "items": {
                   "$ref": "#/components/schemas/TransportType"
-                },
-                "minItems": 1
+                }
               },
               "comments": {
                 "type": "array",
@@ -355,6 +355,7 @@
               },
               "targets": {
                 "type": "array",
+                "minItems": 2,
                 "description": "Список мест, в которых будет производиться обработка",
                 "items": {
                   "$ref": "#/components/schemas/TransportRequestGoal"
@@ -407,8 +408,6 @@
         "title": "Комментарий"
       },
       "TransportRequestGoal": {
-        "$ref": "../models/mdm.json",
-        "type": "object",
         "title": "Цель перевозки",
         "description": "Объект системы, содержащий информацию о месте обработки перевозки",
         "required": [
@@ -418,122 +417,104 @@
           "recipient",
           "unloadAddress"
         ],
-        "properties": {
-          "num": {
-            "type": "string",
-            "x-stoplight": {
-              "id": "pmp5q0rwpbizn"
-            },
-            "description": "Идентификатор цели перевозки"
-          },
-          "route": {
-            "enum": [
-              "Ввоз",
-              "Вывоз"
-            ],
-            "description": "Направление движение груза относительно предприятия, на котором работает организатор перевозки"
-          },
-          "sender": {
-            "$ref": "#/components/schemas/Contractor",
-            "x-stoplight": {
-              "id": "ptvg7rp38gy41"
-            },
-            "description": "Название контрагента, который является отправителем груза. "
-          },
-          "loadLocation": {
-            "$ref": "#/components/schemas/Location",
-            "x-stoplight": {
-              "id": "otp2ig8232ldo"
-            },
-            "description": "Локация, в которой будет производиться погрузка груза на транспортное средство"
-          },
-          "loadAddress": {
-            "type": "string",
-            "x-stoplight": {
-              "id": "yb8bos7giv35u"
-            },
-            "description": "Адрес локации погрузки груза на транспортное средство"
-          },
-          "loadArrival": {
-            "type": "string",
-            "x-stoplight": {
-              "id": "3objcmjoopkyq"
-            },
-            "format": "date-time",
-            "description": "Плановое время прибытия ТС в локацию погрузки."
-          },
-          "recipient": {
-            "$ref": "#/components/schemas/Contractor",
-            "x-stoplight": {
-              "id": "hboe4w6y1zf9m"
-            },
-            "description": "Название контрагента, который является получателем груза."
-          },
-          "unloadLocation": {
-            "$ref": "#/components/schemas/Location",
-            "x-stoplight": {
-              "id": "xex8cpib5onbc"
-            },
-            "description": "Локация, в которой будет производиться выгрузка груза с транспортного средства"
-          },
-          "unloadAddress": {
-            "type": "string",
-            "x-stoplight": {
-              "id": "95faow4s1tqma"
-            },
-            "description": "Адрес локации выгрузки груза с транспортного средства"
-          },
-          "unloadArrival": {
-            "type": "string",
-            "x-stoplight": {
-              "id": "5m8wg7fhcxqpw"
-            },
-            "format": "date-time",
-            "description": "Плановое время прибытия ТС в локацию выгрузки."
-          },
-          "cargo": {
-            "type": "array",
-            "x-stoplight": {
-              "id": "jctsws721fc5j"
-            },
-            "description": "Список перевозимых грузов ",
-            "items": {
-              "$ref": "#/components/schemas/Cargo",
-              "x-stoplight": {
-                "id": "mvlvea4y3lg10"
-              }
-            }
-          }
-        },
-        "examples": [
+        "allOf": [
           {
-            "request": {},
-            "forwarder": {},
-            "carrier": {},
-            "vehicle": {},
-            "driver": {},
-            "phone": "string",
-            "comments": [
-              {
-                "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
-                "text": "string"
+            "type": "object",
+            
+            
+            "properties": {
+              "num": {
+                "type": "string",
+                "x-stoplight": {
+                  "id": "pmp5q0rwpbizn"
+                },
+                "description": "Идентификатор цели перевозки"
+              },
+              "route": {
+                "enum": [
+                  "Ввоз",
+                  "Вывоз"
+                ],
+                "description": "Направление движение груза относительно предприятия, на котором работает организатор перевозки"
+              },
+              "sender": {
+                "$ref": "#/components/schemas/Contractor",
+                "x-stoplight": {
+                  "id": "ptvg7rp38gy41"
+                },
+                "description": "Название контрагента, который является отправителем груза. "
+              },
+              "loadLocation": {
+                "$ref": "#/components/schemas/Location",
+                "x-stoplight": {
+                  "id": "otp2ig8232ldo"
+                },
+                "description": "Локация, в которой будет производиться погрузка груза на транспортное средство"
+              },
+              "loadAddress": {
+                "type": "string",
+                "x-stoplight": {
+                  "id": "yb8bos7giv35u"
+                },
+                "description": "Адрес локации погрузки груза на транспортное средство"
+              },
+              "loadArrival": {
+                "type": "string",
+                "x-stoplight": {
+                  "id": "3objcmjoopkyq"
+                },
+                "format": "date-time",
+                "description": "Плановое время прибытия ТС в локацию погрузки."
+              },
+              "recipient": {
+                "$ref": "#/components/schemas/Contractor",
+                "x-stoplight": {
+                  "id": "hboe4w6y1zf9m"
+                },
+                "description": "Название контрагента, который является получателем груза."
+              },
+              "unloadLocation": {
+                "$ref": "#/components/schemas/Location",
+                "x-stoplight": {
+                  "id": "xex8cpib5onbc"
+                },
+                "description": "Локация, в которой будет производиться выгрузка груза с транспортного средства"
+              },
+              "unloadAddress": {
+                "type": "string",
+                "x-stoplight": {
+                  "id": "95faow4s1tqma"
+                },
+                "description": "Адрес локации выгрузки груза с транспортного средства"
+              },
+              "unloadArrival": {
+                "type": "string",
+                "x-stoplight": {
+                  "id": "5m8wg7fhcxqpw"
+                },
+                "format": "date-time",
+                "description": "Плановое время прибытия ТС в локацию выгрузки."
+              },
+              "cargo": {
+                "type": "array",
+                "x-stoplight": {
+                  "id": "jctsws721fc5j"
+                },
+                "description": "Список перевозимых грузов ",
+                "items": {
+                  "$ref": "#/components/schemas/Cargo",
+                  "x-stoplight": {
+                    "id": "mvlvea4y3lg10"
+                  }
+                }
               }
-            ],
-            "attachment": [
-              {
-                "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
-                "name": "string",
-                "size": 0,
-                "type": "string"
-              }
-            ],
-            "status": {
-              "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
-              "title": "string",
-              "desc": "string"
             }
+          },
+          {
+            "$ref": "../models/mdm.json"
           }
         ]
+        
       },
       "Attachment": {
         "type": "object",
@@ -635,37 +616,43 @@
         "title": "Список предложений"
       },
       "Contractor": {
-        "type": "object",
-        "title": "Контрагент",
-        "$ref": "../models/mdm.json",
         "required": [
           "ID",
           "title",
           "fullTitle",
           "type"
         ],
-        "properties": {
-          "title": {
-            "type": "string",
-            "description": "Сокращенное наименование контрагента, которое будет видно в интерфейсе"
-          },
-          "fullTitle": {
-            "type": "string",
-            "description": "Полное наименование контрагента, как оно прописано в правоустанавливающих документах"
-          },
-          "type": {
-            "$ref": "../models/enum.json",
-            "description": "Тип"
-          },
-          "role": {
-            "type": "array",
-            "minItems": 1,
-            "description": "Роль",
-            "items": {
-              "$ref": "../models/enum.json"
+        "allOf": [
+          {
+            "type": "object",
+            "title": "Контрагент",
+            "properties": {
+              "title": {
+                "type": "string",
+                "description": "Сокращенное наименование контрагента, которое будет видно в интерфейсе"
+              },
+              "fullTitle": {
+                "type": "string",
+                "description": "Полное наименование контрагента, как оно прописано в правоустанавливающих документах"
+              },
+              "type": {
+                "$ref": "../models/enum.json",
+                "description": "Тип"
+              },
+              "role": {
+                "type": "array",
+                "minItems": 1,
+                "description": "Роль",
+                "items": {
+                  "$ref": "../models/enum.json"
+                }
+              }
             }
+          },
+          {
+            "$ref": "../models/mdm.json"
           }
-        }
+        ]
       },
       "Vehicle": {
         "$ref": "../models/mdm.json",

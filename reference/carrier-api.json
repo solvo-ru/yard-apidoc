@@ -7,6 +7,7 @@
     "title": "carrier-api",
     "version": "1.0",
     "description": "API Портала Перевозчика"
+    
   },
   "servers": [
     {
@@ -288,9 +289,9 @@
         "$ref": "../models/mdm.json",
         "type": "object",
         "properties": {
-          "Номер": {
+          "num": {
             "type": "string",
-            "description": "Идентификатор перевозки. Уникальное. Обязательный."
+            "description": "Идентификатор перевозки"
           },
           "Заказчик": {
             "$ref": "#/components/schemas/Customer"

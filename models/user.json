@@ -6,12 +6,16 @@
     "id": "grgfm51eatjej"
   },
   "type": "object",
+  "required": [
+    "ID"
+  ],
   "properties": {
-          "ID": {
-            "type": "integer"
-          },
-          "Login": {
-            "type": "string"
-          }
+    "ID": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "Login": {
+      "type": "string"
     }
+  }
 }

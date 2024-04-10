@@ -6,12 +6,16 @@
     "id": "grgfm51eatjaj"
   },
   "type": "object",
+  "required": [
+    "ID"
+  ],
   "properties": {
-          "ID": {
-            "type": "integer"
-          },
-          "Title": {
-            "type": "string"
-          }
+    "ID": {
+      "type": "integer"
+    },
+    "Title": {
+      "type": "string"
     }
+  },
+  "description": "Схема перечислений"
 }

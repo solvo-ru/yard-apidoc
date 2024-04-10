@@ -10,40 +10,45 @@
     "common"
   ],
   "type": "object",
+  "description": "Общие атрибуты элементов справочников",
   "properties": {
     "ID": {
       "type": "string",
-      "description": "Идентификатор заявки на перевозку в системе. Уникальное. Обязательный.",
+      "description": "Идентификатор записи",
       "x-stoplight": {
         "id": "rmjwc5881kj1d"
       },
       "format": "uuid"
     },
-    "Создано": {
+    "created": {
       "type": "string",
       "format": "date-time",
       "x-stoplight": {
         "id": "b4t8i6jjrm8ab"
-      }
+      },
+      "description": "Создана"
     },
-    "Создал": {
+    "creator": {
       "$ref": "user.json",
       "x-stoplight": {
         "id": "8jyslwnh0n5oj"
-      }
+      },
+      "description": "Создал"
     },
-    "Изменено": {
+    "modified": {
       "type": "string",
       "format": "date-time",
       "x-stoplight": {
         "id": "za982a97wo35a"
-      }
+      },
+      "description": "Изменена"
     },
-    "Изменил": {
+    "modifier": {
       "$ref": "user.json",
       "x-stoplight": {
         "id": "m9n9jzwkxix8y"
-      }
+      },
+      "description": "Изменил"
     }
   }
 }

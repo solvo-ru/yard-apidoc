@@ -282,9 +282,6 @@
     "schemas": {
       "TransportRequest": {
         "$ref": "../models/mdm.json",
-        "x-stoplight": {
-          "id": "de464026250d5"
-        },
         "type": "object",
         "title": "Заявка на перевозку",
         "required": [
@@ -299,19 +296,13 @@
           },
           "customer": {
             "$ref": "#/components/schemas/Contractor",
-            "x-stoplight": {
-              "id": "2cdqrag2qslks"
-            },
             "description": "Контрагент, являющийся заказчиком перевозки"
           },
           "expectedVehicle": {
             "type": "array",
             "description": "Один или несколько типов ТС, которое должно выполнять перевозку ",
             "items": {
-              "$ref": "#/components/schemas/TransportType",
-              "x-stoplight": {
-                "id": "4gvuwf9m32h9p"
-              }
+              "$ref": "#/components/schemas/TransportType"
             },
             "minItems": 1
           },
@@ -319,65 +310,72 @@
             "type": "array",
             "description": "Список замечаний (причин или отклонений) к перевозке, которые могут быть добавлены в процессе согласования",
             "items": {
-              "$ref": "#/components/schemas/Comment",
-              "x-stoplight": {
-                "id": "vjwdij2cxa3y6"
-              }
+              "$ref": "#/components/schemas/Comment"
             }
           },
           "validSince": {
             "type": "string",
             "format": "date-time",
-            "x-stoplight": {
-              "id": "2udw5f9dvh3mr"
-            },
             "description": "Дата начала периода, когда заявка на перевозку актуальна."
           },
           "validUntill": {
             "type": "string",
             "format": "date-time",
-            "x-stoplight": {
-              "id": "jg9zoigjb0two"
-            },
             "description": "Дата окончания периода, когда заявка на перевозку актуальна."
           },
           "status": {
             "$ref": "../models/enum.json",
-            "x-stoplight": {
-              "id": "crmi5wzsq908r"
-            },
             "description": "Актуальный этап выполнения перевозки\n| **Статус**                     | **Описание**                                                 |\n| ------------------------------ | ------------------------------------------------------------ |\n| **Новая**                      | Заявка создана. Возможна корректировка параметров.           |\n| **Оформлена**                  | Создание заявки завершено. Корректировка параметров блокирована. |\n| **Приём предложений начат**    | Экспедитору могут просматривать заявку и делать предложения по ней. |\n| **Приём предложений завершён** | Возможность делать предложения блокируется.                  |\n| **Выносится решение**          | Логист просматривает предложения чтобы выбрать победителя.   |\n| **Победитель не выбран**       | Логист отклонил все предложения.                             |\n| **Победитель выбран**          | Логист выбрал предложение, подходящее по параметрам.         |\n| **Отказ экспедитора**          | Экспедитор, которого выбрали победителем торгов отказался от заявки. |\n| **Отменена**                   | Заявка на перевозку отменена логистом.                       |\n| **Готова к выполнению**        | Заявка на перевозку согласована и подготовлена к выполнению. |\n| **Отмена выполнения**          | Подготовленная заявка на перевозку отменена логистом.        |\n| **Выполняется**                | Начато выполнение перевозки.                                 |\n| **Не выполнена**               | Выполнение перевозки прервано.                               |\n| **Выполнена**                  | Выполнение перевозки успешно завершено.                      |"
           },
           "targets": {
             "type": "array",
             "description": "Список мест, в которых будет производиться обработка",
             "items": {
-              "$ref": "#/components/schemas/TransportRequestGoal",
-              "x-stoplight": {
-                "id": "9j12db3h2pic7"
-              }
+              "$ref": "#/components/schemas/TransportRequestGoal"
             }
           },
           "attachments": {
             "type": "array",
             "description": "Файлы, загруженные в систему, и прикрепленные к перевозке.",
             "items": {
-              "$ref": "#/components/schemas/Attachment",
-              "x-stoplight": {
-                "id": "vllormhgm634w"
-              }
+              "$ref": "#/components/schemas/Attachment"
             }
           },
           "source": {
-                    "$ref": "../models/enum.json",
-
-            "x-stoplight": {
-              "id": "wt9cju165dilf"
-            },
+            "$ref": "../models/enum.json",
             "description": "Способ создания заявки на перевозку."
           }
         },
-        "description": "Объект системы, содержащий информацию о планируемом перемещении груза из одной точки в другую"
+        "description": "Объект системы, содержащий информацию о планируемом перемещении груза из одной точки в другую",
+        "examples": [
+          {
+            "request": {},
+            "forwarder": {},
+            "carrier": {},
+            "vehicle": {},
+            "driver": {},
+            "phone": "string",
+            "comments": [
+              {
+                "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
+                "text": "string"
+              }
+            ],
+            "attachment": [
+              {
+                "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
+                "name": "string",
+                "size": 0,
+                "type": "string"
+              }
+            ],
+            "status": {
+              "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
+              "title": "string",
+              "desc": "string"
+            }
+          }
+        ]
       },
       "TransportRequestList": {
         "type": "array",
@@ -407,7 +405,8 @@
               "id": "91ob6vpqzrmyo"
             }
           }
-        }
+        },
+        "title": "Комментарий"
       },
       "TransportRequestGoal": {
         "$ref": "../models/mdm.json",
@@ -510,7 +509,36 @@
               }
             }
           }
-        }
+        },
+        "examples": [
+          {
+            "request": {},
+            "forwarder": {},
+            "carrier": {},
+            "vehicle": {},
+            "driver": {},
+            "phone": "string",
+            "comments": [
+              {
+                "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
+                "text": "string"
+              }
+            ],
+            "attachment": [
+              {
+                "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
+                "name": "string",
+                "size": 0,
+                "type": "string"
+              }
+            ],
+            "status": {
+              "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
+              "title": "string",
+              "desc": "string"
+            }
+          }
+        ]
       },
       "Attachment": {
         "type": "object",
@@ -562,71 +590,44 @@
         "properties": {
           "request": {
             "$ref": "#/components/schemas/TransportRequest",
-            "x-stoplight": {
-              "id": "rb1879um407g7"
-            },
             "description": "Идентификатор заявки на перевозку"
           },
           "forwarder": {
             "$ref": "#/components/schemas/Contractor",
-            "x-stoplight": {
-              "id": "6mwcmu995050r"
-            },
             "description": "Контрагент, который сделал предложение "
           },
           "carrier": {
             "$ref": "#/components/schemas/Contractor",
-            "x-stoplight": {
-              "id": "68t8vin810efb"
-            },
             "description": "Контрагент, выполняющий перевозку"
           },
           "vehicle": {
             "$ref": "#/components/schemas/Vehicle",
-            "x-stoplight": {
-              "id": "ilohsh160tsgd"
-            },
             "description": "Информация о транспортном средстве, на котором будет выполняться перевозка"
           },
           "driver": {
             "$ref": "#/components/schemas/Driver",
-            "x-stoplight": {
-              "id": "wmjsa5hcfcz35"
-            },
             "description": "Информация о водителе, который будут выполнять перевозку "
           },
           "phone": {
             "type": "string",
-            "description": "Номер телефона для связи с водителем, актуальный на момент перевозки",
-            "x-stoplight": {
-              "id": "riasn0blqlbf0"
-            }
+            "description": "Номер телефона для связи с водителем, актуальный на момент перевозки"
           },
           "comments": {
             "type": "array",
             "description": "Список замечаний (причин или отклонений) к предложений, которые могут быть добавлены в процессе согласования перевозки.",
             "items": {
-              "$ref": "#/components/schemas/Comment",
-              "x-stoplight": {
-                "id": "x2qhe4v8ige9i"
-              }
+              "$ref": "#/components/schemas/Comment"
             }
           },
           "attachment": {
             "type": "array",
             "description": "Файлы, загруженные в систему и прикреплённые к предложению.",
             "items": {
-              "$ref": "#/components/schemas/Attachment",
-              "x-stoplight": {
-                "id": "mxlq1no2hkjt5"
-              }
+              "$ref": "#/components/schemas/Attachment"
             }
           },
           "status": {
             "$ref": "../models/enum.json",
-            "x-stoplight": {
-              "id": "8fe545ft2i4ki"
-            },
             "description": "Статус предложения\n| **Статус**                  | **Описание**                                                 |\n| --------------------------- | ------------------------------------------------------------ |\n| **Новое**                   | Создано новое предложение.                                   |\n| **Выдвинуто**               | Создание предложения завершено. Предложение стало доступно для рассмотрения логистом. |\n| **Принято на рассмотрение** | Предложение принято на рассмотрение логистом.                |\n| **Запрошены корректировки** | Логист запросил корректировки по выдвинутому предложению.    |\n| **Корректируется**          | Параметры предложения корректируются экспедитором.           |\n| **Скорректировано**         | Процесс корректировки предложения завершён.                  |\n| **Предложение снято**       | Предложение отменено экспедитором.                           |\n| **Выносится решение**       | Сделанные по заявке предложения оцениваются с целью принятия решения. |\n| **Отклонено**               | Предложение отклонено логистом.                              |\n| **Выбрано победителем**     | Предложение выбрано победителем торгов.                      |\n| **Отказ от выполнения**     | Экспедитор отказался от выполнения перевозки по заявке.      |\n| **Исполняется**             | Начато выполнение перевозке по связанной заявке.             |"
           }
         }
@@ -635,7 +636,8 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Offer"
-        }
+        },
+        "title": "Список предложений"
       },
       "Contractor": {
         "type": "object",
@@ -650,37 +652,22 @@
         "properties": {
           "title": {
             "type": "string",
-            "x-stoplight": {
-              "id": "d7gaybsjd43v3"
-            },
             "description": "Сокращенное наименование контрагента, которое будет видно в интерфейсе"
           },
           "fullTitle": {
             "type": "string",
-            "x-stoplight": {
-              "id": "w032wg3sejqnv"
-            },
             "description": "Полное наименование контрагента, как оно прописано в правоустанавливающих документах"
           },
           "type": {
             "$ref": "../models/enum.json",
-            "x-stoplight": {
-              "id": "he7qa4jblq6pi"
-            },
             "description": "Тип"
           },
           "role": {
-            "x-stoplight": {
-              "id": "ggu23gz9x4coh"
-            },
             "type": "array",
             "minItems": 1,
             "description": "Роль",
             "items": {
-              "$ref": "../models/enum.json",
-              "x-stoplight": {
-                "id": "2booqypnnsiy7"
-              }
+              "$ref": "../models/enum.json"
             }
           }
         }
@@ -749,8 +736,7 @@
           "docType",
           "haul"
         ],
-                "$ref": "../models/mdm.json",
-
+        "$ref": "../models/mdm.json",
         "properties": {
           "docNum": {
             "type": "integer",
@@ -818,7 +804,7 @@
           }
         },
         "title": "Водитель"
-      },     
+      },
       "Location": {
         "title": "Локация",
         "x-stoplight": {

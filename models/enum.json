@@ -1,10 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "enum",
-  "title": "Trivial list",
-  "x-stoplight": {
-    "id": "grgfm51eatjaj"
-  },
+  "title": "Список",
   "type": "object",
   "description": "Схема перечислений",
   "required": [
@@ -18,16 +14,10 @@
     },
     "title": {
       "type": "string",
-      "x-stoplight": {
-        "id": "6lh1fvimwuple"
-      },
       "description": "Наименование"
     },
     "desc": {
       "type": "string",
-      "x-stoplight": {
-        "id": "zanpdzpyoqxb9"
-      },
       "description": "Описание"
     }
   }

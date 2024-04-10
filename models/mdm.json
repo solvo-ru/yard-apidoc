@@ -1,10 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "mdm",
-  "title": "MdmEntry",
-  "x-stoplight": {
-    "id": "zo3vrlqvcahd2"
-  },
+  "title": "Запись справочника",
   "x-tags": [
     "mdm",
     "common"
@@ -15,39 +11,24 @@
     "ID": {
       "type": "string",
       "description": "Идентификатор записи",
-      "x-stoplight": {
-        "id": "rmjwc5881kj1d"
-      },
       "format": "uuid"
     },
     "created": {
       "type": "string",
       "format": "date-time",
-      "x-stoplight": {
-        "id": "b4t8i6jjrm8ab"
-      },
       "description": "Создана"
     },
     "creator": {
       "$ref": "user.json",
-      "x-stoplight": {
-        "id": "8jyslwnh0n5oj"
-      },
       "description": "Создал"
     },
     "modified": {
       "type": "string",
       "format": "date-time",
-      "x-stoplight": {
-        "id": "za982a97wo35a"
-      },
       "description": "Изменена"
     },
     "modifier": {
       "$ref": "user.json",
-      "x-stoplight": {
-        "id": "m9n9jzwkxix8y"
-      },
       "description": "Изменил"
     }
   }

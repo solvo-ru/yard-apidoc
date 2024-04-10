@@ -28,6 +28,9 @@
               }
             }
           }
+        },
+        "x-stoplight": {
+          "id": "tqg739xajhhay"
         }
       },
       "post": {
@@ -52,8 +55,12 @@
               }
             }
           }
+        },
+        "x-stoplight": {
+          "id": "fw6nr3929yihh"
         }
-      }
+      },
+      "parameters": []
     },
     "/transportRequests/{id}": {
       "get": {
@@ -77,10 +84,14 @@
             "required": true,
             "description": "ID заявки на перевозку",
             "schema": {
-              "type": "integer"
+              "type": "string",
+              "format": "uuid"
             }
           }
-        ]
+        ],
+        "x-stoplight": {
+          "id": "m2sic3aqvfkxj"
+        }
       },
       "put": {
         "summary": "Обновить заявку на перевозку",
@@ -103,7 +114,8 @@
             "required": true,
             "description": "ID заявки на перевозку",
             "schema": {
-              "type": "integer"
+              "type": "string",
+              "format": "uuid"
             }
           }
         ],
@@ -115,6 +127,9 @@
               }
             }
           }
+        },
+        "x-stoplight": {
+          "id": "1zyqx7m0ulvt7"
         }
       },
       "delete": {
@@ -131,11 +146,26 @@
             "required": true,
             "description": "ID заявки на перевозку",
             "schema": {
-              "type": "integer"
+              "type": "string",
+              "format": "uuid"
             }
           }
-        ]
-      }
+        ],
+        "x-stoplight": {
+          "id": "kzux2ii36wpx0"
+        }
+      },
+      "parameters": [
+        {
+          "schema": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true
+        }
+      ]
     },
     "/offers": {
       "get": {
@@ -151,6 +181,9 @@
               }
             }
           }
+        },
+        "x-stoplight": {
+          "id": "0udcekiahq0th"
         }
       },
       "post": {
@@ -175,8 +208,12 @@
               }
             }
           }
+        },
+        "x-stoplight": {
+          "id": "08bn7pfk96yph"
         }
-      }
+      },
+      "parameters": []
     },
     "/offers/{id}": {
       "get": {
@@ -200,10 +237,14 @@
             "required": true,
             "description": "ID предложения",
             "schema": {
-              "type": "integer"
+              "type": "string",
+              "format": "uuid"
             }
           }
-        ]
+        ],
+        "x-stoplight": {
+          "id": "m3im9k796ilqp"
+        }
       },
       "put": {
         "summary": "Обновить предложение",
@@ -226,7 +267,8 @@
             "required": true,
             "description": "ID предложения",
             "schema": {
-              "type": "integer"
+              "type": "string",
+              "format": "uuid"
             }
           }
         ],
@@ -234,53 +276,32 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {
-                  "firstName": {
-                    "type": "string"
-                  },
-                  "lastName": {
-                    "type": "string"
-                  },
-                  "email": {
-                    "type": "string"
-                  },
-                  "dateOfBirth": {
-                    "type": "string",
-                    "format": "date"
-                  }
-                },
-                "required": [
-                  "firstName",
-                  "lastName",
-                  "email",
-                  "dateOfBirth"
-                ]
-              },
-              "examples": {
-                "Create User Bob Fellow": {
-                  "value": {
-                    "firstName": "Bob",
-                    "lastName": "Fellow",
-                    "email": "bob.fellow@gmail.com",
-                    "dateOfBirth": "1996-08-24"
-                  }
-                }
+                "$ref": "#/components/schemas/Offer"
               }
             }
-          },
-          "description": "Post the necessary fields for the API to create a new user."
+          }
         },
-        "description": "Create a new user.",
         "x-stoplight": {
-          "id": "w143qsr1yuqtq"
+          "id": "33eep3ue1k0r1"
         }
-      }
+      },
+      "parameters": [
+        {
+          "schema": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true
+        }
+      ]
     }
   },
   "components": {
     "schemas": {
       "TransportRequest": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
         "$ref": "../models/mdm.json",
         "type": "object",
         "title": "Заявка на перевозку",

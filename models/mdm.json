@@ -2,7 +2,6 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Запись справочника",
   "x-tags": [
-    "mdm",
     "common"
   ],
   "type": "object",

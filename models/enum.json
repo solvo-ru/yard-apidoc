@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "enum",
+  "title": "Trivial list",
+  "x-stoplight": {
+    "id": "grgfm51eatjaj"
+  },
+  "type": "object",
+  "properties": {
+          "ID": {
+            "type": "integer"
+          },
+          "Title": {
+            "type": "string"
+          }
+    }
+}

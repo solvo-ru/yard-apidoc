@@ -6,8 +6,7 @@
   "info": {
     "title": "carrier-api",
     "version": "1.0",
-    "summary": "API Портала Перевозчика",
-    "description": ""
+    "description": "API Портала Перевозчика"
   },
   "servers": [
     {
@@ -281,62 +280,12 @@
   },
   "components": {
     "schemas": {
-      "mdm": {
-        "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "$id": "schema:mdm",
-        "title": "MdmEntry",
-        "x-stoplight": {
-          "id": "zo3vrlqvcahd2"
-        },
-        "x-tags": [
-          "mdm",
-          "common"
-        ],
-        "type": "object",
-        "properties": {
-          "ID": {
-            "type": "string",
-            "description": "Идентификатор заявки на перевозку в системе. Уникальное. Обязательный.",
-            "x-stoplight": {
-              "id": "rmjwc5881kj1d"
-            },
-            "format": "uuid"
-          },
-          "Создано": {
-            "type": "string",
-            "format": "date-time",
-            "x-stoplight": {
-              "id": "b4t8i6jjrm8ab"
-            }
-          },
-          "Создал": {
-            "$ref": "#/components/schemas/User",
-            "x-stoplight": {
-              "id": "8jyslwnh0n5oj"
-            }
-          },
-          "Изменено": {
-            "type": "string",
-            "format": "date-time",
-            "x-stoplight": {
-              "id": "za982a97wo35a"
-            }
-          },
-          "Изменил": {
-            "$ref": "#/components/schemas/User",
-            "x-stoplight": {
-              "id": "m9n9jzwkxix8y"
-            }
-          }
-        }
-      },
       "TransportRequest": {
-        "$schema": "https://json-schema.org/draft/2020-12/schema",
         "x-stoplight": {
           "id": "de464026250d5"
         },
-        "$id": "schema:TransportRequest",
-        "$ref": "schema:mdm",
+        "$id": "TransportRequest",
+        "$ref": "../models/mdm.json",
         "type": "object",
         "properties": {
           "Номер": {
@@ -404,15 +353,7 @@
         }
       },
       "TransportType": {
-        "type": "object",
-        "properties": {
-          "ID": {
-            "type": "integer"
-          },
-          "Название": {
-            "type": "string"
-          }
-        }
+        "$ref": "../models/enum.json"
       },
       "Comment": {
         "type": "object",
@@ -426,23 +367,7 @@
         }
       },
       "TransportRequestStatus": {
-        "type": "string",
-        "enum": [
-          "Новая",
-          "Оформлена",
-          "Приём предложений начат",
-          "Приём предложений завершён",
-          "Выносится решение",
-          "Победитель не выбран",
-          "Победитель выбран",
-          "Отказ экспедитора",
-          "Отменена",
-          "Готова к выполнению",
-          "Отмена выполнения",
-          "Выполняется",
-          "Не выполнена",
-          "Выполнена"
-        ]
+        "$ref": "../models/enum.json"
       },
       "TransportRequestGoal": {
         "type": "object",
@@ -473,24 +398,11 @@
         }
       },
       "TransportRequestSource": {
-        "type": "string",
-        "enum": [
-          "Внутренняя",
-          "Внешняя"
-        ]
-      },
-      "User": {
-        "type": "object",
-        "properties": {
-          "ID": {
-            "type": "integer"
-          },
-          "Логин": {
-            "type": "string"
-          }
-        }
+        "$ref": "../models/enum.json"
       },
       "Offer": {
+        "$id": "Offer",
+        "$ref": "../models/mdm.json",
         "type": "object",
         "properties": {
           "Заявка_на_перевозку": {
@@ -525,23 +437,6 @@
           },
           "Статус": {
             "$ref": "#/components/schemas/OfferStatus"
-          },
-          "ID": {
-            "type": "integer"
-          },
-          "Создано": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "Создал": {
-            "$ref": "../models/User.json"
-          },
-          "Изменено": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "Изменил": {
-            "$ref": "../models/User.json"
           }
         }
       },
@@ -585,21 +480,7 @@
         }
       },
       "OfferStatus": {
-        "type": "string",
-        "enum": [
-          "Новое",
-          "Выдвинуто",
-          "Принято_на_рассмотрение",
-          "Запрошены_корректировки",
-          "Корректируется",
-          "Скорректировано",
-          "Предложение_снято",
-          "Выносится_решение",
-          "Отклонено",
-          "Выбрано_победителем",
-          "Отказ_от_выполнения",
-          "Исполняется"
-        ]
+        "$ref": "../models/enum.json"
       }
     }
   },

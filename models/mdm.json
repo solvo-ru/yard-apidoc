@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "schema:mdm",
+  "$id": "mdm",
   "title": "MdmEntry",
   "x-stoplight": {
     "id": "zo3vrlqvcahd2"
@@ -27,7 +27,7 @@
       }
     },
     "Создал": {
-      "$ref": "./User.json",
+      "$ref": "user.json",
       "x-stoplight": {
         "id": "8jyslwnh0n5oj"
       }
@@ -40,7 +40,7 @@
       }
     },
     "Изменил": {
-      "$ref": "./User.json",
+      "$ref": "user.json",
       "x-stoplight": {
         "id": "m9n9jzwkxix8y"
       }

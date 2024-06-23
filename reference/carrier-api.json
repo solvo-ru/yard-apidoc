@@ -546,7 +546,17 @@
   "components": {
     "securitySchemes": {
       "oauth2": {
-        "type": "oauth2"
+        "type": "oauth2",
+        "flows": {
+          "authorizationCode": {
+            "authorizationUrl": "https://example.com/auth/realms/master/protocol/openid-connect/auth",
+            "tokenUrl": "https://example.com/auth/realms/master/protocol/openid-connect/token",
+            "refreshUrl": "",
+            "scopes": {
+              "userinfo": "userinfo"
+            }
+          }
+        }
       }
     },
     "schemas": {

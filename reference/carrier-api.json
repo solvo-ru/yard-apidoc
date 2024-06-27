@@ -531,14 +531,33 @@
         }
       ]
     },
-    "/auth/login": {
+    "/catalogs": {
       "get": {
-        "summary": "Your GET endpoint",
+        "summary": "Retrieve a list of all catalogs",
         "tags": [],
         "responses": {},
-        "operationId": "get-auth-login",
+        "operationId": "get-catalogs",
         "x-stoplight": {
-          "id": "s5cfsmjj1dmp9"
+          "id": "yhbnufi046opt"
+        },
+        "description": ""
+      },
+      "post": {
+        "summary": "Create new catalog",
+        "tags": [],
+        "responses": {},
+        "operationId": "post-catalogs",
+        "x-stoplight": {
+          "id": "0er9wjghvzb88"
+        }
+      },
+      "put": {
+        "summary": "Update catalog metadata",
+        "tags": [],
+        "responses": {},
+        "operationId": "put-catalogs",
+        "x-stoplight": {
+          "id": "owz0101ooj5wh"
         }
       }
     }

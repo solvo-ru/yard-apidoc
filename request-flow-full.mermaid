@@ -1,0 +1,80 @@
+sequenceDiagram
+    autonumber
+    box Pink Поток заявки
+    actor router as Логист
+    participant web as FrontEnd
+    participant gateway as API Gateway
+    participant request as Заявки
+    end
+
+    participant bpm as Оркестратор
+
+    router->>+web: Открыть форму создания заявки
+    web->>gateway: GET ~/request/form
+    gateway->>request: GET //request/form
+    request-->>gateway: request.jsonschema
+    gateway-->>web: request.form
+    web-->>-router: OK
+
+
+    router->>+web: Заполнить форму
+    router->>web: Сохранить заявку
+    %% destroy web
+    web->>gateway: PUT ~/request
+    %% destroy gateway
+    gateway-)+bpm: CreateProcessInstance{request}
+    note over router,bpm: Создать заявку
+
+    rect Orange
+    note right of request: Long polling
+    request-->>bpm: request-put
+    bpm-)request: {"request": {}}
+    request--)bpm: {"id": UUID}
+    end
+
+    router -x bpm: POST ~//user-tasks/:issue-request/completion
+    note over router,bpm: Оформить заявку
+
+    rect Orange
+    note right of request: Long polling
+    request-->>bpm: request-post
+    bpm-)request: {"request": {}}
+    request--)bpm: OK
+    end
+
+    box Cyan Поток предложений
+    participant offer as Предложение
+    actor dispatcher as Экспедитор
+    end
+
+    create participant notifier as Notifier
+    bpm->>notifier: Уведомление 'Новая заявка'
+
+
+    loop Сбор предложений
+    destroy notifier
+    notifier --> dispatcher: Получил уведомление
+    dispatcher -x+ bpm: CreateProcessInstance{offer}
+    note over dispatcher,bpm: Отправить предложение
+
+    rect Orange
+    note right of bpm: Long polling
+    offer-->>bpm: offer-put
+    bpm-)offer: {"request": {}}
+    offer--)bpm: {"id": UUID}
+    end
+
+    bpm->>bpm: Отправить сообщение в процесс заявки
+    end
+    destroy router
+    router -x bpm: POST ~//user-tasks/:choose-winner/completion
+    note over router,bpm: Выбрать победителя
+
+    destroy dispatcher
+    dispatcher -x bpm: POST ~//user-tasks/:confirm/completion
+    note over dispatcher,bpm: Подтвердить выполнение
+
+    bpm ->- bpm:
+
+    create participant YMS
+    bpm-)-YMS: Создать автовизит

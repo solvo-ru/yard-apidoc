@@ -14,102 +14,6 @@
     }
   ],
   "paths": {
-    "/saml/login": {
-      "post": {
-        "summary": "SAML login request",
-        "description": "Initiates a SAML login flow",
-        "requestBody": {
-          "description": "SAML request",
-          "content": {
-            "application/x-www-form-urlencoded": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "SAMLRequest": {
-                    "type": "string",
-                    "description": "Base64 encoded SAML request"
-                  },
-                  "RelayState": {
-                    "type": "string",
-                    "description": "Relay state for the SAML response"
-                  }
-                },
-                "required": [
-                  "SAMLRequest"
-                ]
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "SAML response",
-            "content": {
-              "application/xml": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "SAMLResponse": {
-                      "type": "string",
-                      "description": "Base64 encoded SAML response"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized"
-          }
-        }
-      }
-    },
-    "/saml/logout": {
-      "post": {
-        "summary": "SAML logout request",
-        "description": "Initiates a SAML logout flow",
-        "requestBody": {
-          "description": "SAML request",
-          "content": {
-            "application/x-www-form-urlencoded": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "SAMLRequest": {
-                    "type": "string",
-                    "description": "Base64 encoded SAML request"
-                  }
-                },
-                "required": [
-                  "SAMLRequest"
-                ]
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "SAML response",
-            "content": {
-              "application/xml": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "SAMLResponse": {
-                      "type": "string",
-                      "description": "Base64 encoded SAML response"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized"
-          }
-        }
-      }
-    },
     "/oauth/token": {
       "post": {
         "summary": "OAuth token request",
@@ -262,12 +166,12 @@
         }
       }
     },
-    "/transportRequests": {
+    "/shipment-rfp": {
       "get": {
         "summary": "Получить список заявок на перевозку",
         "responses": {
           "200": {
-            "$ref": "#/components/responses/transportRequestList"
+            "$ref": "#/components/responses/ShipmentRfpList"
           }
         },
         "x-stoplight": {
@@ -282,7 +186,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TransportRequest"
+                  "$ref": "#/components/schemas/ShipmentRfp"
                 }
               }
             }
@@ -292,7 +196,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/TransportRequest"
+                "$ref": "#/components/schemas/ShipmentRfp"
               }
             }
           }
@@ -303,7 +207,7 @@
       },
       "parameters": []
     },
-    "/transportRequests/{id}": {
+    "/shipment-rfp/{id}": {
       "get": {
         "summary": "Получить детали заявки на перевозку",
         "responses": {
@@ -312,7 +216,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TransportRequest"
+                  "$ref": "#/components/schemas/ShipmentRfp"
                 }
               }
             }
@@ -342,7 +246,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TransportRequest"
+                  "$ref": "#/components/schemas/ShipmentRfp"
                 }
               }
             }
@@ -364,7 +268,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/TransportRequest"
+                "$ref": "#/components/schemas/ShipmentRfp"
               }
             }
           }
@@ -579,14 +483,6 @@
       }
     },
     "schemas": {
-      "SAMLRequest": {
-        "type": "string",
-        "format": "base64"
-      },
-      "SAMLResponse": {
-        "type": "string",
-        "format": "base64"
-      },
       "OAuthTokenRequest": {
         "type": "object",
         "properties": {
@@ -620,7 +516,7 @@
           "client_secret"
         ]
       },
-      "TransportRequest": {
+      "ShipmentRfp": {
         "title": "Заявка на перевозку",
         "description": "Объект системы, содержащий информацию о планируемом перемещении груза из одной точки в другую",
         "allOf": [
@@ -879,7 +775,7 @@
             "type": "object",
             "properties": {
               "request": {
-                "$ref": "#/components/schemas/TransportRequest",
+                "$ref": "#/components/schemas/ShipmentRfp",
                 "description": "Идентификатор заявки на перевозку"
               },
               "forwarder": {
@@ -1237,14 +1133,14 @@
       }
     },
     "responses": {
-      "transportRequestList": {
+      "ShipmentRfpList": {
         "description": "Список заявок на перевозку",
         "content": {
           "application/json": {
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/components/schemas/TransportRequest"
+                "$ref": "#/components/schemas/ShipmentRfp"
               }
             }
           }

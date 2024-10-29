@@ -431,14 +431,10 @@
           },
           "name": "id",
           "in": "path",
-          "required": true
+          "required": true,
+          "description": "Идентификатор"
         }
-      ],
-      "з": {
-        "x-stoplight": {
-          "id": "33eep3ue1k0r1"
-        }
-      }
+      ]
     },
     "/catalogs": {
       "get": {
@@ -538,7 +534,8 @@
           },
           "name": "key",
           "in": "path",
-          "required": true
+          "required": true,
+          "description": "Ключ справочника"
         },
         {
           "schema": {
@@ -546,23 +543,8 @@
           },
           "name": "id",
           "in": "path",
-          "required": true
-        },
-        {
-          "schema": {
-            "type": "string"
-          },
-          "name": "key",
-          "in": "path",
-          "required": true
-        },
-        {
-          "schema": {
-            "type": "string"
-          },
-          "name": "id",
-          "in": "path",
-          "required": true
+          "required": true,
+          "description": "Идентификатор записи"
         }
       ],
       "get": {

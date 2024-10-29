@@ -7,16 +7,26 @@
   "x-internal": false,
   "allOf": [
     {
-      "patternProperties": {
-        "title|displayString": {
-          "type": "string"
-        }
-      }
+      "type": "object",
+      "$ref": "./abstract-auditable.json"
     },
     {
-      "$ref": "./abstract-auditable.json"
+      "$ref": "../../interfaces/withName.json"
     }
   ],
-  "type": "object",
-  "description": ""
+  "examples": [
+    {
+      "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+      "createdBy": {
+        "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
+        "Login": "string"
+      },
+      "createdDate": "2019-08-24T14:15:22Z",
+      "lastModifiedBy": {
+        "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
+        "Login": "string"
+      },
+      "lastModifiedDate": "2019-08-24T14:15:22Z"
+    }
+  ]
 }

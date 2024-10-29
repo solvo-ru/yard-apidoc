@@ -1,0 +1,20 @@
+{
+  "title": "rich-list",
+  "x-stoplight": {
+    "id": "on0x62abayoua"
+  },
+  "allOf": [
+    {
+      "$ref": "./simple-list.json"
+    },
+    {
+      "type": "object",
+      "x-stoplight": {
+        "id": "gog2oduumqfse"
+      }
+    }
+  ],
+  "x-tags": [
+    "collector"
+  ]
+}

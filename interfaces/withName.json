@@ -1,0 +1,12 @@
+{
+  "title": "withName",
+  "x-stoplight": {
+    "id": "iecsnixjems1x"
+  },
+  "type": "object",
+  "patternProperties": {
+        "title|displayString": {
+          "type": "string"
+        }
+      }
+}

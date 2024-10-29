@@ -1,0 +1,10 @@
+{
+  "$ref": "./abstract-named.json",
+  "x-stoplight": {
+    "id": "aor7b1h3sbqwa"
+  },
+  "title": "",
+  "x-tags": [
+    "collector"
+  ]
+}

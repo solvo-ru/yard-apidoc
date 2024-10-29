@@ -3,9 +3,7 @@
   "x-stoplight": {
     "id": "0x317fjusy8sh"
   },
-  "type": "object",
   "title": "DomainItem",
-  "additionalProperties": false,
   "ifNotExist": true,
   "inherits": [
     {
@@ -21,72 +19,63 @@
     "toast_autovacuum_enabled": false
   },
   "table_tablespace_name": "pg_default",
-  "properties": {
-    "data": {
-      "$ref": "#model/$defs/body",
+  "allOf": [
+    {
+      "$ref": "./abstract-bodied.json",
       "x-stoplight": {
-        "id": "81u223f9s3g4n"
+        "id": "0t8i5fd2iq5r0"
       }
     },
-    "displayString": {
-      "type": "string",
-      "generatedColumn": true,
-      "isActivated": true,
-      "mode": "text",
-      "triggerUpdateColumns": false,
+    {
+      "$ref": "../../interfaces/procedural.json",
       "x-stoplight": {
-        "id": "5ff1dbsa7714n"
+        "id": "m0fpda8qtdsua"
       }
     },
-    "status": {
-      "type": "string",
-      "compositePrimaryKey": false,
-      "compositeUniqueKey": false,
-      "format": "uuid",
-      "isActivated": true,
-      "triggerUpdateColumns": false,
+    {
+      "$ref": "../../interfaces/withName.json",
       "x-stoplight": {
-        "id": "63kxsslr887dy"
+        "id": "x6ioybh1yqwaj"
       }
     },
-    "process": {
-      "type": "integer",
-      "compositePrimaryKey": false,
-      "compositeUniqueKey": false,
-      "isActivated": true,
-      "mode": "integer",
-      "triggerUpdateColumns": false,
-      "x-stoplight": {
-        "id": "4opl4y3zt7yl0"
-      }
-    },
-    "sourcePointer": {
-      "type": "string",
-      "compositePrimaryKey": false,
-      "isActivated": true,
-      "length": 10,
-      "mode": "varchar",
-      "triggerUpdateColumns": false,
-      "unique": false,
-      "x-stoplight": {
-        "id": "1uy79iegbxpxk"
-      }
-    },
-    "meta": {
-      "type": "string",
-      "format": "uuid",
-      "isActivated": true,
-      "triggerUpdateColumns": false,
-      "unique": false,
-      "x-stoplight": {
-        "id": "geb2lm7vg4fy7"
-      }
-    },
-    "": {
-      "type": "string",
-      "x-stoplight": {
-        "id": "n4zw8fa69ajb1"
+    {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "meta": {
+          "format": "uuid",
+          "isActivated": true,
+          "triggerUpdateColumns": false,
+          "unique": false,
+          "x-stoplight": {
+            "id": "geb2lm7vg4fy7"
+          },
+          "oneOf": [
+            {
+              "type": "string",
+              "x-stoplight": {
+                "id": "o4g9iyz938ri9"
+              },
+              "format": "uuid"
+            },
+            {
+              "$ref": "./domain-meta.json",
+              "x-stoplight": {
+                "id": "k1cwgt18ywqla"
+              }
+            }
+          ]
+        },
+        "originalIdentity": {
+          "$ref": "../../props/foreignId.json",
+          "x-stoplight": {
+            "id": "1uy79iegbxpxk"
+          }
+        }
       }
     }
-  }
+  ],
+  "x-tags": [
+    "item"
+  ]
 }

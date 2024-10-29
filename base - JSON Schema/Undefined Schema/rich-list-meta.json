@@ -1,0 +1,21 @@
+{
+  "title": "rich-list-meta",
+  "x-stoplight": {
+    "id": "cyi4eylin6hj1"
+  },
+  "allOf": [
+    {
+      "$ref": "./domain-meta.json"
+    },
+    {
+      "$ref": "../../interfaces/collectable.json",
+      "x-stoplight": {
+        "id": "yz6wgxfg6ulwk"
+      }
+    }
+  ],
+  "x-tags": [
+    "collector",
+    "meta"
+  ]
+}

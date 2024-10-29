@@ -1,0 +1,30 @@
+{
+  "title": "foreignId",
+  "x-stoplight": {
+    "id": "yp8fdit9tzdz0"
+  },
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "host": {
+      "type": "string",
+      "x-stoplight": {
+        "id": "buhsawa9kfgpe"
+      }
+    },
+    "route": {
+      "type": "string",
+      "x-stoplight": {
+        "id": "ovmqblk8taclo"
+      }
+    },
+    "protocol": {
+      "type": "string",
+      "x-stoplight": {
+        "id": "gv1xkrb24002i"
+      }
+    }
+  }
+}

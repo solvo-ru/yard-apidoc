@@ -1,0 +1,31 @@
+{
+  "title": "link",
+  "x-stoplight": {
+    "id": "eja7mtg7nfk7n"
+  },
+  "type": "object",
+  "properties": {
+    "host": {
+      "type": "string",
+      "x-stoplight": {
+        "id": "jjwmkox94136i"
+      },
+      "format": "hostname"
+    },
+    "id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "entity": {
+      "type": "string",
+      "x-stoplight": {
+        "id": "kdkzhdakpmbcd"
+      },
+      "enum": [
+        "item",
+        "meta",
+        "collection"
+      ]
+    }
+  }
+}

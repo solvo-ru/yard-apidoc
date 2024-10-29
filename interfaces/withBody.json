@@ -1,0 +1,15 @@
+{
+  "title": "withBody",
+  "x-stoplight": {
+    "id": "w38v80sckhvi2"
+  },
+  "type": "object",
+  "patternProperties": {
+        "^json-data$|^json-schema$": {
+          "type": "object",
+          "x-stoplight": {
+            "id": "8qeypclnrcbv8"
+          }
+        }
+      }
+}

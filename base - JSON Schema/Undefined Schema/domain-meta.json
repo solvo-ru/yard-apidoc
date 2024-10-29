@@ -3,32 +3,7 @@
   "x-stoplight": {
     "id": "rnlc4mbecragj"
   },
-  "type": "object",
   "title": "DomainMeta",
-  "properties": {
-    "schema": {
-      "title": "schema",
-      "$ref": "#model/$defs/body",
-      "compositePrimaryKey": false,
-      "compositeUniqueKey": false,
-      "isActivated": true,
-      "triggerUpdateColumns": false,
-      "x-stoplight": {
-        "id": "tvutyxkdrcwje"
-      }
-    },
-    "life": {
-      "$ref": "#model/$defs/life",
-      "compositePrimaryKey": false,
-      "compositeUniqueKey": false,
-      "isActivated": true,
-      "triggerUpdateColumns": false,
-      "x-stoplight": {
-        "id": "yzmep1nb2ces4"
-      }
-    }
-  },
-  "additionalProperties": false,
   "ifNotExist": true,
   "inherits": [
     {
@@ -38,8 +13,19 @@
   ],
   "isActivated": true,
   "memory_optimized": false,
-  "required": [
-    "schema"
+  "table_tablespace_name": "pg_default",
+  "allOf": [
+    {
+      "$ref": "./abstract-bodied.json"
+    },
+    {
+      "$ref": "../../interfaces/life.json",
+      "x-stoplight": {
+        "id": "2e87mpl2wze52"
+      }
+    }
   ],
-  "table_tablespace_name": "pg_default"
+  "x-tags": [
+    "meta"
+  ]
 }

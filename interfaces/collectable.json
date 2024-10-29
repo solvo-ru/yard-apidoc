@@ -1,0 +1,16 @@
+{
+  "title": "collectable",
+  "x-stoplight": {
+    "id": "wo34ndrg2j3zj"
+  },
+  "type": "object",
+  "properties": {
+    "catalog": {
+      "type": "string",
+      "x-stoplight": {
+        "id": "sc98egcct0176"
+      },
+      "format": "uuid"
+    }
+  }
+}

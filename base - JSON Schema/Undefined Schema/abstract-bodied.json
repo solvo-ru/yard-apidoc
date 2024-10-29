@@ -1,0 +1,31 @@
+{
+  "title": "abstract-named",
+  "x-stoplight": {
+    "id": "jxa8s1nt9bzl4"
+  },
+  "additionalProperties": false,
+  "x-internal": false,
+  "allOf": [
+    {
+      "patternProperties": {
+        "^json-data$|^json-schema$": {
+          "type": "object",
+          "x-stoplight": {
+            "id": "8qeypclnrcbv8"
+          }
+        }
+      },
+      "x-stoplight": {
+        "id": "3t0amsxu26odu"
+      }
+    },
+    {
+      "$ref": "./abstract-auditable.json",
+      "x-stoplight": {
+        "id": "qlkd0he4o8ses"
+      }
+    }
+  ],
+  "type": "object",
+  "description": ""
+}

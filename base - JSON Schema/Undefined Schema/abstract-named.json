@@ -7,8 +7,8 @@
   "x-internal": false,
   "allOf": [
     {
-      "properties": {
-        "title": {
+      "patternProperties": {
+        "title|displayString": {
           "type": "string"
         }
       }

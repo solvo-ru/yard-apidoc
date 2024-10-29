@@ -8,7 +8,7 @@
       "$ref": "./domain-meta.json"
     },
     {
-      "$ref": "../../interfaces/collectable.json",
+      "$ref": "../interfaces/collectable.json",
       "x-stoplight": {
         "id": "yz6wgxfg6ulwk"
       }

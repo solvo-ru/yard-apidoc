@@ -27,13 +27,13 @@
       }
     },
     {
-      "$ref": "../../interfaces/procedural.json",
+      "$ref": "../interfaces/procedural.json",
       "x-stoplight": {
         "id": "m0fpda8qtdsua"
       }
     },
     {
-      "$ref": "../../interfaces/withName.json",
+      "$ref": "../interfaces/withName.json",
       "x-stoplight": {
         "id": "x6ioybh1yqwaj"
       }
@@ -67,7 +67,7 @@
           ]
         },
         "originalIdentity": {
-          "$ref": "../../props/foreignId.json",
+          "$ref": "../props/foreignId.json",
           "x-stoplight": {
             "id": "1uy79iegbxpxk"
           }

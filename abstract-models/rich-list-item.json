@@ -8,7 +8,7 @@
       "$ref": "./simple-list-item.json"
     },
     {
-      "$ref": "../../interfaces/withBody.json",
+      "$ref": "../interfaces/withBody.json",
       "x-stoplight": {
         "id": "vf0x189t0izvj"
       }

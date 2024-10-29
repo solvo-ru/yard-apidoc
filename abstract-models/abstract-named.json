@@ -11,7 +11,7 @@
       "$ref": "./abstract-auditable.json"
     },
     {
-      "$ref": "../../interfaces/withName.json"
+      "$ref": "../interfaces/withName.json"
     }
   ],
   "examples": [

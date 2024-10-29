@@ -7,7 +7,7 @@
   "x-internal": false,
   "allOf": [
     {
-      "$ref": "../../interfaces/withBody.json",
+      "$ref": "../interfaces/withBody.json",
       "x-stoplight": {
         "id": "3t0amsxu26odu"
       }

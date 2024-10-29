@@ -19,9 +19,26 @@
       "$ref": "./abstract-bodied.json"
     },
     {
-      "$ref": "../../interfaces/life.json",
+      "$ref": "../interfaces/life.json",
       "x-stoplight": {
         "id": "2e87mpl2wze52"
+      }
+    },
+    {
+      "type": "object",
+      "x-stoplight": {
+        "id": "hbhgu935ekkfo"
+      },
+      "required": [
+        "processDefinition"
+      ],
+      "properties": {
+        "processDefinition": {
+          "type": "string",
+          "x-stoplight": {
+            "id": "cuof0v5q0q7y4"
+          }
+        }
       }
     }
   ],

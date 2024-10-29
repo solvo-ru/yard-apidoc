@@ -39,7 +39,7 @@
       "oneOf": [
         {
           "type": "object",
-          "$ref": "../../props/user.json",
+          "$ref": "../props/user.json",
           "x-stoplight": {
             "id": "itgen7lnztq6r"
           },
@@ -73,7 +73,7 @@
       "oneOf": [
         {
           "type": "object",
-          "$ref": "../../props/user.json",
+          "$ref": "../props/user.json",
           "x-stoplight": {
             "id": "itgen7lnztq6r"
           },

@@ -11,6 +11,14 @@
       "type": "object",
       "x-stoplight": {
         "id": "gog2oduumqfse"
+      },
+      "properties": {
+        "processDefinition": {
+          "type": "string",
+          "x-stoplight": {
+            "id": "xml5ze1r94yk7"
+          }
+        }
       }
     }
   ],

@@ -8,7 +8,7 @@
       "$ref": "./abstract-named.json"
     },
     {
-      "$ref": "../../interfaces/collectable.json",
+      "$ref": "../interfaces/collectable.json",
       "x-stoplight": {
         "id": "etk1p3f00ii8c"
       }

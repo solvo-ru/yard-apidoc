@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "x-stoplight": {
+    "id": "0x317fjusy8sh"
+  },
+  "type": "object",
+  "title": "DomainItem",
+  "additionalProperties": false,
+  "ifNotExist": true,
+  "inherits": [
+    {
+      "id": "e8aa241c-80e4-453e-88d7-cd0d38e6bc52",
+      "parentTable": "d91045e4-295c-40f8-88e7-6c5a76fe21ec"
+    }
+  ],
+  "isActivated": true,
+  "memory_optimized": false,
+  "storage_parameter": {
+    "id": "e59e52ee-5e59-4fde-88a9-a60f4ea929ea",
+    "autovacuum_enabled": false,
+    "toast_autovacuum_enabled": false
+  },
+  "table_tablespace_name": "pg_default",
+  "properties": {
+    "data": {
+      "$ref": "#model/$defs/body",
+      "x-stoplight": {
+        "id": "81u223f9s3g4n"
+      }
+    },
+    "displayString": {
+      "type": "string",
+      "generatedColumn": true,
+      "isActivated": true,
+      "mode": "text",
+      "triggerUpdateColumns": false,
+      "x-stoplight": {
+        "id": "5ff1dbsa7714n"
+      }
+    },
+    "status": {
+      "type": "string",
+      "compositePrimaryKey": false,
+      "compositeUniqueKey": false,
+      "format": "uuid",
+      "isActivated": true,
+      "triggerUpdateColumns": false,
+      "x-stoplight": {
+        "id": "63kxsslr887dy"
+      }
+    },
+    "process": {
+      "type": "integer",
+      "compositePrimaryKey": false,
+      "compositeUniqueKey": false,
+      "isActivated": true,
+      "mode": "integer",
+      "triggerUpdateColumns": false,
+      "x-stoplight": {
+        "id": "4opl4y3zt7yl0"
+      }
+    },
+    "sourcePointer": {
+      "type": "string",
+      "compositePrimaryKey": false,
+      "isActivated": true,
+      "length": 10,
+      "mode": "varchar",
+      "triggerUpdateColumns": false,
+      "unique": false,
+      "x-stoplight": {
+        "id": "1uy79iegbxpxk"
+      }
+    },
+    "meta": {
+      "type": "string",
+      "format": "uuid",
+      "isActivated": true,
+      "triggerUpdateColumns": false,
+      "unique": false,
+      "x-stoplight": {
+        "id": "geb2lm7vg4fy7"
+      }
+    },
+    "": {
+      "type": "string",
+      "x-stoplight": {
+        "id": "n4zw8fa69ajb1"
+      }
+    }
+  }
+}

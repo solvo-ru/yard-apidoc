@@ -1,6 +1,9 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "x-tags": [
+  "x-stoplight": {
+    "id": "6fd05be033d3d"
+  },
+  "x-tags": [
     "common"
   ],
   "title": "Список",
@@ -13,15 +16,24 @@
   "properties": {
     "ID": {
       "type": "string",
-      "format": "uuid"
+      "format": "uuid",
+      "x-stoplight": {
+        "id": "wyr1jcao4fget"
+      }
     },
     "title": {
       "type": "string",
-      "description": "Наименование"
+      "description": "Наименование",
+      "x-stoplight": {
+        "id": "7ndnzpz2k23q8"
+      }
     },
     "desc": {
       "type": "string",
-      "description": "Описание"
+      "description": "Описание",
+      "x-stoplight": {
+        "id": "1yvs9ur36r0js"
+      }
     }
   }
 }

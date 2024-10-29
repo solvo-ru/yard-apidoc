@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "x-stoplight": {
+    "id": "rnlc4mbecragj"
+  },
+  "type": "object",
+  "title": "DomainMeta",
+  "properties": {
+    "schema": {
+      "title": "schema",
+      "$ref": "#model/$defs/body",
+      "compositePrimaryKey": false,
+      "compositeUniqueKey": false,
+      "isActivated": true,
+      "triggerUpdateColumns": false,
+      "x-stoplight": {
+        "id": "tvutyxkdrcwje"
+      }
+    },
+    "life": {
+      "$ref": "#model/$defs/life",
+      "compositePrimaryKey": false,
+      "compositeUniqueKey": false,
+      "isActivated": true,
+      "triggerUpdateColumns": false,
+      "x-stoplight": {
+        "id": "yzmep1nb2ces4"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "ifNotExist": true,
+  "inherits": [
+    {
+      "id": "5060c873-f50b-4da3-bc3c-2fa0326f6e65",
+      "parentTable": "d91045e4-295c-40f8-88e7-6c5a76fe21ec"
+    }
+  ],
+  "isActivated": true,
+  "memory_optimized": false,
+  "required": [
+    "schema"
+  ],
+  "table_tablespace_name": "pg_default"
+}

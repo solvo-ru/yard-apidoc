@@ -1,0 +1,22 @@
+{
+  "title": "abstract-named",
+  "x-stoplight": {
+    "id": "v8z5ko059anj6"
+  },
+  "additionalProperties": false,
+  "x-internal": false,
+  "allOf": [
+    {
+      "properties": {
+        "title": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "$ref": "./abstract-auditable.json"
+    }
+  ],
+  "type": "object",
+  "description": ""
+}

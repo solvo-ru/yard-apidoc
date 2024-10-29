@@ -1,0 +1,42 @@
+{
+  "title": "life",
+  "x-stoplight": {
+    "id": "92106023de518"
+  },
+  "isActivated": true,
+  "unique": false,
+  "properties": {
+    "since": {
+      "title": "since",
+      "isActivated": true,
+      "unique": false,
+      "mode": "timestamp",
+      "scale": 7,
+      "type": "string",
+      "triggerUpdateColumns": false,
+      "timezone": "WITH TIME ZONE",
+      "format": "date-time",
+      "x-stoplight": {
+        "id": "a65fkhnn7xz2c"
+      }
+    },
+    "until": {
+      "title": "until",
+      "isActivated": true,
+      "unique": false,
+      "mode": "timestamp",
+      "scale": 7,
+      "type": "string",
+      "triggerUpdateColumns": false,
+      "timezone": "WITH TIME ZONE",
+      "format": "date-time",
+      "x-stoplight": {
+        "id": "q59ep2gdrg3ad"
+      }
+    }
+  },
+  "type": "object",
+  "compositePrimaryKey": false,
+  "compositeUniqueKey": false,
+  "triggerUpdateColumns": false
+}

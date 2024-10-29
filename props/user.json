@@ -1,5 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "x-stoplight": {
+    "id": "e64faec8632d6"
+  },
   "title": "Пользователь",
   "type": "object",
   "required": [
@@ -8,10 +11,16 @@
   "properties": {
     "ID": {
       "type": "string",
-      "format": "uuid"
+      "format": "uuid",
+      "x-stoplight": {
+        "id": "1atgkgr7no1wd"
+      }
     },
     "Login": {
-      "type": "string"
+      "type": "string",
+      "x-stoplight": {
+        "id": "bjvrieb5lgis2"
+      }
     }
   }
 }

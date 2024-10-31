@@ -3,7 +3,7 @@
   "x-stoplight": {
     "id": "0x317fjusy8sh"
   },
-  "title": "DomainItem",
+  "title": "domain-item",
   "ifNotExist": true,
   "inherits": [
     {
@@ -70,6 +70,20 @@
           "$ref": "../props/foreignId.json",
           "x-stoplight": {
             "id": "1uy79iegbxpxk"
+          }
+        }
+      }
+    },
+    {
+      "type": "object",
+      "x-stoplight": {
+        "id": "kbge03p6vj4pu"
+      },
+      "properties": {
+        "json-data": {
+          "type": "object",
+          "x-stoplight": {
+            "id": "yipei2b9v0alx"
           }
         }
       }

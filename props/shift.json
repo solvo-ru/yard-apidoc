@@ -1,5 +1,5 @@
 {
-"$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "shift",
   "x-stoplight": {
     "id": "9onwcz8cpmrh8"
@@ -50,5 +50,6 @@
   "required": [
     "status",
     "timestamp"
-  ]
+  ],
+  "description": "Событие смены статуса"
 }

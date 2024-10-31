@@ -1,5 +1,5 @@
 {
-  "openapi": "3.1.0",
+  "openapi": "3.0.0",
   "x-stoplight": {
     "id": "xxuylnzrxq62x"
   },
@@ -9,8 +9,11 @@
     "description": "API Портала Перевозчика"
   },
   "servers": [
+    {"url": "https://stoplight.io/mocks/thehunt/carrier-apidoc/365085546",
+      "description": "Stoplight mocker"
+    },
     {
-      "url": "http://localhost:3000"
+      "url": "http://localhost:8080"
     }
   ],
   "paths": {
@@ -743,7 +746,11 @@
             "$ref": "../abstract-models/simple-list-item.json",
             "description": "Способ создания заявки на перевозку."
           }
-        }
+        },
+        "x-examples": {
+          "Example 1": {}
+        },
+        "$ref": ""
       },
       "shipment-rfp-item": {
         "title": "shipment-rfp-item",
@@ -773,7 +780,38 @@
             }
           }
         ],
-        "type": "object"
+        "type": "object",
+        "x-examples": {
+          "Example 1": {
+            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+            "createdBy": {
+              "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
+              "Login": "string"
+            },
+            "createdDate": "2019-08-24T14:15:22Z",
+            "lastModifiedBy": {
+              "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
+              "Login": "string"
+            },
+            "lastModifiedDate": "2019-08-24T14:15:22Z",
+            "path": [
+              {
+                "host": "example.com",
+                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "entity": "item"
+              }
+            ],
+            "processInstant": "string",
+            "meta": "00bc452f-5ac7-4ce3-9b71-a522f10fc914",
+            "originalIdentity": {
+              "id": "string",
+              "host": "string",
+              "route": "string",
+              "protocol": "string"
+            },
+            "json-data": {}
+          }
+        }
       },
       "offer-data": {
         "title": "Предложение к заявке на перевозку",

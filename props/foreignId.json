@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "foreignId",
   "x-stoplight": {
     "id": "yp8fdit9tzdz0"

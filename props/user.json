@@ -3,7 +3,7 @@
   "x-stoplight": {
     "id": "e64faec8632d6"
   },
-  "title": "Пользователь",
+  "title": "user-profile",
   "type": "object",
   "required": [
     "ID"

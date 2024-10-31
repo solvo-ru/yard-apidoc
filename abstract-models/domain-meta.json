@@ -3,7 +3,7 @@
   "x-stoplight": {
     "id": "rnlc4mbecragj"
   },
-  "title": "DomainMeta",
+  "title": "domain-meta",
   "ifNotExist": true,
   "inherits": [
     {
@@ -37,6 +37,20 @@
           "type": "string",
           "x-stoplight": {
             "id": "cuof0v5q0q7y4"
+          }
+        }
+      }
+    },
+    {
+      "type": "object",
+      "x-stoplight": {
+        "id": "3lsffm5uimfs9"
+      },
+      "properties": {
+        "json-schema": {
+          "type": "object",
+          "x-stoplight": {
+            "id": "c15ypv9secepj"
           }
         }
       }

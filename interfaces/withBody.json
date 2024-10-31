@@ -4,13 +4,27 @@
   "x-stoplight": {
     "id": "w38v80sckhvi2"
   },
-  "type": "object",
-  "patternProperties": {
-        "^json-data$|^json-schema$": {
+  "oneOf": [
+    {
+      "properties": {
+        "json-schema": {
           "type": "object",
           "x-stoplight": {
             "id": "8qeypclnrcbv8"
           }
         }
       }
+    },
+    {"properties": {
+        "json-data": {
+          "type": "object",
+          "x-stoplight": {
+        "id": "yvoppsx19uepu"
+      }
+        }
+      }
+      
+    }
+  ],
+  "type": "object"
 }

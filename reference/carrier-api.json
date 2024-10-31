@@ -5,7 +5,7 @@
   },
   "info": {
     "title": "carrier-api",
-    "version": "1.0",
+    "version": "api-1.0",
     "description": "API Портала Перевозчика"
   },
   "servers": [
@@ -668,9 +668,6 @@
         "title": "Заявка на перевозку",
         "description": "Объект системы, содержащий информацию о планируемом перемещении груза из одной точки в другую",
         "type": "object",
-        "examples": [
-          {}
-        ],
         "properties": {
           "num": {
             "type": "string",
@@ -746,11 +743,7 @@
             "$ref": "../abstract-models/simple-list-item.json",
             "description": "Способ создания заявки на перевозку."
           }
-        },
-        "x-examples": {
-          "Example 1": {}
-        },
-        "$ref": ""
+        }
       },
       "shipment-rfp-item": {
         "title": "shipment-rfp-item",
@@ -1602,19 +1595,73 @@
             "schema": {
               "allOf": [
                 {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/shipment-rfp-item"
-                  }
-                },
-                {
-                  "type": "object",
                   "$ref": "../abstract-models/domain-meta.json",
                   "x-stoplight": {
                     "id": "rzvz9v84wd8zf"
                   }
+                },
+                {
+                  "x-stoplight": {
+                    "id": "mo5t84r3hm50z"
+                  },
+                  "properties": {
+                    "items": {
+                      "type": "array",
+                      "x-stoplight": {
+                        "id": "jgco5incrq7if"
+                      },
+                      "items": {
+                        "$ref": "#/components/schemas/shipment-rfp-item",
+                        "x-stoplight": {
+                          "id": "ut0livh4d7w1d"
+                        }
+                      }
+                    }
+                  }
                 }
-              ]
+              ],
+              "type": "object"
+            },
+            "examples": {
+              "Example 1": {
+                "value": {
+                  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                  "createdBy": {
+                    "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
+                    "Login": "string"
+                  },
+                  "createdDate": "2019-08-24T14:15:22Z",
+                  "lastModifiedBy": {
+                    "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
+                    "Login": "string"
+                  },
+                  "lastModifiedDate": "2019-08-24T14:15:22Z",
+                  "since": "2019-08-24T14:15:22Z",
+                  "until": "2019-08-24T14:15:22Z",
+                  "processDefinition": "string",
+                  "items": [
+                    {
+                      "id": "string",
+                      "path": [
+                        {
+                          "host": "example.com",
+                          "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                          "entity": "item"
+                        }
+                      ],
+                      "processInstant": "string",
+                      "meta": "00bc452f-5ac7-4ce3-9b71-a522f10fc914",
+                      "originalIdentity": {
+                        "id": "string",
+                        "host": "string",
+                        "route": "string",
+                        "protocol": "string"
+                      },
+                      "json-data": {}
+                    }
+                  ]
+                }
+              }
             }
           }
         }

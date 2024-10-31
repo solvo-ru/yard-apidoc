@@ -1,13 +1,13 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "withName",
+  "title": "with-name",
   "x-stoplight": {
     "id": "iecsnixjems1x"
   },
   "type": "object",
   "patternProperties": {
-        "title|displayString": {
-          "type": "string"
-        }
-      }
+    "title|displayString": {
+      "type": "string"
+    }
+  }
 }

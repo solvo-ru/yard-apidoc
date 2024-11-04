@@ -4,7 +4,7 @@
     {
       "$ref": "../abstract/domain-item.json"
     },
-    {
+    {  "type": "object",
       "properties": {
         "json-data": {
           "$ref": "./shipment-rfp-data.json"
@@ -13,8 +13,5 @@
     }
   ],
   "description": "Строка таблицы БД",
-
-
-  "type": "object",
   "$schema": "https://json-schema.org/draft/2020-12/schema"
 }

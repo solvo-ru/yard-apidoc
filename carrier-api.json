@@ -1857,7 +1857,13 @@
                 "$ref": "#/components/schemas/contractor-item"
               }
             ],
-            "type": "object"
+            "type": "object",
+            "examples": [
+              {
+                "id": "owner-001",
+                "name": "ООО 'ГрузВладелец'"
+              }
+            ]
           }
         },
         "description": "Объект системы, содержащий информацию о перевозимом грузе.",
@@ -1880,12 +1886,12 @@
         "description": "Метаданные справочника",
         "title": "Запись коллекции 'Справочник'",
         "example": {
-          "id": "cat-004",
-          "title": "Типы дополнительных услуг",
-          "description": "Справочник типов дополнительных услуг при перевозке",
-          "itemsCount": 0,
-          "createdAt": "2023-05-17T09:30:00Z",
-          "updatedAt": "2023-05-17T09:30:00Z"
+          "id": "cat-001",
+          "name": "Типы транспортных средств",
+          "description": "Справочник типов транспортных средств",
+          "itemsCount": 10,
+          "createdAt": "2023-05-01T10:00:00Z",
+          "updatedAt": "2023-05-01T10:00:00Z"
         },
         "additionalProperties": false,
         "examples": [

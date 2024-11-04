@@ -14,14 +14,8 @@
   "properties": {
     "request": {
       "description": "Идентификатор заявки на перевозку",
-      "oneOf": [
-        {
-          "$ref": "../props/link.json"
-        },
-        {
-          "$ref": "./shipment-rfp-item.json"
-        }
-      ]
+      "type": "string",
+      "format": "uuid"
     },
     "forwarder": {
       "oneOf": [

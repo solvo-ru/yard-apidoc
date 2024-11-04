@@ -1,5 +1,5 @@
 {
-  "openapi": "3.0.0",
+  "openapi": "3.1.0",
   "x-stoplight": {
     "id": "xxuylnzrxq62x"
   },
@@ -433,7 +433,7 @@
         "tags": [],
         "responses": {
           "201": {
-            "$ref": "#/components/responses/catalog-item-dto"
+            "$ref": "#/components/responses/catalog-metaitem"
           }
         },
         "operationId": "post-catalogs",
@@ -441,19 +441,23 @@
           "id": "0er9wjghvzb88"
         },
         "requestBody": {
-          "$ref": "#/components/requestBodies/catalog-dto"
+          "$ref": "#/components/requestBodies/catalog-metaitem"
         }
       },
       "post": {
         "summary": "Изменить описание справочника",
         "tags": [],
-        "responses": {},
+        "responses": {
+          "202": {
+            "$ref": "#/components/responses/catalog-metaitem"
+          }
+        },
         "operationId": "put-catalogs",
         "x-stoplight": {
           "id": "owz0101ooj5wh"
         },
         "requestBody": {
-          "$ref": "#/components/requestBodies/catalog-dto"
+          "$ref": "#/components/requestBodies/catalog-metaitem"
         }
       }
     },
@@ -468,7 +472,7 @@
         "tags": [],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/catalog-dto"
+            "$ref": "#/components/responses/catalog-metaitem"
           }
         },
         "operationId": "get-catalogs-key",
@@ -481,7 +485,7 @@
         "tags": [],
         "responses": {
           "202": {
-            "$ref": "#/components/responses/catalog-item-dto"
+            "$ref": "#/components/responses/catalog-item"
           }
         },
         "operationId": "post-catalogs-key",
@@ -489,19 +493,23 @@
           "id": "ty7uvpc30ogue"
         },
         "requestBody": {
-          "$ref": "#/components/requestBodies/catalog-item-dto"
+          "$ref": "#/components/requestBodies/catalog-item"
         }
       },
       "put": {
         "summary": "Создать запись справочника",
         "tags": [],
-        "responses": {},
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/catalog-item"
+          }
+        },
         "operationId": "put-catalogs-key",
         "x-stoplight": {
           "id": "s2ym9fl60p6ft"
         },
         "requestBody": {
-          "$ref": "#/components/requestBodies/catalog-item-dto"
+          "$ref": "#/components/requestBodies/catalog-item"
         }
       }
     },
@@ -517,7 +525,11 @@
       "get": {
         "summary": "Получить запись справочника",
         "tags": [],
-        "responses": {},
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/catalog-item"
+          }
+        },
         "operationId": "get-catalogs-key-items-id",
         "x-stoplight": {
           "id": "69t3mxqin7oxd"
@@ -526,9 +538,26 @@
     },
     "/lists": {
       "get": {
-        "summary": "Your GET endpoint",
+        "summary": "Получить перечень списков",
         "tags": [],
-        "responses": {},
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "./models/abstract/simple-list.json",
+                    "x-stoplight": {
+                      "id": "oajx1x23o9cxu"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
         "operationId": "get-lists",
         "x-stoplight": {
           "id": "89xmdpidx05pg"
@@ -538,18 +567,26 @@
     "/lists/{key}": {
       "parameters": [
         {
-          "schema": {
-            "type": "string"
-          },
-          "name": "key",
-          "in": "path",
-          "required": true
+          "$ref": "#/components/parameters/key"
         }
       ],
       "get": {
-        "summary": "Your GET endpoint",
+        "summary": "Получить информацию о списке",
         "tags": [],
-        "responses": {},
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "./models/abstract/simple-list.json"
+                }
+              }
+            }
+          }
+        },
         "operationId": "get-lists-key",
         "x-stoplight": {
           "id": "r9ujzr9t9igfy"
@@ -559,18 +596,41 @@
     "/lists/{key}/items": {
       "parameters": [
         {
-          "schema": {
-            "type": "string"
-          },
-          "name": "key",
-          "in": "path",
-          "required": true
+          "$ref": "#/components/parameters/key"
         }
       ],
       "get": {
-        "summary": "Your GET endpoint",
+        "summary": "Получить элементы списка",
         "tags": [],
-        "responses": {},
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "type": "array",
+                      "items": {
+                        "$ref": "./models/abstract/simple-list-item.json",
+                        "x-stoplight": {
+                          "id": "7jvjch7gkp58h"
+                        }
+                      }
+                    },
+                    {
+                      "type": "object",
+                      "$ref": "./models/abstract/simple-list.json",
+                      "x-stoplight": {
+                        "id": "76v1gakykn4ia"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
         "operationId": "get-lists-key-items",
         "x-stoplight": {
           "id": "15erahl7p67k9"
@@ -1585,6 +1645,52 @@
         ],
         "description": "Метаданные справочника",
         "title": "Запись коллекции 'Справочник'"
+      },
+      "catalog-item": {
+        "type": "object",
+        "x-stoplight": {
+          "id": "8lg2sa3fz3emg"
+        },
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/transport-target-item",
+            "x-stoplight": {
+              "id": "wpb2x6heg7tvi"
+            }
+          },
+          {
+            "$ref": "#/components/schemas/contractor-item",
+            "x-stoplight": {
+              "id": "janacbptqye9y"
+            }
+          },
+          {
+            "$ref": "#/components/schemas/vehicle-item",
+            "x-stoplight": {
+              "id": "e1kbi3yvgdub5"
+            }
+          },
+          {
+            "$ref": "#/components/schemas/driver-item",
+            "x-stoplight": {
+              "id": "25wfrm21ah8hv"
+            }
+          },
+          {
+            "$ref": "#/components/schemas/location-item",
+            "x-stoplight": {
+              "id": "8tp4hk2s7lu39"
+            }
+          },
+          {
+            "$ref": "#/components/schemas/cargo-item",
+            "x-stoplight": {
+              "id": "3r4fdu9kukjsh"
+            }
+          }
+        ],
+        "description": "Запись элемента справочника",
+        "title": "Запись элемента справочника"
       }
     },
     "responses": {
@@ -1621,47 +1727,6 @@
                 }
               ],
               "type": "object"
-            },
-            "examples": {
-              "Example 1": {
-                "value": {
-                  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                  "createdBy": {
-                    "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
-                    "Login": "string"
-                  },
-                  "createdDate": "2019-08-24T14:15:22Z",
-                  "lastModifiedBy": {
-                    "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
-                    "Login": "string"
-                  },
-                  "lastModifiedDate": "2019-08-24T14:15:22Z",
-                  "since": "2019-08-24T14:15:22Z",
-                  "until": "2019-08-24T14:15:22Z",
-                  "processDefinition": "string",
-                  "items": [
-                    {
-                      "id": "string",
-                      "path": [
-                        {
-                          "host": "example.com",
-                          "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                          "entity": "item"
-                        }
-                      ],
-                      "processInstant": "string",
-                      "meta": "00bc452f-5ac7-4ce3-9b71-a522f10fc914",
-                      "originalIdentity": {
-                        "id": "string",
-                        "host": "string",
-                        "route": "string",
-                        "protocol": "string"
-                      },
-                      "json-data": {}
-                    }
-                  ]
-                }
-              }
             }
           }
         }
@@ -1673,24 +1738,38 @@
             "schema": {
               "allOf": [
                 {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/offer-item"
-                  }
-                },
-                {
-                  "type": "object",
                   "$ref": "models/abstract/domain-meta.json",
                   "x-stoplight": {
                     "id": "7sv1o5xfofl95"
                   }
+                },
+                {
+                  "x-stoplight": {
+                    "id": "kt0o9skup2xrr"
+                  },
+                  "properties": {
+                    "items": {
+                      "type": "array",
+                      "x-stoplight": {
+                        "id": "7uliacmn9tf23"
+                      },
+                      "items": {
+                        "$ref": "#/components/schemas/offer-item",
+                        "x-stoplight": {
+                          "id": "8vlwsonjv094a"
+                        }
+                      }
+                    }
+                  }
                 }
-              ]
-            }
+              ],
+              "type": "object"
+            },
+            "examples": {}
           }
         }
       },
-      "shipment-rfp-dto": {
+      "shipment-rfp-item": {
         "description": "Example response",
         "content": {
           "application/json": {
@@ -1700,7 +1779,7 @@
           }
         }
       },
-      "offer-dto": {
+      "offer-item": {
         "description": "Example response",
         "content": {
           "application/json": {
@@ -1710,84 +1789,26 @@
           }
         }
       },
-      "catalog-dto-response": {
+      "catalog-metaitem": {
         "content": {
           "application/json": {
             "schema": {
-              "type": "object",
-              "allOf": [
-                {
-                  "$ref": "models/abstract/rich-list.json",
-                  "x-stoplight": {
-                    "id": "58z35liywfpkp"
-                  }
-                },
-                {
-                  "x-stoplight": {
-                    "id": "la5l9w5cojwkj"
-                  },
-                  "properties": {
-                    "json-schema": {
-                      "$ref": "models/abstract/rich-list-meta.json",
-                      "x-stoplight": {
-                        "id": "mdi1m3e9nc628"
-                      }
-                    }
-                  }
-                }
-              ]
+              "$ref": "#/components/schemas/catalog-metaitem"
             }
           }
         },
         "description": "Объект Справочник"
       },
-      "catalog-item-dto": {
+      "catalog-item": {
         "content": {
           "application/json": {
             "schema": {
-              "oneOf": [
-                {
-                  "$ref": "#/components/schemas/transport-target-item",
-                  "x-stoplight": {
-                    "id": "wpb2x6heg7tvi"
-                  }
-                },
-                {
-                  "$ref": "#/components/schemas/contractor-item",
-                  "x-stoplight": {
-                    "id": "janacbptqye9y"
-                  }
-                },
-                {
-                  "$ref": "#/components/schemas/vehicle-item",
-                  "x-stoplight": {
-                    "id": "e1kbi3yvgdub5"
-                  }
-                },
-                {
-                  "$ref": "#/components/schemas/driver-item",
-                  "x-stoplight": {
-                    "id": "25wfrm21ah8hv"
-                  }
-                },
-                {
-                  "$ref": "#/components/schemas/location-item",
-                  "x-stoplight": {
-                    "id": "8tp4hk2s7lu39"
-                  }
-                },
-                {
-                  "$ref": "#/components/schemas/cargo-item",
-                  "x-stoplight": {
-                    "id": "3r4fdu9kukjsh"
-                  }
-                }
-              ],
-              "type": "object"
+              "type": "object",
+              "$ref": "#/components/schemas/catalog-item"
             }
           }
         },
-        "description": "Объект Запись Справочника"
+        "description": "Запись элемента справочника"
       },
       "catalog-list": {
         "description": "Список справочников",
@@ -1803,14 +1824,28 @@
         }
       },
       "catalog-item-list": {
-        "description": "Полный справочник",
+        "description": "Справочник целиком",
         "content": {
           "application/json": {
             "schema": {
               "allOf": [
                 {
+                  "$ref": "#/components/schemas/catalog-metaitem"
+                },
+                {
                   "x-stoplight": {
-                    "id": "f9v665ma0vnq2"
+                    "id": "m3pzguo91szp7"
+                  },
+                  "properties": {
+                    "items": {
+                      "type": "array",
+                      "x-stoplight": {
+                        "id": "z4awbz7u3al2l"
+                      },
+                      "items": {
+                        "$ref": "#/components/schemas/catalog-item"
+                      }
+                    }
                   }
                 }
               ],
@@ -1821,7 +1856,7 @@
       }
     },
     "requestBodies": {
-      "shipment-rfp-dto-request": {
+      "shipment-rfp-item": {
         "description": "Example response",
         "content": {
           "application/json": {
@@ -1831,7 +1866,7 @@
           }
         }
       },
-      "offer-dto-request": {
+      "offer-item": {
         "description": "Example response",
         "content": {
           "application/json": {
@@ -1841,59 +1876,21 @@
           }
         }
       },
-      "catalog": {
+      "catalog-metaitem": {
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/catalog-citem"
+              "$ref": "#/components/schemas/catalog-metaitem"
             }
           }
         },
         "description": "Атрибуты редактируемого справочника"
       },
-      "catalog-item-dto-request": {
+      "catalog-item": {
         "content": {
           "application/json": {
             "schema": {
-              "oneOf": [
-                {
-                  "$ref": "#/components/schemas/transport-target-item",
-                  "x-stoplight": {
-                    "id": "wpb2x6heg7tvi"
-                  }
-                },
-                {
-                  "$ref": "#/components/schemas/contractor-item",
-                  "x-stoplight": {
-                    "id": "janacbptqye9y"
-                  }
-                },
-                {
-                  "$ref": "#/components/schemas/vehicle-item",
-                  "x-stoplight": {
-                    "id": "e1kbi3yvgdub5"
-                  }
-                },
-                {
-                  "$ref": "#/components/schemas/driver-item",
-                  "x-stoplight": {
-                    "id": "25wfrm21ah8hv"
-                  }
-                },
-                {
-                  "$ref": "#/components/schemas/location-item",
-                  "x-stoplight": {
-                    "id": "8tp4hk2s7lu39"
-                  }
-                },
-                {
-                  "$ref": "#/components/schemas/cargo-item",
-                  "x-stoplight": {
-                    "id": "3r4fdu9kukjsh"
-                  }
-                }
-              ],
-              "type": "object"
+              "$ref": "#/components/schemas/catalog-item"
             }
           }
         },

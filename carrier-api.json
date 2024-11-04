@@ -10,8 +10,7 @@
       "url": "solvo.ru"
     },
     "license": {
-      "name": "Commercial",
-      "identifier": "commercial"
+      "name": "Commercial"
     }
   },
   "servers": [
@@ -650,7 +649,6 @@
                       }
                     },
                     {
-                      "type": "object",
                       "$ref": "./models/abstract/simple-list.json"
                     }
                   ]
@@ -1980,8 +1978,6 @@
           "level": {
             "type": "string",
             "examples": [
-              "WAREHOUSE",
-              "WAREHOUSE",
               "WAREHOUSE"
             ]
           }

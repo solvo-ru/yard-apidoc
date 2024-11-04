@@ -692,6 +692,10 @@
             ],
             "examples": [
               "authorization_code",
+              "refresh_token",
+              "authorization_code",
+              "refresh_token",
+              "authorization_code",
               "refresh_token"
             ]
           },
@@ -699,6 +703,8 @@
             "type": "string",
             "description": "Authorization code",
             "examples": [
+              "SplxlOBeZQQYbYS6WxSbIA",
+              "SplxlOBeZQQYbYS6WxSbIA",
               "SplxlOBeZQQYbYS6WxSbIA"
             ]
           },
@@ -706,6 +712,8 @@
             "type": "string",
             "description": "Redirect URI",
             "examples": [
+              "https://client.example.com/callback",
+              "https://client.example.com/callback",
               "https://client.example.com/callback"
             ]
           },
@@ -713,6 +721,8 @@
             "type": "string",
             "description": "Client ID",
             "examples": [
+              "s6BhdRkqt3",
+              "s6BhdRkqt3",
               "s6BhdRkqt3"
             ]
           },
@@ -720,6 +730,8 @@
             "type": "string",
             "description": "Client secret",
             "examples": [
+              "7Fjfp0ZBr1KtDRbnfVdmIw",
+              "7Fjfp0ZBr1KtDRbnfVdmIw",
               "7Fjfp0ZBr1KtDRbnfVdmIw"
             ]
           }
@@ -747,6 +759,8 @@
             "type": "string",
             "description": "Идентификатор перевозки",
             "examples": [
+              "RFP-2023-001",
+              "RFP-2023-001",
               "RFP-2023-001"
             ]
           },
@@ -758,10 +772,21 @@
               },
               {
                 "$ref": "#/components/schemas/contractor-item"
+              },
+              {
+                "$ref": "./models/props/link.json"
               }
             ],
             "type": "object",
             "examples": [
+              {
+                "id": "cust-001",
+                "name": "ООО \"ГрузОтправитель\""
+              },
+              {
+                "id": "cust-001",
+                "name": "ООО \"ГрузОтправитель\""
+              },
               {
                 "id": "cust-001",
                 "name": "ООО \"ГрузОтправитель\""
@@ -779,6 +804,14 @@
               {
                 "id": "vt-001",
                 "name": "Рефрижератор"
+              },
+              {
+                "id": "vt-001",
+                "name": "Рефрижератор"
+              },
+              {
+                "id": "vt-001",
+                "name": "Рефрижератор"
               }
             ]
           },
@@ -787,6 +820,8 @@
             "format": "date-time",
             "description": "Дата начала периода, когда заявка на перевозку актуальна.",
             "examples": [
+              "2023-05-16T00:00:00Z",
+              "2023-05-16T00:00:00Z",
               "2023-05-16T00:00:00Z"
             ]
           },
@@ -795,6 +830,8 @@
             "format": "date-time",
             "description": "Дата окончания периода, когда заявка на перевозку актуальна.",
             "examples": [
+              "2023-05-20T23:59:59Z",
+              "2023-05-20T23:59:59Z",
               "2023-05-20T23:59:59Z"
             ]
           },
@@ -809,11 +846,26 @@
                 },
                 {
                   "$ref": "#/components/schemas/transport-target-item"
+                },
+                {
+                  "$ref": "./models/props/link.json"
                 }
               ],
               "type": "object"
             },
             "examples": [
+              [
+                {
+                  "id": "tt-001",
+                  "name": "Доставка груза в Санкт-Петербург"
+                }
+              ],
+              [
+                {
+                  "id": "tt-001",
+                  "name": "Доставка груза в Санкт-Петербург"
+                }
+              ],
               [
                 {
                   "id": "tt-001",
@@ -835,6 +887,18 @@
                   "id": "att-001",
                   "name": "Договор.pdf"
                 }
+              ],
+              [
+                {
+                  "id": "att-001",
+                  "name": "Договор.pdf"
+                }
+              ],
+              [
+                {
+                  "id": "att-001",
+                  "name": "Договор.pdf"
+                }
               ]
             ]
           },
@@ -842,6 +906,14 @@
             "$ref": "./models/abstract/simple-list-item.json",
             "description": "Способ создания заявки на перевозку.",
             "examples": [
+              {
+                "id": "src-001",
+                "name": "Веб-интерфейс"
+              },
+              {
+                "id": "src-001",
+                "name": "Веб-интерфейс"
+              },
               {
                 "id": "src-001",
                 "name": "Веб-интерфейс"
@@ -856,6 +928,12 @@
         "examples": [
           {
             "id": "string"
+          },
+          {
+            "id": "string"
+          },
+          {
+            "id": "string"
           }
         ],
         "allOf": [
@@ -868,6 +946,9 @@
                 "$ref": "#/components/schemas/shipment-rfp-data"
               }
             }
+          },
+          {
+            "$ref": "./models/abstract/domain-item.json"
           }
         ],
         "x-examples": {
@@ -884,6 +965,11 @@
             },
             "lastModifiedDate": "2019-08-24T14:15:22Z",
             "path": [
+              {
+                "host": "example.com",
+                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "entity": "item"
+              },
               {
                 "host": "example.com",
                 "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
@@ -917,11 +1003,19 @@
             {
               "id": "vt-001",
               "name": "Рефрижератор"
+            },
+            {
+              "id": "vt-001",
+              "name": "Рефрижератор"
             }
           ],
           "validSince": "2023-05-16T00:00:00Z",
           "validUntil": "2023-05-20T23:59:59Z",
           "transportTargets": [
+            {
+              "id": "tt-001",
+              "name": "Доставка груза в Санкт-Петербург"
+            },
             {
               "id": "tt-001",
               "name": "Доставка груза в Санкт-Петербург"
@@ -956,10 +1050,21 @@
               },
               {
                 "$ref": "#/components/schemas/shipment-rfp-item"
+              },
+              {
+                "$ref": "./models/props/link.json"
               }
             ],
             "type": "object",
             "examples": [
+              {
+                "id": "rfp-001",
+                "name": "Перевозка груза из Москвы в Санкт-Петербург"
+              },
+              {
+                "id": "rfp-001",
+                "name": "Перевозка груза из Москвы в Санкт-Петербург"
+              },
               {
                 "id": "rfp-001",
                 "name": "Перевозка груза из Москвы в Санкт-Петербург"
@@ -973,10 +1078,21 @@
               },
               {
                 "$ref": "#/components/schemas/contractor-item"
+              },
+              {
+                "$ref": "./models/props/link.json"
               }
             ],
             "description": "Контрагент, который сделал предложение ",
             "examples": [
+              {
+                "id": "fwd-001",
+                "name": "ООО \"ЛогистикПро\""
+              },
+              {
+                "id": "fwd-001",
+                "name": "ООО \"ЛогистикПро\""
+              },
               {
                 "id": "fwd-001",
                 "name": "ООО \"ЛогистикПро\""
@@ -990,10 +1106,21 @@
               },
               {
                 "$ref": "#/components/schemas/contractor-item"
+              },
+              {
+                "$ref": "./models/props/link.json"
               }
             ],
             "description": "Контрагент, выполняющий перевозку",
             "examples": [
+              {
+                "id": "car-001",
+                "name": "ООО \"ТрансЛогистик\""
+              },
+              {
+                "id": "car-001",
+                "name": "ООО \"ТрансЛогистик\""
+              },
               {
                 "id": "car-001",
                 "name": "ООО \"ТрансЛогистик\""
@@ -1007,10 +1134,21 @@
               },
               {
                 "$ref": "#/components/schemas/vehicle-item"
+              },
+              {
+                "$ref": "./models/props/link.json"
               }
             ],
             "description": "Информация о транспортном средстве, на котором будет выполняться перевозка",
             "examples": [
+              {
+                "id": "veh-001",
+                "name": "КАМАЗ 5490"
+              },
+              {
+                "id": "veh-001",
+                "name": "КАМАЗ 5490"
+              },
               {
                 "id": "veh-001",
                 "name": "КАМАЗ 5490"
@@ -1024,10 +1162,21 @@
               },
               {
                 "$ref": "#/components/schemas/driver-item"
+              },
+              {
+                "$ref": "./models/props/link.json"
               }
             ],
             "description": "Информация о водителе, который будут выполнять перевозку ",
             "examples": [
+              {
+                "id": "drv-001",
+                "name": "Иванов Иван Иванович"
+              },
+              {
+                "id": "drv-001",
+                "name": "Иванов Иван Иванович"
+              },
               {
                 "id": "drv-001",
                 "name": "Иванов Иван Иванович"
@@ -1038,6 +1187,8 @@
             "type": "string",
             "description": "Номер телефона для связи с водителем, актуальный на момент перевозки",
             "examples": [
+              "+7 (999) 123-45-67",
+              "+7 (999) 123-45-67",
               "+7 (999) 123-45-67"
             ]
           },
@@ -1049,6 +1200,14 @@
               "format": "uri-reference"
             },
             "examples": [
+              {
+                "id": "att-002",
+                "name": "Коммерческое предложение.pdf"
+              },
+              {
+                "id": "att-002",
+                "name": "Коммерческое предложение.pdf"
+              },
               {
                 "id": "att-002",
                 "name": "Коммерческое предложение.pdf"
@@ -1070,6 +1229,9 @@
                 "$ref": "#/components/schemas/offer-data"
               }
             }
+          },
+          {
+            "$ref": "./models/abstract/domain-item.json"
           }
         ],
         "x-examples": {},
@@ -1124,6 +1286,9 @@
                 "$ref": "#/components/schemas/transport-target-data"
               }
             }
+          },
+          {
+            "$ref": "./models/abstract/rich-list-item.json"
           }
         ],
         "example": {
@@ -1181,6 +1346,8 @@
             "type": "string",
             "description": "Идентификатор цели перевозки",
             "examples": [
+              "TT-2023-001",
+              "TT-2023-001",
               "TT-2023-001"
             ]
           },
@@ -1191,6 +1358,8 @@
             ],
             "description": "Направление движение груза относительно предприятия, на котором работает организатор перевозки",
             "examples": [
+              "Москва - Санкт-Петербург",
+              "Москва - Санкт-Петербург",
               "Москва - Санкт-Петербург"
             ]
           },
@@ -1201,10 +1370,21 @@
               },
               {
                 "$ref": "#/components/schemas/contractor-item"
+              },
+              {
+                "$ref": "./models/props/link.json"
               }
             ],
             "description": "Название контрагента, который является отправителем груза. ",
             "examples": [
+              {
+                "id": "sender-001",
+                "name": "ООО \"ОтправительГруза\""
+              },
+              {
+                "id": "sender-001",
+                "name": "ООО \"ОтправительГруза\""
+              },
               {
                 "id": "sender-001",
                 "name": "ООО \"ОтправительГруза\""
@@ -1218,10 +1398,21 @@
               },
               {
                 "$ref": "#/components/schemas/location-item"
+              },
+              {
+                "$ref": "./models/props/link.json"
               }
             ],
             "description": "Локация, в которой будет производиться погрузка груза на транспортное средство",
             "examples": [
+              {
+                "id": "loc-001",
+                "name": "Склад \"Восточный\""
+              },
+              {
+                "id": "loc-001",
+                "name": "Склад \"Восточный\""
+              },
               {
                 "id": "loc-001",
                 "name": "Склад \"Восточный\""
@@ -1232,6 +1423,8 @@
             "type": "string",
             "description": "Адрес локации погрузки груза на транспортное средство",
             "examples": [
+              "г. Москва, ул. Складская, д. 1",
+              "г. Москва, ул. Складская, д. 1",
               "г. Москва, ул. Складская, д. 1"
             ]
           },
@@ -1240,6 +1433,8 @@
             "format": "date-time",
             "description": "Плановое время прибытия ТС в локацию погрузки.",
             "examples": [
+              "2023-05-21T08:00:00Z",
+              "2023-05-21T08:00:00Z",
               "2023-05-21T08:00:00Z"
             ]
           },
@@ -1250,10 +1445,21 @@
               },
               {
                 "$ref": "#/components/schemas/contractor-item"
+              },
+              {
+                "$ref": "./models/props/link.json"
               }
             ],
             "description": "Название контрагента, который является получателем груза.",
             "examples": [
+              {
+                "id": "recipient-001",
+                "name": "ООО \"ПолучательГруза\""
+              },
+              {
+                "id": "recipient-001",
+                "name": "ООО \"ПолучательГруза\""
+              },
               {
                 "id": "recipient-001",
                 "name": "ООО \"ПолучательГруза\""
@@ -1267,10 +1473,21 @@
               },
               {
                 "$ref": "#/components/schemas/location-item"
+              },
+              {
+                "$ref": "./models/props/link.json"
               }
             ],
             "description": "Локация, в которой будет производиться выгрузка груза с транспортного средства",
             "examples": [
+              {
+                "id": "loc-002",
+                "name": "Распределительный центр \"Северный\""
+              },
+              {
+                "id": "loc-002",
+                "name": "Распределительный центр \"Северный\""
+              },
               {
                 "id": "loc-002",
                 "name": "Распределительный центр \"Северный\""
@@ -1281,6 +1498,8 @@
             "type": "string",
             "description": "Адрес локации выгрузки груза с транспортного средства",
             "examples": [
+              "г. Санкт-Петербург, пр. Индустриальный, д. 10",
+              "г. Санкт-Петербург, пр. Индустриальный, д. 10",
               "г. Санкт-Петербург, пр. Индустриальный, д. 10"
             ]
           },
@@ -1289,6 +1508,8 @@
             "format": "date-time",
             "description": "Плановое время прибытия ТС в локацию выгрузки.",
             "examples": [
+              "2023-05-22T16:00:00Z",
+              "2023-05-22T16:00:00Z",
               "2023-05-22T16:00:00Z"
             ]
           },
@@ -1302,10 +1523,21 @@
                 },
                 {
                   "$ref": "#/components/schemas/cargo-item"
+                },
+                {
+                  "$ref": "./models/props/link.json"
                 }
               ]
             },
             "examples": [
+              {
+                "id": "cargo-001",
+                "name": "Электроника"
+              },
+              {
+                "id": "cargo-001",
+                "name": "Электроника"
+              },
               {
                 "id": "cargo-001",
                 "name": "Электроника"
@@ -1329,6 +1561,8 @@
             "type": "string",
             "description": "Сокращенное наименование контрагента, которое будет видно в интерфейсе",
             "examples": [
+              "ООО \"ТрансЛогистик\"",
+              "ООО \"ТрансЛогистик\"",
               "ООО \"ТрансЛогистик\""
             ]
           },
@@ -1336,6 +1570,8 @@
             "type": "string",
             "description": "Полное наименование контрагента, как оно прописано в правоустанавливающих документах",
             "examples": [
+              "Общество с ограниченной ответственностью \"ТрансЛогистик\"",
+              "Общество с ограниченной ответственностью \"ТрансЛогистик\"",
               "Общество с ограниченной ответственностью \"ТрансЛогистик\""
             ]
           },
@@ -1343,6 +1579,8 @@
             "$ref": "./models/abstract/simple-list-item.json",
             "description": "Тип",
             "examples": [
+              "CARRIER",
+              "CARRIER",
               "CARRIER"
             ]
           },
@@ -1354,6 +1592,10 @@
               "$ref": "./models/abstract/simple-list-item.json"
             },
             "examples": [
+              "CARRIER",
+              "CUSTOMER",
+              "CARRIER",
+              "CUSTOMER",
               "CARRIER",
               "CUSTOMER"
             ]
@@ -1374,6 +1616,9 @@
                 "$ref": "#/components/schemas/contractor-data"
               }
             }
+          },
+          {
+            "$ref": "./models/abstract/rich-list-item.json"
           }
         ],
         "description": "Строка таблицы БД",
@@ -1407,6 +1652,9 @@
                 "$ref": "#/components/schemas/vehicle-data"
               }
             }
+          },
+          {
+            "$ref": "./models/abstract/rich-list-item.json"
           }
         ],
         "description": "Строка таблицы БД",
@@ -1432,7 +1680,8 @@
           },
           "features": [
             "REFRIGERATOR",
-            "GPS_TRACKER"
+            "GPS_TRACKER",
+            "REFRIGERATOR"
           ]
         }
       },
@@ -1450,6 +1699,8 @@
             "pattern": "^[А-Я]{2}\\d{3,4}[А-Я]{2}(?: [А-Я]{2}\\d{3,4}[А-Я]{2})?$",
             "description": "Номер регистрационного знака транспортного средства. ",
             "examples": [
+              "А123БВ777",
+              "А123БВ777",
               "А123БВ777"
             ]
           },
@@ -1463,11 +1714,16 @@
                 },
                 {
                   "$ref": "#/components/schemas/contractor-item"
+                },
+                {
+                  "$ref": "./models/props/link.json"
                 }
               ],
               "type": "object"
             },
             "examples": [
+              "LONG_HAUL",
+              "LONG_HAUL",
               "LONG_HAUL"
             ]
           },
@@ -1475,6 +1731,8 @@
             "$ref": "./models/abstract/simple-list-item.json",
             "description": "Тип транспортного средства",
             "examples": [
+              "TRUCK",
+              "TRUCK",
               "TRUCK"
             ]
           },
@@ -1482,6 +1740,8 @@
             "type": "string",
             "description": "Марка и модель ТС.",
             "examples": [
+              "КАМАЗ 5490",
+              "КАМАЗ 5490",
               "КАМАЗ 5490"
             ]
           },
@@ -1489,6 +1749,8 @@
             "type": "string",
             "description": "Описание ТС.",
             "examples": [
+              "Седельный тягач с рефрижераторным полуприцепом",
+              "Седельный тягач с рефрижераторным полуприцепом",
               "Седельный тягач с рефрижераторным полуприцепом"
             ]
           }
@@ -1508,6 +1770,9 @@
                 "$ref": "#/components/schemas/driver-data"
               }
             }
+          },
+          {
+            "$ref": "./models/abstract/rich-list-item.json"
           }
         ],
         "description": "Строка таблицы БД",
@@ -1527,7 +1792,8 @@
           "experience": 10,
           "qualifications": [
             "ADR",
-            "REFRIGERATOR"
+            "REFRIGERATOR",
+            "ADR"
           ],
           "currentVehicleId": "veh-001"
         }
@@ -1548,6 +1814,8 @@
             "type": "integer",
             "description": "Номер документа, удостоверяющего личность.",
             "examples": [
+              "7712 345678",
+              "7712 345678",
               "7712 345678"
             ]
           },
@@ -1555,6 +1823,8 @@
             "type": "string",
             "description": "Имя водителя",
             "examples": [
+              "Иван",
+              "Иван",
               "Иван"
             ]
           },
@@ -1562,6 +1832,8 @@
             "type": "string",
             "description": "Фамилия водителя",
             "examples": [
+              "Петров",
+              "Петров",
               "Петров"
             ]
           },
@@ -1569,6 +1841,8 @@
             "type": "string",
             "description": "Отчество",
             "examples": [
+              "Александрович",
+              "Александрович",
               "Александрович"
             ]
           },
@@ -1577,6 +1851,8 @@
             "format": "date",
             "description": "Дата рождения водителя",
             "examples": [
+              "1985-07-15",
+              "1985-07-15",
               "1985-07-15"
             ]
           },
@@ -1584,6 +1860,8 @@
             "$ref": "./models/abstract/simple-list-item.json",
             "description": "Вид документа, удостоверяющего личность\n| **Значение** | **Описание**                   |\n| ------------ | ------------------------------ |\n| **Паспорт**  | Паспорт гражданина РФ.         |\n| **Права**    | Водительское удостоверение РФ. |",
             "examples": [
+              "DRIVER_LICENSE",
+              "DRIVER_LICENSE",
               "DRIVER_LICENSE"
             ]
           },
@@ -1592,6 +1870,8 @@
             "description": "Номер телефона для связи с водителем.",
             "pattern": "^((\\+7)|8)\\d{10}$",
             "examples": [
+              "+7 (999) 123-45-67",
+              "+7 (999) 123-45-67",
               "+7 (999) 123-45-67"
             ]
           },
@@ -1605,11 +1885,16 @@
                 },
                 {
                   "$ref": "#/components/schemas/contractor-item"
+                },
+                {
+                  "$ref": "./models/props/link.json"
                 }
               ],
               "type": "object"
             },
             "examples": [
+              "LONG_HAUL",
+              "LONG_HAUL",
               "LONG_HAUL"
             ]
           }
@@ -1630,6 +1915,9 @@
                 "$ref": "#/components/schemas/location-data"
               }
             }
+          },
+          {
+            "$ref": "./models/abstract/rich-list-item.json"
           }
         ],
         "example": {
@@ -1700,12 +1988,16 @@
           "title": {
             "type": "string",
             "examples": [
+              "Склад 'Восточный'",
+              "Склад 'Восточный'",
               "Склад 'Восточный'"
             ]
           },
           "address": {
             "type": "string",
             "examples": [
+              "г. Москва, ул. Складская, д. 1",
+              "г. Москва, ул. Складская, д. 1",
               "г. Москва, ул. Складская, д. 1"
             ]
           },
@@ -1724,12 +2016,34 @@
                   "id": "term-002",
                   "name": "Терминал 2"
                 }
+              ],
+              [
+                {
+                  "id": "term-001",
+                  "name": "Терминал 1"
+                },
+                {
+                  "id": "term-002",
+                  "name": "Терминал 2"
+                }
+              ],
+              [
+                {
+                  "id": "term-001",
+                  "name": "Терминал 1"
+                },
+                {
+                  "id": "term-002",
+                  "name": "Терминал 2"
+                }
               ]
             ]
           },
           "level": {
             "type": "string",
             "examples": [
+              "WAREHOUSE",
+              "WAREHOUSE",
               "WAREHOUSE"
             ]
           }
@@ -1750,6 +2064,9 @@
                 "$ref": "#/components/schemas/cargo-data"
               }
             }
+          },
+          {
+            "$ref": "./models/abstract/rich-list-item.json"
           }
         ],
         "example": {
@@ -1773,7 +2090,8 @@
           },
           "specialHandling": [
             "FRAGILE",
-            "KEEP_DRY"
+            "KEEP_DRY",
+            "FRAGILE"
           ],
           "customsInfo": {
             "hsCode": "851712",
@@ -1804,6 +2122,8 @@
             "type": "string",
             "description": "Идентификатор грузовой единицы",
             "examples": [
+              "CARGO-2023-001",
+              "CARGO-2023-001",
               "CARGO-2023-001"
             ]
           },
@@ -1811,6 +2131,8 @@
             "type": "string",
             "description": "Текстовое описание груза",
             "examples": [
+              "Электроника (смартфоны, планшеты)",
+              "Электроника (смартфоны, планшеты)",
               "Электроника (смартфоны, планшеты)"
             ]
           },
@@ -1820,6 +2142,8 @@
             "default": 1,
             "description": "Количество груза в единицах измерения (штуки)",
             "examples": [
+              1000,
+              1000,
               1000
             ]
           },
@@ -1828,6 +2152,8 @@
             "minimum": 1,
             "description": "Суммарный вес груза в килограммах вместе с упаковкой (брутто)",
             "examples": [
+              5000,
+              5000,
               5000
             ]
           },
@@ -1837,6 +2163,8 @@
             "exclusiveMinimum": 0,
             "description": "Объем груза в метрах кубических. Вещественное число с тремя знаками после запятой.",
             "examples": [
+              10,
+              10,
               10
             ]
           },
@@ -1844,6 +2172,8 @@
             "type": "string",
             "description": "Сведения об упаковке груза",
             "examples": [
+              "BOXES",
+              "BOXES",
               "BOXES"
             ]
           },
@@ -1855,10 +2185,21 @@
               },
               {
                 "$ref": "#/components/schemas/contractor-item"
+              },
+              {
+                "$ref": "./models/props/link.json"
               }
             ],
             "type": "object",
             "examples": [
+              {
+                "id": "owner-001",
+                "name": "ООО 'ГрузВладелец'"
+              },
+              {
+                "id": "owner-001",
+                "name": "ООО 'ГрузВладелец'"
+              },
               {
                 "id": "owner-001",
                 "name": "ООО 'ГрузВладелец'"
@@ -1881,6 +2222,9 @@
                 "$ref": "./models/abstract/rich-list-meta.json"
               }
             }
+          },
+          {
+            "$ref": "./models/abstract/rich-list.json"
           }
         ],
         "description": "Метаданные справочника",
@@ -1895,6 +2239,22 @@
         },
         "additionalProperties": false,
         "examples": [
+          {
+            "id": "cat-004",
+            "title": "Типы дополнительных услуг",
+            "description": "Справочник типов дополнительных услуг при перевозке",
+            "itemsCount": 0,
+            "createdAt": "2023-05-17T09:30:00Z",
+            "updatedAt": "2023-05-17T09:30:00Z"
+          },
+          {
+            "id": "cat-004",
+            "title": "Типы дополнительных услуг",
+            "description": "Справочник типов дополнительных услуг при перевозке",
+            "itemsCount": 0,
+            "createdAt": "2023-05-17T09:30:00Z",
+            "updatedAt": "2023-05-17T09:30:00Z"
+          },
           {
             "id": "cat-004",
             "title": "Типы дополнительных услуг",

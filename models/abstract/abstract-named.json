@@ -1,23 +1,14 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "x-stoplight": {
-    "id": "v8z5ko059anj6"
-  },
   "title": "abstract-named",
   "x-internal": false,
   "allOf": [
     {
       "type": "object",
-      "$ref": "./abstract-auditable.json",
-      "x-stoplight": {
-        "id": "k0vaj0sgg5fy2"
-      }
+      "$ref": "./abstract-auditable.json"
     },
     {
-      "$ref": "../interfaces/withName.json",
-      "x-stoplight": {
-        "id": "gk6mhirm259zj"
-      }
+      "$ref": "../interfaces/withName.json"
     }
   ],
   "examples": [

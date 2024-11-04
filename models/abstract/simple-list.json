@@ -1,39 +1,24 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "x-stoplight": {
-    "id": "aor7b1h3sbqwa"
-  },
   "title": "simple-list",
   "x-tags": [
     "collector"
   ],
   "allOf": [
     {
-      "$ref": "./abstract-named.json",
-      "x-stoplight": {
-        "id": "mev3gpcjq1euj"
-      }
+      "$ref": "./abstract-named.json"
     },
     {
-      "x-stoplight": {
-        "id": "42ngiej5276hk"
-      },
       "required": [
         "title",
         "key"
       ],
       "properties": {
         "title": {
-          "type": "string",
-          "x-stoplight": {
-            "id": "0utot2a41wxe4"
-          }
+          "type": "string"
         },
         "key": {
-          "type": "string",
-          "x-stoplight": {
-            "id": "ifr7kela51c8e"
-          }
+          "type": "string"
         }
       }
     }

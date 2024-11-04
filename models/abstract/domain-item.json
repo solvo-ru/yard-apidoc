@@ -1,8 +1,5 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "x-stoplight": {
-    "id": "0x317fjusy8sh"
-  },
   "title": "domain-item",
   "ifNotExist": true,
   "inherits": [
@@ -21,22 +18,13 @@
   "table_tablespace_name": "pg_default",
   "allOf": [
     {
-      "$ref": "./abstract-bodied.json",
-      "x-stoplight": {
-        "id": "0t8i5fd2iq5r0"
-      }
+      "$ref": "./abstract-bodied.json"
     },
     {
-      "$ref": "../interfaces/procedural.json",
-      "x-stoplight": {
-        "id": "m0fpda8qtdsua"
-      }
+      "$ref": "../interfaces/procedural.json"
     },
     {
-      "$ref": "../interfaces/withName.json",
-      "x-stoplight": {
-        "id": "x6ioybh1yqwaj"
-      }
+      "$ref": "../interfaces/withName.json"
     },
     {
       "type": "object",
@@ -46,32 +34,19 @@
           "isActivated": true,
           "triggerUpdateColumns": false,
           "unique": false,
-          "x-stoplight": {
-            "id": "geb2lm7vg4fy7"
-          },
           "oneOf": [
             {
               "type": "string",
-              "x-stoplight": {
-                "id": "o4g9iyz938ri9"
-              },
               "format": "uuid"
             },
             {
-              "$ref": "./domain-meta.json",
-              "x-stoplight": {
-                "id": "k1cwgt18ywqla"
-              }
+              "$ref": "./domain-meta.json"
             }
           ]
         },
         "json-data": {
-          "type": "object",
-          "x-stoplight": {
-            "id": "yipei2b9v0alx"
-          }
+          "type": "object"
         }
-        
       }
     }
   ],

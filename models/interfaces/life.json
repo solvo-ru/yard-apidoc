@@ -1,9 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "life",
-  "x-stoplight": {
-    "id": "92106023de518"
-  },
   "isActivated": true,
   "unique": false,
   "properties": {
@@ -16,10 +13,7 @@
       "type": "string",
       "triggerUpdateColumns": false,
       "timezone": "WITH TIME ZONE",
-      "format": "date-time",
-      "x-stoplight": {
-        "id": "a65fkhnn7xz2c"
-      }
+      "format": "date-time"
     },
     "until": {
       "title": "until",
@@ -30,10 +24,7 @@
       "type": "string",
       "triggerUpdateColumns": false,
       "timezone": "WITH TIME ZONE",
-      "format": "date-time",
-      "x-stoplight": {
-        "id": "q59ep2gdrg3ad"
-      }
+      "format": "date-time"
     }
   },
   "type": "object",

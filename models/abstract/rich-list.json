@@ -1,26 +1,14 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "x-stoplight": {
-    "id": "on0x62abayoua"
-  },
   "title": "rich-list",
   "allOf": [
     {
-      "$ref": "./simple-list.json",
-      "x-stoplight": {
-        "id": "imm06vjzyy8px"
-      }
+      "$ref": "./simple-list.json"
     },
     {
-      "x-stoplight": {
-        "id": "gog2oduumqfse"
-      },
       "properties": {
         "processDefinition": {
-          "type": "string",
-          "x-stoplight": {
-            "id": "xml5ze1r94yk7"
-          }
+          "type": "string"
         }
       }
     }

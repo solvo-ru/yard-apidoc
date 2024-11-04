@@ -1,16 +1,10 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "collectable",
-  "x-stoplight": {
-    "id": "wo34ndrg2j3zj"
-  },
   "type": "object",
   "properties": {
     "catalogId": {
       "type": "string",
-      "x-stoplight": {
-        "id": "sc98egcct0176"
-      },
       "format": "uuid"
     }
   }

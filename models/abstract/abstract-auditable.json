@@ -1,8 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "x-stoplight": {
-    "id": "99vptdn2nytl0"
-  },
+  "$id": "abstract-auditable",
   "type": "object",
   "title": "AbstractAuditable",
   "ifNotExist": true,
@@ -22,10 +20,7 @@
       "isActivated": true,
       "primaryKey": true,
       "triggerUpdateColumns": false,
-      "unique": false,
-      "x-stoplight": {
-        "id": "ny6lfzjyqikx2"
-      }
+      "unique": false
     },
     "createdBy": {
       "readOnly": true,
@@ -34,23 +29,14 @@
       "isActivated": true,
       "triggerUpdateColumns": false,
       "unique": false,
-      "x-stoplight": {
-        "id": "nt5fhcx2zduyt"
-      },
       "oneOf": [
         {
           "type": "object",
           "$ref": "../props/user.json",
-          "x-stoplight": {
-            "id": "itgen7lnztq6r"
-          },
           "description": "retrieve"
         },
         {
           "type": "string",
-          "x-stoplight": {
-            "id": "2httgyen3s61h"
-          },
           "format": "uuid",
           "description": "persist"
         }
@@ -66,26 +52,17 @@
       "scale": 7,
       "timezone": "WITH TIME ZONE",
       "triggerUpdateColumns": false,
-      "unique": false,
-      "x-stoplight": {
-        "id": "xviwpk7agci8a"
-      }
+      "unique": false
     },
-    "lastModifiedBy": {      
+    "lastModifiedBy": {
       "oneOf": [
         {
           "type": "object",
           "$ref": "../props/user.json",
-          "x-stoplight": {
-            "id": "itgen7lnztq6r"
-          },
           "description": "retrieve"
         },
         {
           "type": "string",
-          "x-stoplight": {
-            "id": "2httgyen3s61h"
-          },
           "format": "uuid",
           "description": "persist"
         }
@@ -96,10 +73,7 @@
       "format": "uuid",
       "isActivated": true,
       "triggerUpdateColumns": false,
-      "unique": false,
-      "x-stoplight": {
-        "id": "yfpq620hfv3vi"
-      }
+      "unique": false
     },
     "lastModifiedDate": {
       "readOnly": true,
@@ -111,36 +85,24 @@
       "scale": 7,
       "timezone": "WITH TIME ZONE",
       "triggerUpdateColumns": false,
-      "unique": false,
-      "x-stoplight": {
-        "id": "4impzyep3eqzr"
-      }
+      "unique": false
     },
     "originalIdentity": {
-          "type": "object",
-  "properties": {
-    "id": {
-      "type": "string"
-    },
-    "host": {
-      "type": "string",
-      "x-stoplight": {
-        "id": "buhsawa9kfgpe"
-      }
-    },
-    "route": {
-      "type": "string",
-      "x-stoplight": {
-        "id": "ovmqblk8taclo"
-      }
-    },
-    "protocol": {
-      "type": "string",
-      "x-stoplight": {
-        "id": "gv1xkrb24002i"
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "host": {
+          "type": "string"
+        },
+        "route": {
+          "type": "string"
+        },
+        "protocol": {
+          "type": "string"
+        }
       }
     }
-  }
-        }
   }
 }

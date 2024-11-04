@@ -1,8 +1,5 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "x-stoplight": {
-    "id": "e64faec8632d6"
-  },
   "title": "user-profile",
   "type": "object",
   "required": [
@@ -11,16 +8,10 @@
   "properties": {
     "ID": {
       "type": "string",
-      "format": "uuid",
-      "x-stoplight": {
-        "id": "1atgkgr7no1wd"
-      }
+      "format": "uuid"
     },
     "Login": {
-      "type": "string",
-      "x-stoplight": {
-        "id": "bjvrieb5lgis2"
-      }
+      "type": "string"
     }
   }
 }

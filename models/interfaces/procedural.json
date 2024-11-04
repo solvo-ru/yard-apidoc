@@ -1,9 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "procedural",
-  "x-stoplight": {
-    "id": "yfmxd7megloyu"
-  },
   "type": "object",
   "examples": [
     {
@@ -19,16 +16,10 @@
   ],
   "properties": {
     "processInstant": {
-      "type": "string",
-      "x-stoplight": {
-        "id": "ewniryh6zlg4d"
-      }
+      "type": "string"
     },
     "status": {
       "type": "string",
-      "x-stoplight": {
-        "id": "6zpa7u2ywvkcf"
-      },
       "format": "uuid"
     }
   }

@@ -1,8 +1,5 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "x-stoplight": {
-    "id": "rnlc4mbecragj"
-  },
   "title": "domain-meta",
   "ifNotExist": true,
   "inherits": [
@@ -16,45 +13,27 @@
   "table_tablespace_name": "pg_default",
   "allOf": [
     {
-      "$ref": "./abstract-bodied.json",
-      "x-stoplight": {
-        "id": "zrs6g8pcwjxdg"
-      }
+      "$ref": "./abstract-bodied.json"
     },
     {
-      "$ref": "../interfaces/life.json",
-      "x-stoplight": {
-        "id": "2e87mpl2wze52"
-      }
+      "$ref": "../interfaces/life.json"
     },
     {
       "type": "object",
-      "x-stoplight": {
-        "id": "hbhgu935ekkfo"
-      },
       "required": [
         "processDefinition"
       ],
       "properties": {
         "processDefinition": {
-          "type": "string",
-          "x-stoplight": {
-            "id": "cuof0v5q0q7y4"
-          }
+          "type": "string"
         }
       }
     },
     {
       "type": "object",
-      "x-stoplight": {
-        "id": "3lsffm5uimfs9"
-      },
       "properties": {
         "json-schema": {
-          "type": "object",
-          "x-stoplight": {
-            "id": "c15ypv9secepj"
-          }
+          "type": "object"
         }
       }
     }

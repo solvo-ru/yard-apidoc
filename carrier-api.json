@@ -504,39 +504,48 @@
       ],
       "get": {
         "summary": "Получить описание справочника",
-        "tags": [],
+        "tags": [
+          "Справочники"
+        ],
         "responses": {
           "200": {
             "$ref": "#/components/responses/catalog-metaitem"
           }
         },
-        "operationId": "get-catalogs-key"
+        "operationId": "getCatalogByKey",
+        "description": "Получение информации о конкретном справочнике"
       },
       "post": {
         "summary": "Изменить запись справочника",
-        "tags": [],
+        "tags": [
+          "Справочники"
+        ],
         "responses": {
           "202": {
             "$ref": "#/components/responses/catalog-item"
           }
         },
-        "operationId": "post-catalogs-key",
+        "operationId": "updateCatalogByKey",
         "requestBody": {
           "$ref": "#/components/requestBodies/catalog-item"
-        }
+        },
+        "description": "Обновление информации о конкретном справочнике"
       },
       "put": {
         "summary": "Создать запись справочника",
-        "tags": [],
+        "tags": [
+          "Справочники"
+        ],
         "responses": {
           "200": {
             "$ref": "#/components/responses/catalog-item"
           }
         },
-        "operationId": "put-catalogs-key",
+        "operationId": "createCatalogItemByKey",
         "requestBody": {
           "$ref": "#/components/requestBodies/catalog-item"
-        }
+        },
+        "description": "Создание нового элемента в конкретном справочнике"
       }
     },
     "/catalogs/{key}/items/{id}": {
@@ -550,19 +559,24 @@
       ],
       "get": {
         "summary": "Получить запись справочника",
-        "tags": [],
+        "tags": [
+          "Справочники"
+        ],
         "responses": {
           "200": {
             "$ref": "#/components/responses/catalog-item"
           }
         },
-        "operationId": "get-catalogs-key-items-id"
+        "operationId": "getCatalogItemById",
+        "description": "Получение информации о конкретном элементе справочника"
       }
     },
     "/lists": {
       "get": {
         "summary": "Получить перечень списков",
-        "tags": [],
+        "tags": [
+          "Списки"
+        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -578,7 +592,8 @@
             }
           }
         },
-        "operationId": "get-lists"
+        "operationId": "getAllLists",
+        "description": "Получение списка всех списков"
       }
     },
     "/lists/{key}": {
@@ -589,7 +604,9 @@
       ],
       "get": {
         "summary": "Получить информацию о списке",
-        "tags": [],
+        "tags": [
+          "Списки"
+        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -604,7 +621,8 @@
             }
           }
         },
-        "operationId": "get-lists-key"
+        "operationId": "getListByKey",
+        "description": "Получение информации о конкретном списке"
       }
     },
     "/lists/{key}/items": {
@@ -615,7 +633,9 @@
       ],
       "get": {
         "summary": "Получить элементы списка",
-        "tags": [],
+        "tags": [
+          "Списки"
+        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -639,7 +659,8 @@
             }
           }
         },
-        "operationId": "get-lists-key-items"
+        "operationId": "getListItemsByKey",
+        "description": "Получение элементов конкретного списка"
       }
     }
   },

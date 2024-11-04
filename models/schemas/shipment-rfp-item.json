@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "shipment-rfp-item": {
+    "title": "\u0417\u0430\u043f\u0438\u0441\u044c \"\u0417\u0430\u044f\u0432\u043a\u0430 \u043d\u0430 \u043f\u0435\u0440\u0435\u0432\u043e\u0437\u043a\u0443\"",
+    "allOf": [
+      {
+        "$ref": "./models/abstract/domain-item.json"
+      },
+      {
+        "properties": {
+          "json-data": {
+            "$ref": "#/shipment-rfp-data"
+          }
+        }
+      }
+    ],
+    "description": "\u0421\u0442\u0440\u043e\u043a\u0430 \u0442\u0430\u0431\u043b\u0438\u0446\u044b \u0411\u0414",
+    "additionalProperties": false,
+    "type": "object",
+    "examples": [
+      {
+        "json-schema": {},
+        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+        "createdBy": {
+          "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
+          "Login": "string"
+        },
+        "createdDate": "2019-08-24T14:15:22Z",
+        "lastModifiedBy": {
+          "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
+          "Login": "string"
+        },
+        "lastModifiedDate": "2019-08-24T14:15:22Z",
+        "path": [
+          {
+            "host": "example.com",
+            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+            "entity": "item"
+          }
+        ],
+        "processInstant": "string",
+        "title": "string",
+        "meta": "00bc452f-5ac7-4ce3-9b71-a522f10fc914",
+        "originalIdentity": {
+          "id": "string",
+          "host": "string",
+          "route": "string",
+          "protocol": "string"
+        },
+        "json-data": {
+          "num": "RFP-2023-001",
+          "customer": {
+            "host": "example.com",
+            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+            "entity": "item"
+          },
+          "expectedVehicle": {
+            "id": "vt-001",
+            "name": "\u0420\u0435\u0444\u0440\u0438\u0436\u0435\u0440\u0430\u0442\u043e\u0440"
+          },
+          "validSince": "2023-05-16T00:00:00Z",
+          "validUntill": "2023-05-20T23:59:59Z",
+          "targets": [
+            {
+              "id": "tt-001",
+              "name": "\u0414\u043e\u0441\u0442\u0430\u0432\u043a\u0430 \u0433\u0440\u0443\u0437\u0430 \u0432 \u0421\u0430\u043d\u043a\u0442-\u041f\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433"
+            },
+            {
+              "id": "tt-002",
+              "name": "\u0414\u043e\u0441\u0442\u0430\u0432\u043a\u0430 \u0433\u0440\u0443\u0437\u0430 \u0432 \u041c\u043e\u0441\u043a\u0432\u0443"
+            },
+            {
+              "id": "tt-003",
+              "name": "\u0414\u043e\u0441\u0442\u0430\u0432\u043a\u0430 \u0433\u0440\u0443\u0437\u0430 \u0432 \u0415\u043a\u0430\u0442\u0435\u0440\u0438\u043d\u0431\u0443\u0440\u0433"
+            }
+          ],
+          "attachments": [
+            {
+              "id": "att-001",
+              "name": "\u0414\u043e\u0433\u043e\u0432\u043e\u0440.pdf"
+            },
+            {
+              "id": "att-002",
+              "name": "\u0421\u043f\u0435\u0446\u0438\u0444\u0438\u043a\u0430\u0446\u0438\u044f.xlsx"
+            },
+            {
+              "id": "att-003",
+              "name": "\u0418\u043d\u0441\u0442\u0440\u0443\u043a\u0446\u0438\u044f \u043f\u043e \u043f\u043e\u0433\u0440\u0443\u0437\u043a\u0435.docx"
+            }
+          ],
+          "source": {
+            "catalogId": "8c4666aa-d43d-4196-b78a-f94040b1db76"
+          }
+        }
+      },
+      {
+        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+        "createdBy": {
+          "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
+          "Login": "string"
+        },
+        "createdDate": "2019-08-24T14:15:22Z",
+        "lastModifiedBy": {
+          "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
+          "Login": "string"
+        },
+        "lastModifiedDate": "2019-08-24T14:15:22Z",
+        "processInstant": "string",
+        "meta": "00bc452f-5ac7-4ce3-9b71-a522f10fc914",
+        "originalIdentity": {
+          "id": "string",
+          "host": "string",
+          "route": "string",
+          "protocol": "string"
+        },
+        "json-data": {
+          "id": "rfp-001",
+          "name": "\u041f\u0435\u0440\u0435\u0432\u043e\u0437\u043a\u0430 \u0433\u0440\u0443\u0437\u0430 \u0438\u0437 \u041c\u043e\u0441\u043a\u0432\u044b \u0432 \u0421\u0430\u043d\u043a\u0442-\u041f\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433",
+          "customer": {
+            "id": "cust-001",
+            "name": "\u041e\u041e\u041e '\u0413\u0440\u0443\u0437\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u0435\u043b\u044c'"
+          },
+          "vehicleTypes": [
+            {
+              "id": "vt-001",
+              "name": "\u0420\u0435\u0444\u0440\u0438\u0436\u0435\u0440\u0430\u0442\u043e\u0440"
+            }
+          ],
+          "validSince": "2023-05-16T00:00:00Z",
+          "validUntil": "2023-05-20T23:59:59Z",
+          "transportTargets": [
+            {
+              "id": "tt-001",
+              "name": "\u0414\u043e\u0441\u0442\u0430\u0432\u043a\u0430 \u0433\u0440\u0443\u0437\u0430 \u0432 \u0421\u0430\u043d\u043a\u0442-\u041f\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433"
+            }
+          ],
+          "source": {
+            "id": "src-001",
+            "name": "\u0412\u0435\u0431-\u0438\u043d\u0442\u0435\u0440\u0444\u0435\u0439\u0441"
+          }
+        }
+      }
+    ]
+  }
+}

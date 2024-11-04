@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "contractor-item": {
+    "title": "\u0417\u0430\u043f\u0438\u0441\u044c \"\u041a\u043e\u043d\u0442\u0440\u0430\u0433\u0435\u043d\u0442\"",
+    "allOf": [
+      {
+        "$ref": "./models/abstract/rich-list-item.json"
+      },
+      {
+        "type": "object",
+        "properties": {
+          "json-data": {
+            "$ref": "#/contractor-data"
+          }
+        }
+      }
+    ],
+    "description": "\u0421\u0442\u0440\u043e\u043a\u0430 \u0442\u0430\u0431\u043b\u0438\u0446\u044b \u0411\u0414",
+    "examples": [
+      {
+        "id": "cont-001",
+        "name": "\u041e\u041e\u041e '\u0422\u0440\u0430\u043d\u0441\u041b\u043e\u0433\u0438\u0441\u0442\u0438\u043a'",
+        "type": "CARRIER",
+        "status": "ACTIVE",
+        "createdAt": "2023-05-01T09:00:00Z",
+        "updatedAt": "2023-05-01T09:00:00Z",
+        "contactPerson": {
+          "name": "\u0418\u0432\u0430\u043d\u043e\u0432 \u0418\u0432\u0430\u043d \u0418\u0432\u0430\u043d\u043e\u0432\u0438\u0447",
+          "phone": "+7 (999) 123-45-67",
+          "email": "ivanov@translogistic.ru"
+        },
+        "legalAddress": "\u0443\u043b. \u0422\u0440\u0430\u043d\u0441\u043f\u043e\u0440\u0442\u043d\u0430\u044f, 10, \u041c\u043e\u0441\u043a\u0432\u0430, \u0420\u043e\u0441\u0441\u0438\u044f",
+        "inn": "7712345678",
+        "kpp": "771201001"
+      }
+    ]
+  }
+}

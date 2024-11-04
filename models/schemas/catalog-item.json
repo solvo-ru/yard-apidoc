@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "catalog-item": {
+    "oneOf": [
+      {
+        "$ref": "#/transport-target-item"
+      },
+      {
+        "$ref": "#/contractor-item"
+      },
+      {
+        "$ref": "#/vehicle-item"
+      },
+      {
+        "$ref": "#/driver-item"
+      },
+      {
+        "$ref": "#/location-item"
+      },
+      {
+        "$ref": "#/cargo-item"
+      }
+    ],
+    "description": "\u0417\u0430\u043f\u0438\u0441\u044c \u044d\u043b\u0435\u043c\u0435\u043d\u0442\u0430 \u0441\u043f\u0440\u0430\u0432\u043e\u0447\u043d\u0438\u043a\u0430",
+    "title": "\u0417\u0430\u043f\u0438\u0441\u044c \u044d\u043b\u0435\u043c\u0435\u043d\u0442\u0430 \u0441\u043f\u0440\u0430\u0432\u043e\u0447\u043d\u0438\u043a\u0430",
+    "additionalProperties": false,
+    "examples": [
+      {
+        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+        "createdBy": {
+          "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
+          "Login": "string"
+        },
+        "createdDate": "2019-08-24T14:15:22Z",
+        "lastModifiedBy": {
+          "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
+          "Login": "string"
+        },
+        "lastModifiedDate": "2019-08-24T14:15:22Z",
+        "title": "string",
+        "catalogId": "8c4666aa-d43d-4196-b78a-f94040b1db76",
+        "json-schema": {},
+        "json-data": {
+          "num": "TT-2023-001",
+          "route": "\u0412\u0432\u043e\u0437",
+          "sender": {
+            "host": "example.com",
+            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+            "entity": "item"
+          },
+          "loadLocation": {
+            "host": "example.com",
+            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+            "entity": "item"
+          },
+          "loadAddress": "\u0433. \u041c\u043e\u0441\u043a\u0432\u0430, \u0443\u043b. \u0421\u043a\u043b\u0430\u0434\u0441\u043a\u0430\u044f, \u0434. 1",
+          "loadArrival": "2023-05-21T08:00:00Z",
+          "recipient": {
+            "host": "example.com",
+            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+            "entity": "item"
+          },
+          "unloadLocation": {
+            "host": "example.com",
+            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+            "entity": "item"
+          },
+          "unloadAddress": "\u0433. \u0421\u0430\u043d\u043a\u0442-\u041f\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433, \u043f\u0440. \u0418\u043d\u0434\u0443\u0441\u0442\u0440\u0438\u0430\u043b\u044c\u043d\u044b\u0439, \u0434. 10",
+          "unloadArrival": "2023-05-22T16:00:00Z",
+          "cargo": {
+            "id": "cargo-001",
+            "name": "\u042d\u043b\u0435\u043a\u0442\u0440\u043e\u043d\u0438\u043a\u0430"
+          }
+        }
+      }
+    ]
+  }
+}

@@ -7,7 +7,7 @@
     {
       "properties": {
         "json-data": {
-          "$ref": "#/shipment-rfp-data"
+          "$ref": "./shipment-rfp-data.json"
         }
       }
     }

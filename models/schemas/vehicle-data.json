@@ -22,7 +22,7 @@
             "$ref": "../props/link.json"
           },
           {
-            "$ref": "#/contractor-item"
+            "$ref": "./contractor-item.json"
           }
         ]
       }

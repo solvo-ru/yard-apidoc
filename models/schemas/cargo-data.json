@@ -52,21 +52,5 @@
         }
       ]
     }
-  },
-  "examples": [
-    {
-      "num": "CARGO-2023-001",
-      "desc": "Электроника (смартфоны, планшеты)",
-      "amount": 1,
-      "weight": 5000,
-      "volume": 10,
-      "package": "BOXES",
-      "owner": {
-        "host": "example.com",
-        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-        "entity": "item"
-      }
-    }
-  ],
-  "$schema": "https://json-schema.org/draft/2020-12/schema"
+  }
 }

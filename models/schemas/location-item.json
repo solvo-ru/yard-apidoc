@@ -9,10 +9,9 @@
       "type": "object",
       "properties": {
         "json-data": {
-          "$ref": "#/location-data"
+          "$ref": "./location-data.json"
         }
       }
     }
-  ],
-  "$schema": "https://json-schema.org/draft/2020-12/schema"
+  ]
 }

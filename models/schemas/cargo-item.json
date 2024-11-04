@@ -9,7 +9,7 @@
       "type": "object",
       "properties": {
         "json-data": {
-          "$ref": "#/cargo-data"
+          "$ref": "./cargo-data.json"
         }
       }
     }

@@ -1,22 +1,22 @@
 {
   "oneOf": [
     {
-      "$ref": "#/transport-target-item"
+      "$ref": "./transport-target-item.json"
     },
     {
-      "$ref": "#/contractor-item"
+      "$ref": "./contractor-item.json"
     },
     {
-      "$ref": "#/vehicle-item"
+      "$ref": "./vehicle-item.json"
     },
     {
-      "$ref": "#/driver-item"
+      "$ref": "./driver-item.json"
     },
     {
-      "$ref": "#/location-item"
+      "$ref": "./location-item.json"
     },
     {
-      "$ref": "#/cargo-item"
+      "$ref": "./cargo-item.json"
     }
   ],
   "description": "Запись элемента справочника",

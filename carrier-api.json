@@ -620,7 +620,6 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
                   "$ref": "./models/abstract/simple-list.json"
                 }
               }
@@ -695,14 +694,8 @@
               "properties": {
                 "items": {
                   "type": "array",
-                  "x-stoplight": {
-                    "id": "7lp6xqgef6s6r"
-                  },
                   "items": {
-                    "$ref": "./models/schemas/shipment-rfp-item.json",
-                    "x-stoplight": {
-                      "id": "n06hknigjs0p6"
-                    }
+                    "$ref": "./models/schemas/shipment-rfp-item.json"
                   }
                 },
                 "page-info": {

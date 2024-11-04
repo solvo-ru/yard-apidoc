@@ -8,7 +8,7 @@
       "type": "object",
       "properties": {
         "json-data": {
-          "$ref": "#/vehicle-data"
+          "$ref": "./vehicle-data.json"
         }
       }
     }

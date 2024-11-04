@@ -9,7 +9,7 @@
       "type": "object",
       "properties": {
         "json-data": {
-          "$ref": "#/transport-target-data"
+          "$ref": "./transport-target-data.json"
         }
       }
     }

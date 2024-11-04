@@ -8,7 +8,7 @@
       "type": "object",
       "properties": {
         "json-data": {
-          "$ref": "#/offer-data"
+          "$ref": "./offer-data.json"
         }
       }
     },
@@ -21,7 +21,7 @@
         "shipment-rfp": {
           "oneOf": [
             {
-              "$ref": "#/shipment-rfp-data"
+              "$ref": "./shipment-rfp-data.json"
             },
             {
               "type": "string",

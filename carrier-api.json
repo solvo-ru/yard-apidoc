@@ -27,7 +27,7 @@
     "/oauth/token": {
       "post": {
         "summary": "OAuth token request",
-        "description": "Requests an OAuth token",
+        "description": "Получение OAuth токена для аутентификации в системе",
         "requestBody": {
           "description": "OAuth token request",
           "content": {
@@ -63,6 +63,13 @@
                   "client_id",
                   "client_secret"
                 ]
+              },
+              "example": {
+                "grant_type": "authorization_code",
+                "code": "4/P7q7W91a-oMsCeLvIaQm6bTrgtp7",
+                "redirect_uri": "https://example.com/oauth2callback",
+                "client_id": "ваш-client-id",
+                "client_secret": "ваш-client-secret"
               }
             }
           }
@@ -99,13 +106,17 @@
           "401": {
             "description": "Unauthorized"
           }
-        }
+        },
+        "operationId": "getOAuthToken",
+        "tags": [
+          "Аутентификация"
+        ]
       }
     },
     "/oauth/revoke": {
       "post": {
         "summary": "OAuth token revocation",
-        "description": "Revokes an OAuth token",
+        "description": "Отзыв OAuth токена",
         "requestBody": {
           "description": "OAuth token revocation request",
           "content": {
@@ -132,13 +143,17 @@
           "401": {
             "description": "Unauthorized"
           }
-        }
+        },
+        "operationId": "revokeOAuthToken",
+        "tags": [
+          "Аутентификация"
+        ]
       }
     },
     "/oauth/userinfo": {
       "get": {
         "summary": "OAuth userinfo",
-        "description": "Retrieves userinfo for the authenticated user",
+        "description": "Получение информации о текущем пользователе",
         "security": [
           {
             "oauth2": []
@@ -165,6 +180,11 @@
                       "description": "User email"
                     }
                   }
+                },
+                "example": {
+                  "sub": "1234567890",
+                  "name": "Иван Петров",
+                  "email": "ivan.petrov@example.com"
                 }
               }
             }
@@ -172,7 +192,11 @@
           "401": {
             "description": "Unauthorized"
           }
-        }
+        },
+        "operationId": "getUserInfo",
+        "tags": [
+          "Аутентификация"
+        ]
       }
     },
     "/shipment-rfp": {
@@ -182,7 +206,12 @@
           "200": {
             "$ref": "#/components/responses/shipment-rfp-list"
           }
-        }
+        },
+        "description": "Получение списка заявок на перевозку",
+        "operationId": "getShipmentRfpList",
+        "tags": [
+          "Заявки на перевозку"
+        ]
       },
       "put": {
         "summary": "Создать новую заявку на перевозку",
@@ -206,7 +235,12 @@
               }
             }
           }
-        }
+        },
+        "description": "Создание новой заявки на перевозку",
+        "operationId": "createShipmentRfp",
+        "tags": [
+          "Заявки на перевозку"
+        ]
       },
       "parameters": []
     },
@@ -236,6 +270,11 @@
               "format": "uuid"
             }
           }
+        ],
+        "description": "Получение детальной информации о заявке на перевозку",
+        "operationId": "getShipmentRfpDetails",
+        "tags": [
+          "Заявки на перевозку"
         ]
       },
       "post": {
@@ -272,7 +311,12 @@
               }
             }
           }
-        }
+        },
+        "description": "Обновление информации о заявке на перевозку",
+        "operationId": "updateShipmentRfp",
+        "tags": [
+          "Заявки на перевозку"
+        ]
       },
       "parameters": [
         {
@@ -287,7 +331,12 @@
           "200": {
             "$ref": "#/components/responses/offer-list"
           }
-        }
+        },
+        "description": "Получение списка предложений от перевозчиков",
+        "operationId": "getOfferList",
+        "tags": [
+          "Предложения"
+        ]
       },
       "put": {
         "summary": "Создать новое предложение",
@@ -311,7 +360,12 @@
               }
             }
           }
-        }
+        },
+        "description": "Создание нового предложения от перевозчика",
+        "operationId": "createOffer",
+        "tags": [
+          "Предложения"
+        ]
       },
       "parameters": []
     },
@@ -341,6 +395,11 @@
               "format": "uuid"
             }
           }
+        ],
+        "description": "Получение детальной информации о предложении",
+        "operationId": "getOfferDetails",
+        "tags": [
+          "Предложения"
         ]
       },
       "post": {
@@ -377,7 +436,12 @@
               }
             }
           }
-        }
+        },
+        "description": "Обновление информации о предложении",
+        "operationId": "updateOffer",
+        "tags": [
+          "Предложения"
+        ]
       },
       "parameters": [
         {
@@ -388,40 +452,48 @@
     "/catalogs": {
       "get": {
         "summary": "Получить перечень справочников системы",
-        "tags": [],
+        "tags": [
+          "Справочники"
+        ],
         "responses": {
           "200": {
             "$ref": "#/components/responses/catalog-list"
           }
         },
-        "operationId": "get-catalogs",
-        "description": ""
+        "operationId": "getCatalogList",
+        "description": "Получение списка справочников системы"
       },
       "put": {
         "summary": "Создать новый справочник",
-        "tags": [],
+        "tags": [
+          "Справочники"
+        ],
         "responses": {
           "201": {
             "$ref": "#/components/responses/catalog-metaitem"
           }
         },
-        "operationId": "post-catalogs",
+        "operationId": "createCatalog",
         "requestBody": {
           "$ref": "#/components/requestBodies/catalog-metaitem"
-        }
+        },
+        "description": "Создание нового справочника"
       },
       "post": {
         "summary": "Изменить описание справочника",
-        "tags": [],
+        "tags": [
+          "Справочники"
+        ],
         "responses": {
           "202": {
             "$ref": "#/components/responses/catalog-metaitem"
           }
         },
-        "operationId": "put-catalogs",
+        "operationId": "updateCatalog",
         "requestBody": {
           "$ref": "#/components/requestBodies/catalog-metaitem"
-        }
+        },
+        "description": "Обновление информации о справочнике"
       }
     },
     "/catalogs/{key}": {
@@ -432,39 +504,48 @@
       ],
       "get": {
         "summary": "Получить описание справочника",
-        "tags": [],
+        "tags": [
+          "Справочники"
+        ],
         "responses": {
           "200": {
             "$ref": "#/components/responses/catalog-metaitem"
           }
         },
-        "operationId": "get-catalogs-key"
+        "operationId": "getCatalogByKey",
+        "description": "Получение информации о конкретном справочнике"
       },
       "post": {
         "summary": "Изменить запись справочника",
-        "tags": [],
+        "tags": [
+          "Справочники"
+        ],
         "responses": {
           "202": {
             "$ref": "#/components/responses/catalog-item"
           }
         },
-        "operationId": "post-catalogs-key",
+        "operationId": "updateCatalogByKey",
         "requestBody": {
           "$ref": "#/components/requestBodies/catalog-item"
-        }
+        },
+        "description": "Обновление информации о конкретном справочнике"
       },
       "put": {
         "summary": "Создать запись справочника",
-        "tags": [],
+        "tags": [
+          "Справочники"
+        ],
         "responses": {
           "200": {
             "$ref": "#/components/responses/catalog-item"
           }
         },
-        "operationId": "put-catalogs-key",
+        "operationId": "createCatalogItemByKey",
         "requestBody": {
           "$ref": "#/components/requestBodies/catalog-item"
-        }
+        },
+        "description": "Создание нового элемента в конкретном справочнике"
       }
     },
     "/catalogs/{key}/items/{id}": {
@@ -478,19 +559,24 @@
       ],
       "get": {
         "summary": "Получить запись справочника",
-        "tags": [],
+        "tags": [
+          "Справочники"
+        ],
         "responses": {
           "200": {
             "$ref": "#/components/responses/catalog-item"
           }
         },
-        "operationId": "get-catalogs-key-items-id"
+        "operationId": "getCatalogItemById",
+        "description": "Получение информации о конкретном элементе справочника"
       }
     },
     "/lists": {
       "get": {
         "summary": "Получить перечень списков",
-        "tags": [],
+        "tags": [
+          "Списки"
+        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -506,7 +592,8 @@
             }
           }
         },
-        "operationId": "get-lists"
+        "operationId": "getAllLists",
+        "description": "Получение списка всех списков"
       }
     },
     "/lists/{key}": {
@@ -517,7 +604,9 @@
       ],
       "get": {
         "summary": "Получить информацию о списке",
-        "tags": [],
+        "tags": [
+          "Списки"
+        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -532,7 +621,8 @@
             }
           }
         },
-        "operationId": "get-lists-key"
+        "operationId": "getListByKey",
+        "description": "Получение информации о конкретном списке"
       }
     },
     "/lists/{key}/items": {
@@ -543,7 +633,9 @@
       ],
       "get": {
         "summary": "Получить элементы списка",
-        "tags": [],
+        "tags": [
+          "Списки"
+        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -567,7 +659,8 @@
             }
           }
         },
-        "operationId": "get-lists-key-items"
+        "operationId": "getListItemsByKey",
+        "description": "Получение элементов конкретного списка"
       }
     }
   },
@@ -741,7 +834,39 @@
             "json-data": {}
           }
         },
-        "description": "Строка таблицы БД"
+        "description": "Строка таблицы БД",
+        "example": {
+          "id": "123e4567-e89b-12d3-a456-426614174000",
+          "name": "Перевозка груза из Москвы в Санкт-Петербург",
+          "status": "OPEN",
+          "createdAt": "2023-05-15T10:30:00Z",
+          "updatedAt": "2023-05-15T10:30:00Z",
+          "expiresAt": "2023-05-20T23:59:59Z",
+          "origin": {
+            "address": "ул. Ленина, 1, Москва, Россия",
+            "coordinates": {
+              "latitude": 55.7558,
+              "longitude": 37.6173
+            }
+          },
+          "destination": {
+            "address": "Невский проспект, 1, Санкт-Петербург, Россия",
+            "coordinates": {
+              "latitude": 59.9311,
+              "longitude": 30.3609
+            }
+          },
+          "cargo": {
+            "type": "Общие грузы",
+            "weight": 1000,
+            "volume": 5
+          },
+          "additionalRequirements": "Требуется рефрижератор",
+          "estimatedCost": {
+            "amount": 50000,
+            "currency": "RUB"
+          }
+        }
       },
       "offer-data": {
         "title": "Предложение к заявке на перевозку",
@@ -842,7 +967,27 @@
         ],
         "type": "object",
         "x-examples": {},
-        "description": "Строка таблицы БД"
+        "description": "Строка таблицы БД",
+        "example": {
+          "id": "456e7890-f12a-34b5-c678-901234567890",
+          "shipmentRfpId": "123e4567-e89b-12d3-a456-426614174000",
+          "carrierId": "789e0123-g45h-67i8-j901-234567890123",
+          "status": "PENDING",
+          "createdAt": "2023-05-16T14:30:00Z",
+          "updatedAt": "2023-05-16T14:30:00Z",
+          "expiresAt": "2023-05-18T23:59:59Z",
+          "price": {
+            "amount": 48000,
+            "currency": "RUB"
+          },
+          "estimatedPickupTime": "2023-05-21T09:00:00Z",
+          "estimatedDeliveryTime": "2023-05-22T18:00:00Z",
+          "additionalServices": [
+            "Страхование груза",
+            "Экспедирование"
+          ],
+          "notes": "Готовы предоставить рефрижератор для перевозки"
+        }
       },
       "transport-target-item": {
         "title": "Цель перевозки",
@@ -859,7 +1004,30 @@
               }
             }
           }
-        ]
+        ],
+        "example": {
+          "id": "tt-001",
+          "name": "Перевозка груза из Москвы в Санкт-Петербург",
+          "status": "ACTIVE",
+          "createdAt": "2023-05-18T10:00:00Z",
+          "updatedAt": "2023-05-18T10:00:00Z",
+          "origin": {
+            "address": "ул. Ленина, 1, Москва, Россия",
+            "coordinates": {
+              "latitude": 55.7558,
+              "longitude": 37.6173
+            }
+          },
+          "destination": {
+            "address": "Невский проспект, 1, Санкт-Петербург, Россия",
+            "coordinates": {
+              "latitude": 59.9311,
+              "longitude": 30.3609
+            }
+          },
+          "estimatedDepartureTime": "2023-05-20T08:00:00Z",
+          "estimatedArrivalTime": "2023-05-21T18:00:00Z"
+        }
       },
       "transport-target-data": {
         "title": "Цель перевозки",
@@ -997,7 +1165,23 @@
             }
           }
         ],
-        "description": "Строка таблицы БД"
+        "description": "Строка таблицы БД",
+        "example": {
+          "id": "cont-001",
+          "name": "ООО 'ТрансЛогистик'",
+          "type": "CARRIER",
+          "status": "ACTIVE",
+          "createdAt": "2023-05-01T09:00:00Z",
+          "updatedAt": "2023-05-01T09:00:00Z",
+          "contactPerson": {
+            "name": "Иванов Иван Иванович",
+            "phone": "+7 (999) 123-45-67",
+            "email": "ivanov@translogistic.ru"
+          },
+          "legalAddress": "ул. Транспортная, 10, Москва, Россия",
+          "inn": "7712345678",
+          "kpp": "771201001"
+        }
       },
       "vehicle-item": {
         "title": "Автотранспорт",
@@ -1014,7 +1198,32 @@
             }
           }
         ],
-        "description": "Строка таблицы БД"
+        "description": "Строка таблицы БД",
+        "example": {
+          "id": "veh-001",
+          "type": "TRUCK",
+          "make": "КАМАЗ",
+          "model": "5490",
+          "year": 2021,
+          "licensePlate": "А123БВ777",
+          "vin": "X1F5490NEL0000001",
+          "status": "ACTIVE",
+          "createdAt": "2023-05-10T11:00:00Z",
+          "updatedAt": "2023-05-10T11:00:00Z",
+          "capacity": {
+            "weight": 20000,
+            "volume": 86
+          },
+          "dimensions": {
+            "length": 13.6,
+            "width": 2.45,
+            "height": 2.7
+          },
+          "features": [
+            "REFRIGERATOR",
+            "GPS_TRACKER"
+          ]
+        }
       },
       "vehicle-data": {
         "title": "vehicle-data",
@@ -1074,7 +1283,27 @@
             }
           }
         ],
-        "description": "Строка таблицы БД"
+        "description": "Строка таблицы БД",
+        "example": {
+          "id": "drv-001",
+          "firstName": "Александр",
+          "lastName": "Петров",
+          "middleName": "Иванович",
+          "dateOfBirth": "1985-07-15",
+          "phoneNumber": "+7 (999) 234-56-78",
+          "email": "a.petrov@example.com",
+          "licenseNumber": "7712 345678",
+          "licenseExpirationDate": "2025-12-31",
+          "status": "ACTIVE",
+          "createdAt": "2023-05-12T10:30:00Z",
+          "updatedAt": "2023-05-12T10:30:00Z",
+          "experience": 10,
+          "qualifications": [
+            "ADR",
+            "REFRIGERATOR"
+          ],
+          "currentVehicleId": "veh-001"
+        }
       },
       "driver-data": {
         "title": "driver-data",
@@ -1150,7 +1379,61 @@
               }
             }
           }
-        ]
+        ],
+        "example": {
+          "id": "loc-001",
+          "name": "Склад 'Восточный'",
+          "type": "WAREHOUSE",
+          "address": {
+            "country": "Россия",
+            "postalCode": "107140",
+            "city": "Москва",
+            "street": "ул. Верхняя Красносельская",
+            "building": "3с2"
+          },
+          "coordinates": {
+            "latitude": 55.786389,
+            "longitude": 37.662778
+          },
+          "contactPerson": {
+            "name": "Сидоров Петр Алексеевич",
+            "phone": "+7 (495) 123-45-67",
+            "email": "p.sidorov@example.com"
+          },
+          "workingHours": {
+            "monday": {
+              "from": "08:00",
+              "to": "20:00"
+            },
+            "tuesday": {
+              "from": "08:00",
+              "to": "20:00"
+            },
+            "wednesday": {
+              "from": "08:00",
+              "to": "20:00"
+            },
+            "thursday": {
+              "from": "08:00",
+              "to": "20:00"
+            },
+            "friday": {
+              "from": "08:00",
+              "to": "20:00"
+            },
+            "saturday": {
+              "from": "09:00",
+              "to": "18:00"
+            },
+            "sunday": {
+              "from": "09:00",
+              "to": "18:00"
+            }
+          },
+          "status": "ACTIVE",
+          "createdAt": "2023-05-14T09:00:00Z",
+          "updatedAt": "2023-05-14T09:00:00Z"
+        }
       },
       "location-data": {
         "title": "Локация",
@@ -1204,7 +1487,42 @@
               }
             }
           }
-        ]
+        ],
+        "example": {
+          "id": "crg-001",
+          "name": "Электроника",
+          "type": "ELECTRONICS",
+          "description": "Партия смартфонов и планшетов",
+          "weight": 5000,
+          "volume": 10,
+          "quantity": 1000,
+          "packagingType": "BOXES",
+          "dimensions": {
+            "length": 1.2,
+            "width": 0.8,
+            "height": 1.6
+          },
+          "hazardClass": "NON_HAZARDOUS",
+          "temperatureRequirements": {
+            "min": 10,
+            "max": 30
+          },
+          "specialHandling": [
+            "FRAGILE",
+            "KEEP_DRY"
+          ],
+          "customsInfo": {
+            "hsCode": "851712",
+            "countryOfOrigin": "CN",
+            "declaredValue": {
+              "amount": 500000,
+              "currency": "RUB"
+            }
+          },
+          "status": "READY_FOR_PICKUP",
+          "createdAt": "2023-05-15T14:30:00Z",
+          "updatedAt": "2023-05-15T14:30:00Z"
+        }
       },
       "cargo-data": {
         "title": "Груз",
@@ -1277,7 +1595,15 @@
           }
         ],
         "description": "Метаданные справочника",
-        "title": "Запись коллекции 'Справочник'"
+        "title": "Запись коллекции 'Справочник'",
+        "example": {
+          "id": "cat-004",
+          "name": "Типы дополнительных услуг",
+          "description": "Справочник типов дополнительных услуг при перевозке",
+          "itemsCount": 0,
+          "createdAt": "2023-05-17T09:30:00Z",
+          "updatedAt": "2023-05-17T09:30:00Z"
+        }
       },
       "catalog-item": {
         "type": "object",
@@ -1302,7 +1628,24 @@
           }
         ],
         "description": "Запись элемента справочника",
-        "title": "Запись элемента справочника"
+        "title": "Запись элемента справочника",
+        "example": {
+          "id": "cat-item-001",
+          "name": "Рефрижератор",
+          "description": "Транспортное средство с холодильной установкой для перевозки скоропортящихся грузов",
+          "code": "REFRIGERATOR",
+          "catalogId": "cat-001",
+          "status": "ACTIVE",
+          "createdAt": "2023-05-16T11:00:00Z",
+          "updatedAt": "2023-05-16T11:00:00Z",
+          "attributes": {
+            "temperatureRange": {
+              "min": -20,
+              "max": 5
+            },
+            "fuelConsumption": 25
+          }
+        }
       }
     },
     "responses": {
@@ -1327,6 +1670,44 @@
                 }
               ],
               "type": "object"
+            },
+            "example": {
+              "items": [
+                {
+                  "id": "123e4567-e89b-12d3-a456-426614174000",
+                  "name": "Перевозка груза из Москвы в Санкт-Петербург",
+                  "status": "OPEN",
+                  "createdAt": "2023-05-15T10:30:00Z",
+                  "updatedAt": "2023-05-15T10:30:00Z",
+                  "expiresAt": "2023-05-20T23:59:59Z",
+                  "origin": {
+                    "address": "ул. Ленина, 1, Москва, Россия",
+                    "coordinates": {
+                      "latitude": 55.7558,
+                      "longitude": 37.6173
+                    }
+                  },
+                  "destination": {
+                    "address": "Невский проспект, 1, Санкт-Петербург, Россия",
+                    "coordinates": {
+                      "latitude": 59.9311,
+                      "longitude": 30.3609
+                    }
+                  },
+                  "cargo": {
+                    "type": "Общие грузы",
+                    "weight": 1000,
+                    "volume": 5
+                  }
+                }
+              ],
+              "meta": {
+                "totalItems": 1,
+                "itemCount": 1,
+                "itemsPerPage": 10,
+                "totalPages": 1,
+                "currentPage": 1
+              }
             }
           }
         }
@@ -1353,7 +1734,48 @@
               ],
               "type": "object"
             },
-            "examples": {}
+            "examples": {},
+            "example": {
+              "items": [
+                {
+                  "id": "456e7890-f12a-34b5-c678-901234567890",
+                  "shipmentRfpId": "123e4567-e89b-12d3-a456-426614174000",
+                  "carrierId": "789e0123-g45h-67i8-j901-234567890123",
+                  "status": "PENDING",
+                  "createdAt": "2023-05-16T14:30:00Z",
+                  "updatedAt": "2023-05-16T14:30:00Z",
+                  "expiresAt": "2023-05-18T23:59:59Z",
+                  "price": {
+                    "amount": 48000,
+                    "currency": "RUB"
+                  },
+                  "estimatedPickupTime": "2023-05-21T09:00:00Z",
+                  "estimatedDeliveryTime": "2023-05-22T18:00:00Z"
+                },
+                {
+                  "id": "567f8901-g23b-45c6-d789-012345678901",
+                  "shipmentRfpId": "123e4567-e89b-12d3-a456-426614174000",
+                  "carrierId": "890f1234-h56i-78j9-k012-345678901234",
+                  "status": "PENDING",
+                  "createdAt": "2023-05-16T15:45:00Z",
+                  "updatedAt": "2023-05-16T15:45:00Z",
+                  "expiresAt": "2023-05-18T23:59:59Z",
+                  "price": {
+                    "amount": 52000,
+                    "currency": "RUB"
+                  },
+                  "estimatedPickupTime": "2023-05-21T10:00:00Z",
+                  "estimatedDeliveryTime": "2023-05-22T19:00:00Z"
+                }
+              ],
+              "meta": {
+                "totalItems": 2,
+                "itemCount": 2,
+                "itemsPerPage": 10,
+                "totalPages": 1,
+                "currentPage": 1
+              }
+            }
           }
         }
       },
@@ -1406,6 +1828,35 @@
               "type": "array",
               "items": {
                 "$ref": "models/abstract/rich-list.json"
+              }
+            },
+            "example": {
+              "items": [
+                {
+                  "id": "cat-001",
+                  "name": "Типы транспортных средств",
+                  "description": "Справочник типов транспортных средств",
+                  "itemsCount": 10
+                },
+                {
+                  "id": "cat-002",
+                  "name": "Типы грузов",
+                  "description": "Справочник типов грузов",
+                  "itemsCount": 15
+                },
+                {
+                  "id": "cat-003",
+                  "name": "Статусы заявок",
+                  "description": "Справочник статусов заявок на перевозку",
+                  "itemsCount": 5
+                }
+              ],
+              "meta": {
+                "totalItems": 3,
+                "itemCount": 3,
+                "itemsPerPage": 10,
+                "totalPages": 1,
+                "currentPage": 1
               }
             }
           }

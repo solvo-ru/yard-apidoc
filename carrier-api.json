@@ -727,7 +727,7 @@
             "description": "Контрагент, являющийся заказчиком перевозки",
             "oneOf": [
               {
-                "$ref": "models/props/link.json"
+                "$ref": "./models/props/link.json"
               },
               {
                 "$ref": "#/components/schemas/contractor-item"
@@ -740,7 +740,7 @@
             "description": "Один или несколько типов ТС, которое должно выполнять перевозку ",
             "minItems": 1,
             "items": {
-              "$ref": "models/abstract/simple-list-item.json"
+              "$ref": "./models/abstract/simple-list-item.json"
             }
           },
           "validSince": {
@@ -760,7 +760,7 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "models/props/link.json"
+                  "$ref": "./models/props/link.json"
                 },
                 {
                   "$ref": "#/components/schemas/transport-target-item"
@@ -778,7 +778,7 @@
             }
           },
           "source": {
-            "$ref": "models/abstract/simple-list-item.json",
+            "$ref": "./models/abstract/simple-list-item.json",
             "description": "Способ создания заявки на перевозку."
           }
         }
@@ -792,7 +792,7 @@
         ],
         "allOf": [
           {
-            "$ref": "models/abstract/domain-item.json"
+            "$ref": "./models/abstract/domain-item.json"
           },
           {
             "properties": {
@@ -802,7 +802,6 @@
             }
           }
         ],
-        "type": "object",
         "x-examples": {
           "Example 1": {
             "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
@@ -866,7 +865,8 @@
             "amount": 50000,
             "currency": "RUB"
           }
-        }
+        },
+        "type": "object"
       },
       "offer-data": {
         "title": "Предложение к заявке на перевозку",
@@ -885,7 +885,7 @@
             "description": "Идентификатор заявки на перевозку",
             "oneOf": [
               {
-                "$ref": "models/props/link.json"
+                "$ref": "./models/props/link.json"
               },
               {
                 "$ref": "#/components/schemas/shipment-rfp-item"
@@ -896,7 +896,7 @@
           "forwarder": {
             "oneOf": [
               {
-                "$ref": "models/props/link.json"
+                "$ref": "./models/props/link.json"
               },
               {
                 "$ref": "#/components/schemas/contractor-item"
@@ -907,7 +907,7 @@
           "carrier": {
             "oneOf": [
               {
-                "$ref": "models/props/link.json"
+                "$ref": "./models/props/link.json"
               },
               {
                 "$ref": "#/components/schemas/contractor-item"
@@ -918,7 +918,7 @@
           "vehicle": {
             "oneOf": [
               {
-                "$ref": "models/props/link.json"
+                "$ref": "./models/props/link.json"
               },
               {
                 "$ref": "#/components/schemas/vehicle-item"
@@ -929,7 +929,7 @@
           "driver": {
             "oneOf": [
               {
-                "$ref": "models/props/link.json"
+                "$ref": "./models/props/link.json"
               },
               {
                 "$ref": "#/components/schemas/driver-item"
@@ -955,7 +955,7 @@
         "title": "Запись \"Предложение к заявке на перевозку\"",
         "allOf": [
           {
-            "$ref": "models/abstract/domain-item.json"
+            "$ref": "./models/abstract/domain-item.json"
           },
           {
             "properties": {
@@ -994,7 +994,7 @@
         "description": "Объект системы, содержащий информацию о месте обработки перевозки",
         "allOf": [
           {
-            "$ref": "models/abstract/rich-list-item.json"
+            "$ref": "./models/abstract/rich-list-item.json"
           },
           {
             "type": "object",
@@ -1047,7 +1047,7 @@
           "sender": {
             "oneOf": [
               {
-                "$ref": "models/props/link.json"
+                "$ref": "./models/props/link.json"
               },
               {
                 "$ref": "#/components/schemas/contractor-item"
@@ -1058,7 +1058,7 @@
           "loadLocation": {
             "oneOf": [
               {
-                "$ref": "models/props/link.json"
+                "$ref": "./models/props/link.json"
               },
               {
                 "$ref": "#/components/schemas/location-item"
@@ -1078,7 +1078,7 @@
           "recipient": {
             "oneOf": [
               {
-                "$ref": "models/props/link.json"
+                "$ref": "./models/props/link.json"
               },
               {
                 "$ref": "#/components/schemas/contractor-item"
@@ -1089,7 +1089,7 @@
           "unloadLocation": {
             "oneOf": [
               {
-                "$ref": "models/props/link.json"
+                "$ref": "./models/props/link.json"
               },
               {
                 "$ref": "#/components/schemas/location-item"
@@ -1112,7 +1112,7 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "models/props/link.json"
+                  "$ref": "./models/props/link.json"
                 },
                 {
                   "$ref": "#/components/schemas/cargo-item"
@@ -1136,7 +1136,7 @@
             "description": "Полное наименование контрагента, как оно прописано в правоустанавливающих документах"
           },
           "type": {
-            "$ref": "models/abstract/simple-list-item.json",
+            "$ref": "./models/abstract/simple-list-item.json",
             "description": "Тип"
           },
           "role": {
@@ -1144,7 +1144,7 @@
             "minItems": 1,
             "description": "Роль",
             "items": {
-              "$ref": "models/abstract/simple-list-item.json"
+              "$ref": "./models/abstract/simple-list-item.json"
             }
           }
         },
@@ -1154,7 +1154,7 @@
         "title": "Запись \"Контрагент\"",
         "allOf": [
           {
-            "$ref": "models/abstract/rich-list-item.json"
+            "$ref": "./models/abstract/rich-list-item.json"
           },
           {
             "type": "object",
@@ -1187,7 +1187,7 @@
         "title": "Автотранспорт",
         "allOf": [
           {
-            "$ref": "models/abstract/rich-list-item.json"
+            "$ref": "./models/abstract/rich-list-item.json"
           },
           {
             "type": "object",
@@ -1245,7 +1245,7 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "models/props/link.json"
+                  "$ref": "./models/props/link.json"
                 },
                 {
                   "$ref": "#/components/schemas/contractor-item"
@@ -1255,10 +1255,10 @@
             }
           },
           "type": {
-            "$ref": "models/abstract/simple-list-item.json",
+            "$ref": "./models/abstract/simple-list-item.json",
             "description": "Тип транспортного средства"
           },
-          "model": {
+          "./model": {
             "type": "string",
             "description": "Марка и модель ТС."
           },
@@ -1272,7 +1272,7 @@
         "title": "Водитель",
         "allOf": [
           {
-            "$ref": "models/abstract/rich-list-item.json"
+            "$ref": "./models/abstract/rich-list-item.json"
           },
           {
             "type": "object",
@@ -1339,7 +1339,7 @@
             "description": "Дата рождения водителя"
           },
           "docType": {
-            "$ref": "models/abstract/simple-list-item.json",
+            "$ref": "./models/abstract/simple-list-item.json",
             "description": "Вид документа, удостоверяющего личность\n| **Значение** | **Описание**                   |\n| ------------ | ------------------------------ |\n| **Паспорт**  | Паспорт гражданина РФ.         |\n| **Права**    | Водительское удостоверение РФ. |"
           },
           "phone": {
@@ -1353,7 +1353,7 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "models/props/link.json"
+                  "$ref": "./models/props/link.json"
                 },
                 {
                   "$ref": "#/components/schemas/contractor-item"
@@ -1369,7 +1369,7 @@
         "description": "Строка таблицы БД",
         "allOf": [
           {
-            "$ref": "models/abstract/rich-list-item.json"
+            "$ref": "./models/abstract/rich-list-item.json"
           },
           {
             "type": "object",
@@ -1456,7 +1456,7 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "models/props/link.json"
+                  "$ref": "./models/props/link.json"
                 },
                 {
                   "$ref": "#/components/schemas/contractor-item"
@@ -1477,7 +1477,7 @@
         "description": "Объект системы, содержащий информацию о перевозимом грузе.",
         "allOf": [
           {
-            "$ref": "models/abstract/rich-list-item.json"
+            "$ref": "./models/abstract/rich-list-item.json"
           },
           {
             "type": "object",
@@ -1569,7 +1569,7 @@
             "description": "Контрагент, являющийся владельцем перевозимого груза",
             "oneOf": [
               {
-                "$ref": "models/props/link.json"
+                "$ref": "./models/props/link.json"
               },
               {
                 "$ref": "#/components/schemas/contractor-item"
@@ -1584,12 +1584,12 @@
         "type": "object",
         "allOf": [
           {
-            "$ref": "models/abstract/rich-list.json"
+            "$ref": "./models/abstract/rich-list.json"
           },
           {
             "properties": {
               "json-schema": {
-                "$ref": "models/abstract/rich-list-meta.json"
+                "$ref": "./models/abstract/rich-list-meta.json"
               }
             }
           }
@@ -1646,6 +1646,36 @@
             "fuelConsumption": 25
           }
         }
+      },
+      "pagination": {
+        "type": "object",
+        "properties": {
+          "totalItems": {
+            "type": "integer"
+          },
+          "itemCount": {
+            "type": "integer"
+          },
+          "itemsPerPage": {
+            "type": "integer"
+          },
+          "totalPages": {
+            "type": "integer"
+          },
+          "currentPage": {
+            "type": "integer"
+          }
+        },
+        "x-examples": {
+          "Example 1": {
+            "totalItems": 1,
+            "itemCount": 1,
+            "itemsPerPage": 10,
+            "totalPages": 1,
+            "currentPage": 1
+          }
+        },
+        "title": "page-info"
       }
     },
     "responses": {
@@ -1656,7 +1686,7 @@
             "schema": {
               "allOf": [
                 {
-                  "$ref": "models/abstract/domain-meta.json"
+                  "$ref": "./models/abstract/domain-meta.json"
                 },
                 {
                   "properties": {
@@ -1664,6 +1694,19 @@
                       "type": "array",
                       "items": {
                         "$ref": "#/components/schemas/shipment-rfp-item"
+                      }
+                    }
+                  }
+                },
+                {
+                  "x-stoplight": {
+                    "id": "uaee2335r7a3h"
+                  },
+                  "properties": {
+                    "page-info": {
+                      "$ref": "#/components/schemas/pagination",
+                      "x-stoplight": {
+                        "id": "47z21vps1zahi"
                       }
                     }
                   }
@@ -1701,7 +1744,7 @@
                   }
                 }
               ],
-              "meta": {
+              "page-info": {
                 "totalItems": 1,
                 "itemCount": 1,
                 "itemsPerPage": 10,
@@ -1719,7 +1762,7 @@
             "schema": {
               "allOf": [
                 {
-                  "$ref": "models/abstract/domain-meta.json"
+                  "$ref": "./models/abstract/domain-meta.json"
                 },
                 {
                   "properties": {
@@ -1827,7 +1870,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "models/abstract/rich-list.json"
+                "$ref": "./models/abstract/rich-list.json"
               }
             },
             "example": {

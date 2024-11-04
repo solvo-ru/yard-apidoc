@@ -384,7 +384,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "./models/domains.json#offer-item"
+                  "$ref": "./models/schemas/offer-item.json"
                 }
               }
             }
@@ -416,7 +416,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "./models/domains.json#offer-item"
+                  "$ref": "./models/schemas/offer-item.json"
                 }
               }
             }
@@ -438,7 +438,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "./models/domains.json#offer-item"
+                "$ref": "./models/schemas/offer-item.json"
               }
             }
           }
@@ -699,14 +699,14 @@
                     "id": "7lp6xqgef6s6r"
                   },
                   "items": {
-                    "$ref": "./models/domains.json#shipment-rfp-item",
+                    "$ref": "./models/schemas/shipment-rfp-item.json",
                     "x-stoplight": {
                       "id": "n06hknigjs0p6"
                     }
                   }
                 },
                 "page-info": {
-                  "$ref": "./models/domains.json#pagination",
+                  "$ref": "./models/schemas/pagination.json",
                   "x-stoplight": {
                     "id": "0bxl6yxeqrbmi"
                   }
@@ -739,11 +739,11 @@
                 "items": {
                   "type": "array",
                   "items": {
-                    "$ref": "./models/domains.json#offer-item"
+                    "$ref": "./models/schemas/offer-item.json"
                   }
                 },
                 "page-info": {
-                  "$ref": "./models/domains.json#pagination"
+                  "$ref": "./models/schemas/pagination.json"
                 }
               }
             }
@@ -755,7 +755,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "./models/domains.json#shipment-rfp-item"
+              "$ref": "./models/schemas/shipment-rfp-item.json"
             }
           }
         }
@@ -765,7 +765,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "./models/domains.json#offer-item"
+              "$ref": "./models/schemas/offer-item.json"
             }
           }
         }
@@ -774,7 +774,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "./models/domains.json#catalog-metaitem"
+              "$ref": "./models/schemas/catalog-metaitem.json"
             }
           }
         },
@@ -784,7 +784,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "./models/domains.json#catalog-item"
+              "$ref": "./models/schemas/catalog-item.json"
             }
           }
         },
@@ -798,7 +798,7 @@
               "type": "object",
               "properties": {
                 "page-info": {
-                  "$ref": "./models/domains.json#pagination"
+                  "$ref": "./models/schemas/pagination.json"
                 },
                 "catalogs": {
                   "type": "array",
@@ -823,14 +823,14 @@
                 "items": {
                   "type": "array",
                   "items": {
-                    "$ref": "./models/domains.json#catalog-item"
+                    "$ref": "./models/schemas/catalog-item.json"
                   }
                 },
                 "meta": {
-                  "$ref": "./models/domains.json#catalog-metaitem"
+                  "$ref": "./models/schemas/catalog-metaitem.json"
                 },
                 "page-info": {
-                  "$ref": "./models/domains.json#pagination"
+                  "$ref": "./models/schemas/pagination.json"
                 }
               },
               "type": "object"
@@ -845,7 +845,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "./models/domains.json#shipment-rfp-item"
+              "$ref": "./models/schemas/shipment-rfp-item.json"
             }
           }
         }
@@ -855,7 +855,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "./models/domains.json#offer-item"
+              "$ref": "./models/schemas/offer-item.json"
             }
           }
         }
@@ -864,7 +864,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "./models/domains.json#catalog-metaitem"
+              "$ref": "./models/schemas/catalog-metaitem.json"
             }
           }
         },
@@ -874,7 +874,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "./models/domains.json#catalog-item"
+              "$ref": "./models/schemas/catalog-item.json"
             }
           }
         },
@@ -884,7 +884,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "./models/domains.json#shipment-rfp-data"
+              "$ref": "./models/schemas/shipment-rfp-data.json"
             }
           }
         }
@@ -893,7 +893,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "./models/domains.json#offer-data"
+              "$ref": "./models/schemas/offer-data.json"
             }
           }
         }

@@ -2,7 +2,7 @@
   "title": "Запись \"Предложение к заявке на перевозку\"",
   "allOf": [
     {
-      "$ref": "./models/abstract/domain-item.json"
+      "$ref": "../abstract/domain-item.json"
     },
     {
       "type": "object",

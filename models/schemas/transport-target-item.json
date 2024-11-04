@@ -3,7 +3,7 @@
   "description": "Объект системы, содержащий информацию о месте обработки перевозки",
   "allOf": [
     {
-      "$ref": "./models/abstract/rich-list-item.json"
+      "$ref": "../abstract/rich-list-item.json"
     },
     {
       "type": "object",

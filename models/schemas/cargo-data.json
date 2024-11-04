@@ -45,10 +45,10 @@
       "description": "Контрагент, являющийся владельцем перевозимого груза",
       "oneOf": [
         {
-          "$ref": "./models/props/link.json"
+          "$ref": "../props/link.json"
         },
         {
-          "$ref": "#/contractor-item"
+          "$ref": "./contractor-item.json"
         }
       ]
     }

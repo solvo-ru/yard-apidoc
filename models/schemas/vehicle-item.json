@@ -2,7 +2,7 @@
   "title": "Автотранспорт",
   "allOf": [
     {
-      "$ref": "./models/abstract/rich-list-item.json"
+      "$ref": "../abstract/rich-list-item.json"
     },
     {
       "type": "object",

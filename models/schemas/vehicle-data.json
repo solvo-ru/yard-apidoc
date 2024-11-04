@@ -19,7 +19,7 @@
       "items": {
         "oneOf": [
           {
-            "$ref": "./models/props/link.json"
+            "$ref": "../props/link.json"
           },
           {
             "$ref": "#/contractor-item"
@@ -28,7 +28,7 @@
       }
     },
     "type": {
-      "$ref": "./models/abstract/simple-list-item.json",
+      "$ref": "../abstract/simple-list-item.json",
       "description": "Тип транспортного средства"
     },
     "model": {

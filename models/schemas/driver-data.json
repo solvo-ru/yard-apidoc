@@ -33,7 +33,7 @@
       "description": "Дата рождения водителя"
     },
     "docType": {
-      "$ref": "./models/abstract/simple-list-item.json",
+      "$ref": "../abstract/simple-list-item.json",
       "description": "Вид документа, удостоверяющего личность\n| **Значение** | **Описание**                   |\n| ------------ | ------------------------------ |\n| **Паспорт**  | Паспорт гражданина РФ.         |\n| **Права**    | Водительское удостоверение РФ. |"
     },
     "phone": {
@@ -47,7 +47,7 @@
       "items": {
         "oneOf": [
           {
-            "$ref": "./models/props/link.json"
+            "$ref": "../props/link.json"
           },
           {
             "$ref": "#/contractor-item"

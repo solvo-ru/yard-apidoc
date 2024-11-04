@@ -31,7 +31,7 @@
     "sender": {
       "oneOf": [
         {
-          "$ref": "./models/props/link.json"
+          "$ref": "../props/link.json"
         },
         {
           "$ref": "#/contractor-item"
@@ -42,7 +42,7 @@
     "loadLocation": {
       "oneOf": [
         {
-          "$ref": "./models/props/link.json"
+          "$ref": "../props/link.json"
         },
         {
           "$ref": "#/location-item"
@@ -62,7 +62,7 @@
     "recipient": {
       "oneOf": [
         {
-          "$ref": "./models/props/link.json"
+          "$ref": "../props/link.json"
         },
         {
           "$ref": "#/contractor-item"
@@ -73,7 +73,7 @@
     "unloadLocation": {
       "oneOf": [
         {
-          "$ref": "./models/props/link.json"
+          "$ref": "../props/link.json"
         },
         {
           "$ref": "#/location-item"
@@ -96,7 +96,7 @@
       "items": {
         "oneOf": [
           {
-            "$ref": "./models/props/link.json"
+            "$ref": "../props/link.json"
           },
           {
             "$ref": "#/cargo-item"

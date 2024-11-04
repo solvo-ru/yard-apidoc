@@ -59,16 +59,13 @@
       "description": "Тип",
       "oneOf": [
         {
-          "$ref": "./models/props/link.json",
+          "$ref": "../props/link.json",
           "x-stoplight": {
             "id": "tj8hboxrg43sd"
           }
         },
         {
-          "$ref": "./models/abstract/simple-list-item.json",
-          "x-stoplight": {
-            "id": "n0l8d6dwwgolw"
-          }
+          "$ref": "../abstract/simple-list-item.json"
         }
       ]
     },
@@ -79,10 +76,10 @@
       "items": {
         "oneOf": [
           {
-            "$ref": "./models/props/link.json"
+            "$ref": "../props/link.json"
           },
           {
-            "$ref": "./models/abstract/simple-list-item.json"
+            "$ref": "../abstract/simple-list-item.json"
           }
         ]
       }

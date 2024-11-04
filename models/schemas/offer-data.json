@@ -16,7 +16,7 @@
       "description": "Идентификатор заявки на перевозку",
       "oneOf": [
         {
-          "$ref": "./models/props/link.json"
+          "$ref": "../props/link.json"
         },
         {
           "$ref": "#/shipment-rfp-item"
@@ -26,7 +26,7 @@
     "forwarder": {
       "oneOf": [
         {
-          "$ref": "./models/props/link.json"
+          "$ref": "../props/link.json"
         },
         {
           "$ref": "#/contractor-item"
@@ -37,7 +37,7 @@
     "carrier": {
       "oneOf": [
         {
-          "$ref": "./models/props/link.json"
+          "$ref": "../props/link.json"
         },
         {
           "$ref": "#/contractor-item"
@@ -48,7 +48,7 @@
     "vehicle": {
       "oneOf": [
         {
-          "$ref": "./models/props/link.json"
+          "$ref": "../props/link.json"
         },
         {
           "$ref": "#/vehicle-item"
@@ -59,7 +59,7 @@
     "driver": {
       "oneOf": [
         {
-          "$ref": "./models/props/link.json"
+          "$ref": "../props/link.json"
         },
         {
           "$ref": "#/driver-item"

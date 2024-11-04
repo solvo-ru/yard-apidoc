@@ -2,13 +2,13 @@
   "title": "Запись \"Контрагент\"",
   "allOf": [
     {
-      "$ref": "./models/abstract/rich-list-item.json"
+      "$ref": "../abstract/rich-list-item.json"
     },
     {
       "type": "object",
       "properties": {
         "json-data": {
-          "$ref": "#/contractor-data"
+          "$ref": "./contractor-data.json"
         }
       }
     }

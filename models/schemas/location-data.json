@@ -20,10 +20,10 @@
       "items": {
         "oneOf": [
           {
-            "$ref": "./models/props/link.json"
+            "$ref": "../props/link.json"
           },
           {
-            "$ref": "./models/abstract/rich-list-item.json"
+            "$ref": "../abstract/rich-list-item.json"
           }
         ]
       }

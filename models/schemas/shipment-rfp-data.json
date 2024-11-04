@@ -24,7 +24,7 @@
       "description": "Контрагент, являющийся заказчиком перевозки",
       "oneOf": [
         {
-          "$ref": "./models/props/link.json"
+          "$ref": "../props/link.json"
         },
         {
           "$ref": "#/contractor-item"
@@ -65,7 +65,7 @@
         }
       ],
       "items": {
-        "$ref": "./models/abstract/simple-list-item.json"
+        "$ref": "../abstract/simple-list-item.json"
       }
     },
     "validSince": {
@@ -111,7 +111,7 @@
       "items": {
         "oneOf": [
           {
-            "$ref": "./models/props/link.json"
+            "$ref": "../props/link.json"
           },
           {
             "$ref": "#/transport-target-item"
@@ -145,7 +145,7 @@
       }
     },
     "source": {
-      "$ref": "./models/abstract/simple-list-item.json",
+      "$ref": "../abstract/simple-list-item.json",
       "description": "Способ создания заявки на перевозку."
     }
   },

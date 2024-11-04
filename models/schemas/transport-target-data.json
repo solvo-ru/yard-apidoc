@@ -2,7 +2,8 @@
   "title": "Цель перевозки",
   "type": "object",
   "description": "Составной атрибут заявки на перевозку, содержащий информацию о месте обработки перевозки",
-  "additionalProperties": false,
+
+
   "required": [
     "num",
     "route",

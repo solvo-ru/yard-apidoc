@@ -1,7 +1,8 @@
 {
   "title": "vehicle-data",
   "type": "object",
-  "additionalProperties": false,
+
+
   "required": [
     "plate",
     "haul",

@@ -2,7 +2,8 @@
   "title": "Груз",
   "type": "object",
   "description": "Объект системы, содержащий информацию о перевозимом грузе.",
-  "additionalProperties": false,
+
+
   "required": [
     "num",
     "desc",

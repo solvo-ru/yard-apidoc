@@ -2,7 +2,8 @@
   "title": "Локация",
   "type": "object",
   "description": "Используется для создания мест обработки перевозки",
-  "additionalProperties": false,
+
+
   "required": [
     "title",
     "address",

@@ -2,7 +2,8 @@
   "title": "Контрагент",
   "type": "object",
   "description": "Данные юр. лица",
-  "additionalProperties": false,
+
+
   
   "required": [
     "title",

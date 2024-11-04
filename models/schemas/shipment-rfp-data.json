@@ -2,7 +2,8 @@
   "title": "Заявка на перевозку",
   "description": "Объект системы, содержащий информацию о планируемом перемещении груза из одной точки в другую",
   "type": "object",
-  "additionalProperties": false,
+
+
   "required": [
     "num",
     "customer",

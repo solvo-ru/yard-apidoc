@@ -1647,13 +1647,23 @@
         "title": "Запись коллекции 'Справочник'",
         "example": {
           "id": "cat-004",
-          "name": "Типы дополнительных услуг",
+          "title": "Типы дополнительных услуг",
           "description": "Справочник типов дополнительных услуг при перевозке",
           "itemsCount": 0,
           "createdAt": "2023-05-17T09:30:00Z",
           "updatedAt": "2023-05-17T09:30:00Z"
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "examples": [
+          {
+            "id": "cat-004",
+            "title": "Типы дополнительных услуг",
+            "description": "Справочник типов дополнительных услуг при перевозке",
+            "itemsCount": 0,
+            "createdAt": "2023-05-17T09:30:00Z",
+            "updatedAt": "2023-05-17T09:30:00Z"
+          }
+        ]
       },
       "catalog-item": {
         "type": "object",
@@ -1980,20 +1990,17 @@
                 {
                   "id": "cat-001",
                   "title": "Типы транспортных средств",
-                  "description": "Справочник типов транспортных средств",
-                  "itemsCount": 10
+                  "description": "Справочник типов транспортных средств"
                 },
                 {
                   "id": "cat-002",
                   "title": "Типы грузов",
-                  "description": "Справочник типов грузов",
-                  "itemsCount": 15
+                  "description": "Справочник типов грузов"
                 },
                 {
                   "id": "cat-003",
                   "title": "Статусы заявок",
-                  "description": "Справочник статусов заявок на перевозку",
-                  "itemsCount": 5
+                  "description": "Справочник статусов заявок на перевозку"
                 }
               ],
               "page-info": {
@@ -2002,6 +2009,37 @@
                 "itemsPerPage": 10,
                 "totalPages": 1,
                 "currentPage": 1
+              }
+            },
+            "examples": {
+              "Example 1": {
+                "value": {
+                  "page-info": {
+                    "totalItems": 0,
+                    "itemCount": 0,
+                    "itemsPerPage": 0,
+                    "totalPages": 0,
+                    "currentPage": 0
+                  },
+                  "catalogs": [
+                    {
+                      "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                      "createdBy": {
+                        "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
+                        "Login": "string"
+                      },
+                      "createdDate": "2019-08-24T14:15:22Z",
+                      "lastModifiedBy": {
+                        "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
+                        "Login": "string"
+                      },
+                      "lastModifiedDate": "2019-08-24T14:15:22Z",
+                      "title": "string",
+                      "key": "string",
+                      "processDefinition": "string"
+                    }
+                  ]
+                }
               }
             }
           }

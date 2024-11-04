@@ -1339,6 +1339,44 @@
                 }
               ],
               "type": "object"
+            },
+            "example": {
+              "items": [
+                {
+                  "id": "123e4567-e89b-12d3-a456-426614174000",
+                  "name": "Перевозка груза из Москвы в Санкт-Петербург",
+                  "status": "OPEN",
+                  "createdAt": "2023-05-15T10:30:00Z",
+                  "updatedAt": "2023-05-15T10:30:00Z",
+                  "expiresAt": "2023-05-20T23:59:59Z",
+                  "origin": {
+                    "address": "ул. Ленина, 1, Москва, Россия",
+                    "coordinates": {
+                      "latitude": 55.7558,
+                      "longitude": 37.6173
+                    }
+                  },
+                  "destination": {
+                    "address": "Невский проспект, 1, Санкт-Петербург, Россия",
+                    "coordinates": {
+                      "latitude": 59.9311,
+                      "longitude": 30.3609
+                    }
+                  },
+                  "cargo": {
+                    "type": "Общие грузы",
+                    "weight": 1000,
+                    "volume": 5
+                  }
+                }
+              ],
+              "meta": {
+                "totalItems": 1,
+                "itemCount": 1,
+                "itemsPerPage": 10,
+                "totalPages": 1,
+                "currentPage": 1
+              }
             }
           }
         }

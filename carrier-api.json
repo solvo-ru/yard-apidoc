@@ -886,7 +886,27 @@
         ],
         "type": "object",
         "x-examples": {},
-        "description": "Строка таблицы БД"
+        "description": "Строка таблицы БД",
+        "example": {
+          "id": "456e7890-f12a-34b5-c678-901234567890",
+          "shipmentRfpId": "123e4567-e89b-12d3-a456-426614174000",
+          "carrierId": "789e0123-g45h-67i8-j901-234567890123",
+          "status": "PENDING",
+          "createdAt": "2023-05-16T14:30:00Z",
+          "updatedAt": "2023-05-16T14:30:00Z",
+          "expiresAt": "2023-05-18T23:59:59Z",
+          "price": {
+            "amount": 48000,
+            "currency": "RUB"
+          },
+          "estimatedPickupTime": "2023-05-21T09:00:00Z",
+          "estimatedDeliveryTime": "2023-05-22T18:00:00Z",
+          "additionalServices": [
+            "Страхование груза",
+            "Экспедирование"
+          ],
+          "notes": "Готовы предоставить рефрижератор для перевозки"
+        }
       },
       "transport-target-item": {
         "title": "Цель перевозки",

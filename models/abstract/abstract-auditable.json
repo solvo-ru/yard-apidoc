@@ -14,6 +14,7 @@
   ],
   "properties": {
     "id": {
+      "readOnly": true,
       "type": "string",
       "compositePrimaryKey": false,
       "compositeUniqueKey": false,
@@ -27,6 +28,7 @@
       }
     },
     "createdBy": {
+      "readOnly": true,
       "compositePrimaryKey": false,
       "compositeUniqueKey": false,
       "isActivated": true,
@@ -55,6 +57,7 @@
       ]
     },
     "createdDate": {
+      "readOnly": true,
       "type": "string",
       "compositePrimaryKey": false,
       "format": "date-time",
@@ -87,6 +90,7 @@
           "description": "persist"
         }
       ],
+      "readOnly": true,
       "compositePrimaryKey": false,
       "compositeUniqueKey": false,
       "format": "uuid",
@@ -98,6 +102,7 @@
       }
     },
     "lastModifiedDate": {
+      "readOnly": true,
       "type": "string",
       "compositePrimaryKey": false,
       "format": "date-time",

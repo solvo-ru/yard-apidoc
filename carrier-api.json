@@ -10,7 +10,8 @@
       "url": "solvo.ru"
     },
     "license": {
-      "name": "Commercial"
+      "name": "Commercial",
+      "url": "https://solvo.ru/license"
     }
   },
   "servers": [
@@ -63,21 +64,25 @@
                   "client_secret"
                 ]
               },
-              "examples": [
-                {
-                  "grant_type": "authorization_code",
-                  "code": "4/P7q7W91a-oMsCeLvIaQm6bTrgtp7",
-                  "redirect_uri": "https://example.com/oauth2callback",
-                  "client_id": "ваш-client-id",
-                  "client_secret": "ваш-client-secret"
+              "examples": {
+                "Example 1": {
+                  "value": {
+                    "grant_type": "authorization_code",
+                    "code": "4/P7q7W91a-oMsCeLvIaQm6bTrgtp7",
+                    "redirect_uri": "https://example.com/oauth2callback",
+                    "client_id": "ваш-client-id",
+                    "client_secret": "ваш-client-secret"
+                  }
                 },
-                {
-                  "grant_type": "refresh_token",
-                  "refresh_token": "1//0eXABCDEF-ghijklmnopqrstuvwxyzABCDEF",
-                  "client_id": "ваш-client-id",
-                  "client_secret": "ваш-client-secret"
+                "Example 2": {
+                  "value": {
+                    "grant_type": "refresh_token",
+                    "refresh_token": "1//0eXABCDEF-ghijklmnopqrstuvwxyzABCDEF",
+                    "client_id": "ваш-client-id",
+                    "client_secret": "ваш-client-secret"
+                  }
                 }
-              ]
+              }
             }
           }
         },
@@ -107,19 +112,23 @@
                     }
                   }
                 },
-                "examples": [
-                  {
-                    "access_token": "ya29.a0AfH6SMBx-0kzHx8YT1nKhBjLxGJHtLOSO_7VTX8eK0HN_Ew",
-                    "token_type": "Bearer",
-                    "expires_in": 3600,
-                    "refresh_token": "1//0eXABCDEF-ghijklmnopqrstuvwxyzABCDEF"
+                "examples": {
+                  "Example 1": {
+                    "value": {
+                      "access_token": "ya29.a0AfH6SMBx-0kzHx8YT1nKhBjLxGJHtLOSO_7VTX8eK0HN_Ew",
+                      "token_type": "Bearer",
+                      "expires_in": 3600,
+                      "refresh_token": "1//0eXABCDEF-ghijklmnopqrstuvwxyzABCDEF"
+                    }
                   },
-                  {
-                    "access_token": "ya29.b0AfH6SMCx-1lzIy9YU2mLhCkMHtMPTP_8WUY9fL1eL1IN_Fx",
-                    "token_type": "Bearer",
-                    "expires_in": 3600
+                  "Example 2": {
+                    "value": {
+                      "access_token": "ya29.b0AfH6SMCx-1lzIy9YU2mLhCkMHtMPTP_8WUY9fL1eL1IN_Fx",
+                      "token_type": "Bearer",
+                      "expires_in": 3600
+                    }
                   }
-                ]
+                }
               }
             }
           },
@@ -153,14 +162,18 @@
                   "token"
                 ]
               },
-              "examples": [
-                {
-                  "token": "ya29.a0AfH6SMBx-0kzHx8YT1nKhBjLxGJHtLOSO_7VTX8eK0HN_Ew"
+              "examples": {
+                "Example 1": {
+                  "value": {
+                    "token": "ya29.a0AfH6SMBx-0kzHx8YT1nKhBjLxGJHtLOSO_7VTX8eK0HN_Ew"
+                  }
                 },
-                {
-                  "token": "1//0eXABCDEF-ghijklmnopqrstuvwxyzABCDEF"
+                "Example 2": {
+                  "value": {
+                    "token": "1//0eXABCDEF-ghijklmnopqrstuvwxyzABCDEF"
+                  }
                 }
-              ]
+              }
             }
           }
         },
@@ -209,18 +222,22 @@
                     }
                   }
                 },
-                "examples": [
-                  {
-                    "sub": "123456789",
-                    "name": "Иван Иванов",
-                    "email": "ivan.ivanov@example.com"
+                "examples": {
+                  "Example 1": {
+                    "value": {
+                      "sub": "123456789",
+                      "name": "Иван Иванов",
+                      "email": "ivan.ivanov@example.com"
+                    }
                   },
-                  {
-                    "sub": "987654321",
-                    "name": "Анна Петрова",
-                    "email": "anna.petrova@example.com"
+                  "Example 2": {
+                    "value": {
+                      "sub": "987654321",
+                      "name": "Анна Петрова",
+                      "email": "anna.petrova@example.com"
+                    }
                   }
-                ]
+                }
               }
             }
           },
@@ -239,36 +256,7 @@
         "summary": "Получить список заявок на перевозку",
         "responses": {
           "200": {
-            "$ref": "#/components/responses/shipment-rfp-list",
-            "content": {
-              "application/json": {
-                "examples": [
-                  {
-                    "items": [
-                      {
-                        "id": "RFP-001",
-                        "name": "Перевозка груза из Москвы в Санкт-Петербург",
-                        "status": "OPEN",
-                        "createdAt": "2023-05-15T10:30:00Z",
-                        "updatedAt": "2023-05-15T10:30:00Z",
-                        "expiresAt": "2023-05-20T23:59:59Z"
-                      },
-                      {
-                        "id": "RFP-002",
-                        "name": "Доставка товаров в Екатеринбург",
-                        "status": "CLOSED",
-                        "createdAt": "2023-05-14T09:15:00Z",
-                        "updatedAt": "2023-05-16T14:20:00Z",
-                        "expiresAt": "2023-05-19T23:59:59Z"
-                      }
-                    ],
-                    "total": 2,
-                    "page": 1,
-                    "pageSize": 10
-                  }
-                ]
-              }
-            }
+            "$ref": "#/components/responses/shipment-rfp-list"
           }
         },
         "description": "Получение списка заявок на перевозку",
@@ -281,70 +269,11 @@
         "summary": "Создать новую заявку на перевозку",
         "responses": {
           "201": {
-            "description": "Заявка на перевозку создана",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/shipment-rfp-item"
-                },
-                "examples": [
-                  {
-                    "value": {
-                      "id": "RFP-003",
-                      "name": "Перевозка груза из Новосибирска в Красноярск",
-                      "status": "DRAFT",
-                      "createdAt": "2023-05-17T08:45:00Z",
-                      "updatedAt": "2023-05-17T08:45:00Z",
-                      "expiresAt": "2023-06-05T23:59:59Z"
-                    }
-                  }
-                ]
-              }
-            }
+            "$ref": "#/components/responses/shipment-rfp-item"
           }
         },
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/shipment-rfp-item"
-              },
-              "examples": [
-                {
-                  "value": {
-                    "name": "Перевозка груза из Новосибирска в Красноярск",
-                    "status": "DRAFT",
-                    "customer": {
-                      "id": "CUST-001",
-                      "name": "ООО 'Сибирские перевозки'"
-                    },
-                    "vehicleTypes": [
-                      {
-                        "id": "VT-001",
-                        "name": "Рефрижератор"
-                      },
-                      {
-                        "id": "VT-002",
-                        "name": "Тентованный полуприцеп"
-                      }
-                    ],
-                    "validSince": "2023-06-01T00:00:00Z",
-                    "validUntill": "2023-06-05T23:59:59Z",
-                    "targets": [
-                      {
-                        "id": "TT-001",
-                        "name": "Погрузка в Новосибирске"
-                      },
-                      {
-                        "id": "TT-002",
-                        "name": "Разгрузка в Красноярске"
-                      }
-                    ]
-                  }
-                }
-              ]
-            }
-          }
+          "$ref": "#/components/requestBodies/shipment-rfp-data"
         },
         "description": "Создание новой заявки на перевозку",
         "operationId": "createShipmentRfp",
@@ -359,52 +288,7 @@
         "summary": "Получить детали заявки на перевозку",
         "responses": {
           "200": {
-            "description": "Детали заявки на перевозку",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/shipment-rfp-item"
-                },
-                "examples": [
-                  {
-                    "value": {
-                      "id": "RFP-001",
-                      "name": "Перевозка груза из Москвы в Санкт-Петербург",
-                      "status": "OPEN",
-                      "createdAt": "2023-05-15T10:30:00Z",
-                      "updatedAt": "2023-05-15T10:30:00Z",
-                      "expiresAt": "2023-05-20T23:59:59Z",
-                      "customer": {
-                        "id": "CUST-001",
-                        "name": "ООО 'Московские грузоперевозки'"
-                      },
-                      "vehicleTypes": [
-                        {
-                          "id": "VT-001",
-                          "name": "Рефрижератор"
-                        },
-                        {
-                          "id": "VT-002",
-                          "name": "Тентованный полуприцеп"
-                        }
-                      ],
-                      "validSince": "2023-05-15T00:00:00Z",
-                      "validUntill": "2023-05-20T23:59:59Z",
-                      "targets": [
-                        {
-                          "id": "TT-001",
-                          "name": "Погрузка в Москве"
-                        },
-                        {
-                          "id": "TT-002",
-                          "name": "Разгрузка в Санкт-Петербурге"
-                        }
-                      ]
-                    }
-                  }
-                ]
-              }
-            }
+            "$ref": "#/components/responses/shipment-rfp-item"
           }
         },
         "parameters": [
@@ -429,26 +313,7 @@
         "summary": "Обновить заявку на перевозку",
         "responses": {
           "200": {
-            "description": "Заявка на перевозку обновлена",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/shipment-rfp-item"
-                },
-                "examples": [
-                  {
-                    "value": {
-                      "id": "RFP-001",
-                      "name": "Перевозка груза из Москвы в Санкт-Петербург (обновлено)",
-                      "status": "IN_PROGRESS",
-                      "createdAt": "2023-05-15T10:30:00Z",
-                      "updatedAt": "2023-05-17T14:20:00Z",
-                      "expiresAt": "2023-05-25T23:59:59Z"
-                    }
-                  }
-                ]
-              }
-            }
+            "$ref": "#/components/responses/shipment-rfp-item"
           }
         },
         "parameters": [
@@ -464,32 +329,7 @@
           }
         ],
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/shipment-rfp-item"
-              },
-              "examples": [
-                {
-                  "value": {
-                    "name": "Перевозка груза из Москвы в Санкт-Петербург (обновлено)",
-                    "status": "IN_PROGRESS",
-                    "vehicleTypes": [
-                      {
-                        "id": "VT-001",
-                        "name": "Рефрижератор"
-                      },
-                      {
-                        "id": "VT-003",
-                        "name": "Изотермический фургон"
-                      }
-                    ],
-                    "validUntill": "2023-05-25T23:59:59Z"
-                  }
-                }
-              ]
-            }
-          }
+          "$ref": "#/components/requestBodies/shipment-rfp-item"
         },
         "description": "Обновление информации о заявке на перевозку",
         "operationId": "updateShipmentRfp",
@@ -521,24 +361,11 @@
         "summary": "Создать новое предложение",
         "responses": {
           "201": {
-            "description": "Предложение создано",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/offer-item"
-                }
-              }
-            }
+            "$ref": "#/components/responses/offer-item"
           }
         },
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/offer-item"
-              }
-            }
-          }
+          "$ref": "#/components/requestBodies/offer-data"
         },
         "description": "Создание нового предложения от перевозчика",
         "operationId": "createOffer",
@@ -1075,17 +902,6 @@
       },
       "shipment-rfp-item": {
         "title": "Запись \"Заявка на перевозку\"",
-        "examples": [
-          {
-            "id": "string"
-          },
-          {
-            "id": "string"
-          },
-          {
-            "id": "string"
-          }
-        ],
         "allOf": [
           {
             "$ref": "./models/abstract/domain-item.json"
@@ -1099,99 +915,132 @@
           }
         ],
         "description": "Строка таблицы БД",
-        "example": {
-          "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-          "createdBy": {
-            "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
-            "Login": "string"
-          },
-          "createdDate": "2019-08-24T14:15:22Z",
-          "lastModifiedBy": {
-            "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
-            "Login": "string"
-          },
-          "lastModifiedDate": "2019-08-24T14:15:22Z",
-          "processInstant": "string",
-          "meta": "00bc452f-5ac7-4ce3-9b71-a522f10fc914",
-          "originalIdentity": {
-            "id": "string",
-            "host": "string",
-            "route": "string",
-            "protocol": "string"
-          },
-          "json-data": {
-            "id": "rfp-001",
-            "name": "Перевозка груза из Москвы в Санкт-Петербург",
-            "status": "OPEN",
-            "createdABy": "2023-05-15T10:30:00Z",
-            "updatedAt": "2023-05-15T10:30:00Z",
-            "expiresAt": "2023-05-20T23:59:59Z",
-            "customer": {
-              "id": "cust-001",
-              "name": "ООО 'ГрузОтправитель'"
+        "additionalProperties": false,
+        "type": "object",
+        "examples": [
+          {
+            "json-schema": {},
+            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+            "createdBy": {
+              "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
+              "Login": "string"
             },
-            "vehicleTypes": [
+            "createdDate": "2019-08-24T14:15:22Z",
+            "lastModifiedBy": {
+              "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
+              "Login": "string"
+            },
+            "lastModifiedDate": "2019-08-24T14:15:22Z",
+            "path": [
               {
-                "id": "vt-001",
-                "name": "Рефрижератор"
-              },
-              {
-                "id": "vt-001",
-                "name": "Рефрижератор"
-              },
-              {
-                "id": "vt-001",
-                "name": "Рефрижератор"
-              },
-              {
-                "id": "vt-001",
-                "name": "Рефрижератор"
-              },
-              {
-                "id": "vt-001",
-                "name": "Рефрижератор"
-              },
-              {
-                "id": "vt-001",
-                "name": "Рефрижератор"
+                "host": "example.com",
+                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "entity": "item"
               }
             ],
-            "validSince": "2023-05-16T00:00:00Z",
-            "validUntil": "2023-05-20T23:59:59Z",
-            "transportTargets": [
-              {
-                "id": "tt-001",
-                "name": "Доставка груза в Санкт-Петербург"
+            "processInstant": "string",
+            "title": "string",
+            "meta": "00bc452f-5ac7-4ce3-9b71-a522f10fc914",
+            "originalIdentity": {
+              "id": "string",
+              "host": "string",
+              "route": "string",
+              "protocol": "string"
+            },
+            "json-data": {
+              "num": "RFP-2023-001",
+              "customer": {
+                "host": "example.com",
+                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "entity": "item"
               },
-              {
-                "id": "tt-001",
-                "name": "Доставка груза в Санкт-Петербург"
+              "expectedVehicle": {
+                "id": "vt-001",
+                "name": "Рефрижератор"
               },
-              {
-                "id": "tt-001",
-                "name": "Доставка груза в Санкт-Петербург"
-              },
-              {
-                "id": "tt-001",
-                "name": "Доставка груза в Санкт-Петербург"
-              },
-              {
-                "id": "tt-001",
-                "name": "Доставка груза в Санкт-Петербург"
-              },
-              {
-                "id": "tt-001",
-                "name": "Доставка груза в Санкт-Петербург"
+              "validSince": "2023-05-16T00:00:00Z",
+              "validUntill": "2023-05-20T23:59:59Z",
+              "targets": [
+                {
+                  "id": "tt-001",
+                  "name": "Доставка груза в Санкт-Петербург"
+                },
+                {
+                  "id": "tt-002",
+                  "name": "Доставка груза в Москву"
+                },
+                {
+                  "id": "tt-003",
+                  "name": "Доставка груза в Екатеринбург"
+                }
+              ],
+              "attachments": [
+                {
+                  "id": "att-001",
+                  "name": "Договор.pdf"
+                },
+                {
+                  "id": "att-002",
+                  "name": "Спецификация.xlsx"
+                },
+                {
+                  "id": "att-003",
+                  "name": "Инструкция по погрузке.docx"
+                }
+              ],
+              "source": {
+                "catalogId": "8c4666aa-d43d-4196-b78a-f94040b1db76"
               }
-            ],
-            "source": {
-              "id": "src-001",
-              "name": "Веб-интерфейс"
+            }
+          },
+          {
+            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+            "createdBy": {
+              "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
+              "Login": "string"
+            },
+            "createdDate": "2019-08-24T14:15:22Z",
+            "lastModifiedBy": {
+              "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
+              "Login": "string"
+            },
+            "lastModifiedDate": "2019-08-24T14:15:22Z",
+            "processInstant": "string",
+            "meta": "00bc452f-5ac7-4ce3-9b71-a522f10fc914",
+            "originalIdentity": {
+              "id": "string",
+              "host": "string",
+              "route": "string",
+              "protocol": "string"
+            },
+            "json-data": {
+              "id": "rfp-001",
+              "name": "Перевозка груза из Москвы в Санкт-Петербург",
+              "customer": {
+                "id": "cust-001",
+                "name": "ООО 'ГрузОтправитель'"
+              },
+              "vehicleTypes": [
+                {
+                  "id": "vt-001",
+                  "name": "Рефрижератор"
+                }
+              ],
+              "validSince": "2023-05-16T00:00:00Z",
+              "validUntil": "2023-05-20T23:59:59Z",
+              "transportTargets": [
+                {
+                  "id": "tt-001",
+                  "name": "Доставка груза в Санкт-Петербург"
+                }
+              ],
+              "source": {
+                "id": "src-001",
+                "name": "Веб-интерфейс"
+              }
             }
           }
-        },
-        "additionalProperties": false,
-        "type": "object"
+        ]
       },
       "offer-data": {
         "title": "Предложение к заявке на перевозку",
@@ -1216,22 +1065,7 @@
               {
                 "$ref": "#/components/schemas/shipment-rfp-item"
               }
-            ],
-            "examples": [
-              {
-                "id": "rfp-001",
-                "name": "Перевозка груза из Москвы в Санкт-Петербург"
-              },
-              {
-                "id": "rfp-001",
-                "name": "Перевозка груза из Москвы в Санкт-Петербург"
-              },
-              {
-                "id": "rfp-001",
-                "name": "Перевозка груза из Москвы в Санкт-Петербург"
-              }
-            ],
-            "type": "object"
+            ]
           },
           "forwarder": {
             "oneOf": [
@@ -1242,21 +1076,7 @@
                 "$ref": "#/components/schemas/contractor-item"
               }
             ],
-            "description": "Контрагент, который сделал предложение ",
-            "examples": [
-              {
-                "id": "fwd-001",
-                "name": "ООО \"ЛогистикПро\""
-              },
-              {
-                "id": "fwd-001",
-                "name": "ООО \"ЛогистикПро\""
-              },
-              {
-                "id": "fwd-001",
-                "name": "ООО \"ЛогистикПро\""
-              }
-            ]
+            "description": "Контрагент, который сделал предложение "
           },
           "carrier": {
             "oneOf": [
@@ -1267,21 +1087,7 @@
                 "$ref": "#/components/schemas/contractor-item"
               }
             ],
-            "description": "Контрагент, выполняющий перевозку",
-            "examples": [
-              {
-                "id": "car-001",
-                "name": "ООО \"ТрансЛогистик\""
-              },
-              {
-                "id": "car-001",
-                "name": "ООО \"ТрансЛогистик\""
-              },
-              {
-                "id": "car-001",
-                "name": "ООО \"ТрансЛогистик\""
-              }
-            ]
+            "description": "Контрагент, выполняющий перевозку"
           },
           "vehicle": {
             "oneOf": [
@@ -1292,21 +1098,7 @@
                 "$ref": "#/components/schemas/vehicle-item"
               }
             ],
-            "description": "Информация о транспортном средстве, на котором будет выполняться перевозка",
-            "examples": [
-              {
-                "id": "veh-001",
-                "name": "КАМАЗ 5490"
-              },
-              {
-                "id": "veh-001",
-                "name": "КАМАЗ 5490"
-              },
-              {
-                "id": "veh-001",
-                "name": "КАМАЗ 5490"
-              }
-            ]
+            "description": "Информация о транспортном средстве, на котором будет выполняться перевозка"
           },
           "driver": {
             "oneOf": [
@@ -1317,48 +1109,15 @@
                 "$ref": "#/components/schemas/driver-item"
               }
             ],
-            "description": "Информация о водителе, который будут выполнять перевозку ",
-            "examples": [
-              {
-                "id": "drv-001",
-                "name": "Иванов Иван Иванович"
-              },
-              {
-                "id": "drv-001",
-                "name": "Иванов Иван Иванович"
-              },
-              {
-                "id": "drv-001",
-                "name": "Иванов Иван Иванович"
-              }
-            ]
+            "description": "Информация о водителе, который будут выполнять перевозку "
           },
           "phone": {
             "type": "string",
-            "description": "Номер телефона для связи с водителем, актуальный на момент перевозки",
-            "examples": [
-              "+7 (999) 123-45-67",
-              "+7 (999) 123-45-67",
-              "+7 (999) 123-45-67"
-            ]
+            "description": "Номер телефона для связи с водителем, актуальный на момент перевозки"
           },
           "attachment": {
             "type": "array",
             "description": "Файлы, загруженные в систему и прикреплённые к предложению.",
-            "examples": [
-              {
-                "id": "att-002",
-                "name": "Коммерческое предложение.pdf"
-              },
-              {
-                "id": "att-002",
-                "name": "Коммерческое предложение.pdf"
-              },
-              {
-                "id": "att-002",
-                "name": "Коммерческое предложение.pdf"
-              }
-            ],
             "items": {
               "type": "string",
               "format": "uri-reference"
@@ -1373,6 +1132,7 @@
             "$ref": "./models/abstract/domain-item.json"
           },
           {
+            "type": "object",
             "properties": {
               "json-data": {
                 "$ref": "#/components/schemas/offer-data"
@@ -1380,6 +1140,7 @@
             }
           },
           {
+            "type": "object",
             "required": [
               "shipment-rfp"
             ],
@@ -1387,7 +1148,6 @@
               "shipment-rfp": {
                 "oneOf": [
                   {
-                    "type": "object",
                     "$ref": "#/components/schemas/shipment-rfp-data"
                   },
                   {
@@ -1399,43 +1159,118 @@
             }
           }
         ],
-        "x-examples": {},
         "description": "Строка таблицы БД",
-        "example": {
-          "id": "offer-001",
-          "status": "PENDING",
-          "createdAt": "2023-05-16T14:30:00Z",
-          "updatedAt": "2023-05-16T14:30:00Z",
-          "expiresAt": "2023-05-18T23:59:59Z",
-          "shipmentRfp": {
-            "id": "rfp-001",
-            "name": "Перевозка груза из Москвы в Санкт-Петербург"
-          },
-          "forwarder": {
-            "id": "fwd-001",
-            "name": "ООО 'ЛогистикПро'"
-          },
-          "carrier": {
-            "id": "car-001",
-            "name": "ООО 'ТрансЛогистик'"
-          },
-          "vehicle": {
-            "id": "veh-001",
-            "name": "КАМАЗ 5490"
-          },
-          "driver": {
-            "id": "drv-001",
-            "name": "Иванов Иван Иванович"
-          },
-          "price": {
-            "amount": 48000,
-            "currency": "RUB"
-          },
-          "estimatedPickupTime": "2023-05-21T09:00:00Z",
-          "estimatedDeliveryTime": "2023-05-22T18:00:00Z"
-        },
         "additionalProperties": false,
-        "type": "object"
+        "type": "object",
+        "examples": [
+          {
+            "json-schema": {},
+            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+            "createdBy": {
+              "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
+              "Login": "string"
+            },
+            "createdDate": "2019-08-24T14:15:22Z",
+            "lastModifiedBy": {
+              "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
+              "Login": "string"
+            },
+            "lastModifiedDate": "2019-08-24T14:15:22Z",
+            "path": [
+              {
+                "host": "example.com",
+                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "entity": "item"
+              }
+            ],
+            "processInstant": "string",
+            "title": "string",
+            "meta": "00bc452f-5ac7-4ce3-9b71-a522f10fc914",
+            "originalIdentity": {
+              "id": "string",
+              "host": "string",
+              "route": "string",
+              "protocol": "string"
+            },
+            "json-data": {
+              "request": {
+                "host": "example.com",
+                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "entity": "item"
+              },
+              "forwarder": {
+                "host": "example.com",
+                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "entity": "item"
+              },
+              "carrier": {
+                "host": "example.com",
+                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "entity": "item"
+              },
+              "vehicle": {
+                "host": "example.com",
+                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "entity": "item"
+              },
+              "driver": {
+                "host": "example.com",
+                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "entity": "item"
+              },
+              "phone": "+7 (999) 123-45-67",
+              "attachment": {
+                "id": "att-002",
+                "name": "Коммерческое предложение.pdf"
+              }
+            },
+            "shipment-rfp": {
+              "num": "RFP-2023-001",
+              "customer": {
+                "host": "example.com",
+                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "entity": "item"
+              },
+              "expectedVehicle": {
+                "id": "vt-001",
+                "name": "Рефрижератор"
+              },
+              "validSince": "2023-05-16T00:00:00Z",
+              "validUntill": "2023-05-20T23:59:59Z",
+              "targets": [
+                {
+                  "id": "tt-001",
+                  "name": "Доставка груза в Санкт-Петербург"
+                },
+                {
+                  "id": "tt-002",
+                  "name": "Доставка груза в Москву"
+                },
+                {
+                  "id": "tt-003",
+                  "name": "Доставка груза в Екатеринбург"
+                }
+              ],
+              "attachments": [
+                {
+                  "id": "att-001",
+                  "name": "Договор.pdf"
+                },
+                {
+                  "id": "att-002",
+                  "name": "Спецификация.xlsx"
+                },
+                {
+                  "id": "att-003",
+                  "name": "Инструкция по погрузке.docx"
+                }
+              ],
+              "source": {
+                "catalogId": "8c4666aa-d43d-4196-b78a-f94040b1db76"
+              }
+            }
+          }
+        ]
       },
       "transport-target-item": {
         "title": "Цель перевозки",
@@ -1453,38 +1288,56 @@
             }
           }
         ],
-        "example": {
-          "id": "tt-001",
-          "name": "Доставка груза в Санкт-Петербург",
-          "status": "ACTIVE",
-          "createdAt": "2023-05-15T11:00:00Z",
-          "updatedAt": "2023-05-15T11:00:00Z",
-          "route": "Москва - Санкт-Петербург",
-          "sender": {
-            "id": "sender-001",
-            "name": "ООО 'ОтправительГруза'"
-          },
-          "loadLocation": {
-            "id": "loc-001",
-            "name": "Склад 'Восточный'"
-          },
-          "loadAddress": "г. Москва, ул. Складская, д. 1",
-          "loadArrival": "2023-05-21T08:00:00Z",
-          "recipient": {
-            "id": "recipient-001",
-            "name": "ООО 'ПолучательГруза'"
-          },
-          "unloadLocation": {
-            "id": "loc-002",
-            "name": "Распределительный центр 'Северный'"
-          },
-          "unloadAddress": "г. Санкт-Петербург, пр. Индустриальный, д. 10",
-          "unloadArrival": "2023-05-22T16:00:00Z",
-          "cargo": {
-            "id": "cargo-001",
-            "name": "Электроника"
+        "examples": [
+          {
+            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+            "createdBy": {
+              "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
+              "Login": "string"
+            },
+            "createdDate": "2019-08-24T14:15:22Z",
+            "lastModifiedBy": {
+              "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
+              "Login": "string"
+            },
+            "lastModifiedDate": "2019-08-24T14:15:22Z",
+            "title": "string",
+            "catalogId": "8c4666aa-d43d-4196-b78a-f94040b1db76",
+            "json-schema": {},
+            "json-data": {
+              "num": "TT-2023-001",
+              "route": "Ввоз",
+              "sender": {
+                "host": "example.com",
+                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "entity": "item"
+              },
+              "loadLocation": {
+                "host": "example.com",
+                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "entity": "item"
+              },
+              "loadAddress": "г. Москва, ул. Складская, д. 1",
+              "loadArrival": "2023-05-21T08:00:00Z",
+              "recipient": {
+                "host": "example.com",
+                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "entity": "item"
+              },
+              "unloadLocation": {
+                "host": "example.com",
+                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "entity": "item"
+              },
+              "unloadAddress": "г. Санкт-Петербург, пр. Индустриальный, д. 10",
+              "unloadArrival": "2023-05-22T16:00:00Z",
+              "cargo": {
+                "id": "cargo-001",
+                "name": "Электроника"
+              }
+            }
           }
-        }
+        ]
       },
       "transport-target-data": {
         "title": "Цель перевозки",
@@ -1507,24 +1360,14 @@
         "properties": {
           "num": {
             "type": "string",
-            "description": "Идентификатор цели перевозки",
-            "examples": [
-              "TT-2023-001",
-              "TT-2023-001",
-              "TT-2023-001"
-            ]
+            "description": "Идентификатор цели перевозки"
           },
           "route": {
             "enum": [
               "Ввоз",
               "Вывоз"
             ],
-            "description": "Направление движение груза относительно предприятия, на котором работает организатор перевозки",
-            "examples": [
-              "Москва - Санкт-Петербург",
-              "Москва - Санкт-Петербург",
-              "Москва - Санкт-Петербург"
-            ]
+            "description": "Направление движение груза относительно предприятия, на котором работает организатор перевозки"
           },
           "sender": {
             "oneOf": [
@@ -1535,21 +1378,7 @@
                 "$ref": "#/components/schemas/contractor-item"
               }
             ],
-            "description": "Название контрагента, который является отправителем груза. ",
-            "examples": [
-              {
-                "id": "sender-001",
-                "name": "ООО \"ОтправительГруза\""
-              },
-              {
-                "id": "sender-001",
-                "name": "ООО \"ОтправительГруза\""
-              },
-              {
-                "id": "sender-001",
-                "name": "ООО \"ОтправительГруза\""
-              }
-            ]
+            "description": "Название контрагента, который является отправителем груза. "
           },
           "loadLocation": {
             "oneOf": [
@@ -1560,40 +1389,16 @@
                 "$ref": "#/components/schemas/location-item"
               }
             ],
-            "description": "Локация, в которой будет производиться погрузка груза на транспортное средство",
-            "examples": [
-              {
-                "id": "loc-001",
-                "name": "Склад \"Восточный\""
-              },
-              {
-                "id": "loc-001",
-                "name": "Склад \"Восточный\""
-              },
-              {
-                "id": "loc-001",
-                "name": "Склад \"Восточный\""
-              }
-            ]
+            "description": "Локация, в которой будет производиться погрузка груза на транспортное средство"
           },
           "loadAddress": {
             "type": "string",
-            "description": "Адрес локации погрузки груза на транспортное средство",
-            "examples": [
-              "г. Москва, ул. Складская, д. 1",
-              "г. Москва, ул. Складская, д. 1",
-              "г. Москва, ул. Складская, д. 1"
-            ]
+            "description": "Адрес локации погрузки груза на транспортное средство"
           },
           "loadArrival": {
             "type": "string",
             "format": "date-time",
-            "description": "Плановое время прибытия ТС в локацию погрузки.",
-            "examples": [
-              "2023-05-21T08:00:00Z",
-              "2023-05-21T08:00:00Z",
-              "2023-05-21T08:00:00Z"
-            ]
+            "description": "Плановое время прибытия ТС в локацию погрузки."
           },
           "recipient": {
             "oneOf": [
@@ -1604,21 +1409,7 @@
                 "$ref": "#/components/schemas/contractor-item"
               }
             ],
-            "description": "Название контрагента, который является получателем груза.",
-            "examples": [
-              {
-                "id": "recipient-001",
-                "name": "ООО \"ПолучательГруза\""
-              },
-              {
-                "id": "recipient-001",
-                "name": "ООО \"ПолучательГруза\""
-              },
-              {
-                "id": "recipient-001",
-                "name": "ООО \"ПолучательГруза\""
-              }
-            ]
+            "description": "Название контрагента, который является получателем груза."
           },
           "unloadLocation": {
             "oneOf": [
@@ -1629,58 +1420,20 @@
                 "$ref": "#/components/schemas/location-item"
               }
             ],
-            "description": "Локация, в которой будет производиться выгрузка груза с транспортного средства",
-            "examples": [
-              {
-                "id": "loc-002",
-                "name": "Распределительный центр \"Северный\""
-              },
-              {
-                "id": "loc-002",
-                "name": "Распределительный центр \"Северный\""
-              },
-              {
-                "id": "loc-002",
-                "name": "Распределительный центр \"Северный\""
-              }
-            ]
+            "description": "Локация, в которой будет производиться выгрузка груза с транспортного средства"
           },
           "unloadAddress": {
             "type": "string",
-            "description": "Адрес локации выгрузки груза с транспортного средства",
-            "examples": [
-              "г. Санкт-Петербург, пр. Индустриальный, д. 10",
-              "г. Санкт-Петербург, пр. Индустриальный, д. 10",
-              "г. Санкт-Петербург, пр. Индустриальный, д. 10"
-            ]
+            "description": "Адрес локации выгрузки груза с транспортного средства"
           },
           "unloadArrival": {
             "type": "string",
             "format": "date-time",
-            "description": "Плановое время прибытия ТС в локацию выгрузки.",
-            "examples": [
-              "2023-05-22T16:00:00Z",
-              "2023-05-22T16:00:00Z",
-              "2023-05-22T16:00:00Z"
-            ]
+            "description": "Плановое время прибытия ТС в локацию выгрузки."
           },
           "cargo": {
             "type": "array",
             "description": "Список перевозимых грузов ",
-            "examples": [
-              {
-                "id": "cargo-001",
-                "name": "Электроника"
-              },
-              {
-                "id": "cargo-001",
-                "name": "Электроника"
-              },
-              {
-                "id": "cargo-001",
-                "name": "Электроника"
-              }
-            ],
             "items": {
               "oneOf": [
                 {
@@ -1692,12 +1445,85 @@
               ]
             }
           }
-        }
+        },
+        "examples": [
+          {
+            "num": "TT-2023-001",
+            "route": "Ввоз",
+            "sender": {
+              "host": "example.com",
+              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "entity": "item"
+            },
+            "loadLocation": {
+              "host": "example.com",
+              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "entity": "item"
+            },
+            "loadAddress": "г. Москва, ул. Складская, д. 1",
+            "loadArrival": "2023-05-21T08:00:00Z",
+            "recipient": {
+              "host": "example.com",
+              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "entity": "item"
+            },
+            "unloadLocation": {
+              "host": "example.com",
+              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "entity": "item"
+            },
+            "unloadAddress": "г. Санкт-Петербург, пр. Индустриальный, д. 10",
+            "unloadArrival": "2023-05-22T16:00:00Z",
+            "cargo": {
+              "id": "cargo-001",
+              "name": "Электроника"
+            }
+          }
+        ]
       },
       "contractor-data": {
         "title": "Контрагент",
         "type": "object",
         "description": "Данные юр. лица",
+        "additionalProperties": false,
+        "examples": [
+          {
+            "title": "string",
+            "fullTitle": "string",
+            "type": {
+              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "createdBy": {
+                "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
+                "Login": "string"
+              },
+              "createdDate": "2019-08-24T14:15:22Z",
+              "lastModifiedBy": {
+                "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
+                "Login": "string"
+              },
+              "lastModifiedDate": "2019-08-24T14:15:22Z",
+              "title": "string",
+              "catalogId": "8c4666aa-d43d-4196-b78a-f94040b1db76"
+            },
+            "role": [
+              {
+                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "createdBy": {
+                  "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
+                  "Login": "string"
+                },
+                "createdDate": "2019-08-24T14:15:22Z",
+                "lastModifiedBy": {
+                  "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
+                  "Login": "string"
+                },
+                "lastModifiedDate": "2019-08-24T14:15:22Z",
+                "title": "string",
+                "catalogId": "8c4666aa-d43d-4196-b78a-f94040b1db76"
+              }
+            ]
+          }
+        ],
         "required": [
           "title",
           "fullTitle",
@@ -1706,29 +1532,27 @@
         "properties": {
           "title": {
             "type": "string",
-            "description": "Сокращенное наименование контрагента, которое будет видно в интерфейсе",
-            "examples": [
-              "ООО \"ТрансЛогистик\"",
-              "ООО \"ТрансЛогистик\"",
-              "ООО \"ТрансЛогистик\""
-            ]
+            "description": "Сокращенное наименование контрагента, которое будет видно в интерфейсе"
           },
           "fullTitle": {
             "type": "string",
-            "description": "Полное наименование контрагента, как оно прописано в правоустанавливающих документах",
-            "examples": [
-              "Общество с ограниченной ответственностью \"ТрансЛогистик\"",
-              "Общество с ограниченной ответственностью \"ТрансЛогистик\"",
-              "Общество с ограниченной ответственностью \"ТрансЛогистик\""
-            ]
+            "description": "Полное наименование контрагента, как оно прописано в правоустанавливающих документах"
           },
           "type": {
-            "$ref": "./models/abstract/simple-list-item.json",
             "description": "Тип",
-            "examples": [
-              "CARRIER",
-              "CARRIER",
-              "CARRIER"
+            "oneOf": [
+              {
+                "$ref": "./models/props/link.json",
+                "x-stoplight": {
+                  "id": "tj8hboxrg43sd"
+                }
+              },
+              {
+                "$ref": "./models/abstract/simple-list-item.json",
+                "x-stoplight": {
+                  "id": "n0l8d6dwwgolw"
+                }
+              }
             ]
           },
           "role": {
@@ -1736,19 +1560,17 @@
             "minItems": 1,
             "description": "Роль",
             "items": {
-              "$ref": "./models/abstract/simple-list-item.json"
-            },
-            "examples": [
-              "CARRIER",
-              "CUSTOMER",
-              "CARRIER",
-              "CUSTOMER",
-              "CARRIER",
-              "CUSTOMER"
-            ]
+              "oneOf": [
+                {
+                  "$ref": "./models/props/link.json"
+                },
+                {
+                  "$ref": "./models/abstract/simple-list-item.json"
+                }
+              ]
+            }
           }
-        },
-        "additionalProperties": false
+        }
       },
       "contractor-item": {
         "title": "Запись \"Контрагент\"",
@@ -1766,22 +1588,24 @@
           }
         ],
         "description": "Строка таблицы БД",
-        "example": {
-          "id": "cont-001",
-          "name": "ООО 'ТрансЛогистик'",
-          "type": "CARRIER",
-          "status": "ACTIVE",
-          "createdAt": "2023-05-01T09:00:00Z",
-          "updatedAt": "2023-05-01T09:00:00Z",
-          "contactPerson": {
-            "name": "Иванов Иван Иванович",
-            "phone": "+7 (999) 123-45-67",
-            "email": "ivanov@translogistic.ru"
-          },
-          "legalAddress": "ул. Транспортная, 10, Москва, Россия",
-          "inn": "7712345678",
-          "kpp": "771201001"
-        }
+        "examples": [
+          {
+            "id": "cont-001",
+            "name": "ООО 'ТрансЛогистик'",
+            "type": "CARRIER",
+            "status": "ACTIVE",
+            "createdAt": "2023-05-01T09:00:00Z",
+            "updatedAt": "2023-05-01T09:00:00Z",
+            "contactPerson": {
+              "name": "Иванов Иван Иванович",
+              "phone": "+7 (999) 123-45-67",
+              "email": "ivanov@translogistic.ru"
+            },
+            "legalAddress": "ул. Транспортная, 10, Москва, Россия",
+            "inn": "7712345678",
+            "kpp": "771201001"
+          }
+        ]
       },
       "vehicle-item": {
         "title": "Автотранспорт",
@@ -1798,33 +1622,7 @@
             }
           }
         ],
-        "description": "Строка таблицы БД",
-        "example": {
-          "id": "veh-001",
-          "type": "TRUCK",
-          "make": "КАМАЗ",
-          "model": "5490",
-          "year": 2021,
-          "licensePlate": "А123БВ777",
-          "vin": "X1F5490NEL0000001",
-          "status": "ACTIVE",
-          "createdAt": "2023-05-10T11:00:00Z",
-          "updatedAt": "2023-05-10T11:00:00Z",
-          "capacity": {
-            "weight": 20000,
-            "volume": 86
-          },
-          "dimensions": {
-            "length": 13.6,
-            "width": 2.45,
-            "height": 2.7
-          },
-          "features": [
-            "REFRIGERATOR",
-            "GPS_TRACKER",
-            "REFRIGERATOR"
-          ]
-        }
+        "description": "Строка таблицы БД"
       },
       "vehicle-data": {
         "title": "vehicle-data",
@@ -1839,21 +1637,11 @@
           "plate": {
             "type": "string",
             "pattern": "^[А-Я]{2}\\d{3,4}[А-Я]{2}(?: [А-Я]{2}\\d{3,4}[А-Я]{2})?$",
-            "description": "Номер регистрационного знака транспортного средства. ",
-            "examples": [
-              "А123БВ777",
-              "А123БВ777",
-              "А123БВ777"
-            ]
+            "description": "Номер регистрационного знака транспортного средства. "
           },
           "haul": {
             "description": "Список контрагентов, которые могут использовать ТС",
             "type": "array",
-            "examples": [
-              "LONG_HAUL",
-              "LONG_HAUL",
-              "LONG_HAUL"
-            ],
             "items": {
               "oneOf": [
                 {
@@ -1862,8 +1650,7 @@
                 {
                   "$ref": "#/components/schemas/contractor-item"
                 }
-              ],
-              "type": "object"
+              ]
             }
           },
           "type": {
@@ -1872,23 +1659,42 @@
           },
           "model": {
             "type": "string",
-            "description": "Марка и модель ТС.",
-            "examples": [
-              "КАМАЗ 5490",
-              "КАМАЗ 5490",
-              "КАМАЗ 5490"
-            ]
+            "description": "Марка и модель ТС."
           },
           "desc": {
             "type": "string",
-            "description": "Описание ТС.",
-            "examples": [
-              "Седельный тягач с рефрижераторным полуприцепом",
-              "Седельный тягач с рефрижераторным полуприцепом",
-              "Седельный тягач с рефрижераторным полуприцепом"
-            ]
+            "description": "Описание ТС."
           }
-        }
+        },
+        "examples": [
+          {
+            "plate": "string",
+            "haul": [
+              {
+                "host": "example.com",
+                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "entity": "item"
+              }
+            ],
+            "type": {
+              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "createdBy": {
+                "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
+                "Login": "string"
+              },
+              "createdDate": "2019-08-24T14:15:22Z",
+              "lastModifiedBy": {
+                "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
+                "Login": "string"
+              },
+              "lastModifiedDate": "2019-08-24T14:15:22Z",
+              "title": "string",
+              "catalogId": "8c4666aa-d43d-4196-b78a-f94040b1db76"
+            },
+            "model": "string",
+            "desc": "string"
+          }
+        ]
       },
       "driver-item": {
         "title": "Водитель",
@@ -1905,28 +1711,7 @@
             }
           }
         ],
-        "description": "Строка таблицы БД",
-        "example": {
-          "id": "drv-001",
-          "firstName": "Александр",
-          "lastName": "Петров",
-          "middleName": "Иванович",
-          "dateOfBirth": "1985-07-15",
-          "phoneNumber": "+7 (999) 234-56-78",
-          "email": "a.petrov@example.com",
-          "licenseNumber": "7712 345678",
-          "licenseExpirationDate": "2025-12-31",
-          "status": "ACTIVE",
-          "createdAt": "2023-05-12T10:30:00Z",
-          "updatedAt": "2023-05-12T10:30:00Z",
-          "experience": 10,
-          "qualifications": [
-            "ADR",
-            "REFRIGERATOR",
-            "ADR"
-          ],
-          "currentVehicleId": "veh-001"
-        }
+        "description": "Строка таблицы БД"
       },
       "driver-data": {
         "title": "driver-data",
@@ -1943,47 +1728,24 @@
         "properties": {
           "docNum": {
             "type": "integer",
-            "description": "Номер документа, удостоверяющего личность.",
-            "examples": [
-              "7712 345678",
-              "7712 345678",
-              "7712 345678"
-            ]
+            "description": "Номер документа, удостоверяющего личность."
           },
           "name": {
             "type": "string",
-            "description": "Имя водителя",
-            "examples": [
-              "Иван",
-              "Иван",
-              "Иван"
-            ]
+            "description": "Имя водителя"
           },
           "lastName": {
             "type": "string",
-            "description": "Фамилия водителя",
-            "examples": [
-              "Петров",
-              "Петров",
-              "Петров"
-            ]
+            "description": "Фамилия водителя"
           },
           "patronym": {
             "type": "string",
-            "description": "Отчество",
-            "examples": [
-              "Александрович"
-            ]
+            "description": "Отчество"
           },
           "birthday": {
             "type": "string",
             "format": "date",
-            "description": "Дата рождения водителя",
-            "examples": [
-              "1985-07-15",
-              "1985-07-15",
-              "1985-07-15"
-            ]
+            "description": "Дата рождения водителя"
           },
           "docType": {
             "$ref": "./models/abstract/simple-list-item.json",
@@ -1992,19 +1754,11 @@
           "phone": {
             "type": "string",
             "description": "Номер телефона для связи с водителем.",
-            "pattern": "^((\\+7)|8)\\d{10}$",
-            "examples": [
-              "+7 (999) 123-45-67"
-            ]
+            "pattern": "^((\\+7)|8)\\d{10}$"
           },
           "haul": {
             "type": "array",
             "description": "Список контрагентов, которые могут использовать водителя.",
-            "examples": [
-              "LONG_HAUL",
-              "LONG_HAUL",
-              "LONG_HAUL"
-            ],
             "items": {
               "oneOf": [
                 {
@@ -2013,8 +1767,7 @@
                 {
                   "$ref": "#/components/schemas/contractor-item"
                 }
-              ],
-              "type": "object"
+              ]
             }
           }
         }
@@ -2034,61 +1787,7 @@
               }
             }
           }
-        ],
-        "example": {
-          "id": "loc-001",
-          "name": "Склад 'Восточный'",
-          "type": "WAREHOUSE",
-          "address": {
-            "country": "Россия",
-            "postalCode": "107140",
-            "city": "Москва",
-            "street": "ул. Верхняя Красносельская",
-            "building": "3с2"
-          },
-          "coordinates": {
-            "latitude": 55.786389,
-            "longitude": 37.662778
-          },
-          "contactPerson": {
-            "name": "Сидоров Петр Алексеевич",
-            "phone": "+7 (495) 123-45-67",
-            "email": "p.sidorov@example.com"
-          },
-          "workingHours": {
-            "monday": {
-              "from": "08:00",
-              "to": "20:00"
-            },
-            "tuesday": {
-              "from": "08:00",
-              "to": "20:00"
-            },
-            "wednesday": {
-              "from": "08:00",
-              "to": "20:00"
-            },
-            "thursday": {
-              "from": "08:00",
-              "to": "20:00"
-            },
-            "friday": {
-              "from": "08:00",
-              "to": "20:00"
-            },
-            "saturday": {
-              "from": "09:00",
-              "to": "18:00"
-            },
-            "sunday": {
-              "from": "09:00",
-              "to": "18:00"
-            }
-          },
-          "status": "ACTIVE",
-          "createdAt": "2023-05-14T09:00:00Z",
-          "updatedAt": "2023-05-14T09:00:00Z"
-        }
+        ]
       },
       "location-data": {
         "title": "Локация",
@@ -2102,49 +1801,26 @@
         ],
         "properties": {
           "title": {
-            "type": "string",
-            "examples": [
-              "Склад 'Восточный'",
-              "Склад 'Восточный'",
-              "Склад 'Восточный'"
-            ]
+            "type": "string"
           },
           "address": {
-            "type": "string",
-            "examples": [
-              "г. Москва, ул. Складская, д. 1",
-              "г. Москва, ул. Складская, д. 1",
-              "г. Москва, ул. Складская, д. 1"
-            ]
+            "type": "string"
           },
           "terminals": {
             "type": "array",
-            "examples": [
-              [
+            "items": {
+              "oneOf": [
                 {
-                  "id": "term-001",
-                  "name": "Терминал 1"
+                  "$ref": "./models/props/link.json"
                 },
                 {
-                  "id": "term-002",
-                  "name": "Терминал 2"
-                },
-                {
-                  "id": "term-003",
-                  "name": "Терминал 3"
+                  "$ref": "./models/abstract/rich-list-item.json"
                 }
               ]
-            ],
-            "items": {
-              "": "./models/abstract/simple-list-item.json",
-              "type": "object"
             }
           },
           "level": {
-            "type": "string",
-            "examples": [
-              "WAREHOUSE"
-            ]
+            "type": "string"
           }
         }
       },
@@ -2163,43 +1839,7 @@
               }
             }
           }
-        ],
-        "example": {
-          "id": "crg-001",
-          "name": "Электроника",
-          "type": "ELECTRONICS",
-          "description": "Партия смартфонов и планшетов",
-          "weight": 5000,
-          "volume": 10,
-          "quantity": 1000,
-          "packagingType": "BOXES",
-          "dimensions": {
-            "length": 1.2,
-            "width": 0.8,
-            "height": 1.6
-          },
-          "hazardClass": "NON_HAZARDOUS",
-          "temperatureRequirements": {
-            "min": 10,
-            "max": 30
-          },
-          "specialHandling": [
-            "FRAGILE",
-            "KEEP_DRY",
-            "FRAGILE"
-          ],
-          "customsInfo": {
-            "hsCode": "851712",
-            "countryOfOrigin": "CN",
-            "declaredValue": {
-              "amount": 500000,
-              "currency": "RUB"
-            }
-          },
-          "status": "READY_FOR_PICKUP",
-          "createdAt": "2023-05-15T14:30:00Z",
-          "updatedAt": "2023-05-15T14:30:00Z"
-        }
+        ]
       },
       "cargo-data": {
         "title": "Груз",
@@ -2217,62 +1857,32 @@
         "properties": {
           "num": {
             "type": "string",
-            "description": "Идентификатор грузовой единицы",
-            "examples": [
-              "CARGO-2023-001",
-              "CARGO-2023-001",
-              "CARGO-2023-001"
-            ]
+            "description": "Идентификатор грузовой единицы"
           },
           "desc": {
             "type": "string",
-            "description": "Текстовое описание груза",
-            "examples": [
-              "Электроника (смартфоны, планшеты)",
-              "Электроника (смартфоны, планшеты)",
-              "Электроника (смартфоны, планшеты)"
-            ]
+            "description": "Текстовое описание груза"
           },
           "amount": {
             "type": "integer",
             "minimum": 1,
             "default": 1,
-            "description": "Количество груза в единицах измерения (штуки)",
-            "examples": [
-              1000,
-              1000,
-              1000
-            ]
+            "description": "Количество груза в единицах измерения (штуки)"
           },
           "weight": {
             "type": "integer",
             "minimum": 1,
-            "description": "Суммарный вес груза в килограммах вместе с упаковкой (брутто)",
-            "examples": [
-              5000,
-              5000,
-              5000
-            ]
+            "description": "Суммарный вес груза в килограммах вместе с упаковкой (брутто)"
           },
           "volume": {
             "type": "number",
             "format": "float",
             "exclusiveMinimum": 0,
-            "description": "Объем груза в метрах кубических. Вещественное число с тремя знаками после запятой.",
-            "examples": [
-              10,
-              10,
-              10
-            ]
+            "description": "Объем груза в метрах кубических. Вещественное число с тремя знаками после запятой."
           },
           "package": {
             "type": "string",
-            "description": "Сведения об упаковке груза",
-            "examples": [
-              "BOXES",
-              "BOXES",
-              "BOXES"
-            ]
+            "description": "Сведения об упаковке груза"
           },
           "owner": {
             "description": "Контрагент, являющийся владельцем перевозимого груза",
@@ -2283,24 +1893,24 @@
               {
                 "$ref": "#/components/schemas/contractor-item"
               }
-            ],
-            "examples": [
-              {
-                "id": "owner-001",
-                "name": "ООО 'ГрузВладелец'"
-              },
-              {
-                "id": "owner-001",
-                "name": "ООО 'ГрузВладелец'"
-              },
-              {
-                "id": "owner-001",
-                "name": "ООО 'ГрузВладелец'"
-              }
-            ],
-            "type": "object"
+            ]
           }
-        }
+        },
+        "examples": [
+          {
+            "num": "CARGO-2023-001",
+            "desc": "Электроника (смартфоны, планшеты)",
+            "amount": 1,
+            "weight": 5000,
+            "volume": 10,
+            "package": "BOXES",
+            "owner": {
+              "host": "example.com",
+              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "entity": "item"
+            }
+          }
+        ]
       },
       "catalog-metaitem": {
         "allOf": [
@@ -2317,45 +1927,9 @@
         ],
         "description": "Метаданные справочника",
         "title": "Запись коллекции 'Справочник'",
-        "example": {
-          "id": "456e7890-f12a-34b5-c678-901234567890",
-          "name": "Типы транспортных средств",
-          "description": "Справочник типов транспортных средств",
-          "itemsCount": 10,
-          "createdAt": "2023-05-01T10:00:00Z",
-          "updatedAt": "2023-05-01T10:00:00Z"
-        },
-        "additionalProperties": false,
-        "examples": [
-          {
-            "id": "cat-004",
-            "title": "Типы дополнительных услуг",
-            "description": "Справочник типов дополнительных услуг при перевозке",
-            "itemsCount": 0,
-            "createdAt": "2023-05-17T09:30:00Z",
-            "updatedAt": "2023-05-17T09:30:00Z"
-          },
-          {
-            "id": "cat-004",
-            "title": "Типы дополнительных услуг",
-            "description": "Справочник типов дополнительных услуг при перевозке",
-            "itemsCount": 0,
-            "createdAt": "2023-05-17T09:30:00Z",
-            "updatedAt": "2023-05-17T09:30:00Z"
-          },
-          {
-            "id": "cat-004",
-            "title": "Типы дополнительных услуг",
-            "description": "Справочник типов дополнительных услуг при перевозке",
-            "itemsCount": 0,
-            "createdAt": "2023-05-17T09:30:00Z",
-            "updatedAt": "2023-05-17T09:30:00Z"
-          }
-        ],
-        "type": "object"
+        "additionalProperties": false
       },
       "catalog-item": {
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/transport-target-item"
@@ -2378,36 +1952,69 @@
         ],
         "description": "Запись элемента справочника",
         "title": "Запись элемента справочника",
-        "example": {
-          "id": "456e7890-f12a-34b5-c678-901234567890",
-          "name": "Рефрижератор",
-          "description": "Транспортное средство с холодильной установкой для перевозки скоропортящихся грузов",
-          "code": "REFRIGERATOR",
-          "catalogId": "cat-001",
-          "status": "ACTIVE",
-          "createdAt": "2023-05-16T11:00:00Z",
-          "updatedAt": "2023-05-16T11:00:00Z",
-          "attributes": {
-            "temperatureRange": {
-              "min": -20,
-              "max": 5
+        "additionalProperties": false,
+        "examples": [
+          {
+            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+            "createdBy": {
+              "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
+              "Login": "string"
             },
-            "fuelConsumption": 25
+            "createdDate": "2019-08-24T14:15:22Z",
+            "lastModifiedBy": {
+              "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
+              "Login": "string"
+            },
+            "lastModifiedDate": "2019-08-24T14:15:22Z",
+            "title": "string",
+            "catalogId": "8c4666aa-d43d-4196-b78a-f94040b1db76",
+            "json-schema": {},
+            "json-data": {
+              "num": "TT-2023-001",
+              "route": "Ввоз",
+              "sender": {
+                "host": "example.com",
+                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "entity": "item"
+              },
+              "loadLocation": {
+                "host": "example.com",
+                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "entity": "item"
+              },
+              "loadAddress": "г. Москва, ул. Складская, д. 1",
+              "loadArrival": "2023-05-21T08:00:00Z",
+              "recipient": {
+                "host": "example.com",
+                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "entity": "item"
+              },
+              "unloadLocation": {
+                "host": "example.com",
+                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "entity": "item"
+              },
+              "unloadAddress": "г. Санкт-Петербург, пр. Индустриальный, д. 10",
+              "unloadArrival": "2023-05-22T16:00:00Z",
+              "cargo": {
+                "id": "cargo-001",
+                "name": "Электроника"
+              }
+            }
           }
-        },
-        "additionalProperties": false
+        ]
       },
       "pagination": {
         "type": "object",
-        "x-examples": {
-          "Example 1": {
+        "examples": [
+          {
             "totalItems": 1,
             "itemCount": 1,
             "itemsPerPage": 10,
             "totalPages": 1,
             "currentPage": 1
           }
-        },
+        ],
         "title": "page-info",
         "required": [
           "totalItems",
@@ -2442,79 +2049,32 @@
         "content": {
           "application/json": {
             "schema": {
-              "allOf": [
-                {
-                  "required": [
-                    "items"
-                  ],
-                  "properties": {
-                    "items": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/shipment-rfp-item"
-                      }
+              "type": "object",
+              "properties": {
+                "items": {
+                  "type": "array",
+                  "x-stoplight": {
+                    "id": "7lp6xqgef6s6r"
+                  },
+                  "items": {
+                    "$ref": "#/components/schemas/shipment-rfp-item",
+                    "x-stoplight": {
+                      "id": "n06hknigjs0p6"
                     }
                   }
                 },
-                {
-                  "required": [
-                    "page-info"
-                  ],
-                  "properties": {
-                    "page-info": {
-                      "$ref": "#/components/schemas/pagination"
-                    }
+                "page-info": {
+                  "$ref": "#/components/schemas/pagination",
+                  "x-stoplight": {
+                    "id": "0bxl6yxeqrbmi"
                   }
                 },
-                {
-                  "required": [
-                    "meta"
-                  ],
-                  "properties": {
-                    "meta": {
-                      "$ref": "./models/abstract/domain-meta.json"
-                    }
+                "meta": {
+                  "$ref": "./models/abstract/domain-meta.json",
+                  "x-stoplight": {
+                    "id": "zcx18i8ny72yp"
                   }
                 }
-              ],
-              "type": "object"
-            },
-            "example": {
-              "items": [
-                {
-                  "id": "123e4567-e89b-12d3-a456-426614174000",
-                  "name": "Перевозка груза из Москвы в Санкт-Петербург",
-                  "status": "OPEN",
-                  "createdAt": "2023-05-15T10:30:00Z",
-                  "updatedAt": "2023-05-15T10:30:00Z",
-                  "expiresAt": "2023-05-20T23:59:59Z",
-                  "origin": {
-                    "address": "ул. Ленина, 1, Москва, Россия",
-                    "coordinates": {
-                      "latitude": 55.7558,
-                      "longitude": 37.6173
-                    }
-                  },
-                  "destination": {
-                    "address": "Невский проспект, 1, Санкт-Петербург, Россия",
-                    "coordinates": {
-                      "latitude": 59.9311,
-                      "longitude": 30.3609
-                    }
-                  },
-                  "cargo": {
-                    "type": "Общие грузы",
-                    "weight": 1000,
-                    "volume": 5
-                  }
-                }
-              ],
-              "page-info": {
-                "totalItems": 1,
-                "itemCount": 1,
-                "itemsPerPage": 10,
-                "totalPages": 1,
-                "currentPage": 1
               }
             }
           }
@@ -2543,129 +2103,6 @@
                 "page-info": {
                   "$ref": "#/components/schemas/pagination"
                 }
-              }
-            },
-            "examples": {
-              "Example 1": {
-                "value": {
-                  "items": [
-                    {
-                      "id": "offer-001",
-                      "status": "PENDING",
-                      "createdAt": "2023-05-16T14:30:00Z",
-                      "updatedAt": "2023-05-16T14:30:00Z",
-                      "expiresAt": "2023-05-18T23:59:59Z",
-                      "shipmentRfp": {
-                        "id": "rfp-001",
-                        "name": "Перевозка груза из Москвы в Санкт-Петербург"
-                      },
-                      "forwarder": {
-                        "id": "fwd-001",
-                        "name": "ООО 'ЛогистикПро'"
-                      },
-                      "carrier": {
-                        "id": "car-001",
-                        "name": "ООО 'ТрансЛогистик'"
-                      },
-                      "vehicle": {
-                        "id": "veh-001",
-                        "name": "КАМАЗ 5490"
-                      },
-                      "driver": {
-                        "id": "drv-001",
-                        "name": "Иванов Иван Иванович"
-                      },
-                      "price": {
-                        "amount": 48000,
-                        "currency": "RUB"
-                      },
-                      "estimatedPickupTime": "2023-05-21T09:00:00Z",
-                      "estimatedDeliveryTime": "2023-05-22T18:00:00Z"
-                    }
-                  ],
-                  "meta": {
-                    "json-schema": {},
-                    "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                    "createdBy": {
-                      "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
-                      "Login": "string"
-                    },
-                    "createdDate": "2019-08-24T14:15:22Z",
-                    "lastModifiedBy": {
-                      "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
-                      "Login": "string"
-                    },
-                    "lastModifiedDate": "2019-08-24T14:15:22Z",
-                    "since": "2019-08-24T14:15:22Z",
-                    "until": "2019-08-24T14:15:22Z",
-                    "processDefinition": "string"
-                  },
-                  "page-info": {
-                    "totalItems": 0,
-                    "itemCount": 0,
-                    "itemsPerPage": 0,
-                    "totalPages": 0,
-                    "currentPage": 0
-                  }
-                }
-              }
-            },
-            "example": {
-              "items": [
-                {
-                  "id": "456e7890-f12a-34b5-c678-901234567890",
-                  "shipmentRfpId": "123e4567-e89b-12d3-a456-426614174000",
-                  "carrierId": "789e0123-g45h-67i8-j901-234567890123",
-                  "status": "PENDING",
-                  "createdAt": "2023-05-16T14:30:00Z",
-                  "updatedAt": "2023-05-16T14:30:00Z",
-                  "expiresAt": "2023-05-18T23:59:59Z",
-                  "price": {
-                    "amount": 48000,
-                    "currency": "RUB"
-                  },
-                  "estimatedPickupTime": "2023-05-21T09:00:00Z",
-                  "estimatedDeliveryTime": "2023-05-22T18:00:00Z"
-                },
-                {
-                  "id": "567f8901-g23b-45c6-d789-012345678901",
-                  "shipmentRfpId": "123e4567-e89b-12d3-a456-426614174000",
-                  "carrierId": "890f1234-h56i-78j9-k012-345678901234",
-                  "status": "PENDING",
-                  "createdAt": "2023-05-16T15:45:00Z",
-                  "updatedAt": "2023-05-16T15:45:00Z",
-                  "expiresAt": "2023-05-18T23:59:59Z",
-                  "price": {
-                    "amount": 52000,
-                    "currency": "RUB"
-                  },
-                  "estimatedPickupTime": "2023-05-21T10:00:00Z",
-                  "estimatedDeliveryTime": "2023-05-22T19:00:00Z"
-                }
-              ],
-              "meta": {
-                "json-schema": {},
-                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                "createdBy": {
-                  "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
-                  "Login": "string"
-                },
-                "createdDate": "2019-08-24T14:15:22Z",
-                "lastModifiedBy": {
-                  "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
-                  "Login": "string"
-                },
-                "lastModifiedDate": "2019-08-24T14:15:22Z",
-                "since": "2019-08-24T14:15:22Z",
-                "until": "2019-08-24T14:15:22Z",
-                "processDefinition": "string"
-              },
-              "page-info": {
-                "totalItems": 2,
-                "itemCount": 2,
-                "itemsPerPage": 10,
-                "totalPages": 1,
-                "currentPage": 1
               }
             }
           }
@@ -2705,7 +2142,6 @@
         "content": {
           "application/json": {
             "schema": {
-              "type": "object",
               "$ref": "#/components/schemas/catalog-item"
             }
           }
@@ -2729,33 +2165,6 @@
                   }
                 }
               }
-            },
-            "example": {
-              "page-info": {
-                "totalItems": 0,
-                "itemCount": 0,
-                "itemsPerPage": 0,
-                "totalPages": 0,
-                "currentPage": 0
-              },
-              "catalogs": [
-                {
-                  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                  "createdBy": {
-                    "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
-                    "Login": "string"
-                  },
-                  "createdDate": "2019-08-24T14:15:22Z",
-                  "lastModifiedBy": {
-                    "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
-                    "Login": "string"
-                  },
-                  "lastModifiedDate": "2019-08-24T14:15:22Z",
-                  "title": "string",
-                  "key": "string",
-                  "processDefinition": "string"
-                }
-              ]
             }
           }
         }
@@ -2828,6 +2237,24 @@
           }
         },
         "description": "Объект Запись Справочника"
+      },
+      "shipment-rfp-data": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/shipment-rfp-data"
+            }
+          }
+        }
+      },
+      "offer-data": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/offer-data"
+            }
+          }
+        }
       }
     },
     "parameters": {

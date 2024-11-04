@@ -29,7 +29,6 @@
       "unique": false,
       "oneOf": [
         {
-          "type": "object",
           "$ref": "../props/user.json",
           "description": "retrieve"
         },
@@ -55,7 +54,6 @@
     "lastModifiedBy": {
       "oneOf": [
         {
-          "type": "object",
           "$ref": "../props/user.json",
           "description": "retrieve"
         },

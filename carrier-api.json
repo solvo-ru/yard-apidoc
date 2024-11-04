@@ -172,6 +172,11 @@
                       "description": "User email"
                     }
                   }
+                },
+                "example": {
+                  "sub": "1234567890",
+                  "name": "Иван Петров",
+                  "email": "ivan.petrov@example.com"
                 }
               }
             }

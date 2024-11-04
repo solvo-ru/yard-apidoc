@@ -1,0 +1,1 @@
+jq 'walk(if type == "object" then del(.["x-stoplight"]) else . end)' carrier-api.json > output.json

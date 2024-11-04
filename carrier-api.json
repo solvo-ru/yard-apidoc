@@ -1547,7 +1547,24 @@
           }
         ],
         "description": "Запись элемента справочника",
-        "title": "Запись элемента справочника"
+        "title": "Запись элемента справочника",
+        "example": {
+          "id": "cat-item-001",
+          "name": "Рефрижератор",
+          "description": "Транспортное средство с холодильной установкой для перевозки скоропортящихся грузов",
+          "code": "REFRIGERATOR",
+          "catalogId": "cat-001",
+          "status": "ACTIVE",
+          "createdAt": "2023-05-16T11:00:00Z",
+          "updatedAt": "2023-05-16T11:00:00Z",
+          "attributes": {
+            "temperatureRange": {
+              "min": -20,
+              "max": 5
+            },
+            "fuelConsumption": 25
+          }
+        }
       }
     },
     "responses": {

@@ -903,7 +903,7 @@
         },
         "description": "Строка таблицы БД",
         "example": {
-          "id": "123e4567-e89b-12d3-a456-426614174000",
+          "id": "rfp-001",
           "name": "Перевозка груза из Москвы в Санкт-Петербург",
           "status": "OPEN",
           "createdAt": "2023-05-15T10:30:00Z",
@@ -1075,13 +1075,13 @@
         "x-examples": {},
         "description": "Строка таблицы БД",
         "example": {
-          "id": "456e7890-f12a-34b5-c678-901234567890",
+          "id": "offer-001",
           "status": "PENDING",
           "createdAt": "2023-05-16T14:30:00Z",
           "updatedAt": "2023-05-16T14:30:00Z",
           "expiresAt": "2023-05-18T23:59:59Z",
           "shipmentRfp": {
-            "id": "123e4567-e89b-12d3-a456-426614174000",
+            "id": "rfp-001",
             "name": "Перевозка груза из Москвы в Санкт-Петербург"
           },
           "forwarder": {
@@ -1128,26 +1128,35 @@
         ],
         "example": {
           "id": "tt-001",
-          "name": "Перевозка груза из Москвы в Санкт-Петербург",
+          "name": "Доставка груза в Санкт-Петербург",
           "status": "ACTIVE",
-          "createdAt": "2023-05-18T10:00:00Z",
-          "updatedAt": "2023-05-18T10:00:00Z",
-          "origin": {
-            "address": "ул. Ленина, 1, Москва, Россия",
-            "coordinates": {
-              "latitude": 55.7558,
-              "longitude": 37.6173
-            }
+          "createdAt": "2023-05-15T11:00:00Z",
+          "updatedAt": "2023-05-15T11:00:00Z",
+          "route": "Москва - Санкт-Петербург",
+          "sender": {
+            "id": "sender-001",
+            "name": "ООО 'ОтправительГруза'"
           },
-          "destination": {
-            "address": "Невский проспект, 1, Санкт-Петербург, Россия",
-            "coordinates": {
-              "latitude": 59.9311,
-              "longitude": 30.3609
-            }
+          "loadLocation": {
+            "id": "loc-001",
+            "name": "Склад 'Восточный'"
           },
-          "estimatedDepartureTime": "2023-05-20T08:00:00Z",
-          "estimatedArrivalTime": "2023-05-21T18:00:00Z"
+          "loadAddress": "г. Москва, ул. Складская, д. 1",
+          "loadArrival": "2023-05-21T08:00:00Z",
+          "recipient": {
+            "id": "recipient-001",
+            "name": "ООО 'ПолучательГруза'"
+          },
+          "unloadLocation": {
+            "id": "loc-002",
+            "name": "Распределительный центр 'Северный'"
+          },
+          "unloadAddress": "г. Санкт-Петербург, пр. Индустриальный, д. 10",
+          "unloadArrival": "2023-05-22T16:00:00Z",
+          "cargo": {
+            "id": "cargo-001",
+            "name": "Электроника"
+          }
         }
       },
       "transport-target-data": {

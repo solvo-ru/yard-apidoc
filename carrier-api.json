@@ -1537,33 +1537,54 @@
         "properties": {
           "docNum": {
             "type": "integer",
-            "description": "Номер документа, удостоверяющего личность."
+            "description": "Номер документа, удостоверяющего личность.",
+            "examples": [
+              "7712 345678"
+            ]
           },
           "name": {
             "type": "string",
-            "description": "Имя водителя"
+            "description": "Имя водителя",
+            "examples": [
+              "Иван"
+            ]
           },
           "lastName": {
             "type": "string",
-            "description": "Фамилия водителя"
+            "description": "Фамилия водителя",
+            "examples": [
+              "Петров"
+            ]
           },
           "patronym": {
             "type": "string",
-            "description": "Отчество"
+            "description": "Отчество",
+            "examples": [
+              "Александрович"
+            ]
           },
           "birthday": {
             "type": "string",
             "format": "date",
-            "description": "Дата рождения водителя"
+            "description": "Дата рождения водителя",
+            "examples": [
+              "1985-07-15"
+            ]
           },
           "docType": {
             "$ref": "./models/abstract/simple-list-item.json",
-            "description": "Вид документа, удостоверяющего личность\n| **Значение** | **Описание**                   |\n| ------------ | ------------------------------ |\n| **Паспорт**  | Паспорт гражданина РФ.         |\n| **Права**    | Водительское удостоверение РФ. |"
+            "description": "Вид документа, удостоверяющего личность\n| **Значение** | **Описание**                   |\n| ------------ | ------------------------------ |\n| **Паспорт**  | Паспорт гражданина РФ.         |\n| **Права**    | Водительское удостоверение РФ. |",
+            "examples": [
+              "DRIVER_LICENSE"
+            ]
           },
           "phone": {
             "type": "string",
             "description": "Номер телефона для связи с водителем.",
-            "pattern": "^((\\+7)|8)\\d{10}$"
+            "pattern": "^((\\+7)|8)\\d{10}$",
+            "examples": [
+              "+7 (999) 123-45-67"
+            ]
           },
           "haul": {
             "type": "array",
@@ -1578,7 +1599,10 @@
                 }
               ],
               "type": "object"
-            }
+            },
+            "examples": [
+              "LONG_HAUL"
+            ]
           }
         },
         "additionalProperties": false

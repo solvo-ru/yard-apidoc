@@ -1406,7 +1406,42 @@
               }
             }
           }
-        ]
+        ],
+        "example": {
+          "id": "crg-001",
+          "name": "Электроника",
+          "type": "ELECTRONICS",
+          "description": "Партия смартфонов и планшетов",
+          "weight": 5000,
+          "volume": 10,
+          "quantity": 1000,
+          "packagingType": "BOXES",
+          "dimensions": {
+            "length": 1.2,
+            "width": 0.8,
+            "height": 1.6
+          },
+          "hazardClass": "NON_HAZARDOUS",
+          "temperatureRequirements": {
+            "min": 10,
+            "max": 30
+          },
+          "specialHandling": [
+            "FRAGILE",
+            "KEEP_DRY"
+          ],
+          "customsInfo": {
+            "hsCode": "851712",
+            "countryOfOrigin": "CN",
+            "declaredValue": {
+              "amount": 500000,
+              "currency": "RUB"
+            }
+          },
+          "status": "READY_FOR_PICKUP",
+          "createdAt": "2023-05-15T14:30:00Z",
+          "updatedAt": "2023-05-15T14:30:00Z"
+        }
       },
       "cargo-data": {
         "title": "Груз",

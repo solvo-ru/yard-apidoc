@@ -1298,7 +1298,61 @@
               }
             }
           }
-        ]
+        ],
+        "example": {
+          "id": "loc-001",
+          "name": "Склад 'Восточный'",
+          "type": "WAREHOUSE",
+          "address": {
+            "country": "Россия",
+            "postalCode": "107140",
+            "city": "Москва",
+            "street": "ул. Верхняя Красносельская",
+            "building": "3с2"
+          },
+          "coordinates": {
+            "latitude": 55.786389,
+            "longitude": 37.662778
+          },
+          "contactPerson": {
+            "name": "Сидоров Петр Алексеевич",
+            "phone": "+7 (495) 123-45-67",
+            "email": "p.sidorov@example.com"
+          },
+          "workingHours": {
+            "monday": {
+              "from": "08:00",
+              "to": "20:00"
+            },
+            "tuesday": {
+              "from": "08:00",
+              "to": "20:00"
+            },
+            "wednesday": {
+              "from": "08:00",
+              "to": "20:00"
+            },
+            "thursday": {
+              "from": "08:00",
+              "to": "20:00"
+            },
+            "friday": {
+              "from": "08:00",
+              "to": "20:00"
+            },
+            "saturday": {
+              "from": "09:00",
+              "to": "18:00"
+            },
+            "sunday": {
+              "from": "09:00",
+              "to": "18:00"
+            }
+          },
+          "status": "ACTIVE",
+          "createdAt": "2023-05-14T09:00:00Z",
+          "updatedAt": "2023-05-14T09:00:00Z"
+        }
       },
       "location-data": {
         "title": "Локация",

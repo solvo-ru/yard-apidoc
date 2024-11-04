@@ -1200,30 +1200,18 @@
             }
           },
           {
-            "x-stoplight": {
-              "id": "hchffjnbe4342"
-            },
             "required": [
               "shipment-rfp"
             ],
             "properties": {
               "shipment-rfp": {
-                "x-stoplight": {
-                  "id": "gbepp09vypib2"
-                },
                 "oneOf": [
                   {
                     "type": "object",
-                    "$ref": "#/components/schemas/shipment-rfp-data",
-                    "x-stoplight": {
-                      "id": "lk4p73yg0pykd"
-                    }
+                    "$ref": "#/components/schemas/shipment-rfp-data"
                   },
                   {
                     "type": "string",
-                    "x-stoplight": {
-                      "id": "g5mq5tsk1g74x"
-                    },
                     "format": "uuid"
                   }
                 ]
@@ -1709,10 +1697,7 @@
               "КАМАЗ 5490",
               "КАМАЗ 5490",
               "КАМАЗ 5490"
-            ],
-            "x-stoplight": {
-              "id": "loxjk61oj1vz3"
-            }
+            ]
           },
           "desc": {
             "type": "string",
@@ -2292,34 +2277,22 @@
                   }
                 },
                 {
-                  "x-stoplight": {
-                    "id": "uaee2335r7a3h"
-                  },
                   "required": [
                     "page-info"
                   ],
                   "properties": {
                     "page-info": {
-                      "$ref": "#/components/schemas/pagination",
-                      "x-stoplight": {
-                        "id": "47z21vps1zahi"
-                      }
+                      "$ref": "#/components/schemas/pagination"
                     }
                   }
                 },
                 {
-                  "x-stoplight": {
-                    "id": "htprt5vuam6hc"
-                  },
                   "required": [
                     "meta"
                   ],
                   "properties": {
                     "meta": {
-                      "$ref": "./models/abstract/domain-meta.json",
-                      "x-stoplight": {
-                        "id": "4j11n19esp7wj"
-                      }
+                      "$ref": "./models/abstract/domain-meta.json"
                     }
                   }
                 }
@@ -2379,28 +2352,16 @@
               ],
               "properties": {
                 "meta": {
-                  "$ref": "./models/abstract/domain-meta.json",
-                  "x-stoplight": {
-                    "id": "dvoi7irex76ef"
-                  }
+                  "$ref": "./models/abstract/domain-meta.json"
                 },
                 "items": {
                   "type": "array",
-                  "x-stoplight": {
-                    "id": "74354zq0xj592"
-                  },
                   "items": {
-                    "$ref": "#/components/schemas/offer-item",
-                    "x-stoplight": {
-                      "id": "c3w754cw3hvm9"
-                    }
+                    "$ref": "#/components/schemas/offer-item"
                   }
                 },
                 "page-info": {
-                  "$ref": "#/components/schemas/pagination",
-                  "x-stoplight": {
-                    "id": "5b6b0ppvjlv2s"
-                  }
+                  "$ref": "#/components/schemas/pagination"
                 }
               }
             },
@@ -2579,21 +2540,12 @@
               "type": "object",
               "properties": {
                 "page-info": {
-                  "$ref": "#/components/schemas/pagination",
-                  "x-stoplight": {
-                    "id": "l4chwz7k78drx"
-                  }
+                  "$ref": "#/components/schemas/pagination"
                 },
                 "catalogs": {
                   "type": "array",
-                  "x-stoplight": {
-                    "id": "ah0923czz2be9"
-                  },
                   "items": {
-                    "$ref": "./models/abstract/rich-list.json",
-                    "x-stoplight": {
-                      "id": "rn3ub0ahouvc7"
-                    }
+                    "$ref": "./models/abstract/rich-list.json"
                   }
                 }
               }
@@ -2644,16 +2596,10 @@
                   }
                 },
                 "meta": {
-                  "$ref": "#/components/schemas/catalog-metaitem",
-                  "x-stoplight": {
-                    "id": "l5dj20i5g8j4n"
-                  }
+                  "$ref": "#/components/schemas/catalog-metaitem"
                 },
                 "page-info": {
-                  "$ref": "#/components/schemas/pagination",
-                  "x-stoplight": {
-                    "id": "sgo7rubop2ync"
-                  }
+                  "$ref": "#/components/schemas/pagination"
                 }
               },
               "type": "object"

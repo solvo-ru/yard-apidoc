@@ -1,20 +1,18 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "cargo-item": {
-    "title": "Груз",
-    "description": "Объект системы, содержащий информацию о перевозимом грузе.",
-    "allOf": [
-      {
-        "$ref": "./models/abstract/rich-list-item.json"
-      },
-      {
-        "type": "object",
-        "properties": {
-          "json-data": {
-            "$ref": "#/cargo-data"
-          }
+  "title": "Груз",
+  "description": "Объект системы, содержащий информацию о перевозимом грузе.",
+  "allOf": [
+    {
+      "$ref": "./models/abstract/rich-list-item.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "json-data": {
+          "$ref": "#/cargo-data"
         }
       }
-    ]
-  }
+    }
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
 }

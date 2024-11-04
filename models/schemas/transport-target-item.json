@@ -1,70 +1,68 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "transport-target-item": {
-    "title": "Цель перевозки",
-    "description": "Объект системы, содержащий информацию о месте обработки перевозки",
-    "allOf": [
-      {
-        "$ref": "./models/abstract/rich-list-item.json"
-      },
-      {
-        "type": "object",
-        "properties": {
-          "json-data": {
-            "$ref": "#/transport-target-data"
-          }
-        }
-      }
-    ],
-    "examples": [
-      {
-        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-        "createdBy": {
-          "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
-          "Login": "string"
-        },
-        "createdDate": "2019-08-24T14:15:22Z",
-        "lastModifiedBy": {
-          "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
-          "Login": "string"
-        },
-        "lastModifiedDate": "2019-08-24T14:15:22Z",
-        "title": "string",
-        "catalogId": "8c4666aa-d43d-4196-b78a-f94040b1db76",
-        "json-schema": {},
+  "title": "Цель перевозки",
+  "description": "Объект системы, содержащий информацию о месте обработки перевозки",
+  "allOf": [
+    {
+      "$ref": "./models/abstract/rich-list-item.json"
+    },
+    {
+      "type": "object",
+      "properties": {
         "json-data": {
-          "num": "TT-2023-001",
-          "route": "Ввоз",
-          "sender": {
-            "host": "example.com",
-            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-            "entity": "item"
-          },
-          "loadLocation": {
-            "host": "example.com",
-            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-            "entity": "item"
-          },
-          "loadAddress": "г. Москва, ул. Складская, д. 1",
-          "loadArrival": "2023-05-21T08:00:00Z",
-          "recipient": {
-            "host": "example.com",
-            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-            "entity": "item"
-          },
-          "unloadLocation": {
-            "host": "example.com",
-            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-            "entity": "item"
-          },
-          "unloadAddress": "г. Санкт-Петербург, пр. Индустриальный, д. 10",
-          "unloadArrival": "2023-05-22T16:00:00Z",
-          "cargo": {
-            "id": "cargo-001",
-            "name": "Электроника"
-          }
+          "$ref": "#/transport-target-data"
         }
       }
-    ]
-  }
+    }
+  ],
+  "examples": [
+    {
+      "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+      "createdBy": {
+        "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
+        "Login": "string"
+      },
+      "createdDate": "2019-08-24T14:15:22Z",
+      "lastModifiedBy": {
+        "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
+        "Login": "string"
+      },
+      "lastModifiedDate": "2019-08-24T14:15:22Z",
+      "title": "string",
+      "catalogId": "8c4666aa-d43d-4196-b78a-f94040b1db76",
+      "json-schema": {},
+      "json-data": {
+        "num": "TT-2023-001",
+        "route": "Ввоз",
+        "sender": {
+          "host": "example.com",
+          "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+          "entity": "item"
+        },
+        "loadLocation": {
+          "host": "example.com",
+          "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+          "entity": "item"
+        },
+        "loadAddress": "г. Москва, ул. Складская, д. 1",
+        "loadArrival": "2023-05-21T08:00:00Z",
+        "recipient": {
+          "host": "example.com",
+          "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+          "entity": "item"
+        },
+        "unloadLocation": {
+          "host": "example.com",
+          "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+          "entity": "item"
+        },
+        "unloadAddress": "г. Санкт-Петербург, пр. Индустриальный, д. 10",
+        "unloadArrival": "2023-05-22T16:00:00Z",
+        "cargo": {
+          "id": "cargo-001",
+          "name": "Электроника"
+        }
+      }
+    }
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
 }

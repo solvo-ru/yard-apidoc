@@ -1,38 +1,36 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "contractor-item": {
-    "title": "Запись \"Контрагент\"",
-    "allOf": [
-      {
-        "$ref": "./models/abstract/rich-list-item.json"
-      },
-      {
-        "type": "object",
-        "properties": {
-          "json-data": {
-            "$ref": "#/contractor-data"
-          }
+  "title": "Запись \"Контрагент\"",
+  "allOf": [
+    {
+      "$ref": "./models/abstract/rich-list-item.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "json-data": {
+          "$ref": "#/contractor-data"
         }
       }
-    ],
-    "description": "Строка таблицы БД",
-    "examples": [
-      {
-        "id": "cont-001",
-        "name": "ООО 'ТрансЛогистик'",
-        "type": "CARRIER",
-        "status": "ACTIVE",
-        "createdAt": "2023-05-01T09:00:00Z",
-        "updatedAt": "2023-05-01T09:00:00Z",
-        "contactPerson": {
-          "name": "Иванов Иван Иванович",
-          "phone": "+7 (999) 123-45-67",
-          "email": "ivanov@translogistic.ru"
-        },
-        "legalAddress": "ул. Транспортная, 10, Москва, Россия",
-        "inn": "7712345678",
-        "kpp": "771201001"
-      }
-    ]
-  }
+    }
+  ],
+  "description": "Строка таблицы БД",
+  "examples": [
+    {
+      "id": "cont-001",
+      "name": "ООО 'ТрансЛогистик'",
+      "type": "CARRIER",
+      "status": "ACTIVE",
+      "createdAt": "2023-05-01T09:00:00Z",
+      "updatedAt": "2023-05-01T09:00:00Z",
+      "contactPerson": {
+        "name": "Иванов Иван Иванович",
+        "phone": "+7 (999) 123-45-67",
+        "email": "ivanov@translogistic.ru"
+      },
+      "legalAddress": "ул. Транспортная, 10, Москва, Россия",
+      "inn": "7712345678",
+      "kpp": "771201001"
+    }
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
 }

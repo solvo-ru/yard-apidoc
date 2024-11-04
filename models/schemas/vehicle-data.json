@@ -1,75 +1,73 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "vehicle-data": {
-    "title": "vehicle-data",
-    "type": "object",
-    "additionalProperties": false,
-    "required": [
-      "plate",
-      "haul",
-      "type"
-    ],
-    "properties": {
-      "plate": {
-        "type": "string",
-        "pattern": "^[А-Я]{2}\\d{3,4}[А-Я]{2}(?: [А-Я]{2}\\d{3,4}[А-Я]{2})?$",
-        "description": "Номер регистрационного знака транспортного средства. "
-      },
-      "haul": {
-        "description": "Список контрагентов, которые могут использовать ТС",
-        "type": "array",
-        "items": {
-          "oneOf": [
-            {
-              "$ref": "./models/props/link.json"
-            },
-            {
-              "$ref": "#/contractor-item"
-            }
-          ]
-        }
-      },
-      "type": {
-        "$ref": "./models/abstract/simple-list-item.json",
-        "description": "Тип транспортного средства"
-      },
-      "model": {
-        "type": "string",
-        "description": "Марка и модель ТС."
-      },
-      "desc": {
-        "type": "string",
-        "description": "Описание ТС."
+  "title": "vehicle-data",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "plate",
+    "haul",
+    "type"
+  ],
+  "properties": {
+    "plate": {
+      "type": "string",
+      "pattern": "^[А-Я]{2}\\d{3,4}[А-Я]{2}(?: [А-Я]{2}\\d{3,4}[А-Я]{2})?$",
+      "description": "Номер регистрационного знака транспортного средства. "
+    },
+    "haul": {
+      "description": "Список контрагентов, которые могут использовать ТС",
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "./models/props/link.json"
+          },
+          {
+            "$ref": "#/contractor-item"
+          }
+        ]
       }
     },
-    "examples": [
-      {
-        "plate": "string",
-        "haul": [
-          {
-            "host": "example.com",
-            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-            "entity": "item"
-          }
-        ],
-        "type": {
+    "type": {
+      "$ref": "./models/abstract/simple-list-item.json",
+      "description": "Тип транспортного средства"
+    },
+    "model": {
+      "type": "string",
+      "description": "Марка и модель ТС."
+    },
+    "desc": {
+      "type": "string",
+      "description": "Описание ТС."
+    }
+  },
+  "examples": [
+    {
+      "plate": "string",
+      "haul": [
+        {
+          "host": "example.com",
           "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-          "createdBy": {
-            "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
-            "Login": "string"
-          },
-          "createdDate": "2019-08-24T14:15:22Z",
-          "lastModifiedBy": {
-            "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
-            "Login": "string"
-          },
-          "lastModifiedDate": "2019-08-24T14:15:22Z",
-          "title": "string",
-          "catalogId": "8c4666aa-d43d-4196-b78a-f94040b1db76"
+          "entity": "item"
+        }
+      ],
+      "type": {
+        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+        "createdBy": {
+          "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
+          "Login": "string"
         },
-        "model": "string",
-        "desc": "string"
-      }
-    ]
-  }
+        "createdDate": "2019-08-24T14:15:22Z",
+        "lastModifiedBy": {
+          "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
+          "Login": "string"
+        },
+        "lastModifiedDate": "2019-08-24T14:15:22Z",
+        "title": "string",
+        "catalogId": "8c4666aa-d43d-4196-b78a-f94040b1db76"
+      },
+      "model": "string",
+      "desc": "string"
+    }
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
 }

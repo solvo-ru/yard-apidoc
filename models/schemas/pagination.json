@@ -1,41 +1,39 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "pagination": {
-    "type": "object",
-    "examples": [
-      {
-        "totalItems": 1,
-        "itemCount": 1,
-        "itemsPerPage": 10,
-        "totalPages": 1,
-        "currentPage": 1
-      }
-    ],
-    "title": "page-info",
-    "required": [
-      "totalItems",
-      "itemCount",
-      "itemsPerPage",
-      "totalPages",
-      "currentPage"
-    ],
-    "properties": {
-      "totalItems": {
-        "type": "integer"
-      },
-      "itemCount": {
-        "type": "integer"
-      },
-      "itemsPerPage": {
-        "type": "integer"
-      },
-      "totalPages": {
-        "type": "integer"
-      },
-      "currentPage": {
-        "type": "integer"
-      }
+  "type": "object",
+  "examples": [
+    {
+      "totalItems": 1,
+      "itemCount": 1,
+      "itemsPerPage": 10,
+      "totalPages": 1,
+      "currentPage": 1
+    }
+  ],
+  "title": "page-info",
+  "required": [
+    "totalItems",
+    "itemCount",
+    "itemsPerPage",
+    "totalPages",
+    "currentPage"
+  ],
+  "properties": {
+    "totalItems": {
+      "type": "integer"
     },
-    "additionalProperties": false
-  }
+    "itemCount": {
+      "type": "integer"
+    },
+    "itemsPerPage": {
+      "type": "integer"
+    },
+    "totalPages": {
+      "type": "integer"
+    },
+    "currentPage": {
+      "type": "integer"
+    }
+  },
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
 }

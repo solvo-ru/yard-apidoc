@@ -1,15 +1,29 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "contractor-data": {
-    "title": "Контрагент",
-    "type": "object",
-    "description": "Данные юр. лица",
-    "additionalProperties": false,
-    "examples": [
-      {
+  "title": "Контрагент",
+  "type": "object",
+  "description": "Данные юр. лица",
+  "additionalProperties": false,
+  "examples": [
+    {
+      "title": "string",
+      "fullTitle": "string",
+      "type": {
+        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+        "createdBy": {
+          "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
+          "Login": "string"
+        },
+        "createdDate": "2019-08-24T14:15:22Z",
+        "lastModifiedBy": {
+          "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
+          "Login": "string"
+        },
+        "lastModifiedDate": "2019-08-24T14:15:22Z",
         "title": "string",
-        "fullTitle": "string",
-        "type": {
+        "catalogId": "8c4666aa-d43d-4196-b78a-f94040b1db76"
+      },
+      "role": [
+        {
           "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
           "createdBy": {
             "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
@@ -23,72 +37,56 @@
           "lastModifiedDate": "2019-08-24T14:15:22Z",
           "title": "string",
           "catalogId": "8c4666aa-d43d-4196-b78a-f94040b1db76"
-        },
-        "role": [
-          {
-            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-            "createdBy": {
-              "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
-              "Login": "string"
-            },
-            "createdDate": "2019-08-24T14:15:22Z",
-            "lastModifiedBy": {
-              "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
-              "Login": "string"
-            },
-            "lastModifiedDate": "2019-08-24T14:15:22Z",
-            "title": "string",
-            "catalogId": "8c4666aa-d43d-4196-b78a-f94040b1db76"
+        }
+      ]
+    }
+  ],
+  "required": [
+    "title",
+    "fullTitle",
+    "type"
+  ],
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Сокращенное наименование контрагента, которое будет видно в интерфейсе"
+    },
+    "fullTitle": {
+      "type": "string",
+      "description": "Полное наименование контрагента, как оно прописано в правоустанавливающих документах"
+    },
+    "type": {
+      "description": "Тип",
+      "oneOf": [
+        {
+          "$ref": "./models/props/link.json",
+          "x-stoplight": {
+            "id": "tj8hboxrg43sd"
           }
-        ]
-      }
-    ],
-    "required": [
-      "title",
-      "fullTitle",
-      "type"
-    ],
-    "properties": {
-      "title": {
-        "type": "string",
-        "description": "Сокращенное наименование контрагента, которое будет видно в интерфейсе"
-      },
-      "fullTitle": {
-        "type": "string",
-        "description": "Полное наименование контрагента, как оно прописано в правоустанавливающих документах"
-      },
-      "type": {
-        "description": "Тип",
+        },
+        {
+          "$ref": "./models/abstract/simple-list-item.json",
+          "x-stoplight": {
+            "id": "n0l8d6dwwgolw"
+          }
+        }
+      ]
+    },
+    "role": {
+      "type": "array",
+      "minItems": 1,
+      "description": "Роль",
+      "items": {
         "oneOf": [
           {
-            "$ref": "./models/props/link.json",
-            "x-stoplight": {
-              "id": "tj8hboxrg43sd"
-            }
+            "$ref": "./models/props/link.json"
           },
           {
-            "$ref": "./models/abstract/simple-list-item.json",
-            "x-stoplight": {
-              "id": "n0l8d6dwwgolw"
-            }
+            "$ref": "./models/abstract/simple-list-item.json"
           }
         ]
-      },
-      "role": {
-        "type": "array",
-        "minItems": 1,
-        "description": "Роль",
-        "items": {
-          "oneOf": [
-            {
-              "$ref": "./models/props/link.json"
-            },
-            {
-              "$ref": "./models/abstract/simple-list-item.json"
-            }
-          ]
-        }
       }
     }
-  }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
 }

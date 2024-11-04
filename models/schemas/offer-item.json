@@ -1,150 +1,148 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "offer-item": {
-    "title": "Запись \"Предложение к заявке на перевозку\"",
-    "allOf": [
-      {
-        "$ref": "./models/abstract/domain-item.json"
-      },
-      {
-        "type": "object",
-        "properties": {
-          "json-data": {
-            "$ref": "#/offer-data"
-          }
-        }
-      },
-      {
-        "type": "object",
-        "required": [
-          "shipment-rfp"
-        ],
-        "properties": {
-          "shipment-rfp": {
-            "oneOf": [
-              {
-                "$ref": "#/shipment-rfp-data"
-              },
-              {
-                "type": "string",
-                "format": "uuid"
-              }
-            ]
-          }
-        }
-      }
-    ],
-    "description": "Строка таблицы БД",
-    "additionalProperties": false,
-    "type": "object",
-    "examples": [
-      {
-        "json-schema": {},
-        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-        "createdBy": {
-          "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
-          "Login": "string"
-        },
-        "createdDate": "2019-08-24T14:15:22Z",
-        "lastModifiedBy": {
-          "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
-          "Login": "string"
-        },
-        "lastModifiedDate": "2019-08-24T14:15:22Z",
-        "path": [
-          {
-            "host": "example.com",
-            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-            "entity": "item"
-          }
-        ],
-        "processInstant": "string",
-        "title": "string",
-        "meta": "00bc452f-5ac7-4ce3-9b71-a522f10fc914",
-        "originalIdentity": {
-          "id": "string",
-          "host": "string",
-          "route": "string",
-          "protocol": "string"
-        },
+  "title": "Запись \"Предложение к заявке на перевозку\"",
+  "allOf": [
+    {
+      "$ref": "./models/abstract/domain-item.json"
+    },
+    {
+      "type": "object",
+      "properties": {
         "json-data": {
-          "request": {
-            "host": "example.com",
-            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-            "entity": "item"
-          },
-          "forwarder": {
-            "host": "example.com",
-            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-            "entity": "item"
-          },
-          "carrier": {
-            "host": "example.com",
-            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-            "entity": "item"
-          },
-          "vehicle": {
-            "host": "example.com",
-            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-            "entity": "item"
-          },
-          "driver": {
-            "host": "example.com",
-            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-            "entity": "item"
-          },
-          "phone": "+7 (999) 123-45-67",
-          "attachment": {
-            "id": "att-002",
-            "name": "Коммерческое предложение.pdf"
-          }
-        },
-        "shipment-rfp": {
-          "num": "RFP-2023-001",
-          "customer": {
-            "host": "example.com",
-            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-            "entity": "item"
-          },
-          "expectedVehicle": {
-            "id": "vt-001",
-            "name": "Рефрижератор"
-          },
-          "validSince": "2023-05-16T00:00:00Z",
-          "validUntill": "2023-05-20T23:59:59Z",
-          "targets": [
-            {
-              "id": "tt-001",
-              "name": "Доставка груза в Санкт-Петербург"
-            },
-            {
-              "id": "tt-002",
-              "name": "Доставка груза в Москву"
-            },
-            {
-              "id": "tt-003",
-              "name": "Доставка груза в Екатеринбург"
-            }
-          ],
-          "attachments": [
-            {
-              "id": "att-001",
-              "name": "Договор.pdf"
-            },
-            {
-              "id": "att-002",
-              "name": "Спецификация.xlsx"
-            },
-            {
-              "id": "att-003",
-              "name": "Инструкция по погрузке.docx"
-            }
-          ],
-          "source": {
-            "catalogId": "8c4666aa-d43d-4196-b78a-f94040b1db76"
-          }
+          "$ref": "#/offer-data"
         }
       }
-    ]
-  }
+    },
+    {
+      "type": "object",
+      "required": [
+        "shipment-rfp"
+      ],
+      "properties": {
+        "shipment-rfp": {
+          "oneOf": [
+            {
+              "$ref": "#/shipment-rfp-data"
+            },
+            {
+              "type": "string",
+              "format": "uuid"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "description": "Строка таблицы БД",
+  "additionalProperties": false,
+  "type": "object",
+  "examples": [
+    {
+      "json-schema": {},
+      "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+      "createdBy": {
+        "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
+        "Login": "string"
+      },
+      "createdDate": "2019-08-24T14:15:22Z",
+      "lastModifiedBy": {
+        "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
+        "Login": "string"
+      },
+      "lastModifiedDate": "2019-08-24T14:15:22Z",
+      "path": [
+        {
+          "host": "example.com",
+          "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+          "entity": "item"
+        }
+      ],
+      "processInstant": "string",
+      "title": "string",
+      "meta": "00bc452f-5ac7-4ce3-9b71-a522f10fc914",
+      "originalIdentity": {
+        "id": "string",
+        "host": "string",
+        "route": "string",
+        "protocol": "string"
+      },
+      "json-data": {
+        "request": {
+          "host": "example.com",
+          "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+          "entity": "item"
+        },
+        "forwarder": {
+          "host": "example.com",
+          "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+          "entity": "item"
+        },
+        "carrier": {
+          "host": "example.com",
+          "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+          "entity": "item"
+        },
+        "vehicle": {
+          "host": "example.com",
+          "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+          "entity": "item"
+        },
+        "driver": {
+          "host": "example.com",
+          "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+          "entity": "item"
+        },
+        "phone": "+7 (999) 123-45-67",
+        "attachment": {
+          "id": "att-002",
+          "name": "Коммерческое предложение.pdf"
+        }
+      },
+      "shipment-rfp": {
+        "num": "RFP-2023-001",
+        "customer": {
+          "host": "example.com",
+          "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+          "entity": "item"
+        },
+        "expectedVehicle": {
+          "id": "vt-001",
+          "name": "Рефрижератор"
+        },
+        "validSince": "2023-05-16T00:00:00Z",
+        "validUntill": "2023-05-20T23:59:59Z",
+        "targets": [
+          {
+            "id": "tt-001",
+            "name": "Доставка груза в Санкт-Петербург"
+          },
+          {
+            "id": "tt-002",
+            "name": "Доставка груза в Москву"
+          },
+          {
+            "id": "tt-003",
+            "name": "Доставка груза в Екатеринбург"
+          }
+        ],
+        "attachments": [
+          {
+            "id": "att-001",
+            "name": "Договор.pdf"
+          },
+          {
+            "id": "att-002",
+            "name": "Спецификация.xlsx"
+          },
+          {
+            "id": "att-003",
+            "name": "Инструкция по погрузке.docx"
+          }
+        ],
+        "source": {
+          "catalogId": "8c4666aa-d43d-4196-b78a-f94040b1db76"
+        }
+      }
+    }
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
 }

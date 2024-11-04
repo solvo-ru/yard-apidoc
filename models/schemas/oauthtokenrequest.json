@@ -1,66 +1,63 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "OAuthTokenRequest": {
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "type": "object",
-    "properties": {
-      "grant_type": {
-        "type": "string",
-        "enum": [
-          "authorization_code",
-          "refresh_token"
-        ],
-        "examples": [
-          "authorization_code",
-          "refresh_token",
-          "authorization_code",
-          "refresh_token",
-          "authorization_code",
-          "refresh_token"
-        ]
-      },
-      "code": {
-        "type": "string",
-        "description": "Authorization code",
-        "examples": [
-          "SplxlOBeZQQYbYS6WxSbIA",
-          "SplxlOBeZQQYbYS6WxSbIA",
-          "SplxlOBeZQQYbYS6WxSbIA"
-        ]
-      },
-      "redirect_uri": {
-        "type": "string",
-        "description": "Redirect URI",
-        "examples": [
-          "https://client.example.com/callback",
-          "https://client.example.com/callback",
-          "https://client.example.com/callback"
-        ]
-      },
-      "client_id": {
-        "type": "string",
-        "description": "Client ID",
-        "examples": [
-          "s6BhdRkqt3",
-          "s6BhdRkqt3",
-          "s6BhdRkqt3"
-        ]
-      },
-      "client_secret": {
-        "type": "string",
-        "description": "Client secret",
-        "examples": [
-          "7Fjfp0ZBr1KtDRbnfVdmIw",
-          "7Fjfp0ZBr1KtDRbnfVdmIw",
-          "7Fjfp0ZBr1KtDRbnfVdmIw"
-        ]
-      }
+  "type": "object",
+  "properties": {
+    "grant_type": {
+      "type": "string",
+      "enum": [
+        "authorization_code",
+        "refresh_token"
+      ],
+      "examples": [
+        "authorization_code",
+        "refresh_token",
+        "authorization_code",
+        "refresh_token",
+        "authorization_code",
+        "refresh_token"
+      ]
     },
-    "required": [
-      "grant_type",
-      "client_id",
-      "client_secret"
-    ],
-    "additionalProperties": false
-  }
+    "code": {
+      "type": "string",
+      "description": "Authorization code",
+      "examples": [
+        "SplxlOBeZQQYbYS6WxSbIA",
+        "SplxlOBeZQQYbYS6WxSbIA",
+        "SplxlOBeZQQYbYS6WxSbIA"
+      ]
+    },
+    "redirect_uri": {
+      "type": "string",
+      "description": "Redirect URI",
+      "examples": [
+        "https://client.example.com/callback",
+        "https://client.example.com/callback",
+        "https://client.example.com/callback"
+      ]
+    },
+    "client_id": {
+      "type": "string",
+      "description": "Client ID",
+      "examples": [
+        "s6BhdRkqt3",
+        "s6BhdRkqt3",
+        "s6BhdRkqt3"
+      ]
+    },
+    "client_secret": {
+      "type": "string",
+      "description": "Client secret",
+      "examples": [
+        "7Fjfp0ZBr1KtDRbnfVdmIw",
+        "7Fjfp0ZBr1KtDRbnfVdmIw",
+        "7Fjfp0ZBr1KtDRbnfVdmIw"
+      ]
+    }
+  },
+  "required": [
+    "grant_type",
+    "client_id",
+    "client_secret"
+  ],
+  "additionalProperties": false
 }

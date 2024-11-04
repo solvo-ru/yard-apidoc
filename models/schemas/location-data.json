@@ -1,38 +1,36 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "location-data": {
-    "title": "Локация",
-    "type": "object",
-    "description": "Используется для создания мест обработки перевозки",
-    "additionalProperties": false,
-    "required": [
-      "title",
-      "address",
-      "terminals"
-    ],
-    "properties": {
-      "title": {
-        "type": "string"
-      },
-      "address": {
-        "type": "string"
-      },
-      "terminals": {
-        "type": "array",
-        "items": {
-          "oneOf": [
-            {
-              "$ref": "./models/props/link.json"
-            },
-            {
-              "$ref": "./models/abstract/rich-list-item.json"
-            }
-          ]
-        }
-      },
-      "level": {
-        "type": "string"
+  "title": "Локация",
+  "type": "object",
+  "description": "Используется для создания мест обработки перевозки",
+  "additionalProperties": false,
+  "required": [
+    "title",
+    "address",
+    "terminals"
+  ],
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "terminals": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "./models/props/link.json"
+          },
+          {
+            "$ref": "./models/abstract/rich-list-item.json"
+          }
+        ]
       }
+    },
+    "level": {
+      "type": "string"
     }
-  }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
 }

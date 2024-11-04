@@ -1,155 +1,153 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "shipment-rfp-data": {
-    "title": "Заявка на перевозку",
-    "description": "Объект системы, содержащий информацию о планируемом перемещении груза из одной точки в другую",
-    "type": "object",
-    "additionalProperties": false,
-    "required": [
-      "num",
-      "customer",
-      "validSince",
-      "validUntill",
-      "targets"
-    ],
-    "properties": {
-      "num": {
-        "type": "string",
-        "description": "Идентификатор перевозки",
-        "examples": [
-          "RFP-2023-001",
-          "RFP-2023-001",
-          "RFP-2023-001"
+  "title": "Заявка на перевозку",
+  "description": "Объект системы, содержащий информацию о планируемом перемещении груза из одной точки в другую",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "num",
+    "customer",
+    "validSince",
+    "validUntill",
+    "targets"
+  ],
+  "properties": {
+    "num": {
+      "type": "string",
+      "description": "Идентификатор перевозки",
+      "examples": [
+        "RFP-2023-001",
+        "RFP-2023-001",
+        "RFP-2023-001"
+      ]
+    },
+    "customer": {
+      "description": "Контрагент, являющийся заказчиком перевозки",
+      "oneOf": [
+        {
+          "$ref": "./models/props/link.json"
+        },
+        {
+          "$ref": "#/contractor-item"
+        }
+      ],
+      "examples": [
+        {
+          "id": "cust-001",
+          "name": "ООО \"ГрузОтправитель\""
+        },
+        {
+          "id": "cust-001",
+          "name": "ООО \"ГрузОтправитель\""
+        },
+        {
+          "id": "cust-001",
+          "name": "ООО \"ГрузОтправитель\""
+        }
+      ],
+      "type": "object"
+    },
+    "expectedVehicle": {
+      "type": "array",
+      "description": "Один или несколько типов ТС, которое должно выполнять перевозку ",
+      "minItems": 1,
+      "examples": [
+        {
+          "id": "vt-001",
+          "name": "Рефрижератор"
+        },
+        {
+          "id": "vt-001",
+          "name": "Рефрижератор"
+        },
+        {
+          "id": "vt-001",
+          "name": "Рефрижератор"
+        }
+      ],
+      "items": {
+        "$ref": "./models/abstract/simple-list-item.json"
+      }
+    },
+    "validSince": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Дата начала периода, когда заявка на перевозку актуальна.",
+      "examples": [
+        "2023-05-16T00:00:00Z",
+        "2023-05-16T00:00:00Z",
+        "2023-05-16T00:00:00Z"
+      ]
+    },
+    "validUntill": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Дата окончания периода, когда заявка на перевозку актуальна.",
+      "examples": [
+        "2023-05-20T23:59:59Z",
+        "2023-05-20T23:59:59Z",
+        "2023-05-20T23:59:59Z"
+      ]
+    },
+    "targets": {
+      "type": "array",
+      "minItems": 1,
+      "description": "Список мест, в которых будет производиться обработка",
+      "examples": [
+        [
+          {
+            "id": "tt-001",
+            "name": "Доставка груза в Санкт-Петербург"
+          },
+          {
+            "id": "tt-002",
+            "name": "Доставка груза в Москву"
+          },
+          {
+            "id": "tt-003",
+            "name": "Доставка груза в Екатеринбург"
+          }
         ]
-      },
-      "customer": {
-        "description": "Контрагент, являющийся заказчиком перевозки",
+      ],
+      "items": {
         "oneOf": [
           {
             "$ref": "./models/props/link.json"
           },
           {
-            "$ref": "#/contractor-item"
-          }
-        ],
-        "examples": [
-          {
-            "id": "cust-001",
-            "name": "ООО \"ГрузОтправитель\""
-          },
-          {
-            "id": "cust-001",
-            "name": "ООО \"ГрузОтправитель\""
-          },
-          {
-            "id": "cust-001",
-            "name": "ООО \"ГрузОтправитель\""
+            "$ref": "#/transport-target-item"
           }
         ],
         "type": "object"
-      },
-      "expectedVehicle": {
-        "type": "array",
-        "description": "Один или несколько типов ТС, которое должно выполнять перевозку ",
-        "minItems": 1,
-        "examples": [
-          {
-            "id": "vt-001",
-            "name": "Рефрижератор"
-          },
-          {
-            "id": "vt-001",
-            "name": "Рефрижератор"
-          },
-          {
-            "id": "vt-001",
-            "name": "Рефрижератор"
-          }
-        ],
-        "items": {
-          "$ref": "./models/abstract/simple-list-item.json"
-        }
-      },
-      "validSince": {
-        "type": "string",
-        "format": "date-time",
-        "description": "Дата начала периода, когда заявка на перевозку актуальна.",
-        "examples": [
-          "2023-05-16T00:00:00Z",
-          "2023-05-16T00:00:00Z",
-          "2023-05-16T00:00:00Z"
-        ]
-      },
-      "validUntill": {
-        "type": "string",
-        "format": "date-time",
-        "description": "Дата окончания периода, когда заявка на перевозку актуальна.",
-        "examples": [
-          "2023-05-20T23:59:59Z",
-          "2023-05-20T23:59:59Z",
-          "2023-05-20T23:59:59Z"
-        ]
-      },
-      "targets": {
-        "type": "array",
-        "minItems": 1,
-        "description": "Список мест, в которых будет производиться обработка",
-        "examples": [
-          [
-            {
-              "id": "tt-001",
-              "name": "Доставка груза в Санкт-Петербург"
-            },
-            {
-              "id": "tt-002",
-              "name": "Доставка груза в Москву"
-            },
-            {
-              "id": "tt-003",
-              "name": "Доставка груза в Екатеринбург"
-            }
-          ]
-        ],
-        "items": {
-          "oneOf": [
-            {
-              "$ref": "./models/props/link.json"
-            },
-            {
-              "$ref": "#/transport-target-item"
-            }
-          ],
-          "type": "object"
-        }
-      },
-      "attachments": {
-        "type": "array",
-        "description": "Файлы, загруженные в систему, и прикрепленные к перевозке.",
-        "examples": [
-          [
-            {
-              "id": "att-001",
-              "name": "Договор.pdf"
-            },
-            {
-              "id": "att-002",
-              "name": "Спецификация.xlsx"
-            },
-            {
-              "id": "att-003",
-              "name": "Инструкция по погрузке.docx"
-            }
-          ]
-        ],
-        "items": {
-          "type": "string",
-          "format": "uri"
-        }
-      },
-      "source": {
-        "$ref": "./models/abstract/simple-list-item.json",
-        "description": "Способ создания заявки на перевозку."
       }
+    },
+    "attachments": {
+      "type": "array",
+      "description": "Файлы, загруженные в систему, и прикрепленные к перевозке.",
+      "examples": [
+        [
+          {
+            "id": "att-001",
+            "name": "Договор.pdf"
+          },
+          {
+            "id": "att-002",
+            "name": "Спецификация.xlsx"
+          },
+          {
+            "id": "att-003",
+            "name": "Инструкция по погрузке.docx"
+          }
+        ]
+      ],
+      "items": {
+        "type": "string",
+        "format": "uri"
+      }
+    },
+    "source": {
+      "$ref": "./models/abstract/simple-list-item.json",
+      "description": "Способ создания заявки на перевозку."
     }
-  }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
 }

@@ -1,145 +1,143 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "transport-target-data": {
-    "title": "Цель перевозки",
-    "type": "object",
-    "description": "Составной атрибут заявки на перевозку, содержащий информацию о месте обработки перевозки",
-    "additionalProperties": false,
-    "required": [
-      "num",
-      "route",
-      "sender",
-      "loadLocation",
-      "loadAddress",
-      "loadArrival",
-      "recipient",
-      "unloadLocation",
-      "unloadAddress",
-      "unloadArrival",
-      "cargo"
-    ],
-    "properties": {
-      "num": {
-        "type": "string",
-        "description": "Идентификатор цели перевозки"
-      },
-      "route": {
-        "enum": [
-          "Ввоз",
-          "Вывоз"
-        ],
-        "description": "Направление движение груза относительно предприятия, на котором работает организатор перевозки"
-      },
-      "sender": {
+  "title": "Цель перевозки",
+  "type": "object",
+  "description": "Составной атрибут заявки на перевозку, содержащий информацию о месте обработки перевозки",
+  "additionalProperties": false,
+  "required": [
+    "num",
+    "route",
+    "sender",
+    "loadLocation",
+    "loadAddress",
+    "loadArrival",
+    "recipient",
+    "unloadLocation",
+    "unloadAddress",
+    "unloadArrival",
+    "cargo"
+  ],
+  "properties": {
+    "num": {
+      "type": "string",
+      "description": "Идентификатор цели перевозки"
+    },
+    "route": {
+      "enum": [
+        "Ввоз",
+        "Вывоз"
+      ],
+      "description": "Направление движение груза относительно предприятия, на котором работает организатор перевозки"
+    },
+    "sender": {
+      "oneOf": [
+        {
+          "$ref": "./models/props/link.json"
+        },
+        {
+          "$ref": "#/contractor-item"
+        }
+      ],
+      "description": "Название контрагента, который является отправителем груза. "
+    },
+    "loadLocation": {
+      "oneOf": [
+        {
+          "$ref": "./models/props/link.json"
+        },
+        {
+          "$ref": "#/location-item"
+        }
+      ],
+      "description": "Локация, в которой будет производиться погрузка груза на транспортное средство"
+    },
+    "loadAddress": {
+      "type": "string",
+      "description": "Адрес локации погрузки груза на транспортное средство"
+    },
+    "loadArrival": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Плановое время прибытия ТС в локацию погрузки."
+    },
+    "recipient": {
+      "oneOf": [
+        {
+          "$ref": "./models/props/link.json"
+        },
+        {
+          "$ref": "#/contractor-item"
+        }
+      ],
+      "description": "Название контрагента, который является получателем груза."
+    },
+    "unloadLocation": {
+      "oneOf": [
+        {
+          "$ref": "./models/props/link.json"
+        },
+        {
+          "$ref": "#/location-item"
+        }
+      ],
+      "description": "Локация, в которой будет производиться выгрузка груза с транспортного средства"
+    },
+    "unloadAddress": {
+      "type": "string",
+      "description": "Адрес локации выгрузки груза с транспортного средства"
+    },
+    "unloadArrival": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Плановое время прибытия ТС в локацию выгрузки."
+    },
+    "cargo": {
+      "type": "array",
+      "description": "Список перевозимых грузов ",
+      "items": {
         "oneOf": [
           {
             "$ref": "./models/props/link.json"
           },
           {
-            "$ref": "#/contractor-item"
+            "$ref": "#/cargo-item"
           }
-        ],
-        "description": "Название контрагента, который является отправителем груза. "
+        ]
+      }
+    }
+  },
+  "examples": [
+    {
+      "num": "TT-2023-001",
+      "route": "Ввоз",
+      "sender": {
+        "host": "example.com",
+        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+        "entity": "item"
       },
       "loadLocation": {
-        "oneOf": [
-          {
-            "$ref": "./models/props/link.json"
-          },
-          {
-            "$ref": "#/location-item"
-          }
-        ],
-        "description": "Локация, в которой будет производиться погрузка груза на транспортное средство"
+        "host": "example.com",
+        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+        "entity": "item"
       },
-      "loadAddress": {
-        "type": "string",
-        "description": "Адрес локации погрузки груза на транспортное средство"
-      },
-      "loadArrival": {
-        "type": "string",
-        "format": "date-time",
-        "description": "Плановое время прибытия ТС в локацию погрузки."
-      },
+      "loadAddress": "г. Москва, ул. Складская, д. 1",
+      "loadArrival": "2023-05-21T08:00:00Z",
       "recipient": {
-        "oneOf": [
-          {
-            "$ref": "./models/props/link.json"
-          },
-          {
-            "$ref": "#/contractor-item"
-          }
-        ],
-        "description": "Название контрагента, который является получателем груза."
+        "host": "example.com",
+        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+        "entity": "item"
       },
       "unloadLocation": {
-        "oneOf": [
-          {
-            "$ref": "./models/props/link.json"
-          },
-          {
-            "$ref": "#/location-item"
-          }
-        ],
-        "description": "Локация, в которой будет производиться выгрузка груза с транспортного средства"
+        "host": "example.com",
+        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+        "entity": "item"
       },
-      "unloadAddress": {
-        "type": "string",
-        "description": "Адрес локации выгрузки груза с транспортного средства"
-      },
-      "unloadArrival": {
-        "type": "string",
-        "format": "date-time",
-        "description": "Плановое время прибытия ТС в локацию выгрузки."
-      },
+      "unloadAddress": "г. Санкт-Петербург, пр. Индустриальный, д. 10",
+      "unloadArrival": "2023-05-22T16:00:00Z",
       "cargo": {
-        "type": "array",
-        "description": "Список перевозимых грузов ",
-        "items": {
-          "oneOf": [
-            {
-              "$ref": "./models/props/link.json"
-            },
-            {
-              "$ref": "#/cargo-item"
-            }
-          ]
-        }
+        "id": "cargo-001",
+        "name": "Электроника"
       }
-    },
-    "examples": [
-      {
-        "num": "TT-2023-001",
-        "route": "Ввоз",
-        "sender": {
-          "host": "example.com",
-          "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-          "entity": "item"
-        },
-        "loadLocation": {
-          "host": "example.com",
-          "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-          "entity": "item"
-        },
-        "loadAddress": "г. Москва, ул. Складская, д. 1",
-        "loadArrival": "2023-05-21T08:00:00Z",
-        "recipient": {
-          "host": "example.com",
-          "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-          "entity": "item"
-        },
-        "unloadLocation": {
-          "host": "example.com",
-          "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-          "entity": "item"
-        },
-        "unloadAddress": "г. Санкт-Петербург, пр. Индустриальный, д. 10",
-        "unloadArrival": "2023-05-22T16:00:00Z",
-        "cargo": {
-          "id": "cargo-001",
-          "name": "Электроника"
-        }
-      }
-    ]
-  }
+    }
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
 }

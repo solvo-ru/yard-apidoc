@@ -1,74 +1,72 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "cargo-data": {
-    "title": "Груз",
-    "type": "object",
-    "description": "Объект системы, содержащий информацию о перевозимом грузе.",
-    "additionalProperties": false,
-    "required": [
-      "num",
-      "desc",
-      "amount",
-      "weight",
-      "package",
-      "owner"
-    ],
-    "properties": {
-      "num": {
-        "type": "string",
-        "description": "Идентификатор грузовой единицы"
-      },
-      "desc": {
-        "type": "string",
-        "description": "Текстовое описание груза"
-      },
-      "amount": {
-        "type": "integer",
-        "minimum": 1,
-        "default": 1,
-        "description": "Количество груза в единицах измерения (штуки)"
-      },
-      "weight": {
-        "type": "integer",
-        "minimum": 1,
-        "description": "Суммарный вес груза в килограммах вместе с упаковкой (брутто)"
-      },
-      "volume": {
-        "type": "number",
-        "format": "float",
-        "exclusiveMinimum": 0,
-        "description": "Объем груза в метрах кубических. Вещественное число с тремя знаками после запятой."
-      },
-      "package": {
-        "type": "string",
-        "description": "Сведения об упаковке груза"
-      },
-      "owner": {
-        "description": "Контрагент, являющийся владельцем перевозимого груза",
-        "oneOf": [
-          {
-            "$ref": "./models/props/link.json"
-          },
-          {
-            "$ref": "#/contractor-item"
-          }
-        ]
-      }
+  "title": "Груз",
+  "type": "object",
+  "description": "Объект системы, содержащий информацию о перевозимом грузе.",
+  "additionalProperties": false,
+  "required": [
+    "num",
+    "desc",
+    "amount",
+    "weight",
+    "package",
+    "owner"
+  ],
+  "properties": {
+    "num": {
+      "type": "string",
+      "description": "Идентификатор грузовой единицы"
     },
-    "examples": [
-      {
-        "num": "CARGO-2023-001",
-        "desc": "Электроника (смартфоны, планшеты)",
-        "amount": 1,
-        "weight": 5000,
-        "volume": 10,
-        "package": "BOXES",
-        "owner": {
-          "host": "example.com",
-          "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-          "entity": "item"
+    "desc": {
+      "type": "string",
+      "description": "Текстовое описание груза"
+    },
+    "amount": {
+      "type": "integer",
+      "minimum": 1,
+      "default": 1,
+      "description": "Количество груза в единицах измерения (штуки)"
+    },
+    "weight": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Суммарный вес груза в килограммах вместе с упаковкой (брутто)"
+    },
+    "volume": {
+      "type": "number",
+      "format": "float",
+      "exclusiveMinimum": 0,
+      "description": "Объем груза в метрах кубических. Вещественное число с тремя знаками после запятой."
+    },
+    "package": {
+      "type": "string",
+      "description": "Сведения об упаковке груза"
+    },
+    "owner": {
+      "description": "Контрагент, являющийся владельцем перевозимого груза",
+      "oneOf": [
+        {
+          "$ref": "./models/props/link.json"
+        },
+        {
+          "$ref": "#/contractor-item"
         }
+      ]
+    }
+  },
+  "examples": [
+    {
+      "num": "CARGO-2023-001",
+      "desc": "Электроника (смартфоны, планшеты)",
+      "amount": 1,
+      "weight": 5000,
+      "volume": 10,
+      "package": "BOXES",
+      "owner": {
+        "host": "example.com",
+        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+        "entity": "item"
       }
-    ]
-  }
+    }
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
 }

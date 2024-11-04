@@ -1,62 +1,60 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "driver-data": {
-    "title": "driver-data",
-    "type": "object",
-    "additionalProperties": false,
-    "required": [
-      "docNum",
-      "name",
-      "lastName",
-      "birthday",
-      "docType",
-      "haul"
-    ],
-    "properties": {
-      "docNum": {
-        "type": "integer",
-        "description": "Номер документа, удостоверяющего личность."
-      },
-      "name": {
-        "type": "string",
-        "description": "Имя водителя"
-      },
-      "lastName": {
-        "type": "string",
-        "description": "Фамилия водителя"
-      },
-      "patronym": {
-        "type": "string",
-        "description": "Отчество"
-      },
-      "birthday": {
-        "type": "string",
-        "format": "date",
-        "description": "Дата рождения водителя"
-      },
-      "docType": {
-        "$ref": "./models/abstract/simple-list-item.json",
-        "description": "Вид документа, удостоверяющего личность\n| **Значение** | **Описание**                   |\n| ------------ | ------------------------------ |\n| **Паспорт**  | Паспорт гражданина РФ.         |\n| **Права**    | Водительское удостоверение РФ. |"
-      },
-      "phone": {
-        "type": "string",
-        "description": "Номер телефона для связи с водителем.",
-        "pattern": "^((\\+7)|8)\\d{10}$"
-      },
-      "haul": {
-        "type": "array",
-        "description": "Список контрагентов, которые могут использовать водителя.",
-        "items": {
-          "oneOf": [
-            {
-              "$ref": "./models/props/link.json"
-            },
-            {
-              "$ref": "#/contractor-item"
-            }
-          ]
-        }
+  "title": "driver-data",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "docNum",
+    "name",
+    "lastName",
+    "birthday",
+    "docType",
+    "haul"
+  ],
+  "properties": {
+    "docNum": {
+      "type": "integer",
+      "description": "Номер документа, удостоверяющего личность."
+    },
+    "name": {
+      "type": "string",
+      "description": "Имя водителя"
+    },
+    "lastName": {
+      "type": "string",
+      "description": "Фамилия водителя"
+    },
+    "patronym": {
+      "type": "string",
+      "description": "Отчество"
+    },
+    "birthday": {
+      "type": "string",
+      "format": "date",
+      "description": "Дата рождения водителя"
+    },
+    "docType": {
+      "$ref": "./models/abstract/simple-list-item.json",
+      "description": "Вид документа, удостоверяющего личность\n| **Значение** | **Описание**                   |\n| ------------ | ------------------------------ |\n| **Паспорт**  | Паспорт гражданина РФ.         |\n| **Права**    | Водительское удостоверение РФ. |"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Номер телефона для связи с водителем.",
+      "pattern": "^((\\+7)|8)\\d{10}$"
+    },
+    "haul": {
+      "type": "array",
+      "description": "Список контрагентов, которые могут использовать водителя.",
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "./models/props/link.json"
+          },
+          {
+            "$ref": "#/contractor-item"
+          }
+        ]
       }
     }
-  }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
 }

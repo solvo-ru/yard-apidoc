@@ -1,20 +1,18 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "vehicle-item": {
-    "title": "Автотранспорт",
-    "allOf": [
-      {
-        "$ref": "./models/abstract/rich-list-item.json"
-      },
-      {
-        "type": "object",
-        "properties": {
-          "json-data": {
-            "$ref": "#/vehicle-data"
-          }
+  "title": "Автотранспорт",
+  "allOf": [
+    {
+      "$ref": "./models/abstract/rich-list-item.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "json-data": {
+          "$ref": "#/vehicle-data"
         }
       }
-    ],
-    "description": "Строка таблицы БД"
-  }
+    }
+  ],
+  "description": "Строка таблицы БД",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
 }

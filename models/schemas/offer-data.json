@@ -1,86 +1,84 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "offer-data": {
-    "title": "Предложение к заявке на перевозку",
-    "description": "Объект системы, которое хранит информацию по заявлению экспедитора о готовности выполнить перевозку по выбранной заявке на перевозку",
-    "type": "object",
-    "additionalProperties": false,
-    "required": [
-      "request",
-      "forwarder",
-      "carrier",
-      "vehicle",
-      "driver",
-      "phone"
-    ],
-    "properties": {
-      "request": {
-        "description": "Идентификатор заявки на перевозку",
-        "oneOf": [
-          {
-            "$ref": "./models/props/link.json"
-          },
-          {
-            "$ref": "#/shipment-rfp-item"
-          }
-        ]
-      },
-      "forwarder": {
-        "oneOf": [
-          {
-            "$ref": "./models/props/link.json"
-          },
-          {
-            "$ref": "#/contractor-item"
-          }
-        ],
-        "description": "Контрагент, который сделал предложение "
-      },
-      "carrier": {
-        "oneOf": [
-          {
-            "$ref": "./models/props/link.json"
-          },
-          {
-            "$ref": "#/contractor-item"
-          }
-        ],
-        "description": "Контрагент, выполняющий перевозку"
-      },
-      "vehicle": {
-        "oneOf": [
-          {
-            "$ref": "./models/props/link.json"
-          },
-          {
-            "$ref": "#/vehicle-item"
-          }
-        ],
-        "description": "Информация о транспортном средстве, на котором будет выполняться перевозка"
-      },
-      "driver": {
-        "oneOf": [
-          {
-            "$ref": "./models/props/link.json"
-          },
-          {
-            "$ref": "#/driver-item"
-          }
-        ],
-        "description": "Информация о водителе, который будут выполнять перевозку "
-      },
-      "phone": {
-        "type": "string",
-        "description": "Номер телефона для связи с водителем, актуальный на момент перевозки"
-      },
-      "attachment": {
-        "type": "array",
-        "description": "Файлы, загруженные в систему и прикреплённые к предложению.",
-        "items": {
-          "type": "string",
-          "format": "uri-reference"
+  "title": "Предложение к заявке на перевозку",
+  "description": "Объект системы, которое хранит информацию по заявлению экспедитора о готовности выполнить перевозку по выбранной заявке на перевозку",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "request",
+    "forwarder",
+    "carrier",
+    "vehicle",
+    "driver",
+    "phone"
+  ],
+  "properties": {
+    "request": {
+      "description": "Идентификатор заявки на перевозку",
+      "oneOf": [
+        {
+          "$ref": "./models/props/link.json"
+        },
+        {
+          "$ref": "#/shipment-rfp-item"
         }
+      ]
+    },
+    "forwarder": {
+      "oneOf": [
+        {
+          "$ref": "./models/props/link.json"
+        },
+        {
+          "$ref": "#/contractor-item"
+        }
+      ],
+      "description": "Контрагент, который сделал предложение "
+    },
+    "carrier": {
+      "oneOf": [
+        {
+          "$ref": "./models/props/link.json"
+        },
+        {
+          "$ref": "#/contractor-item"
+        }
+      ],
+      "description": "Контрагент, выполняющий перевозку"
+    },
+    "vehicle": {
+      "oneOf": [
+        {
+          "$ref": "./models/props/link.json"
+        },
+        {
+          "$ref": "#/vehicle-item"
+        }
+      ],
+      "description": "Информация о транспортном средстве, на котором будет выполняться перевозка"
+    },
+    "driver": {
+      "oneOf": [
+        {
+          "$ref": "./models/props/link.json"
+        },
+        {
+          "$ref": "#/driver-item"
+        }
+      ],
+      "description": "Информация о водителе, который будут выполнять перевозку "
+    },
+    "phone": {
+      "type": "string",
+      "description": "Номер телефона для связи с водителем, актуальный на момент перевозки"
+    },
+    "attachment": {
+      "type": "array",
+      "description": "Файлы, загруженные в систему и прикреплённые к предложению.",
+      "items": {
+        "type": "string",
+        "format": "uri-reference"
       }
     }
-  }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
 }

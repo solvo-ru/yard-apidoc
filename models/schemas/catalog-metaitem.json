@@ -1,20 +1,18 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "catalog-metaitem": {
-    "allOf": [
-      {
-        "$ref": "./models/abstract/rich-list.json"
-      },
-      {
-        "properties": {
-          "json-schema": {
-            "$ref": "./models/abstract/rich-list-meta.json"
-          }
+  "allOf": [
+    {
+      "$ref": "./models/abstract/rich-list.json"
+    },
+    {
+      "properties": {
+        "json-schema": {
+          "$ref": "./models/abstract/rich-list-meta.json"
         }
       }
-    ],
-    "description": "Метаданные справочника",
-    "title": "Запись коллекции 'Справочник'",
-    "additionalProperties": false
-  }
+    }
+  ],
+  "description": "Метаданные справочника",
+  "title": "Запись коллекции 'Справочник'",
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
 }

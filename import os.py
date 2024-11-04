@@ -18,11 +18,15 @@ def split_json(input_file, output_dir, schema_url):
 
     # Iterate through first-level properties
     for key, value in data.items():
-        # Create a new dictionary with the current property and add $schema
-        new_data = {
-            "$schema": schema_url,
-            key: value
-        }
+        # Add $schema to the existing value if it's a dictionary
+        if isinstance(value, dict):
+            value["$schema"] = schema_url
+        else:
+            # If the value is not a dictionary, wrap it in a dictionary with $schema
+            value = {
+                "$schema": schema_url,
+                "value": value
+            }
 
         # Create a safe filename
         safe_key = slugify(key)
@@ -30,9 +34,10 @@ def split_json(input_file, output_dir, schema_url):
 
         # Write the new JSON to a file
         with open(output_file, 'w', encoding='utf-8') as f:
-            json.dump(new_data, f, indent=2, ensure_ascii=False)
+            json.dump(value, f, indent=2, ensure_ascii=False)
 
         print(f"Created: {output_file}")
+
 
 # Example usage
 input_file = "schemas.json"

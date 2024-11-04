@@ -1117,7 +1117,32 @@
             }
           }
         ],
-        "description": "Строка таблицы БД"
+        "description": "Строка таблицы БД",
+        "example": {
+          "id": "veh-001",
+          "type": "TRUCK",
+          "make": "КАМАЗ",
+          "model": "5490",
+          "year": 2021,
+          "licensePlate": "А123БВ777",
+          "vin": "X1F5490NEL0000001",
+          "status": "ACTIVE",
+          "createdAt": "2023-05-10T11:00:00Z",
+          "updatedAt": "2023-05-10T11:00:00Z",
+          "capacity": {
+            "weight": 20000,
+            "volume": 86
+          },
+          "dimensions": {
+            "length": 13.6,
+            "width": 2.45,
+            "height": 2.7
+          },
+          "features": [
+            "REFRIGERATOR",
+            "GPS_TRACKER"
+          ]
+        }
       },
       "vehicle-data": {
         "title": "vehicle-data",

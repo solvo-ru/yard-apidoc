@@ -745,7 +745,10 @@
         "properties": {
           "num": {
             "type": "string",
-            "description": "Идентификатор перевозки"
+            "description": "Идентификатор перевозки",
+            "examples": [
+              "RFP-2023-001"
+            ]
           },
           "customer": {
             "description": "Контрагент, являющийся заказчиком перевозки",
@@ -757,7 +760,13 @@
                 "$ref": "#/components/schemas/contractor-item"
               }
             ],
-            "type": "object"
+            "type": "object",
+            "examples": [
+              {
+                "id": "cust-001",
+                "name": "ООО \"ГрузОтправитель\""
+              }
+            ]
           },
           "expectedVehicle": {
             "type": "array",
@@ -765,17 +774,29 @@
             "minItems": 1,
             "items": {
               "$ref": "./models/abstract/simple-list-item.json"
-            }
+            },
+            "examples": [
+              {
+                "id": "vt-001",
+                "name": "Рефрижератор"
+              }
+            ]
           },
           "validSince": {
             "type": "string",
             "format": "date-time",
-            "description": "Дата начала периода, когда заявка на перевозку актуальна."
+            "description": "Дата начала периода, когда заявка на перевозку актуальна.",
+            "examples": [
+              "2023-05-16T00:00:00Z"
+            ]
           },
           "validUntill": {
             "type": "string",
             "format": "date-time",
-            "description": "Дата окончания периода, когда заявка на перевозку актуальна."
+            "description": "Дата окончания периода, когда заявка на перевозку актуальна.",
+            "examples": [
+              "2023-05-20T23:59:59Z"
+            ]
           },
           "targets": {
             "type": "array",
@@ -791,7 +812,15 @@
                 }
               ],
               "type": "object"
-            }
+            },
+            "examples": [
+              [
+                {
+                  "id": "tt-001",
+                  "name": "Доставка груза в Санкт-Петербург"
+                }
+              ]
+            ]
           },
           "attachments": {
             "type": "array",
@@ -799,11 +828,25 @@
             "items": {
               "type": "string",
               "format": "uri"
-            }
+            },
+            "examples": [
+              [
+                {
+                  "id": "att-001",
+                  "name": "Договор.pdf"
+                }
+              ]
+            ]
           },
           "source": {
             "$ref": "./models/abstract/simple-list-item.json",
-            "description": "Способ создания заявки на перевозку."
+            "description": "Способ создания заявки на перевозку.",
+            "examples": [
+              {
+                "id": "src-001",
+                "name": "Веб-интерфейс"
+              }
+            ]
           }
         },
         "additionalProperties": false

@@ -1435,7 +1435,48 @@
               ],
               "type": "object"
             },
-            "examples": {}
+            "examples": {},
+            "example": {
+              "items": [
+                {
+                  "id": "456e7890-f12a-34b5-c678-901234567890",
+                  "shipmentRfpId": "123e4567-e89b-12d3-a456-426614174000",
+                  "carrierId": "789e0123-g45h-67i8-j901-234567890123",
+                  "status": "PENDING",
+                  "createdAt": "2023-05-16T14:30:00Z",
+                  "updatedAt": "2023-05-16T14:30:00Z",
+                  "expiresAt": "2023-05-18T23:59:59Z",
+                  "price": {
+                    "amount": 48000,
+                    "currency": "RUB"
+                  },
+                  "estimatedPickupTime": "2023-05-21T09:00:00Z",
+                  "estimatedDeliveryTime": "2023-05-22T18:00:00Z"
+                },
+                {
+                  "id": "567f8901-g23b-45c6-d789-012345678901",
+                  "shipmentRfpId": "123e4567-e89b-12d3-a456-426614174000",
+                  "carrierId": "890f1234-h56i-78j9-k012-345678901234",
+                  "status": "PENDING",
+                  "createdAt": "2023-05-16T15:45:00Z",
+                  "updatedAt": "2023-05-16T15:45:00Z",
+                  "expiresAt": "2023-05-18T23:59:59Z",
+                  "price": {
+                    "amount": 52000,
+                    "currency": "RUB"
+                  },
+                  "estimatedPickupTime": "2023-05-21T10:00:00Z",
+                  "estimatedDeliveryTime": "2023-05-22T19:00:00Z"
+                }
+              ],
+              "meta": {
+                "totalItems": 2,
+                "itemCount": 2,
+                "itemsPerPage": 10,
+                "totalPages": 1,
+                "currentPage": 1
+              }
+            }
           }
         }
       },

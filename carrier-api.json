@@ -1439,7 +1439,10 @@
           "plate": {
             "type": "string",
             "pattern": "^[А-Я]{2}\\d{3,4}[А-Я]{2}(?: [А-Я]{2}\\d{3,4}[А-Я]{2})?$",
-            "description": "Номер регистрационного знака транспортного средства. "
+            "description": "Номер регистрационного знака транспортного средства. ",
+            "examples": [
+              "А123БВ777"
+            ]
           },
           "haul": {
             "description": "Список контрагентов, которые могут использовать ТС",
@@ -1454,19 +1457,31 @@
                 }
               ],
               "type": "object"
-            }
+            },
+            "examples": [
+              "LONG_HAUL"
+            ]
           },
           "type": {
             "$ref": "./models/abstract/simple-list-item.json",
-            "description": "Тип транспортного средства"
+            "description": "Тип транспортного средства",
+            "examples": [
+              "TRUCK"
+            ]
           },
           "./model": {
             "type": "string",
-            "description": "Марка и модель ТС."
+            "description": "Марка и модель ТС.",
+            "examples": [
+              "КАМАЗ 5490"
+            ]
           },
           "desc": {
             "type": "string",
-            "description": "Описание ТС."
+            "description": "Описание ТС.",
+            "examples": [
+              "Седельный тягач с рефрижераторным полуприцепом"
+            ]
           }
         },
         "additionalProperties": false

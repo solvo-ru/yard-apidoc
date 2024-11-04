@@ -958,7 +958,13 @@
                 "$ref": "#/components/schemas/shipment-rfp-item"
               }
             ],
-            "type": "object"
+            "type": "object",
+            "examples": [
+              {
+                "id": "rfp-001",
+                "name": "Перевозка груза из Москвы в Санкт-Петербург"
+              }
+            ]
           },
           "forwarder": {
             "oneOf": [
@@ -969,7 +975,13 @@
                 "$ref": "#/components/schemas/contractor-item"
               }
             ],
-            "description": "Контрагент, который сделал предложение "
+            "description": "Контрагент, который сделал предложение ",
+            "examples": [
+              {
+                "id": "fwd-001",
+                "name": "ООО \"ЛогистикПро\""
+              }
+            ]
           },
           "carrier": {
             "oneOf": [
@@ -980,7 +992,13 @@
                 "$ref": "#/components/schemas/contractor-item"
               }
             ],
-            "description": "Контрагент, выполняющий перевозку"
+            "description": "Контрагент, выполняющий перевозку",
+            "examples": [
+              {
+                "id": "car-001",
+                "name": "ООО \"ТрансЛогистик\""
+              }
+            ]
           },
           "vehicle": {
             "oneOf": [
@@ -991,7 +1009,13 @@
                 "$ref": "#/components/schemas/vehicle-item"
               }
             ],
-            "description": "Информация о транспортном средстве, на котором будет выполняться перевозка"
+            "description": "Информация о транспортном средстве, на котором будет выполняться перевозка",
+            "examples": [
+              {
+                "id": "veh-001",
+                "name": "КАМАЗ 5490"
+              }
+            ]
           },
           "driver": {
             "oneOf": [
@@ -1002,11 +1026,20 @@
                 "$ref": "#/components/schemas/driver-item"
               }
             ],
-            "description": "Информация о водителе, который будут выполнять перевозку "
+            "description": "Информация о водителе, который будут выполнять перевозку ",
+            "examples": [
+              {
+                "id": "drv-001",
+                "name": "Иванов Иван Иванович"
+              }
+            ]
           },
           "phone": {
             "type": "string",
-            "description": "Номер телефона для связи с водителем, актуальный на момент перевозки"
+            "description": "Номер телефона для связи с водителем, актуальный на момент перевозки",
+            "examples": [
+              "+7 (999) 123-45-67"
+            ]
           },
           "attachment": {
             "type": "array",
@@ -1014,7 +1047,13 @@
             "items": {
               "type": "string",
               "format": "uri-reference"
-            }
+            },
+            "examples": [
+              {
+                "id": "att-002",
+                "name": "Коммерческое предложение.pdf"
+              }
+            ]
           }
         },
         "additionalProperties": false

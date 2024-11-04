@@ -1690,11 +1690,17 @@
         "properties": {
           "title": {
             "type": "string",
-            "description": "название места обработки"
+            "description": "название места обработки",
+            "examples": [
+              "Склад \"Восточный\""
+            ]
           },
           "address": {
             "type": "string",
-            "description": "Адрес локации"
+            "description": "Адрес локации",
+            "examples": [
+              "г. Москва, ул. Складская, д. 1"
+            ]
           },
           "terminals": {
             "type": "array",
@@ -1709,11 +1715,26 @@
                 }
               ],
               "type": "object"
-            }
+            },
+            "examples": [
+              [
+                {
+                  "id": "term-001",
+                  "name": "Терминал 1"
+                },
+                {
+                  "id": "term-002",
+                  "name": "Терминал 2"
+                }
+              ]
+            ]
           },
           "level": {
             "type": "string",
-            "description": "Положение локации в иерархии топологии."
+            "description": "Положение локации в иерархии топологии.",
+            "examples": [
+              "WAREHOUSE"
+            ]
           }
         },
         "additionalProperties": false

@@ -11,25 +11,6 @@
           "$ref": "./offer-data.json"
         }
       }
-    },
-    {
-      "type": "object",
-      "required": [
-        "shipment-rfp"
-      ],
-      "properties": {
-        "shipment-rfp": {
-          "oneOf": [
-            {
-              "$ref": "./shipment-rfp-data.json"
-            },
-            {
-              "type": "string",
-              "format": "uuid"
-            }
-          ]
-        }
-      }
     }
   ],
   "description": "Строка таблицы БД",
@@ -109,7 +90,7 @@
           "name": "Рефрижератор"
         },
         "validSince": "2023-05-16T00:00:00Z",
-        "validUntill": "2023-05-20T23:59:59Z",
+        "validUntil": "2023-05-20T23:59:59Z",
         "targets": [
           {
             "id": "tt-001",

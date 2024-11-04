@@ -65,29 +65,13 @@
             }
           ]
         },
-        "originalIdentity": {
-          "$ref": "../props/foreignId.json",
-          "x-stoplight": {
-            "id": "1uy79iegbxpxk"
-          }
-        }
-      },
-      "x-stoplight": {
-        "id": "6zs3uejbbb31h"
-      }
-    },
-    {
-      "type": "object",
-      "x-stoplight": {
-        "id": "kbge03p6vj4pu"
-      },
-      "properties": {
         "json-data": {
           "type": "object",
           "x-stoplight": {
             "id": "yipei2b9v0alx"
           }
         }
+        
       }
     }
   ],

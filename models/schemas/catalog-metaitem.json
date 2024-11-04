@@ -4,8 +4,9 @@
       "$ref": "../abstract/rich-list.json"
     },
     {
+      "type": "object",
       "properties": {
-        "json-schema": {
+        "meta": {
           "$ref": "../abstract/rich-list-meta.json"
         }
       }

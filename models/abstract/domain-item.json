@@ -46,8 +46,19 @@
         },
         "json-data": {
           "type": "object"
+        },
+        "displayName": {
+          "type": "string",
+          "x-stoplight": {
+            "id": "06himppwpl81d"
+          }
         }
-      }
+      },
+      "required": [
+        "meta",
+        "json-data",
+        "displayName"
+      ]
     }
   ],
   "x-tags": [

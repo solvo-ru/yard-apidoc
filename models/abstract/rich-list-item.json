@@ -14,7 +14,10 @@
         "json-data": {
           "type": "object"
         }
-      }
+      },
+      "required": [
+        "json-data"
+      ]
     }
   ],
   "x-tags": [

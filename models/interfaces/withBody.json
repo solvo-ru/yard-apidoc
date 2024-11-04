@@ -7,14 +7,20 @@
         "json-schema": {
           "type": "object"
         }
-      }
+      },
+      "required": [
+        "json-schema"
+      ]
     },
     {
       "properties": {
         "json-data": {
           "type": "object"
         }
-      }
+      },
+      "required": [
+        "json-data"
+      ]
     }
   ],
   "type": "object"

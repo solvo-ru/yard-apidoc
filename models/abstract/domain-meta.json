@@ -20,14 +20,14 @@
     },
     {
       "type": "object",
-      "required": [
-        "processDefinition"
-      ],
       "properties": {
         "processDefinition": {
           "type": "string"
         }
-      }
+      },
+      "required": [
+        "processDefinition"
+      ]
     },
     {
       "type": "object",
@@ -35,7 +35,10 @@
         "json-schema": {
           "type": "object"
         }
-      }
+      },
+      "required": [
+        "json-schema"
+      ]
     }
   ],
   "x-tags": [

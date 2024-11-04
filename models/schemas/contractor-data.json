@@ -3,44 +3,7 @@
   "type": "object",
   "description": "Данные юр. лица",
   "additionalProperties": false,
-  "examples": [
-    {
-      "title": "string",
-      "fullTitle": "string",
-      "type": {
-        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-        "createdBy": {
-          "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
-          "Login": "string"
-        },
-        "createdDate": "2019-08-24T14:15:22Z",
-        "lastModifiedBy": {
-          "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
-          "Login": "string"
-        },
-        "lastModifiedDate": "2019-08-24T14:15:22Z",
-        "title": "string",
-        "catalogId": "8c4666aa-d43d-4196-b78a-f94040b1db76"
-      },
-      "role": [
-        {
-          "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-          "createdBy": {
-            "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
-            "Login": "string"
-          },
-          "createdDate": "2019-08-24T14:15:22Z",
-          "lastModifiedBy": {
-            "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
-            "Login": "string"
-          },
-          "lastModifiedDate": "2019-08-24T14:15:22Z",
-          "title": "string",
-          "catalogId": "8c4666aa-d43d-4196-b78a-f94040b1db76"
-        }
-      ]
-    }
-  ],
+  
   "required": [
     "title",
     "fullTitle",

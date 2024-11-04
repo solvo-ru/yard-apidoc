@@ -27,7 +27,7 @@
     "/oauth/token": {
       "post": {
         "summary": "OAuth token request",
-        "description": "Requests an OAuth token",
+        "description": "Получение OAuth токена для аутентификации в системе",
         "requestBody": {
           "description": "OAuth token request",
           "content": {
@@ -106,13 +106,17 @@
           "401": {
             "description": "Unauthorized"
           }
-        }
+        },
+        "operationId": "getOAuthToken",
+        "tags": [
+          "Аутентификация"
+        ]
       }
     },
     "/oauth/revoke": {
       "post": {
         "summary": "OAuth token revocation",
-        "description": "Revokes an OAuth token",
+        "description": "Отзыв OAuth токена",
         "requestBody": {
           "description": "OAuth token revocation request",
           "content": {
@@ -139,13 +143,17 @@
           "401": {
             "description": "Unauthorized"
           }
-        }
+        },
+        "operationId": "revokeOAuthToken",
+        "tags": [
+          "Аутентификация"
+        ]
       }
     },
     "/oauth/userinfo": {
       "get": {
         "summary": "OAuth userinfo",
-        "description": "Retrieves userinfo for the authenticated user",
+        "description": "Получение информации о текущем пользователе",
         "security": [
           {
             "oauth2": []
@@ -184,7 +192,11 @@
           "401": {
             "description": "Unauthorized"
           }
-        }
+        },
+        "operationId": "getUserInfo",
+        "tags": [
+          "Аутентификация"
+        ]
       }
     },
     "/shipment-rfp": {
@@ -194,7 +206,12 @@
           "200": {
             "$ref": "#/components/responses/shipment-rfp-list"
           }
-        }
+        },
+        "description": "Получение списка заявок на перевозку",
+        "operationId": "getShipmentRfpList",
+        "tags": [
+          "Заявки на перевозку"
+        ]
       },
       "put": {
         "summary": "Создать новую заявку на перевозку",
@@ -218,7 +235,12 @@
               }
             }
           }
-        }
+        },
+        "description": "Создание новой заявки на перевозку",
+        "operationId": "createShipmentRfp",
+        "tags": [
+          "Заявки на перевозку"
+        ]
       },
       "parameters": []
     },
@@ -248,6 +270,11 @@
               "format": "uuid"
             }
           }
+        ],
+        "description": "Получение детальной информации о заявке на перевозку",
+        "operationId": "getShipmentRfpDetails",
+        "tags": [
+          "Заявки на перевозку"
         ]
       },
       "post": {
@@ -284,7 +311,12 @@
               }
             }
           }
-        }
+        },
+        "description": "Обновление информации о заявке на перевозку",
+        "operationId": "updateShipmentRfp",
+        "tags": [
+          "Заявки на перевозку"
+        ]
       },
       "parameters": [
         {

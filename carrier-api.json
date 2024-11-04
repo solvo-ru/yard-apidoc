@@ -841,29 +841,27 @@
           "createdAt": "2023-05-15T10:30:00Z",
           "updatedAt": "2023-05-15T10:30:00Z",
           "expiresAt": "2023-05-20T23:59:59Z",
-          "origin": {
-            "address": "ул. Ленина, 1, Москва, Россия",
-            "coordinates": {
-              "latitude": 55.7558,
-              "longitude": 37.6173
+          "customer": {
+            "id": "cust-001",
+            "name": "ООО 'ГрузОтправитель'"
+          },
+          "vehicleTypes": [
+            {
+              "id": "vt-001",
+              "name": "Рефрижератор"
             }
-          },
-          "destination": {
-            "address": "Невский проспект, 1, Санкт-Петербург, Россия",
-            "coordinates": {
-              "latitude": 59.9311,
-              "longitude": 30.3609
+          ],
+          "validSince": "2023-05-16T00:00:00Z",
+          "validUntil": "2023-05-20T23:59:59Z",
+          "transportTargets": [
+            {
+              "id": "tt-001",
+              "name": "Доставка груза в Санкт-Петербург"
             }
-          },
-          "cargo": {
-            "type": "Общие грузы",
-            "weight": 1000,
-            "volume": 5
-          },
-          "additionalRequirements": "Требуется рефрижератор",
-          "estimatedCost": {
-            "amount": 50000,
-            "currency": "RUB"
+          ],
+          "source": {
+            "id": "src-001",
+            "name": "Веб-интерфейс"
           }
         },
         "type": "object"
@@ -970,23 +968,36 @@
         "description": "Строка таблицы БД",
         "example": {
           "id": "456e7890-f12a-34b5-c678-901234567890",
-          "shipmentRfpId": "123e4567-e89b-12d3-a456-426614174000",
-          "carrierId": "789e0123-g45h-67i8-j901-234567890123",
           "status": "PENDING",
           "createdAt": "2023-05-16T14:30:00Z",
           "updatedAt": "2023-05-16T14:30:00Z",
           "expiresAt": "2023-05-18T23:59:59Z",
+          "shipmentRfp": {
+            "id": "123e4567-e89b-12d3-a456-426614174000",
+            "name": "Перевозка груза из Москвы в Санкт-Петербург"
+          },
+          "forwarder": {
+            "id": "fwd-001",
+            "name": "ООО 'ЛогистикПро'"
+          },
+          "carrier": {
+            "id": "car-001",
+            "name": "ООО 'ТрансЛогистик'"
+          },
+          "vehicle": {
+            "id": "veh-001",
+            "name": "КАМАЗ 5490"
+          },
+          "driver": {
+            "id": "drv-001",
+            "name": "Иванов Иван Иванович"
+          },
           "price": {
             "amount": 48000,
             "currency": "RUB"
           },
           "estimatedPickupTime": "2023-05-21T09:00:00Z",
-          "estimatedDeliveryTime": "2023-05-22T18:00:00Z",
-          "additionalServices": [
-            "Страхование груза",
-            "Экспедирование"
-          ],
-          "notes": "Готовы предоставить рефрижератор для перевозки"
+          "estimatedDeliveryTime": "2023-05-22T18:00:00Z"
         }
       },
       "transport-target-item": {

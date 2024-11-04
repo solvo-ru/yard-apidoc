@@ -63,13 +63,21 @@
                   "client_secret"
                 ]
               },
-              "example": {
-                "grant_type": "authorization_code",
-                "code": "4/P7q7W91a-oMsCeLvIaQm6bTrgtp7",
-                "redirect_uri": "https://example.com/oauth2callback",
-                "client_id": "ваш-client-id",
-                "client_secret": "ваш-client-secret"
-              }
+              "examples": [
+                {
+                  "grant_type": "authorization_code",
+                  "code": "4/P7q7W91a-oMsCeLvIaQm6bTrgtp7",
+                  "redirect_uri": "https://example.com/oauth2callback",
+                  "client_id": "ваш-client-id",
+                  "client_secret": "ваш-client-secret"
+                },
+                {
+                  "grant_type": "refresh_token",
+                  "refresh_token": "1//0eXABCDEF-ghijklmnopqrstuvwxyzABCDEF",
+                  "client_id": "ваш-client-id",
+                  "client_secret": "ваш-client-secret"
+                }
+              ]
             }
           }
         },
@@ -98,7 +106,20 @@
                       "description": "Refresh token"
                     }
                   }
-                }
+                },
+                "examples": [
+                  {
+                    "access_token": "ya29.a0AfH6SMBx-0kzHx8YT1nKhBjLxGJHtLOSO_7VTX8eK0HN_Ew",
+                    "token_type": "Bearer",
+                    "expires_in": 3600,
+                    "refresh_token": "1//0eXABCDEF-ghijklmnopqrstuvwxyzABCDEF"
+                  },
+                  {
+                    "access_token": "ya29.b0AfH6SMCx-1lzIy9YU2mLhCkMHtMPTP_8WUY9fL1eL1IN_Fx",
+                    "token_type": "Bearer",
+                    "expires_in": 3600
+                  }
+                ]
               }
             }
           },
@@ -131,7 +152,15 @@
                 "required": [
                   "token"
                 ]
-              }
+              },
+              "examples": [
+                {
+                  "token": "ya29.a0AfH6SMBx-0kzHx8YT1nKhBjLxGJHtLOSO_7VTX8eK0HN_Ew"
+                },
+                {
+                  "token": "1//0eXABCDEF-ghijklmnopqrstuvwxyzABCDEF"
+                }
+              ]
             }
           }
         },
@@ -180,11 +209,18 @@
                     }
                   }
                 },
-                "example": {
-                  "sub": "1234567890",
-                  "name": "Иван Петров",
-                  "email": "ivan.petrov@example.com"
-                }
+                "examples": [
+                  {
+                    "sub": "123456789",
+                    "name": "Иван Иванов",
+                    "email": "ivan.ivanov@example.com"
+                  },
+                  {
+                    "sub": "987654321",
+                    "name": "Анна Петрова",
+                    "email": "anna.petrova@example.com"
+                  }
+                ]
               }
             }
           },
@@ -203,7 +239,36 @@
         "summary": "Получить список заявок на перевозку",
         "responses": {
           "200": {
-            "$ref": "#/components/responses/shipment-rfp-list"
+            "$ref": "#/components/responses/shipment-rfp-list",
+            "content": {
+              "application/json": {
+                "examples": [
+                  {
+                    "items": [
+                      {
+                        "id": "RFP-001",
+                        "name": "Перевозка груза из Москвы в Санкт-Петербург",
+                        "status": "OPEN",
+                        "createdAt": "2023-05-15T10:30:00Z",
+                        "updatedAt": "2023-05-15T10:30:00Z",
+                        "expiresAt": "2023-05-20T23:59:59Z"
+                      },
+                      {
+                        "id": "RFP-002",
+                        "name": "Доставка товаров в Екатеринбург",
+                        "status": "CLOSED",
+                        "createdAt": "2023-05-14T09:15:00Z",
+                        "updatedAt": "2023-05-16T14:20:00Z",
+                        "expiresAt": "2023-05-19T23:59:59Z"
+                      }
+                    ],
+                    "total": 2,
+                    "page": 1,
+                    "pageSize": 10
+                  }
+                ]
+              }
+            }
           }
         },
         "description": "Получение списка заявок на перевозку",
@@ -221,7 +286,19 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/shipment-rfp-item"
-                }
+                },
+                "examples": [
+                  {
+                    "value": {
+                      "id": "RFP-003",
+                      "name": "Перевозка груза из Новосибирска в Красноярск",
+                      "status": "DRAFT",
+                      "createdAt": "2023-05-17T08:45:00Z",
+                      "updatedAt": "2023-05-17T08:45:00Z",
+                      "expiresAt": "2023-06-05T23:59:59Z"
+                    }
+                  }
+                ]
               }
             }
           }
@@ -231,7 +308,41 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/shipment-rfp-item"
-              }
+              },
+              "examples": [
+                {
+                  "value": {
+                    "name": "Перевозка груза из Новосибирска в Красноярск",
+                    "status": "DRAFT",
+                    "customer": {
+                      "id": "CUST-001",
+                      "name": "ООО 'Сибирские перевозки'"
+                    },
+                    "vehicleTypes": [
+                      {
+                        "id": "VT-001",
+                        "name": "Рефрижератор"
+                      },
+                      {
+                        "id": "VT-002",
+                        "name": "Тентованный полуприцеп"
+                      }
+                    ],
+                    "validSince": "2023-06-01T00:00:00Z",
+                    "validUntill": "2023-06-05T23:59:59Z",
+                    "targets": [
+                      {
+                        "id": "TT-001",
+                        "name": "Погрузка в Новосибирске"
+                      },
+                      {
+                        "id": "TT-002",
+                        "name": "Разгрузка в Красноярске"
+                      }
+                    ]
+                  }
+                }
+              ]
             }
           }
         },
@@ -253,7 +364,45 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/shipment-rfp-item"
-                }
+                },
+                "examples": [
+                  {
+                    "value": {
+                      "id": "RFP-001",
+                      "name": "Перевозка груза из Москвы в Санкт-Петербург",
+                      "status": "OPEN",
+                      "createdAt": "2023-05-15T10:30:00Z",
+                      "updatedAt": "2023-05-15T10:30:00Z",
+                      "expiresAt": "2023-05-20T23:59:59Z",
+                      "customer": {
+                        "id": "CUST-001",
+                        "name": "ООО 'Московские грузоперевозки'"
+                      },
+                      "vehicleTypes": [
+                        {
+                          "id": "VT-001",
+                          "name": "Рефрижератор"
+                        },
+                        {
+                          "id": "VT-002",
+                          "name": "Тентованный полуприцеп"
+                        }
+                      ],
+                      "validSince": "2023-05-15T00:00:00Z",
+                      "validUntill": "2023-05-20T23:59:59Z",
+                      "targets": [
+                        {
+                          "id": "TT-001",
+                          "name": "Погрузка в Москве"
+                        },
+                        {
+                          "id": "TT-002",
+                          "name": "Разгрузка в Санкт-Петербурге"
+                        }
+                      ]
+                    }
+                  }
+                ]
               }
             }
           }
@@ -285,7 +434,19 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/shipment-rfp-item"
-                }
+                },
+                "examples": [
+                  {
+                    "value": {
+                      "id": "RFP-001",
+                      "name": "Перевозка груза из Москвы в Санкт-Петербург (обновлено)",
+                      "status": "IN_PROGRESS",
+                      "createdAt": "2023-05-15T10:30:00Z",
+                      "updatedAt": "2023-05-17T14:20:00Z",
+                      "expiresAt": "2023-05-25T23:59:59Z"
+                    }
+                  }
+                ]
               }
             }
           }
@@ -307,7 +468,26 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/shipment-rfp-item"
-              }
+              },
+              "examples": [
+                {
+                  "value": {
+                    "name": "Перевозка груза из Москвы в Санкт-Петербург (обновлено)",
+                    "status": "IN_PROGRESS",
+                    "vehicleTypes": [
+                      {
+                        "id": "VT-001",
+                        "name": "Рефрижератор"
+                      },
+                      {
+                        "id": "VT-003",
+                        "name": "Изотермический фургон"
+                      }
+                    ],
+                    "validUntill": "2023-05-25T23:59:59Z"
+                  }
+                }
+              ]
             }
           }
         },

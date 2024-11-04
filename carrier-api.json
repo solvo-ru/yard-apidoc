@@ -689,23 +689,39 @@
             "enum": [
               "authorization_code",
               "refresh_token"
+            ],
+            "examples": [
+              "authorization_code",
+              "refresh_token"
             ]
           },
           "code": {
             "type": "string",
-            "description": "Authorization code"
+            "description": "Authorization code",
+            "examples": [
+              "SplxlOBeZQQYbYS6WxSbIA"
+            ]
           },
           "redirect_uri": {
             "type": "string",
-            "description": "Redirect URI"
+            "description": "Redirect URI",
+            "examples": [
+              "https://client.example.com/callback"
+            ]
           },
           "client_id": {
             "type": "string",
-            "description": "Client ID"
+            "description": "Client ID",
+            "examples": [
+              "s6BhdRkqt3"
+            ]
           },
           "client_secret": {
             "type": "string",
-            "description": "Client secret"
+            "description": "Client secret",
+            "examples": [
+              "7Fjfp0ZBr1KtDRbnfVdmIw"
+            ]
           }
         },
         "required": [

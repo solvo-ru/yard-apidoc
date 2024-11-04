@@ -1202,7 +1202,27 @@
             }
           }
         ],
-        "description": "Строка таблицы БД"
+        "description": "Строка таблицы БД",
+        "example": {
+          "id": "drv-001",
+          "firstName": "Александр",
+          "lastName": "Петров",
+          "middleName": "Иванович",
+          "dateOfBirth": "1985-07-15",
+          "phoneNumber": "+7 (999) 234-56-78",
+          "email": "a.petrov@example.com",
+          "licenseNumber": "7712 345678",
+          "licenseExpirationDate": "2025-12-31",
+          "status": "ACTIVE",
+          "createdAt": "2023-05-12T10:30:00Z",
+          "updatedAt": "2023-05-12T10:30:00Z",
+          "experience": 10,
+          "qualifications": [
+            "ADR",
+            "REFRIGERATOR"
+          ],
+          "currentVehicleId": "veh-001"
+        }
       },
       "driver-data": {
         "title": "driver-data",

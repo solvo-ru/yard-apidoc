@@ -718,6 +718,13 @@
         "title": "Заявка на перевозку",
         "description": "Объект системы, содержащий информацию о планируемом перемещении груза из одной точки в другую",
         "type": "object",
+        "required": [
+          "num",
+          "customer",
+          "validSince",
+          "validUntill",
+          "targets"
+        ],
         "properties": {
           "num": {
             "type": "string",
@@ -963,7 +970,6 @@
             }
           }
         ],
-        "type": "object",
         "x-examples": {},
         "description": "Строка таблицы БД",
         "example": {
@@ -998,7 +1004,8 @@
           },
           "estimatedPickupTime": "2023-05-21T09:00:00Z",
           "estimatedDeliveryTime": "2023-05-22T18:00:00Z"
-        }
+        },
+        "type": "object"
       },
       "transport-target-item": {
         "title": "Цель перевозки",
@@ -1043,6 +1050,20 @@
       "transport-target-data": {
         "title": "Цель перевозки",
         "type": "object",
+        "description": "Составной атрибут заявки на перевозку, содержащий информацию о месте обработки перевозки",
+        "required": [
+          "num",
+          "route",
+          "sender",
+          "loadLocation",
+          "loadAddress",
+          "loadArrival",
+          "recipient",
+          "unloadLocation",
+          "unloadAddress",
+          "unloadArrival",
+          "cargo"
+        ],
         "properties": {
           "num": {
             "type": "string",
@@ -1131,12 +1152,17 @@
               ]
             }
           }
-        },
-        "description": "Составной атрибут заявки на перевозку, содержащий информацию о месте обработки перевозки"
+        }
       },
       "contractor-data": {
         "title": "Контрагент",
         "type": "object",
+        "description": "Данные юр. лица",
+        "required": [
+          "title",
+          "fullTitle",
+          "type"
+        ],
         "properties": {
           "title": {
             "type": "string",
@@ -1158,8 +1184,7 @@
               "$ref": "./models/abstract/simple-list-item.json"
             }
           }
-        },
-        "description": "Данные юр. лица"
+        }
       },
       "contractor-item": {
         "title": "Запись \"Контрагент\"",
@@ -1449,8 +1474,11 @@
       "location-data": {
         "title": "Локация",
         "type": "object",
+        "description": "Используется для создания мест обработки перевозки",
         "required": [
-          "title"
+          "title",
+          "address",
+          "terminals"
         ],
         "properties": {
           "title": {
@@ -1480,8 +1508,7 @@
             "type": "string",
             "description": "Положение локации в иерархии топологии."
           }
-        },
-        "description": "Используется для создания мест обработки перевозки"
+        }
       },
       "cargo-item": {
         "title": "Груз",
@@ -1660,6 +1687,23 @@
       },
       "pagination": {
         "type": "object",
+        "x-examples": {
+          "Example 1": {
+            "totalItems": 1,
+            "itemCount": 1,
+            "itemsPerPage": 10,
+            "totalPages": 1,
+            "currentPage": 1
+          }
+        },
+        "title": "page-info",
+        "required": [
+          "totalItems",
+          "itemCount",
+          "itemsPerPage",
+          "totalPages",
+          "currentPage"
+        ],
         "properties": {
           "totalItems": {
             "type": "integer"
@@ -1676,17 +1720,7 @@
           "currentPage": {
             "type": "integer"
           }
-        },
-        "x-examples": {
-          "Example 1": {
-            "totalItems": 1,
-            "itemCount": 1,
-            "itemsPerPage": 10,
-            "totalPages": 1,
-            "currentPage": 1
-          }
-        },
-        "title": "page-info"
+        }
       }
     },
     "responses": {
@@ -1700,6 +1734,9 @@
                   "$ref": "./models/abstract/domain-meta.json"
                 },
                 {
+                  "required": [
+                    "items"
+                  ],
                   "properties": {
                     "items": {
                       "type": "array",
@@ -1713,6 +1750,9 @@
                   "x-stoplight": {
                     "id": "uaee2335r7a3h"
                   },
+                  "required": [
+                    "page-info"
+                  ],
                   "properties": {
                     "page-info": {
                       "$ref": "#/components/schemas/pagination",
@@ -1776,6 +1816,9 @@
                   "$ref": "./models/abstract/domain-meta.json"
                 },
                 {
+                  "required": [
+                    "items"
+                  ],
                   "properties": {
                     "items": {
                       "type": "array",
@@ -1879,33 +1922,67 @@
         "content": {
           "application/json": {
             "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "./models/abstract/rich-list.json"
-              }
+              "allOf": [
+                {
+                  "required": [
+                    "page-info"
+                  ],
+                  "properties": {
+                    "page-info": {
+                      "$ref": "#/components/schemas/pagination",
+                      "x-stoplight": {
+                        "id": "krs64oxilk2vz"
+                      }
+                    }
+                  }
+                },
+                {
+                  "x-stoplight": {
+                    "id": "1b7quhm2gm6cp"
+                  },
+                  "required": [
+                    "catalogs"
+                  ],
+                  "properties": {
+                    "catalogs": {
+                      "type": "array",
+                      "x-stoplight": {
+                        "id": "xkxd3lrad2co6"
+                      },
+                      "items": {
+                        "$ref": "./models/abstract/rich-list.json",
+                        "x-stoplight": {
+                          "id": "vavdoahrvhwq8"
+                        }
+                      }
+                    }
+                  }
+                }
+              ],
+              "type": "object"
             },
             "example": {
-              "items": [
+              "catalogs": [
                 {
                   "id": "cat-001",
-                  "name": "Типы транспортных средств",
+                  "title": "Типы транспортных средств",
                   "description": "Справочник типов транспортных средств",
                   "itemsCount": 10
                 },
                 {
                   "id": "cat-002",
-                  "name": "Типы грузов",
+                  "title": "Типы грузов",
                   "description": "Справочник типов грузов",
                   "itemsCount": 15
                 },
                 {
                   "id": "cat-003",
-                  "name": "Статусы заявок",
+                  "title": "Статусы заявок",
                   "description": "Справочник статусов заявок на перевозку",
                   "itemsCount": 5
                 }
               ],
-              "meta": {
+              "page-info": {
                 "totalItems": 3,
                 "itemCount": 3,
                 "itemsPerPage": 10,
@@ -1926,6 +2003,9 @@
                   "$ref": "#/components/schemas/catalog-metaitem"
                 },
                 {
+                  "required": [
+                    "items"
+                  ],
                   "properties": {
                     "items": {
                       "type": "array",

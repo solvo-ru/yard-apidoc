@@ -4,10 +4,35 @@
   "x-stoplight": {
     "id": "iecsnixjems1x"
   },
-  "type": "object",
   "patternProperties": {
     "title|displayString": {
       "type": "string"
     }
-  }
+  },
+  "oneOf": [
+    {
+      "properties": {
+        "title": {
+          "type": "string",
+          "x-stoplight": {
+            "id": "bzgqunxsnqmay"
+          }
+        }
+      }
+    },
+    {
+      "x-stoplight": {
+        "id": "43tnp0kp41vvp"
+      },
+      "properties": {
+        "displayName": {
+          "type": "string",
+          "x-stoplight": {
+            "id": "q4c6ac1r0txun"
+          }
+        }
+      }
+    }
+  ],
+  "type": "object"
 }

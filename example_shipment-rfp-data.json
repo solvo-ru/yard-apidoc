@@ -1,0 +1,310 @@
+[
+  {
+    "num": "w5TpFJbXhFmBUT0",
+    "customer": {},
+    "expectedVehicle": [
+      {
+        "error": "Unable to resolve reference: ../abstract/simple-list-item.json"
+      },
+      {
+        "error": "Unable to resolve reference: ../abstract/simple-list-item.json"
+      },
+      {
+        "error": "Unable to resolve reference: ../abstract/simple-list-item.json"
+      },
+      {
+        "error": "Unable to resolve reference: ../abstract/simple-list-item.json"
+      }
+    ],
+    "validSince": "2024-11-20T16:17:43.710933",
+    "validUntill": "2024-11-28T16:17:43.710950",
+    "targets": [
+      {},
+      {}
+    ],
+    "attachments": [
+      "https://example.com/resource/64",
+      "https://example.com/resource/885"
+    ],
+    "source": {
+      "error": "Unable to resolve reference: ../abstract/simple-list-item.json"
+    }
+  },
+  {
+    "num": "U3LyGhZ6m3Bi0jr",
+    "customer": {},
+    "expectedVehicle": [
+      {
+        "error": "Unable to resolve reference: ../abstract/simple-list-item.json"
+      },
+      {
+        "error": "Unable to resolve reference: ../abstract/simple-list-item.json"
+      },
+      {
+        "error": "Unable to resolve reference: ../abstract/simple-list-item.json"
+      },
+      {
+        "error": "Unable to resolve reference: ../abstract/simple-list-item.json"
+      }
+    ],
+    "validSince": "2024-12-31T16:17:43.711019",
+    "validUntill": "2025-05-31T16:17:43.711024",
+    "targets": [
+      {},
+      {},
+      {}
+    ],
+    "attachments": [
+      "https://example.com/resource/546",
+      "https://example.com/resource/686",
+      "https://example.com/resource/109"
+    ],
+    "source": {
+      "error": "Unable to resolve reference: ../abstract/simple-list-item.json"
+    }
+  },
+  {
+    "num": "c6jtUbhZX5VUB3",
+    "customer": {},
+    "expectedVehicle": [
+      {
+        "error": "Unable to resolve reference: ../abstract/simple-list-item.json"
+      },
+      {
+        "error": "Unable to resolve reference: ../abstract/simple-list-item.json"
+      },
+      {
+        "error": "Unable to resolve reference: ../abstract/simple-list-item.json"
+      },
+      {
+        "error": "Unable to resolve reference: ../abstract/simple-list-item.json"
+      }
+    ],
+    "validSince": "2025-07-11T16:17:43.711091",
+    "validUntill": "2025-07-18T16:17:43.711097",
+    "targets": [
+      {},
+      {}
+    ],
+    "attachments": [
+      "https://example.com/resource/778",
+      "https://example.com/resource/483"
+    ],
+    "source": {
+      "error": "Unable to resolve reference: ../abstract/simple-list-item.json"
+    }
+  },
+  {
+    "num": "8ZsrbFOycUwi6U02l",
+    "customer": {},
+    "expectedVehicle": [
+      {
+        "error": "Unable to resolve reference: ../abstract/simple-list-item.json"
+      },
+      {
+        "error": "Unable to resolve reference: ../abstract/simple-list-item.json"
+      },
+      {
+        "error": "Unable to resolve reference: ../abstract/simple-list-item.json"
+      },
+      {
+        "error": "Unable to resolve reference: ../abstract/simple-list-item.json"
+      }
+    ],
+    "validSince": "2024-11-12T16:17:43.711153",
+    "validUntill": "2025-02-09T16:17:43.711159",
+    "targets": [
+      {}
+    ],
+    "attachments": [
+      "https://example.com/resource/399",
+      "https://example.com/resource/789",
+      "https://example.com/resource/542",
+      "https://example.com/resource/620"
+    ],
+    "source": {
+      "error": "Unable to resolve reference: ../abstract/simple-list-item.json"
+    }
+  },
+  {
+    "num": "g5N75",
+    "customer": {},
+    "expectedVehicle": [
+      {
+        "error": "Unable to resolve reference: ../abstract/simple-list-item.json"
+      },
+      {
+        "error": "Unable to resolve reference: ../abstract/simple-list-item.json"
+      },
+      {
+        "error": "Unable to resolve reference: ../abstract/simple-list-item.json"
+      },
+      {
+        "error": "Unable to resolve reference: ../abstract/simple-list-item.json"
+      },
+      {
+        "error": "Unable to resolve reference: ../abstract/simple-list-item.json"
+      }
+    ],
+    "validSince": "2025-07-24T16:17:43.711222",
+    "validUntill": "2025-09-26T16:17:43.711228",
+    "targets": [
+      {}
+    ],
+    "attachments": [
+      "https://example.com/resource/194",
+      "https://example.com/resource/699",
+      "https://example.com/resource/431",
+      "https://example.com/resource/928"
+    ],
+    "source": {
+      "error": "Unable to resolve reference: ../abstract/simple-list-item.json"
+    }
+  },
+  {
+    "num": "cH5MqcCIR",
+    "customer": {},
+    "expectedVehicle": [
+      {
+        "error": "Unable to resolve reference: ../abstract/simple-list-item.json"
+      },
+      {
+        "error": "Unable to resolve reference: ../abstract/simple-list-item.json"
+      },
+      {
+        "error": "Unable to resolve reference: ../abstract/simple-list-item.json"
+      },
+      {
+        "error": "Unable to resolve reference: ../abstract/simple-list-item.json"
+      }
+    ],
+    "validSince": "2025-06-27T16:17:43.711285",
+    "validUntill": "2024-12-29T16:17:43.711291",
+    "targets": [
+      {}
+    ],
+    "attachments": [
+      "https://example.com/resource/237"
+    ],
+    "source": {
+      "error": "Unable to resolve reference: ../abstract/simple-list-item.json"
+    }
+  },
+  {
+    "num": "DYw2AkicBj",
+    "customer": {},
+    "expectedVehicle": [
+      {
+        "error": "Unable to resolve reference: ../abstract/simple-list-item.json"
+      }
+    ],
+    "validSince": "2025-06-11T16:17:43.711328",
+    "validUntill": "2025-07-06T16:17:43.711334",
+    "targets": [
+      {},
+      {}
+    ],
+    "attachments": [
+      "https://example.com/resource/201",
+      "https://example.com/resource/295",
+      "https://example.com/resource/87",
+      "https://example.com/resource/348"
+    ],
+    "source": {
+      "error": "Unable to resolve reference: ../abstract/simple-list-item.json"
+    }
+  },
+  {
+    "num": "HX3qT4J4XwOcvlTDH8",
+    "customer": {},
+    "expectedVehicle": [
+      {
+        "error": "Unable to resolve reference: ../abstract/simple-list-item.json"
+      }
+    ],
+    "validSince": "2025-02-10T16:17:43.711377",
+    "validUntill": "2025-08-27T16:17:43.711383",
+    "targets": [
+      {},
+      {}
+    ],
+    "attachments": [
+      "https://example.com/resource/948",
+      "https://example.com/resource/926"
+    ],
+    "source": {
+      "error": "Unable to resolve reference: ../abstract/simple-list-item.json"
+    }
+  },
+  {
+    "num": "2fOvnzMX2Icc",
+    "customer": {},
+    "expectedVehicle": [
+      {
+        "error": "Unable to resolve reference: ../abstract/simple-list-item.json"
+      },
+      {
+        "error": "Unable to resolve reference: ../abstract/simple-list-item.json"
+      },
+      {
+        "error": "Unable to resolve reference: ../abstract/simple-list-item.json"
+      },
+      {
+        "error": "Unable to resolve reference: ../abstract/simple-list-item.json"
+      }
+    ],
+    "validSince": "2025-04-14T16:17:43.711436",
+    "validUntill": "2024-11-06T16:17:43.711442",
+    "targets": [
+      {},
+      {},
+      {}
+    ],
+    "attachments": [
+      "https://example.com/resource/724",
+      "https://example.com/resource/654",
+      "https://example.com/resource/582"
+    ],
+    "source": {
+      "error": "Unable to resolve reference: ../abstract/simple-list-item.json"
+    }
+  },
+  {
+    "num": "gUzYWQ43",
+    "customer": {},
+    "expectedVehicle": [
+      {
+        "error": "Unable to resolve reference: ../abstract/simple-list-item.json"
+      },
+      {
+        "error": "Unable to resolve reference: ../abstract/simple-list-item.json"
+      },
+      {
+        "error": "Unable to resolve reference: ../abstract/simple-list-item.json"
+      },
+      {
+        "error": "Unable to resolve reference: ../abstract/simple-list-item.json"
+      },
+      {
+        "error": "Unable to resolve reference: ../abstract/simple-list-item.json"
+      }
+    ],
+    "validSince": "2024-12-09T16:17:43.711503",
+    "validUntill": "2025-01-24T16:17:43.711509",
+    "targets": [
+      {},
+      {},
+      {},
+      {}
+    ],
+    "attachments": [
+      "https://example.com/resource/356",
+      "https://example.com/resource/946",
+      "https://example.com/resource/793",
+      "https://example.com/resource/973"
+    ],
+    "source": {
+      "error": "Unable to resolve reference: ../abstract/simple-list-item.json"
+    }
+  }
+]

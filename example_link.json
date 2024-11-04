@@ -7,26 +7,6 @@
   {
     "host": null,
     "id": null,
-    "entity": "collection"
-  },
-  {
-    "host": null,
-    "id": null,
-    "entity": "meta"
-  },
-  {
-    "host": null,
-    "id": null,
-    "entity": "collection"
-  },
-  {
-    "host": null,
-    "id": null,
-    "entity": "item"
-  },
-  {
-    "host": null,
-    "id": null,
     "entity": "meta"
   },
   {
@@ -48,5 +28,25 @@
     "host": null,
     "id": null,
     "entity": "item"
+  },
+  {
+    "host": null,
+    "id": null,
+    "entity": "meta"
+  },
+  {
+    "host": null,
+    "id": null,
+    "entity": "item"
+  },
+  {
+    "host": null,
+    "id": null,
+    "entity": "item"
+  },
+  {
+    "host": null,
+    "id": null,
+    "entity": "meta"
   }
 ]

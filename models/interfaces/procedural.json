@@ -5,39 +5,31 @@
     "id": "yfmxd7megloyu"
   },
   "type": "object",
+  "examples": [
+    {
+      "path": [
+        {
+          "host": "example.com",
+          "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+          "entity": "item"
+        }
+      ],
+      "processInstant": "string"
+    }
+  ],
   "properties": {
-    "path": {
-      "type": "array",
-      "x-stoplight": {
-        "id": "c0qqncmgnglh4"
-      },
-      "uniqueItems": true,
-      "minItems": 1,
-      "items": {
-        "x-stoplight": {
-          "id": "umrek2hf091f5"
-        },
-        "oneOf": [
-          {
-            "$ref": "../props/link.json",
-            "x-stoplight": {
-              "id": "9ee4ijk9zuzm5"
-            }
-          },
-          {
-            "$ref": "../props/shift.json",
-            "x-stoplight": {
-              "id": "b0jlr250rcuh7"
-            }
-          }
-        ]
-      }
-    },
     "processInstant": {
       "type": "string",
       "x-stoplight": {
         "id": "ewniryh6zlg4d"
       }
+    },
+    "status": {
+      "type": "string",
+      "x-stoplight": {
+        "id": "6zpa7u2ywvkcf"
+      },
+      "format": "uuid"
     }
   }
 }

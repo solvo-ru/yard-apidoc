@@ -4,7 +4,6 @@
     "id": "v8z5ko059anj6"
   },
   "title": "abstract-named",
-  "additionalProperties": false,
   "x-internal": false,
   "allOf": [
     {

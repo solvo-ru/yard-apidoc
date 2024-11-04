@@ -15,15 +15,12 @@
         }
       }
     },
-    {"properties": {
+    {
+      "properties": {
         "json-data": {
-          "type": "object",
-          "x-stoplight": {
-        "id": "yvoppsx19uepu"
-      }
+          "type": "object"
         }
       }
-      
     }
   ],
   "type": "object"

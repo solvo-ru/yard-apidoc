@@ -4,7 +4,6 @@
   "x-stoplight": {
     "id": "jxa8s1nt9bzl4"
   },
-  "additionalProperties": false,
   "x-internal": false,
   "allOf": [
     {

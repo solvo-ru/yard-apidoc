@@ -747,6 +747,7 @@
         "title": "Заявка на перевозку",
         "description": "Объект системы, содержащий информацию о планируемом перемещении груза из одной точки в другую",
         "type": "object",
+        "additionalProperties": false,
         "required": [
           "num",
           "customer",
@@ -772,12 +773,8 @@
               },
               {
                 "$ref": "#/components/schemas/contractor-item"
-              },
-              {
-                "$ref": "./models/props/link.json"
               }
             ],
-            "type": "object",
             "examples": [
               {
                 "id": "cust-001",
@@ -791,15 +788,13 @@
                 "id": "cust-001",
                 "name": "ООО \"ГрузОтправитель\""
               }
-            ]
+            ],
+            "type": "object"
           },
           "expectedVehicle": {
             "type": "array",
             "description": "Один или несколько типов ТС, которое должно выполнять перевозку ",
             "minItems": 1,
-            "items": {
-              "$ref": "./models/abstract/simple-list-item.json"
-            },
             "examples": [
               {
                 "id": "vt-001",
@@ -813,7 +808,10 @@
                 "id": "vt-001",
                 "name": "Рефрижератор"
               }
-            ]
+            ],
+            "items": {
+              "$ref": "./models/abstract/simple-list-item.json"
+            }
           },
           "validSince": {
             "type": "string",
@@ -839,20 +837,6 @@
             "type": "array",
             "minItems": 1,
             "description": "Список мест, в которых будет производиться обработка",
-            "items": {
-              "oneOf": [
-                {
-                  "$ref": "./models/props/link.json"
-                },
-                {
-                  "$ref": "#/components/schemas/transport-target-item"
-                },
-                {
-                  "$ref": "./models/props/link.json"
-                }
-              ],
-              "type": "object"
-            },
             "examples": [
               [
                 {
@@ -868,15 +852,22 @@
                   "name": "Доставка груза в Екатеринбург"
                 }
               ]
-            ]
+            ],
+            "items": {
+              "oneOf": [
+                {
+                  "$ref": "./models/props/link.json"
+                },
+                {
+                  "$ref": "#/components/schemas/transport-target-item"
+                }
+              ],
+              "type": "object"
+            }
           },
           "attachments": {
             "type": "array",
             "description": "Файлы, загруженные в систему, и прикрепленные к перевозке.",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            },
             "examples": [
               [
                 {
@@ -892,28 +883,17 @@
                   "name": "Инструкция по погрузке.docx"
                 }
               ]
-            ]
+            ],
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
           },
           "source": {
             "$ref": "./models/abstract/simple-list-item.json",
-            "description": "Способ создания заявки на перевозку.",
-            "examples": [
-              {
-                "id": "src-001",
-                "name": "Веб-интерфейс"
-              },
-              {
-                "id": "src-001",
-                "name": "Веб-интерфейс"
-              },
-              {
-                "id": "src-001",
-                "name": "Веб-интерфейс"
-              }
-            ]
+            "description": "Способ создания заявки на перевозку."
           }
-        },
-        "additionalProperties": false
+        }
       },
       "shipment-rfp-item": {
         "title": "Запись \"Заявка на перевозку\"",
@@ -938,9 +918,6 @@
                 "$ref": "#/components/schemas/shipment-rfp-data"
               }
             }
-          },
-          {
-            "$ref": "./models/abstract/domain-item.json"
           }
         ],
         "description": "Строка таблицы БД",
@@ -1035,13 +1012,14 @@
             }
           }
         },
-        "type": "object",
-        "additionalProperties": false
+        "additionalProperties": false,
+        "type": "object"
       },
       "offer-data": {
         "title": "Предложение к заявке на перевозку",
         "description": "Объект системы, которое хранит информацию по заявлению экспедитора о готовности выполнить перевозку по выбранной заявке на перевозку",
         "type": "object",
+        "additionalProperties": false,
         "required": [
           "request",
           "forwarder",
@@ -1059,12 +1037,8 @@
               },
               {
                 "$ref": "#/components/schemas/shipment-rfp-item"
-              },
-              {
-                "$ref": "./models/props/link.json"
               }
             ],
-            "type": "object",
             "examples": [
               {
                 "id": "rfp-001",
@@ -1078,7 +1052,8 @@
                 "id": "rfp-001",
                 "name": "Перевозка груза из Москвы в Санкт-Петербург"
               }
-            ]
+            ],
+            "type": "object"
           },
           "forwarder": {
             "oneOf": [
@@ -1087,9 +1062,6 @@
               },
               {
                 "$ref": "#/components/schemas/contractor-item"
-              },
-              {
-                "$ref": "./models/props/link.json"
               }
             ],
             "description": "Контрагент, который сделал предложение ",
@@ -1115,9 +1087,6 @@
               },
               {
                 "$ref": "#/components/schemas/contractor-item"
-              },
-              {
-                "$ref": "./models/props/link.json"
               }
             ],
             "description": "Контрагент, выполняющий перевозку",
@@ -1143,9 +1112,6 @@
               },
               {
                 "$ref": "#/components/schemas/vehicle-item"
-              },
-              {
-                "$ref": "./models/props/link.json"
               }
             ],
             "description": "Информация о транспортном средстве, на котором будет выполняться перевозка",
@@ -1171,9 +1137,6 @@
               },
               {
                 "$ref": "#/components/schemas/driver-item"
-              },
-              {
-                "$ref": "./models/props/link.json"
               }
             ],
             "description": "Информация о водителе, который будут выполнять перевозку ",
@@ -1204,10 +1167,6 @@
           "attachment": {
             "type": "array",
             "description": "Файлы, загруженные в систему и прикреплённые к предложению.",
-            "items": {
-              "type": "string",
-              "format": "uri-reference"
-            },
             "examples": [
               {
                 "id": "att-002",
@@ -1221,10 +1180,13 @@
                 "id": "att-002",
                 "name": "Коммерческое предложение.pdf"
               }
-            ]
+            ],
+            "items": {
+              "type": "string",
+              "format": "uri-reference"
+            }
           }
-        },
-        "additionalProperties": false
+        }
       },
       "offer-item": {
         "title": "Запись \"Предложение к заявке на перевозку\"",
@@ -1240,7 +1202,35 @@
             }
           },
           {
-            "$ref": "./models/abstract/domain-item.json"
+            "x-stoplight": {
+              "id": "hchffjnbe4342"
+            },
+            "required": [
+              "shipment-rfp"
+            ],
+            "properties": {
+              "shipment-rfp": {
+                "x-stoplight": {
+                  "id": "gbepp09vypib2"
+                },
+                "oneOf": [
+                  {
+                    "type": "object",
+                    "$ref": "#/components/schemas/shipment-rfp-data",
+                    "x-stoplight": {
+                      "id": "lk4p73yg0pykd"
+                    }
+                  },
+                  {
+                    "type": "string",
+                    "x-stoplight": {
+                      "id": "g5mq5tsk1g74x"
+                    },
+                    "format": "uuid"
+                  }
+                ]
+              }
+            }
           }
         ],
         "x-examples": {},
@@ -1278,8 +1268,8 @@
           "estimatedPickupTime": "2023-05-21T09:00:00Z",
           "estimatedDeliveryTime": "2023-05-22T18:00:00Z"
         },
-        "type": "object",
-        "additionalProperties": false
+        "additionalProperties": false,
+        "type": "object"
       },
       "transport-target-item": {
         "title": "Цель перевозки",
@@ -1295,9 +1285,6 @@
                 "$ref": "#/components/schemas/transport-target-data"
               }
             }
-          },
-          {
-            "$ref": "./models/abstract/rich-list-item.json"
           }
         ],
         "example": {
@@ -1337,6 +1324,7 @@
         "title": "Цель перевозки",
         "type": "object",
         "description": "Составной атрибут заявки на перевозку, содержащий информацию о месте обработки перевозки",
+        "additionalProperties": false,
         "required": [
           "num",
           "route",
@@ -1379,9 +1367,6 @@
               },
               {
                 "$ref": "#/components/schemas/contractor-item"
-              },
-              {
-                "$ref": "./models/props/link.json"
               }
             ],
             "description": "Название контрагента, который является отправителем груза. ",
@@ -1407,9 +1392,6 @@
               },
               {
                 "$ref": "#/components/schemas/location-item"
-              },
-              {
-                "$ref": "./models/props/link.json"
               }
             ],
             "description": "Локация, в которой будет производиться погрузка груза на транспортное средство",
@@ -1454,9 +1436,6 @@
               },
               {
                 "$ref": "#/components/schemas/contractor-item"
-              },
-              {
-                "$ref": "./models/props/link.json"
               }
             ],
             "description": "Название контрагента, который является получателем груза.",
@@ -1482,9 +1461,6 @@
               },
               {
                 "$ref": "#/components/schemas/location-item"
-              },
-              {
-                "$ref": "./models/props/link.json"
               }
             ],
             "description": "Локация, в которой будет производиться выгрузка груза с транспортного средства",
@@ -1525,19 +1501,6 @@
           "cargo": {
             "type": "array",
             "description": "Список перевозимых грузов ",
-            "items": {
-              "oneOf": [
-                {
-                  "$ref": "./models/props/link.json"
-                },
-                {
-                  "$ref": "#/components/schemas/cargo-item"
-                },
-                {
-                  "$ref": "./models/props/link.json"
-                }
-              ]
-            },
             "examples": [
               {
                 "id": "cargo-001",
@@ -1551,10 +1514,19 @@
                 "id": "cargo-001",
                 "name": "Электроника"
               }
-            ]
+            ],
+            "items": {
+              "oneOf": [
+                {
+                  "$ref": "./models/props/link.json"
+                },
+                {
+                  "$ref": "#/components/schemas/cargo-item"
+                }
+              ]
+            }
           }
-        },
-        "additionalProperties": false
+        }
       },
       "contractor-data": {
         "title": "Контрагент",
@@ -1625,9 +1597,6 @@
                 "$ref": "#/components/schemas/contractor-data"
               }
             }
-          },
-          {
-            "$ref": "./models/abstract/rich-list-item.json"
           }
         ],
         "description": "Строка таблицы БД",
@@ -1661,9 +1630,6 @@
                 "$ref": "#/components/schemas/vehicle-data"
               }
             }
-          },
-          {
-            "$ref": "./models/abstract/rich-list-item.json"
           }
         ],
         "description": "Строка таблицы БД",
@@ -1697,6 +1663,7 @@
       "vehicle-data": {
         "title": "vehicle-data",
         "type": "object",
+        "additionalProperties": false,
         "required": [
           "plate",
           "haul",
@@ -1716,6 +1683,11 @@
           "haul": {
             "description": "Список контрагентов, которые могут использовать ТС",
             "type": "array",
+            "examples": [
+              "LONG_HAUL",
+              "LONG_HAUL",
+              "LONG_HAUL"
+            ],
             "items": {
               "oneOf": [
                 {
@@ -1723,36 +1695,26 @@
                 },
                 {
                   "$ref": "#/components/schemas/contractor-item"
-                },
-                {
-                  "$ref": "./models/props/link.json"
                 }
               ],
               "type": "object"
-            },
-            "examples": [
-              "LONG_HAUL",
-              "LONG_HAUL",
-              "LONG_HAUL"
-            ]
+            }
           },
           "type": {
             "$ref": "./models/abstract/simple-list-item.json",
-            "description": "Тип транспортного средства",
-            "examples": [
-              "TRUCK",
-              "TRUCK",
-              "TRUCK"
-            ]
+            "description": "Тип транспортного средства"
           },
-          "./model": {
+          "model": {
             "type": "string",
             "description": "Марка и модель ТС.",
             "examples": [
               "КАМАЗ 5490",
               "КАМАЗ 5490",
               "КАМАЗ 5490"
-            ]
+            ],
+            "x-stoplight": {
+              "id": "loxjk61oj1vz3"
+            }
           },
           "desc": {
             "type": "string",
@@ -1763,8 +1725,7 @@
               "Седельный тягач с рефрижераторным полуприцепом"
             ]
           }
-        },
-        "additionalProperties": false
+        }
       },
       "driver-item": {
         "title": "Водитель",
@@ -1779,9 +1740,6 @@
                 "$ref": "#/components/schemas/driver-data"
               }
             }
-          },
-          {
-            "$ref": "./models/abstract/rich-list-item.json"
           }
         ],
         "description": "Строка таблицы БД",
@@ -1810,6 +1768,7 @@
       "driver-data": {
         "title": "driver-data",
         "type": "object",
+        "additionalProperties": false,
         "required": [
           "docNum",
           "name",
@@ -1850,8 +1809,6 @@
             "type": "string",
             "description": "Отчество",
             "examples": [
-              "Александрович",
-              "Александрович",
               "Александрович"
             ]
           },
@@ -1867,26 +1824,24 @@
           },
           "docType": {
             "$ref": "./models/abstract/simple-list-item.json",
-            "description": "Вид документа, удостоверяющего личность\n| **Значение** | **Описание**                   |\n| ------------ | ------------------------------ |\n| **Паспорт**  | Паспорт гражданина РФ.         |\n| **Права**    | Водительское удостоверение РФ. |",
-            "examples": [
-              "DRIVER_LICENSE",
-              "DRIVER_LICENSE",
-              "DRIVER_LICENSE"
-            ]
+            "description": "Вид документа, удостоверяющего личность\n| **Значение** | **Описание**                   |\n| ------------ | ------------------------------ |\n| **Паспорт**  | Паспорт гражданина РФ.         |\n| **Права**    | Водительское удостоверение РФ. |"
           },
           "phone": {
             "type": "string",
             "description": "Номер телефона для связи с водителем.",
             "pattern": "^((\\+7)|8)\\d{10}$",
             "examples": [
-              "+7 (999) 123-45-67",
-              "+7 (999) 123-45-67",
               "+7 (999) 123-45-67"
             ]
           },
           "haul": {
             "type": "array",
             "description": "Список контрагентов, которые могут использовать водителя.",
+            "examples": [
+              "LONG_HAUL",
+              "LONG_HAUL",
+              "LONG_HAUL"
+            ],
             "items": {
               "oneOf": [
                 {
@@ -1894,21 +1849,12 @@
                 },
                 {
                   "$ref": "#/components/schemas/contractor-item"
-                },
-                {
-                  "$ref": "./models/props/link.json"
                 }
               ],
               "type": "object"
-            },
-            "examples": [
-              "LONG_HAUL",
-              "LONG_HAUL",
-              "LONG_HAUL"
-            ]
+            }
           }
-        },
-        "additionalProperties": false
+        }
       },
       "location-item": {
         "title": "Локация",
@@ -1924,9 +1870,6 @@
                 "$ref": "#/components/schemas/location-data"
               }
             }
-          },
-          {
-            "$ref": "./models/abstract/rich-list-item.json"
           }
         ],
         "example": {
@@ -1988,6 +1931,7 @@
         "title": "Локация",
         "type": "object",
         "description": "Используется для создания мест обработки перевозки",
+        "additionalProperties": false,
         "required": [
           "title",
           "address",
@@ -2012,9 +1956,6 @@
           },
           "terminals": {
             "type": "array",
-            "items": {
-              "": "./models/abstract/simple-list-item.json"
-            },
             "examples": [
               [
                 {
@@ -2030,7 +1971,11 @@
                   "name": "Терминал 3"
                 }
               ]
-            ]
+            ],
+            "items": {
+              "": "./models/abstract/simple-list-item.json",
+              "type": "object"
+            }
           },
           "level": {
             "type": "string",
@@ -2040,8 +1985,7 @@
               "WAREHOUSE"
             ]
           }
-        },
-        "additionalProperties": false
+        }
       },
       "cargo-item": {
         "title": "Груз",
@@ -2057,9 +2001,6 @@
                 "$ref": "#/components/schemas/cargo-data"
               }
             }
-          },
-          {
-            "$ref": "./models/abstract/rich-list-item.json"
           }
         ],
         "example": {
@@ -2102,6 +2043,8 @@
       "cargo-data": {
         "title": "Груз",
         "type": "object",
+        "description": "Объект системы, содержащий информацию о перевозимом грузе.",
+        "additionalProperties": false,
         "required": [
           "num",
           "desc",
@@ -2178,12 +2121,8 @@
               },
               {
                 "$ref": "#/components/schemas/contractor-item"
-              },
-              {
-                "$ref": "./models/props/link.json"
               }
             ],
-            "type": "object",
             "examples": [
               {
                 "id": "owner-001",
@@ -2197,14 +2136,12 @@
                 "id": "owner-001",
                 "name": "ООО 'ГрузВладелец'"
               }
-            ]
+            ],
+            "type": "object"
           }
-        },
-        "description": "Объект системы, содержащий информацию о перевозимом грузе.",
-        "additionalProperties": false
+        }
       },
       "catalog-metaitem": {
-        "type": "object",
         "allOf": [
           {
             "$ref": "./models/abstract/rich-list.json"
@@ -2215,15 +2152,12 @@
                 "$ref": "./models/abstract/rich-list-meta.json"
               }
             }
-          },
-          {
-            "$ref": "./models/abstract/rich-list.json"
           }
         ],
         "description": "Метаданные справочника",
         "title": "Запись коллекции 'Справочник'",
         "example": {
-          "id": "cat-001",
+          "id": "456e7890-f12a-34b5-c678-901234567890",
           "name": "Типы транспортных средств",
           "description": "Справочник типов транспортных средств",
           "itemsCount": 10,
@@ -2256,7 +2190,8 @@
             "createdAt": "2023-05-17T09:30:00Z",
             "updatedAt": "2023-05-17T09:30:00Z"
           }
-        ]
+        ],
+        "type": "object"
       },
       "catalog-item": {
         "type": "object",
@@ -2283,7 +2218,7 @@
         "description": "Запись элемента справочника",
         "title": "Запись элемента справочника",
         "example": {
-          "id": "cat-item-001",
+          "id": "456e7890-f12a-34b5-c678-901234567890",
           "name": "Рефрижератор",
           "description": "Транспортное средство с холодильной установкой для перевозки скоропортящихся грузов",
           "code": "REFRIGERATOR",
@@ -2441,51 +2376,37 @@
         "content": {
           "application/json": {
             "schema": {
-              "allOf": [
-                {
-                  "required": [
-                    "items"
-                  ],
-                  "properties": {
-                    "items": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/offer-item"
-                      }
+              "type": "object",
+              "required": [
+                "meta",
+                "items"
+              ],
+              "properties": {
+                "meta": {
+                  "$ref": "./models/abstract/domain-meta.json",
+                  "x-stoplight": {
+                    "id": "dvoi7irex76ef"
+                  }
+                },
+                "items": {
+                  "type": "array",
+                  "x-stoplight": {
+                    "id": "74354zq0xj592"
+                  },
+                  "items": {
+                    "$ref": "#/components/schemas/offer-item",
+                    "x-stoplight": {
+                      "id": "c3w754cw3hvm9"
                     }
                   }
                 },
-                {
+                "page-info": {
+                  "$ref": "#/components/schemas/pagination",
                   "x-stoplight": {
-                    "id": "udu1xsj9bfkfa"
-                  },
-                  "required": [
-                    "meta"
-                  ],
-                  "properties": {
-                    "meta": {
-                      "$ref": "./models/abstract/domain-meta.json",
-                      "x-stoplight": {
-                        "id": "ifcy9uj15g02v"
-                      }
-                    }
-                  }
-                },
-                {
-                  "x-stoplight": {
-                    "id": "ims4wou1t9gd7"
-                  },
-                  "properties": {
-                    "page-info": {
-                      "$ref": "#/components/schemas/pagination",
-                      "x-stoplight": {
-                        "id": "fok2875eu59es"
-                      }
-                    }
+                    "id": "5b6b0ppvjlv2s"
                   }
                 }
-              ],
-              "type": "object"
+              }
             },
             "examples": {
               "Example 1": {
@@ -2555,7 +2476,7 @@
             "example": {
               "items": [
                 {
-                  "id": "456e7890-f12a-34b5-c678-901234567890",                  
+                  "id": "456e7890-f12a-34b5-c678-901234567890",
                   "shipmentRfpId": "123e4567-e89b-12d3-a456-426614174000",
                   "carrierId": "789e0123-g45h-67i8-j901-234567890123",
                   "status": "PENDING",
@@ -2586,22 +2507,22 @@
                 }
               ],
               "meta": {
-                    "json-schema": {},
-                    "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                    "createdBy": {
-                      "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
-                      "Login": "string"
-                    },
-                    "createdDate": "2019-08-24T14:15:22Z",
-                    "lastModifiedBy": {
-                      "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
-                      "Login": "string"
-                    },
-                    "lastModifiedDate": "2019-08-24T14:15:22Z",
-                    "since": "2019-08-24T14:15:22Z",
-                    "until": "2019-08-24T14:15:22Z",
-                    "processDefinition": "string"
-                  },
+                "json-schema": {},
+                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "createdBy": {
+                  "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
+                  "Login": "string"
+                },
+                "createdDate": "2019-08-24T14:15:22Z",
+                "lastModifiedBy": {
+                  "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
+                  "Login": "string"
+                },
+                "lastModifiedDate": "2019-08-24T14:15:22Z",
+                "since": "2019-08-24T14:15:22Z",
+                "until": "2019-08-24T14:15:22Z",
+                "processDefinition": "string"
+              },
               "page-info": {
                 "totalItems": 2,
                 "itemCount": 2,
@@ -2659,44 +2580,27 @@
         "content": {
           "application/json": {
             "schema": {
-              "allOf": [
-                {
-                  "required": [
-                    "page-info"
-                  ],
-                  "properties": {
-                    "page-info": {
-                      "$ref": "#/components/schemas/pagination",
-                      "x-stoplight": {
-                        "id": "krs64oxilk2vz"
-                      }
-                    }
+              "type": "object",
+              "properties": {
+                "page-info": {
+                  "$ref": "#/components/schemas/pagination",
+                  "x-stoplight": {
+                    "id": "l4chwz7k78drx"
                   }
                 },
-                {
+                "catalogs": {
+                  "type": "array",
                   "x-stoplight": {
-                    "id": "1b7quhm2gm6cp"
+                    "id": "ah0923czz2be9"
                   },
-                  "required": [
-                    "catalogs"
-                  ],
-                  "properties": {
-                    "catalogs": {
-                      "type": "array",
-                      "x-stoplight": {
-                        "id": "xkxd3lrad2co6"
-                      },
-                      "items": {
-                        "$ref": "./models/abstract/rich-list.json",
-                        "x-stoplight": {
-                          "id": "vavdoahrvhwq8"
-                        }
-                      }
+                  "items": {
+                    "$ref": "./models/abstract/rich-list.json",
+                    "x-stoplight": {
+                      "id": "rn3ub0ahouvc7"
                     }
                   }
                 }
-              ],
-              "type": "object"
+              }
             },
             "example": {
               "page-info": {
@@ -2724,37 +2628,6 @@
                   "processDefinition": "string"
                 }
               ]
-            },
-            "examples": {
-              "Example 1": {
-                "value": {
-                  "page-info": {
-                    "totalItems": 0,
-                    "itemCount": 0,
-                    "itemsPerPage": 0,
-                    "totalPages": 0,
-                    "currentPage": 0
-                  },
-                  "catalogs": [
-                    {
-                      "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                      "createdBy": {
-                        "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
-                        "Login": "string"
-                      },
-                      "createdDate": "2019-08-24T14:15:22Z",
-                      "lastModifiedBy": {
-                        "ID": "3892eb50-4697-4c72-aadc-32b766bce3c0",
-                        "Login": "string"
-                      },
-                      "lastModifiedDate": "2019-08-24T14:15:22Z",
-                      "title": "string",
-                      "key": "string",
-                      "processDefinition": "string"
-                    }
-                  ]
-                }
-              }
             }
           }
         }
@@ -2764,24 +2637,29 @@
         "content": {
           "application/json": {
             "schema": {
-              "allOf": [
-                {
-                  "$ref": "#/components/schemas/catalog-metaitem"
+              "required": [
+                "items"
+              ],
+              "properties": {
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/catalog-item"
+                  }
                 },
-                {
-                  "required": [
-                    "items"
-                  ],
-                  "properties": {
-                    "items": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/catalog-item"
-                      }
-                    }
+                "meta": {
+                  "$ref": "#/components/schemas/catalog-metaitem",
+                  "x-stoplight": {
+                    "id": "l5dj20i5g8j4n"
+                  }
+                },
+                "page-info": {
+                  "$ref": "#/components/schemas/pagination",
+                  "x-stoplight": {
+                    "id": "sgo7rubop2ync"
                   }
                 }
-              ],
+              },
               "type": "object"
             }
           }

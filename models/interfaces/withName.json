@@ -4,11 +4,6 @@
   "x-stoplight": {
     "id": "iecsnixjems1x"
   },
-  "patternProperties": {
-    "title|displayString": {
-      "type": "string"
-    }
-  },
   "oneOf": [
     {
       "properties": {

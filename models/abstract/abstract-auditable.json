@@ -5,7 +5,6 @@
   },
   "type": "object",
   "title": "AbstractAuditable",
-  "additionalProperties": false,
   "ifNotExist": true,
   "isActivated": true,
   "memory_optimized": false,

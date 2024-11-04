@@ -1,12 +1,15 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "simple-list-item",
   "x-stoplight": {
     "id": "nel649mf50sr8"
   },
+  "title": "simple-list-item",
   "allOf": [
     {
-      "$ref": "./abstract-named.json"
+      "$ref": "./abstract-named.json",
+      "x-stoplight": {
+        "id": "yfuu218s7yp62"
+      }
     },
     {
       "$ref": "../interfaces/collectable.json",

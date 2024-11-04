@@ -16,7 +16,10 @@
   "table_tablespace_name": "pg_default",
   "allOf": [
     {
-      "$ref": "./abstract-bodied.json"
+      "$ref": "./abstract-bodied.json",
+      "x-stoplight": {
+        "id": "zrs6g8pcwjxdg"
+      }
     },
     {
       "$ref": "../interfaces/life.json",

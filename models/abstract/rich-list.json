@@ -1,12 +1,15 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "rich-list",
   "x-stoplight": {
     "id": "on0x62abayoua"
   },
+  "title": "rich-list",
   "allOf": [
     {
-      "$ref": "./simple-list.json"
+      "$ref": "./simple-list.json",
+      "x-stoplight": {
+        "id": "imm06vjzyy8px"
+      }
     },
     {
       "type": "object",

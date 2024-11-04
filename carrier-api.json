@@ -9,7 +9,8 @@
     "description": "API Портала Перевозчика"
   },
   "servers": [
-    {"url": "https://stoplight.io/mocks/thehunt/carrier-apidoc/365085546",
+    {
+      "url": "https://stoplight.io/mocks/thehunt/carrier-apidoc/365085546",
       "description": "Stoplight mocker"
     },
     {
@@ -93,6 +94,9 @@
           "401": {
             "description": "Unauthorized"
           }
+        },
+        "x-stoplight": {
+          "id": "hpbhab9mp7gcw"
         }
       }
     },
@@ -126,6 +130,9 @@
           "401": {
             "description": "Unauthorized"
           }
+        },
+        "x-stoplight": {
+          "id": "6xptsoneekv3d"
         }
       }
     },
@@ -166,6 +173,9 @@
           "401": {
             "description": "Unauthorized"
           }
+        },
+        "x-stoplight": {
+          "id": "3tylhoojrzybk"
         }
       }
     },
@@ -181,7 +191,7 @@
           "id": "tqg739xajhhay"
         }
       },
-      "post": {
+      "put": {
         "summary": "Создать новую заявку на перевозку",
         "responses": {
           "201": {
@@ -241,7 +251,7 @@
           "id": "m2sic3aqvfkxj"
         }
       },
-      "put": {
+      "post": {
         "summary": "Обновить заявку на перевозку",
         "responses": {
           "200": {
@@ -280,38 +290,9 @@
           "id": "1zyqx7m0ulvt7"
         }
       },
-      "delete": {
-        "summary": "Удалить заявку на перевозку",
-        "responses": {
-          "204": {
-            "description": "Заявка на перевозку удалена"
-          }
-        },
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "description": "ID заявки на перевозку",
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "x-stoplight": {
-          "id": "kzux2ii36wpx0"
-        }
-      },
       "parameters": [
         {
-          "schema": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "name": "id",
-          "in": "path",
-          "required": true
+          "$ref": "#/components/parameters/id"
         }
       ]
     },
@@ -327,7 +308,7 @@
           "id": "0udcekiahq0th"
         }
       },
-      "post": {
+      "put": {
         "summary": "Создать новое предложение",
         "responses": {
           "201": {
@@ -428,14 +409,7 @@
       },
       "parameters": [
         {
-          "schema": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "name": "id",
-          "in": "path",
-          "required": true,
-          "description": "Идентификатор"
+          "$ref": "#/components/parameters/id"
         }
       ]
     },
@@ -457,7 +431,11 @@
       "put": {
         "summary": "Создать новый справочник",
         "tags": [],
-        "responses": {},
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/catalog-item-dto"
+          }
+        },
         "operationId": "post-catalogs",
         "x-stoplight": {
           "id": "0er9wjghvzb88"
@@ -482,13 +460,7 @@
     "/catalogs/{key}": {
       "parameters": [
         {
-          "schema": {
-            "type": "string"
-          },
-          "name": "key",
-          "in": "path",
-          "required": true,
-          "description": "Ключ справочника"
+          "$ref": "#/components/parameters/key"
         }
       ],
       "get": {
@@ -507,7 +479,11 @@
       "post": {
         "summary": "Изменить запись справочника",
         "tags": [],
-        "responses": {},
+        "responses": {
+          "202": {
+            "$ref": "#/components/responses/catalog-item-dto"
+          }
+        },
         "operationId": "post-catalogs-key",
         "x-stoplight": {
           "id": "ty7uvpc30ogue"
@@ -532,22 +508,10 @@
     "/catalogs/{key}/items/{id}": {
       "parameters": [
         {
-          "schema": {
-            "type": "string"
-          },
-          "name": "key",
-          "in": "path",
-          "required": true,
-          "description": "Ключ справочника"
+          "$ref": "#/components/parameters/key"
         },
         {
-          "schema": {
-            "type": "string"
-          },
-          "name": "id",
-          "in": "path",
-          "required": true,
-          "description": "Идентификатор записи"
+          "$ref": "#/components/parameters/id"
         }
       ],
       "get": {
@@ -662,7 +626,10 @@
           "grant_type",
           "client_id",
           "client_secret"
-        ]
+        ],
+        "x-stoplight": {
+          "id": "abayal5o45b7i"
+        }
       },
       "shipment-rfp-data": {
         "title": "Заявка на перевозку",
@@ -677,7 +644,7 @@
             "description": "Контрагент, являющийся заказчиком перевозки",
             "oneOf": [
               {
-                "$ref": "../props/link.json",
+                "$ref": "models/props/link.json",
                 "x-stoplight": {
                   "id": "8gl5gjzrzg2m6"
                 }
@@ -696,7 +663,7 @@
             "description": "Один или несколько типов ТС, которое должно выполнять перевозку ",
             "minItems": 1,
             "items": {
-              "$ref": "../abstract-models/simple-list-item.json"
+              "$ref": "models/abstract/simple-list-item.json"
             }
           },
           "validSince": {
@@ -716,10 +683,7 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "../props/link.json",
-                  "x-stoplight": {
-                    "id": "aya1vh4vy2jkj"
-                  }
+                  "$ref": "models/props/link.json"
                 },
                 {
                   "$ref": "#/components/schemas/transport-target-item",
@@ -740,13 +704,16 @@
             }
           },
           "source": {
-            "$ref": "../abstract-models/simple-list-item.json",
+            "$ref": "models/abstract/simple-list-item.json",
             "description": "Способ создания заявки на перевозку."
           }
+        },
+        "x-stoplight": {
+          "id": "24dcghbouipvg"
         }
       },
       "shipment-rfp-item": {
-        "title": "shipment-rfp-item",
+        "title": "Запись \"Заявка на перевозку\"",
         "x-stoplight": {
           "id": "cf6mee4euvnlw"
         },
@@ -757,7 +724,7 @@
         ],
         "allOf": [
           {
-            "$ref": "../abstract-models/domain-item.json"
+            "$ref": "models/abstract/domain-item.json"
           },
           {
             "x-stoplight": {
@@ -804,7 +771,8 @@
             },
             "json-data": {}
           }
-        }
+        },
+        "description": "Строка таблицы БД"
       },
       "offer-data": {
         "title": "Предложение к заявке на перевозку",
@@ -826,7 +794,7 @@
             "description": "Идентификатор заявки на перевозку",
             "oneOf": [
               {
-                "$ref": "../props/link.json",
+                "$ref": "models/props/link.json",
                 "x-stoplight": {
                   "id": "c63nthhf8x093"
                 }
@@ -843,7 +811,7 @@
           "forwarder": {
             "oneOf": [
               {
-                "$ref": "../props/link.json",
+                "$ref": "models/props/link.json",
                 "x-stoplight": {
                   "id": "8gl5gjzrzg2m6"
                 }
@@ -860,7 +828,7 @@
           "carrier": {
             "oneOf": [
               {
-                "$ref": "../props/link.json",
+                "$ref": "models/props/link.json",
                 "x-stoplight": {
                   "id": "8gl5gjzrzg2m6"
                 }
@@ -877,7 +845,7 @@
           "vehicle": {
             "oneOf": [
               {
-                "$ref": "../props/link.json",
+                "$ref": "models/props/link.json",
                 "x-stoplight": {
                   "id": "8gl5gjzrzg2m6"
                 }
@@ -894,7 +862,7 @@
           "driver": {
             "oneOf": [
               {
-                "$ref": "../props/link.json",
+                "$ref": "models/props/link.json",
                 "x-stoplight": {
                   "id": "8gl5gjzrzg2m6"
                 }
@@ -923,13 +891,13 @@
         }
       },
       "offer-item": {
-        "title": "offer-item",
+        "title": "Запись \"Предложение к заявке на перевозку\"",
         "x-stoplight": {
           "id": "2irmnd3n1x17k"
         },
         "allOf": [
           {
-            "$ref": "../abstract-models/domain-item.json"
+            "$ref": "models/abstract/domain-item.json"
           },
           {
             "x-stoplight": {
@@ -945,7 +913,9 @@
             }
           }
         ],
-        "type": "object"
+        "type": "object",
+        "x-examples": {},
+        "description": "Строка таблицы БД"
       },
       "transport-target-item": {
         "title": "Цель перевозки",
@@ -955,7 +925,7 @@
         "description": "Объект системы, содержащий информацию о месте обработки перевозки",
         "allOf": [
           {
-            "$ref": "../abstract-models/rich-list-item.json"
+            "$ref": "models/abstract/rich-list-item.json"
           },
           {
             "type": "object",
@@ -971,7 +941,7 @@
         ]
       },
       "transport-target-data": {
-        "title": "transport-target-data",
+        "title": "Цель перевозки",
         "x-stoplight": {
           "id": "sup9l3suzdp3s"
         },
@@ -994,7 +964,7 @@
           "sender": {
             "oneOf": [
               {
-                "$ref": "../props/link.json",
+                "$ref": "models/props/link.json",
                 "x-stoplight": {
                   "id": "8gl5gjzrzg2m6"
                 }
@@ -1014,7 +984,7 @@
           "loadLocation": {
             "oneOf": [
               {
-                "$ref": "../props/link.json",
+                "$ref": "models/props/link.json",
                 "x-stoplight": {
                   "id": "8gl5gjzrzg2m6"
                 }
@@ -1049,7 +1019,7 @@
           "recipient": {
             "oneOf": [
               {
-                "$ref": "../props/link.json",
+                "$ref": "models/props/link.json",
                 "x-stoplight": {
                   "id": "8gl5gjzrzg2m6"
                 }
@@ -1069,7 +1039,7 @@
           "unloadLocation": {
             "oneOf": [
               {
-                "$ref": "../props/link.json",
+                "$ref": "models/props/link.json",
                 "x-stoplight": {
                   "id": "8gl5gjzrzg2m6"
                 }
@@ -1110,7 +1080,7 @@
             "items": {
               "oneOf": [
                 {
-                  "$ref": "../props/link.json",
+                  "$ref": "models/props/link.json",
                   "x-stoplight": {
                     "id": "8gl5gjzrzg2m6"
                   }
@@ -1127,10 +1097,11 @@
               }
             }
           }
-        }
+        },
+        "description": "Составной атрибут заявки на перевозку, содержащий информацию о месте обработки перевозки"
       },
       "contractor-data": {
-        "title": "contractor-data",
+        "title": "Контрагент",
         "x-stoplight": {
           "id": "malfkfex9dimp"
         },
@@ -1145,7 +1116,7 @@
             "description": "Полное наименование контрагента, как оно прописано в правоустанавливающих документах"
           },
           "type": {
-            "$ref": "../abstract-models/simple-list-item.json",
+            "$ref": "models/abstract/simple-list-item.json",
             "description": "Тип"
           },
           "role": {
@@ -1153,19 +1124,20 @@
             "minItems": 1,
             "description": "Роль",
             "items": {
-              "$ref": "../abstract-models/simple-list-item.json"
+              "$ref": "models/abstract/simple-list-item.json"
             }
           }
-        }
+        },
+        "description": "Данные юр. лица"
       },
       "contractor-item": {
-        "title": "Контрагент",
+        "title": "Запись \"Контрагент\"",
         "x-stoplight": {
           "id": "220644c36d038"
         },
         "allOf": [
           {
-            "$ref": "../abstract-models/rich-list-item.json"
+            "$ref": "models/abstract/rich-list-item.json"
           },
           {
             "type": "object",
@@ -1181,7 +1153,8 @@
               }
             }
           }
-        ]
+        ],
+        "description": "Строка таблицы БД"
       },
       "vehicle-item": {
         "title": "Автотранспорт",
@@ -1190,7 +1163,7 @@
         },
         "allOf": [
           {
-            "$ref": "../abstract-models/rich-list-item.json"
+            "$ref": "models/abstract/rich-list-item.json"
           },
           {
             "type": "object",
@@ -1203,7 +1176,8 @@
               }
             }
           }
-        ]
+        ],
+        "description": "Строка таблицы БД"
       },
       "vehicle-data": {
         "title": "vehicle-data",
@@ -1237,7 +1211,7 @@
               },
               "oneOf": [
                 {
-                  "$ref": "../props/link.json",
+                  "$ref": "models/props/link.json",
                   "x-stoplight": {
                     "id": "kymt1t3y4muax"
                   }
@@ -1253,7 +1227,7 @@
             }
           },
           "type": {
-            "$ref": "../abstract-models/simple-list-item.json",
+            "$ref": "models/abstract/simple-list-item.json",
             "x-stoplight": {
               "id": "z9dot6efy9eib"
             },
@@ -1282,7 +1256,7 @@
         },
         "allOf": [
           {
-            "$ref": "../abstract-models/rich-list-item.json"
+            "$ref": "models/abstract/rich-list-item.json"
           },
           {
             "type": "object",
@@ -1295,7 +1269,8 @@
               }
             }
           }
-        ]
+        ],
+        "description": "Строка таблицы БД"
       },
       "driver-data": {
         "title": "driver-data",
@@ -1349,7 +1324,7 @@
             "description": "Дата рождения водителя"
           },
           "docType": {
-            "$ref": "../abstract-models/simple-list-item.json",
+            "$ref": "models/abstract/simple-list-item.json",
             "x-stoplight": {
               "id": "nes53j1f341xu"
             },
@@ -1375,7 +1350,7 @@
               },
               "oneOf": [
                 {
-                  "$ref": "../props/link.json",
+                  "$ref": "models/props/link.json",
                   "x-stoplight": {
                     "id": "kymt1t3y4muax"
                   }
@@ -1397,10 +1372,10 @@
         "x-stoplight": {
           "id": "d4f4bcc61a3cc"
         },
-        "description": "Используется для создания мест обработки перевозки",
+        "description": "Строка таблицы БД",
         "allOf": [
           {
-            "$ref": "../abstract-models/rich-list-item.json"
+            "$ref": "models/abstract/rich-list-item.json"
           },
           {
             "type": "object",
@@ -1416,7 +1391,7 @@
         ]
       },
       "location-data": {
-        "title": "location-data",
+        "title": "Локация",
         "x-stoplight": {
           "id": "pnyzq4bdpgvyf"
         },
@@ -1451,7 +1426,7 @@
               },
               "oneOf": [
                 {
-                  "$ref": "../props/link.json",
+                  "$ref": "models/props/link.json",
                   "x-stoplight": {
                     "id": "kymt1t3y4muax"
                   }
@@ -1473,7 +1448,8 @@
             },
             "description": "Положение локации в иерархии топологии."
           }
-        }
+        },
+        "description": "Используется для создания мест обработки перевозки"
       },
       "cargo-item": {
         "title": "Груз",
@@ -1483,7 +1459,7 @@
         "description": "Объект системы, содержащий информацию о перевозимом грузе.",
         "allOf": [
           {
-            "$ref": "../abstract-models/rich-list-item.json"
+            "$ref": "models/abstract/rich-list-item.json"
           },
           {
             "type": "object",
@@ -1502,7 +1478,7 @@
         ]
       },
       "cargo-data": {
-        "title": "cargo-data",
+        "title": "Груз",
         "x-stoplight": {
           "id": "mp5hi1iubepxl"
         },
@@ -1570,7 +1546,7 @@
             "description": "Контрагент, являющийся владельцем перевозимого груза",
             "oneOf": [
               {
-                "$ref": "../props/link.json",
+                "$ref": "models/props/link.json",
                 "x-stoplight": {
                   "id": "lpv4xambqxqyr"
                 }
@@ -1584,7 +1560,31 @@
             ],
             "type": "object"
           }
-        }
+        },
+        "description": "Объект системы, содержащий информацию о перевозимом грузе."
+      },
+      "catalog-metaitem": {
+        "type": "object",
+        "x-stoplight": {
+          "id": "e8206209bbf39"
+        },
+        "allOf": [
+          {
+            "$ref": "models/abstract/rich-list.json"
+          },
+          {
+            "x-stoplight": {
+              "id": "la5l9w5cojwkj"
+            },
+            "properties": {
+              "json-schema": {
+                "$ref": "models/abstract/rich-list-meta.json"
+              }
+            }
+          }
+        ],
+        "description": "Метаданные справочника",
+        "title": "Запись коллекции 'Справочник'"
       }
     },
     "responses": {
@@ -1595,7 +1595,7 @@
             "schema": {
               "allOf": [
                 {
-                  "$ref": "../abstract-models/domain-meta.json",
+                  "$ref": "models/abstract/domain-meta.json",
                   "x-stoplight": {
                     "id": "rzvz9v84wd8zf"
                   }
@@ -1680,7 +1680,7 @@
                 },
                 {
                   "type": "object",
-                  "$ref": "../abstract-models/domain-meta.json",
+                  "$ref": "models/abstract/domain-meta.json",
                   "x-stoplight": {
                     "id": "7sv1o5xfofl95"
                   }
@@ -1710,14 +1710,14 @@
           }
         }
       },
-      "catalog-dto": {
+      "catalog-dto-response": {
         "content": {
           "application/json": {
             "schema": {
               "type": "object",
               "allOf": [
                 {
-                  "$ref": "../abstract-models/rich-list.json",
+                  "$ref": "models/abstract/rich-list.json",
                   "x-stoplight": {
                     "id": "58z35liywfpkp"
                   }
@@ -1728,7 +1728,7 @@
                   },
                   "properties": {
                     "json-schema": {
-                      "$ref": "../abstract-models/rich-list-meta.json",
+                      "$ref": "models/abstract/rich-list-meta.json",
                       "x-stoplight": {
                         "id": "mdi1m3e9nc628"
                       }
@@ -1796,7 +1796,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "../abstract-models/rich-list.json"
+                "$ref": "models/abstract/rich-list.json"
               }
             }
           }
@@ -1821,7 +1821,7 @@
       }
     },
     "requestBodies": {
-      "shipment-rfp-dto": {
+      "shipment-rfp-dto-request": {
         "description": "Example response",
         "content": {
           "application/json": {
@@ -1831,7 +1831,7 @@
           }
         }
       },
-      "offer-dto": {
+      "offer-dto-request": {
         "description": "Example response",
         "content": {
           "application/json": {
@@ -1841,37 +1841,17 @@
           }
         }
       },
-      "catalog-dto": {
+      "catalog": {
         "content": {
           "application/json": {
             "schema": {
-              "type": "object",
-              "allOf": [
-                {
-                  "$ref": "../abstract-models/rich-list.json",
-                  "x-stoplight": {
-                    "id": "58z35liywfpkp"
-                  }
-                },
-                {
-                  "x-stoplight": {
-                    "id": "la5l9w5cojwkj"
-                  },
-                  "properties": {
-                    "json-schema": {
-                      "$ref": "../abstract-models/rich-list-meta.json",
-                      "x-stoplight": {
-                        "id": "mdi1m3e9nc628"
-                      }
-                    }
-                  }
-                }
-              ]
+              "$ref": "#/components/schemas/catalog-citem"
             }
           }
-        }
+        },
+        "description": "Атрибуты редактируемого справочника"
       },
-      "catalog-item-dto": {
+      "catalog-item-dto-request": {
         "content": {
           "application/json": {
             "schema": {
@@ -1918,6 +1898,29 @@
           }
         },
         "description": "Объект Запись Справочника"
+      }
+    },
+    "parameters": {
+      "id": {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "description": "Идентификатор записи"
+      },
+      "key": {
+        "name": "key",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "format": "hostname"
+        },
+        "description": "Ключ/код коллекции",
+        "style": "label"
       }
     }
   },

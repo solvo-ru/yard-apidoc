@@ -331,7 +331,12 @@
           "200": {
             "$ref": "#/components/responses/offer-list"
           }
-        }
+        },
+        "description": "Получение списка предложений от перевозчиков",
+        "operationId": "getOfferList",
+        "tags": [
+          "Предложения"
+        ]
       },
       "put": {
         "summary": "Создать новое предложение",
@@ -355,7 +360,12 @@
               }
             }
           }
-        }
+        },
+        "description": "Создание нового предложения от перевозчика",
+        "operationId": "createOffer",
+        "tags": [
+          "Предложения"
+        ]
       },
       "parameters": []
     },
@@ -385,6 +395,11 @@
               "format": "uuid"
             }
           }
+        ],
+        "description": "Получение детальной информации о предложении",
+        "operationId": "getOfferDetails",
+        "tags": [
+          "Предложения"
         ]
       },
       "post": {
@@ -421,7 +436,12 @@
               }
             }
           }
-        }
+        },
+        "description": "Обновление информации о предложении",
+        "operationId": "updateOffer",
+        "tags": [
+          "Предложения"
+        ]
       },
       "parameters": [
         {
@@ -432,40 +452,48 @@
     "/catalogs": {
       "get": {
         "summary": "Получить перечень справочников системы",
-        "tags": [],
+        "tags": [
+          "Справочники"
+        ],
         "responses": {
           "200": {
             "$ref": "#/components/responses/catalog-list"
           }
         },
-        "operationId": "get-catalogs",
-        "description": ""
+        "operationId": "getCatalogList",
+        "description": "Получение списка справочников системы"
       },
       "put": {
         "summary": "Создать новый справочник",
-        "tags": [],
+        "tags": [
+          "Справочники"
+        ],
         "responses": {
           "201": {
             "$ref": "#/components/responses/catalog-metaitem"
           }
         },
-        "operationId": "post-catalogs",
+        "operationId": "createCatalog",
         "requestBody": {
           "$ref": "#/components/requestBodies/catalog-metaitem"
-        }
+        },
+        "description": "Создание нового справочника"
       },
       "post": {
         "summary": "Изменить описание справочника",
-        "tags": [],
+        "tags": [
+          "Справочники"
+        ],
         "responses": {
           "202": {
             "$ref": "#/components/responses/catalog-metaitem"
           }
         },
-        "operationId": "put-catalogs",
+        "operationId": "updateCatalog",
         "requestBody": {
           "$ref": "#/components/requestBodies/catalog-metaitem"
-        }
+        },
+        "description": "Обновление информации о справочнике"
       }
     },
     "/catalogs/{key}": {

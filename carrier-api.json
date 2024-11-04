@@ -1318,15 +1318,24 @@
         "properties": {
           "title": {
             "type": "string",
-            "description": "Сокращенное наименование контрагента, которое будет видно в интерфейсе"
+            "description": "Сокращенное наименование контрагента, которое будет видно в интерфейсе",
+            "examples": [
+              "ООО \"ТрансЛогистик\""
+            ]
           },
           "fullTitle": {
             "type": "string",
-            "description": "Полное наименование контрагента, как оно прописано в правоустанавливающих документах"
+            "description": "Полное наименование контрагента, как оно прописано в правоустанавливающих документах",
+            "examples": [
+              "Общество с ограниченной ответственностью \"ТрансЛогистик\""
+            ]
           },
           "type": {
             "$ref": "./models/abstract/simple-list-item.json",
-            "description": "Тип"
+            "description": "Тип",
+            "examples": [
+              "CARRIER"
+            ]
           },
           "role": {
             "type": "array",
@@ -1334,7 +1343,11 @@
             "description": "Роль",
             "items": {
               "$ref": "./models/abstract/simple-list-item.json"
-            }
+            },
+            "examples": [
+              "CARRIER",
+              "CUSTOMER"
+            ]
           }
         },
         "additionalProperties": false

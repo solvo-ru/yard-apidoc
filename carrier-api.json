@@ -1550,6 +1550,35 @@
               "items": {
                 "$ref": "models/abstract/rich-list.json"
               }
+            },
+            "example": {
+              "items": [
+                {
+                  "id": "cat-001",
+                  "name": "Типы транспортных средств",
+                  "description": "Справочник типов транспортных средств",
+                  "itemsCount": 10
+                },
+                {
+                  "id": "cat-002",
+                  "name": "Типы грузов",
+                  "description": "Справочник типов грузов",
+                  "itemsCount": 15
+                },
+                {
+                  "id": "cat-003",
+                  "name": "Статусы заявок",
+                  "description": "Справочник статусов заявок на перевозку",
+                  "itemsCount": 5
+                }
+              ],
+              "meta": {
+                "totalItems": 3,
+                "itemCount": 3,
+                "itemsPerPage": 10,
+                "totalPages": 1,
+                "currentPage": 1
+              }
             }
           }
         }

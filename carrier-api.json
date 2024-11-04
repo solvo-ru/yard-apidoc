@@ -63,6 +63,13 @@
                   "client_id",
                   "client_secret"
                 ]
+              },
+              "example": {
+                "grant_type": "authorization_code",
+                "code": "4/P7q7W91a-oMsCeLvIaQm6bTrgtp7",
+                "redirect_uri": "https://example.com/oauth2callback",
+                "client_id": "ваш-client-id",
+                "client_secret": "ваш-client-secret"
               }
             }
           }

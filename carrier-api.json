@@ -1699,31 +1699,20 @@
         "properties": {
           "title": {
             "type": "string",
-            "description": "название места обработки",
             "examples": [
-              "Склад \"Восточный\""
+              "Склад 'Восточный'"
             ]
           },
           "address": {
             "type": "string",
-            "description": "Адрес локации",
             "examples": [
               "г. Москва, ул. Складская, д. 1"
             ]
           },
           "terminals": {
             "type": "array",
-            "description": "Список контрагентов с типом «Терминал», которые выполняют обработку перевозки в локации.",
             "items": {
-              "oneOf": [
-                {
-                  "$ref": "./models/props/link.json"
-                },
-                {
-                  "$ref": "#/components/schemas/contractor-item"
-                }
-              ],
-              "type": "object"
+              "": "./models/abstract/simple-list-item.json"
             },
             "examples": [
               [
@@ -1740,7 +1729,6 @@
           },
           "level": {
             "type": "string",
-            "description": "Положение локации в иерархии топологии.",
             "examples": [
               "WAREHOUSE"
             ]

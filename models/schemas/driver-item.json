@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "driver-item": {
-    "title": "\u0412\u043e\u0434\u0438\u0442\u0435\u043b\u044c",
+    "title": "Водитель",
     "allOf": [
       {
         "$ref": "./models/abstract/rich-list-item.json"
@@ -15,6 +15,6 @@
         }
       }
     ],
-    "description": "\u0421\u0442\u0440\u043e\u043a\u0430 \u0442\u0430\u0431\u043b\u0438\u0446\u044b \u0411\u0414"
+    "description": "Строка таблицы БД"
   }
 }

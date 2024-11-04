@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "transport-target-item": {
-    "title": "\u0426\u0435\u043b\u044c \u043f\u0435\u0440\u0435\u0432\u043e\u0437\u043a\u0438",
-    "description": "\u041e\u0431\u044a\u0435\u043a\u0442 \u0441\u0438\u0441\u0442\u0435\u043c\u044b, \u0441\u043e\u0434\u0435\u0440\u0436\u0430\u0449\u0438\u0439 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044e \u043e \u043c\u0435\u0441\u0442\u0435 \u043e\u0431\u0440\u0430\u0431\u043e\u0442\u043a\u0438 \u043f\u0435\u0440\u0435\u0432\u043e\u0437\u043a\u0438",
+    "title": "Цель перевозки",
+    "description": "Объект системы, содержащий информацию о месте обработки перевозки",
     "allOf": [
       {
         "$ref": "./models/abstract/rich-list-item.json"
@@ -34,7 +34,7 @@
         "json-schema": {},
         "json-data": {
           "num": "TT-2023-001",
-          "route": "\u0412\u0432\u043e\u0437",
+          "route": "Ввоз",
           "sender": {
             "host": "example.com",
             "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
@@ -45,7 +45,7 @@
             "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
             "entity": "item"
           },
-          "loadAddress": "\u0433. \u041c\u043e\u0441\u043a\u0432\u0430, \u0443\u043b. \u0421\u043a\u043b\u0430\u0434\u0441\u043a\u0430\u044f, \u0434. 1",
+          "loadAddress": "г. Москва, ул. Складская, д. 1",
           "loadArrival": "2023-05-21T08:00:00Z",
           "recipient": {
             "host": "example.com",
@@ -57,11 +57,11 @@
             "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
             "entity": "item"
           },
-          "unloadAddress": "\u0433. \u0421\u0430\u043d\u043a\u0442-\u041f\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433, \u043f\u0440. \u0418\u043d\u0434\u0443\u0441\u0442\u0440\u0438\u0430\u043b\u044c\u043d\u044b\u0439, \u0434. 10",
+          "unloadAddress": "г. Санкт-Петербург, пр. Индустриальный, д. 10",
           "unloadArrival": "2023-05-22T16:00:00Z",
           "cargo": {
             "id": "cargo-001",
-            "name": "\u042d\u043b\u0435\u043a\u0442\u0440\u043e\u043d\u0438\u043a\u0430"
+            "name": "Электроника"
           }
         }
       }

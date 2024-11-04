@@ -923,7 +923,30 @@
               }
             }
           }
-        ]
+        ],
+        "example": {
+          "id": "tt-001",
+          "name": "Перевозка груза из Москвы в Санкт-Петербург",
+          "status": "ACTIVE",
+          "createdAt": "2023-05-18T10:00:00Z",
+          "updatedAt": "2023-05-18T10:00:00Z",
+          "origin": {
+            "address": "ул. Ленина, 1, Москва, Россия",
+            "coordinates": {
+              "latitude": 55.7558,
+              "longitude": 37.6173
+            }
+          },
+          "destination": {
+            "address": "Невский проспект, 1, Санкт-Петербург, Россия",
+            "coordinates": {
+              "latitude": 59.9311,
+              "longitude": 30.3609
+            }
+          },
+          "estimatedDepartureTime": "2023-05-20T08:00:00Z",
+          "estimatedArrivalTime": "2023-05-21T18:00:00Z"
+        }
       },
       "transport-target-data": {
         "title": "Цель перевозки",

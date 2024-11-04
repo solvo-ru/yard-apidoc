@@ -1995,9 +1995,6 @@
             "schema": {
               "allOf": [
                 {
-                  "$ref": "./models/abstract/domain-meta.json"
-                },
-                {
                   "required": [
                     "items"
                   ],
@@ -2022,6 +2019,22 @@
                       "$ref": "#/components/schemas/pagination",
                       "x-stoplight": {
                         "id": "47z21vps1zahi"
+                      }
+                    }
+                  }
+                },
+                {
+                  "x-stoplight": {
+                    "id": "htprt5vuam6hc"
+                  },
+                  "required": [
+                    "meta"
+                  ],
+                  "properties": {
+                    "meta": {
+                      "$ref": "./models/abstract/domain-meta.json",
+                      "x-stoplight": {
+                        "id": "4j11n19esp7wj"
                       }
                     }
                   }
@@ -2077,9 +2090,6 @@
             "schema": {
               "allOf": [
                 {
-                  "$ref": "./models/abstract/domain-meta.json"
-                },
-                {
                   "required": [
                     "items"
                   ],
@@ -2088,6 +2098,35 @@
                       "type": "array",
                       "items": {
                         "$ref": "#/components/schemas/offer-item"
+                      }
+                    }
+                  }
+                },
+                {
+                  "x-stoplight": {
+                    "id": "udu1xsj9bfkfa"
+                  },
+                  "required": [
+                    "meta"
+                  ],
+                  "properties": {
+                    "meta": {
+                      "$ref": "./models/abstract/domain-meta.json",
+                      "x-stoplight": {
+                        "id": "ifcy9uj15g02v"
+                      }
+                    }
+                  }
+                },
+                {
+                  "x-stoplight": {
+                    "id": "ims4wou1t9gd7"
+                  },
+                  "properties": {
+                    "page-info": {
+                      "$ref": "#/components/schemas/pagination",
+                      "x-stoplight": {
+                        "id": "fok2875eu59es"
                       }
                     }
                   }

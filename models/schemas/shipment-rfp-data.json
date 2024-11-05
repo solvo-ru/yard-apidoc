@@ -91,5 +91,415 @@
       "description": "Способ создания заявки на перевозку."
     }
   },
-  "$schema": "https://json-schema.org/draft/2020-12/schema"
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "examples": [
+    {
+      "num": "RFP-2023-001",
+      "customer": {
+        "id": "cust-001",
+        "title": "ООО Электроника-Трейд",
+        "catalogId": "cat-contractors-001",
+        "json-data": {
+          "title": "ООО Электроника-Трейд",
+          "fullTitle": "Общество с ограниченной ответственностью 'Электроника-Трейд'",
+          "type": {
+            "id": "type-001",
+            "title": "Поставщик электроники"
+          }
+        }
+      },
+      "expectedVehicle": [
+        {
+          "id": "vt-001",
+          "title": "Рефрижератор"
+        }
+      ],
+      "validSince": "2023-12-01T08:00:00Z",
+      "validUntil": "2023-12-02T18:00:00Z",
+      "targets": [
+        {
+          "id": "tgt-001",
+          "title": "Маршрут Москва-Петербург",
+          "catalogId": "cat-targets-001",
+          "json-data": {
+            "num": "TGT-2023-001",
+            "route": "Ввоз",
+            "sender": {
+              "id": "sender-001",
+              "title": "ООО Электроника-Трейд"
+            },
+            "loadLocation": {
+              "id": "loc-001",
+              "title": "Склад Москва-1"
+            },
+            "loadAddress": "г. Москва, ул. Складская, д. 10",
+            "loadArrival": "2023-12-01T10:00:00Z",
+            "recipient": {
+              "id": "rec-001",
+              "title": "ООО ТехноМаркет"
+            },
+            "unloadLocation": {
+              "id": "loc-002",
+              "title": "Склад СПб-1"
+            },
+            "unloadAddress": "г. Санкт-Петербург, пр. Индустриальный, д. 15",
+            "unloadArrival": "2023-12-02T15:00:00Z",
+            "cargo": [
+              {
+                "id": "cargo-001",
+                "title": "Партия смартфонов"
+              }
+            ]
+          }
+        }
+      ],
+      "attachments": [
+        "http://example.com/docs/waybill-001.pdf"
+      ],
+      "source": {
+        "id": "src-001",
+        "title": "Веб-портал"
+      }
+    },
+    {
+      "num": "RFP-2023-002",
+      "customer": {
+        "id": "cust-002",
+        "title": "ООО ПродуктыОпт",
+        "catalogId": "cat-contractors-002",
+        "json-data": {
+          "title": "ООО ПродуктыОпт",
+          "fullTitle": "Общество с ограниченной ответственностью 'ПродуктыОпт'",
+          "type": {
+            "id": "type-002",
+            "title": "Оптовый поставщик продуктов"
+          }
+        }
+      },
+      "expectedVehicle": [
+        {
+          "id": "vt-002",
+          "title": "Рефрижератор"
+        }
+      ],
+      "validSince": "2023-12-03T07:00:00Z",
+      "validUntil": "2023-12-03T20:00:00Z",
+      "targets": [
+        {
+          "id": "tgt-002",
+          "title": "Развоз по Москве",
+          "catalogId": "cat-targets-002",
+          "json-data": {
+            "num": "TGT-2023-002",
+            "route": "Вывоз",
+            "sender": {
+              "id": "sender-002",
+              "title": "ООО ПродуктыОпт"
+            },
+            "loadLocation": {
+              "id": "loc-003",
+              "title": "Распределительный центр Москва"
+            },
+            "loadAddress": "г. Москва, ул. Логистическая, д. 5",
+            "loadArrival": "2023-12-03T08:00:00Z",
+            "recipient": {
+              "id": "rec-002",
+              "title": "Сеть магазинов 'Продукты 24'"
+            },
+            "unloadLocation": {
+              "id": "loc-004",
+              "title": "Магазин Продукты 24"
+            },
+            "unloadAddress": "г. Москва, ул. Торговая, д. 20",
+            "unloadArrival": "2023-12-03T16:00:00Z",
+            "cargo": [
+              {
+                "id": "cargo-002",
+                "title": "Молочная продукция"
+              }
+            ]
+          }
+        }
+      ],
+      "attachments": [
+        "http://example.com/docs/invoice-002.pdf"
+      ],
+      "source": {
+        "id": "src-002",
+        "title": "Мобильное приложение"
+      }
+    },
+    {
+      "num": "RFP-2023-003",
+      "customer": {
+        "id": "cust-003",
+        "title": "АО СтройМатериалы",
+        "catalogId": "cat-contractors-003",
+        "json-data": {
+          "title": "АО СтройМатериалы",
+          "fullTitle": "Акционерное общество 'СтройМатериалы'",
+          "type": {
+            "id": "type-003",
+            "title": "Поставщик стройматериалов"
+          }
+        }
+      },
+      "expectedVehicle": [
+        {
+          "id": "vt-003",
+          "title": "Бортовой грузовик"
+        }
+      ],
+      "validSince": "2023-12-04T06:00:00Z",
+      "validUntil": "2023-12-04T18:00:00Z",
+      "targets": [
+        {
+          "id": "tgt-003",
+          "title": "Доставка стройматериалов",
+          "catalogId": "cat-targets-003",
+          "json-data": {
+            "num": "TGT-2023-003",
+            "route": "Ввоз",
+            "sender": {
+              "id": "sender-003",
+              "title": "АО СтройМатериалы"
+            },
+            "loadLocation": {
+              "id": "loc-005",
+              "title": "Склад стройматериалов"
+            },
+            "loadAddress": "г. Москва, ул. Промышленная, д. 25",
+            "loadArrival": "2023-12-04T07:00:00Z",
+            "recipient": {
+              "id": "rec-003",
+              "title": "ООО СтройОбъект"
+            },
+            "unloadLocation": {
+              "id": "loc-006",
+              "title": "Строительная площадка"
+            },
+            "unloadAddress": "г. Москва, ул. Строительная, д. 30",
+            "unloadArrival": "2023-12-04T15:00:00Z",
+            "cargo": [
+              {
+                "id": "cargo -003",
+                "title": "Цемент"
+              }
+            ]
+          }
+        }
+      ],
+      "attachments": [
+        "http://example.com/docs/contract-003.pdf"
+      ],
+      "source": {
+        "id": "src-003",
+        "title": "Электронная почта"
+      }
+    },
+    {
+      "num": "RFP-2023-004",
+      "customer": {
+        "id": "cust-004",
+        "title": "ООО ХимПром",
+        "catalogId": "cat-contractors-004",
+        "json-data": {
+          "title": "ООО ХимПром",
+          "fullTitle": "Общество с ограниченной ответственностью 'ХимПром'",
+          "type": {
+            "id": "type-004",
+            "title": "Поставщик химической продукции"
+          }
+        }
+      },
+      "expectedVehicle": [
+        {
+          "id": "vt-004",
+          "title": "Цистерна"
+        }
+      ],
+      "validSince": "2023-12-05T09:00:00Z",
+      "validUntil": "2023-12-05T17:00:00Z",
+      "targets": [
+        {
+          "id": "tgt-004",
+          "title": "Доставка химикатов",
+          "catalogId": "cat-targets-004",
+          "json-data": {
+            "num": "TGT-2023-004",
+            "route": "Вывоз",
+            "sender": {
+              "id": "sender-004",
+              "title": "ООО ХимПром"
+            },
+            "loadLocation": {
+              "id": "loc-007",
+              "title": "Склад химической продукции"
+            },
+            "loadAddress": "г. Москва, ул. Химическая, д. 12",
+            "loadArrival": "2023-12-05T10:00:00Z",
+            "recipient": {
+              "id": "rec-004",
+              "title": "Завод 'ХимТехнологии'"
+            },
+            "unloadLocation": {
+              "id": "loc-008",
+              "title": "Производственный цех"
+            },
+            "unloadAddress": "г. Москва, ул. Заводская, д. 5",
+            "unloadArrival": "2023-12-05T15:00:00Z",
+            "cargo": [
+              {
+                "id": "cargo-004",
+                "title": "Химикаты"
+              }
+            ]
+          }
+        }
+      ],
+      "attachments": [
+        "http://example.com/docs/contract-004.pdf"
+      ],
+      "source": {
+        "id": "src-004",
+        "title": "Система управления"
+      }
+    },
+    {
+      "num": "RFP-2023-005",
+      "customer": {
+        "id": "cust-005",
+        "title": "АО ТехноСнаб",
+        "catalogId": "cat-contractors-005",
+        "json-data": {
+          "title": "АО ТехноСнаб",
+          "fullTitle": "Акционерное общество 'ТехноСнаб'",
+          "type": {
+            "id": "type-005",
+            "title": "Поставщик технического оборудования"
+          }
+        }
+      },
+      "expectedVehicle": [
+        {
+          "id": "vt-005",
+          "title": "Грузовик"
+        }
+      ],
+      "validSince": "2023-12-06T08:00:00Z",
+      "validUntil": "2023-12-06T20:00:00Z",
+      "targets": [
+        {
+          "id": "tgt-005",
+          "title": "Доставка оборудования",
+          "catalogId": "cat-targets-005",
+          "json-data": {
+            "num": "TGT-2023-005",
+            "route": "Ввоз",
+            "sender": {
+              "id": "sender-005",
+              "title": "АО ТехноСнаб"
+            },
+            "loadLocation": {
+              "id": "loc-009",
+              "title": "Склад оборудования"
+            },
+            "loadAddress": "г. Москва, ул. Оборудование, д. 8",
+            "loadArrival": "2023-12-06T09:00:00Z",
+            "recipient": {
+              "id": "rec-005",
+              "title": "Завод 'ТехноПроизводство'"
+            },
+
+            "unloadLocation": {
+              "id": "loc-010",
+              "title": "Производственный цех"
+            },
+            "unloadAddress": "г. Москва, ул. Заводская, д. 10",
+            "unloadArrival": "2023-12-06T18:00:00Z",
+            "cargo": [
+              {
+                "id": "cargo-005",
+                "title": "Техническое оборудование"
+              }
+            ]
+          }
+        }
+      ],
+      "attachments": [
+        "http://example.com/docs/contract-005.pdf"
+      ],
+      "source": {
+        "id": "src-005",
+        "title": "Веб-портал"
+      }
+    },
+    {
+      "num": "RFP-2023-006",
+      "customer": {
+        "id": "cust-006",
+        "title": "ООО АвтоЗапчасти",
+        "catalogId": "cat-contractors-006",
+        "json-data": {
+          "title": "ООО АвтоЗапчасти",
+          "fullTitle": "Общество с ограниченной ответственностью 'АвтоЗапчасти'",
+          "type": {
+            "id": "type-006",
+            "title": "Поставщик автозапчастей"
+          }
+        }
+      },
+      "expectedVehicle": [
+        {
+          "id": "vt-006",
+          "title": "Грузовик"
+        }
+      ],
+      "validSince": "2023-12-07T08:00:00Z",
+      "validUntil": "2023-12-07T19:00:00Z",
+      "targets": [
+        {
+          "id": "tgt-006",
+          "title": "Доставка автозапчастей",
+          "catalogId": "cat-targets-006",
+          "json-data": {
+            "num": "TGT-2023-006",
+            "route": "Вывоз",
+            "sender": {
+              "id": "sender-006",
+              "title": "ООО АвтоЗапчасти"
+            },
+            "loadLocation": {
+              "id": "loc-011",
+              "title": "Склад автозапчастей"
+            },
+            "loadAddress": "г. Москва, ул. Автозапчастей, д. 15",
+            "loadArrival": "2023-12-07T09:00:00Z",
+            "recipient": {
+              "id": "rec-006",
+              "title": "Сеть магазинов 'АвтоМир'"
+            },
+            "unloadLocation": {
+              "id": "loc-012",
+              "title": "Магазин АвтоМир"
+            },
+            "unloadAddress": "г. Москва, ул. Торговая, д. 25",
+            "unloadArrival": "2023-12-07T17:00:00Z",
+            "cargo": [
+              {
+                "id": "cargo-006",
+                "title": "Автозапчасти"
+              }
+            ]
+          }
+        }
+      ],
+      "attachments": [
+        "http://example.com/docs/contract-006.pdf"
+      ],
+      "source": {
+        "id": "src-006",
+        "title": "Мобильное приложение"
+      }
+    }]
 }

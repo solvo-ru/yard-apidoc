@@ -38,8 +38,8 @@
       "lastModifiedDate": "2019-08-24T14:15:22Z",
       "title": "string",
       "catalogId": "8c4666aa-d43d-4196-b78a-f94040b1db76",
-      "json-schema": {},
-      "json-data": {
+      jsonSchema: {},
+      "jsonData": {
         "num": "TT-2023-001",
         "route": "Ввоз",
         "sender": {

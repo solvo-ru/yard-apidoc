@@ -83,7 +83,7 @@
         "id": "f001",
         "title": "ООО ЛогистикПро",
         "catalogId": "cat-001",
-        "json-data": {
+        "jsonData": {
           "title": "ООО ЛогистикПро",
           "fullTitle": "Общество с ограниченной ответственностью 'ЛогистикПро'",
           "type": {
@@ -96,7 +96,7 @@
         "id": "c001",
         "title": "АО ТрансГруз",
         "catalogId": "cat-002",
-        "json-data": {
+        "jsonData": {
           "title": "АО ТрансГруз",
           "fullTitle": "Акционерное общество 'ТрансГруз'",
           "type": {
@@ -109,7 +109,7 @@
         "id": "v001",
         "title": "КАМАЗ 5490",
         "catalogId": "cat-003",
-        "json-data": {
+        "jsonData": {
           "plate": "А123БВ78",
           "type": {
             "id": "vt-001",
@@ -123,7 +123,7 @@
         "id": "d001",
         "title": "Иванов Иван Иванович",
         "catalogId": "cat-004",
-        "json-data": {
+        "jsonData": {
           "docNum": 4510123456,
           "name": "Иван",
           "lastName": "Иванов",
@@ -147,7 +147,7 @@
         "id": "f002",
         "title": "ООО ЭкспрессДоставка",
         "catalogId": "cat-005",
-        "json-data": {
+        "jsonData": {
           "title": "ООО ЭкспрессДоставка",
           "fullTitle": "Общество с ограниченной ответственностью 'ЭкспрессДоставка'",
           "type": {
@@ -160,7 +160,7 @@
         "id": "c002",
         "title": "ИП Петров П.П.",
         "catalogId": "cat-006",
-        "json-data": {
+        "jsonData": {
           "title": "ИП Петров П.П.",
           "fullTitle": "Индивидуальный предприниматель Петров Петр Петрович",
           "type": {
@@ -173,7 +173,7 @@
         "id": "v002",
         "title": "Газель Next",
         "catalogId": "cat-007",
-        "json-data": {
+        "jsonData": {
           "plate": "В456ГД90",
           "type": {
             "id": "vt-002",
@@ -187,7 +187,7 @@
         "id": "d002",
         "title": "Петров Петр Петрович",
         "catalogId": "cat-008",
-        "json-data": {
+        "jsonData": {
           "docNum": 4510234567,
           "name": "Петр",
           "lastName": "Петров",
@@ -211,7 +211,7 @@
         "id": "f003",
         "title": "АО РефТранс",
         "catalogId": "cat-009",
-        "json-data": {
+        "jsonData": {
           "title": "АО РефТранс",
           "fullTitle": "Акционерное общество 'РефТранс'",
           "type": {
@@ -224,7 +224,7 @@
         "id": "c003",
         "title": "ООО ХолодЛогистик",
         "catalogId": "cat-010",
-        "json-data": {
+        "jsonData": {
           "title": "ООО ХолодЛогистик",
           "fullTitle": "Общество с ограниченной ответственностью 'ХолодЛогистик'",
           "type": {
@@ -237,7 +237,7 @@
         "id": "v003",
         "title": "Volvo FH",
         "catalogId": "cat-011",
-        "json-data": {
+        "jsonData": {
           "plate": "Е789ЖЗ150",
           "type": {
             "id": "vt-003",
@@ -251,7 +251,7 @@
         "id": "d003",
         "title": "Сидоров Сидор Сидорович",
         "catalogId": "cat-012",
-        "json-data": {
+        "jsonData": {
           "docNum": 4510345678,
           "name": "Сидор",
           "lastName": "Сидоров",
@@ -275,7 +275,7 @@
         "id": "f004",
         "title": "ООО СтройЛогистика",
         "catalogId": "cat-013",
-        "json-data": {
+        "jsonData": {
           "title": "ООО СтройЛогистика",
           "fullTitle": "Общество с ограниченной ответственностью 'СтройЛогистика'",
           "type": {
@@ -288,7 +288,7 @@
         "id": "c004",
         "title": "ИП Сидоров С.С.",
         "catalogId": "cat-014",
-        "json-data": {
+        "jsonData": {
           "title": "ИП Сидоров С.С.",
           "fullTitle": "Индивидуальный предприниматель Сидоров Сидор Сидорович",
           "type": {
@@ -301,7 +301,7 @@
         "id": "v004",
         "title": "МАЗ 6516",
         "catalogId": "cat-015",
-        "json-data": {
+        "jsonData": {
           "plate": "К123ЛМ77",
           "type": {
             "id": "vt-004",
@@ -315,7 +315,7 @@
         "id": "d004",
         "title": "Кузнецов Кузьма Кузьмич",
         "catalogId": "cat-016",
-        "json-data": {
+        "jsonData": {
           "docNum": 4510456789,
           "name": "Кузьма",
           "lastName": "Кузнецов",
@@ -339,7 +339,7 @@
         "id": "f005",
         "title": "АО ГрузТранс",
         "catalogId": "cat-017",
-        "json-data": {
+        "jsonData": {
           "title": "АО ГрузТранс",
           "fullTitle": "Акционерное общество 'ГрузТранс'",
           "type": {
@@ -352,7 +352,7 @@
         "id": "c005",
         "title": "ООО ЛогистикСервис",
         "catalogId": "cat-018",
-        "json-data": {
+        "jsonData": {
           "title": "ООО ЛогистикСервис",
           "fullTitle": "Общество с ограниченной ответственностью 'ЛогистикСервис'",
           "type": {
@@ -365,7 +365,7 @@
         "id": "v005",
         "title": "Isuzu N-Series",
         "catalogId": "cat-019",
-        "json-data": {
+        "jsonData": {
           "plate": "М456НТ99",
           "type": {
             "id": "vt-005",
@@ -379,7 +379,7 @@
         "id": "d005",
         "title": "Федоров Федор Федорович",
         "catalogId": "cat-020",
-        "json-data": {
+        "jsonData": {
           "docNum": 4510567890,
           "name": "Федор",
           "lastName": "Федоров",
@@ -403,7 +403,7 @@
         "id": "f006",
         "title": "ООО ТранспортСервис",
         "catalogId": "cat-021",
-        "json-data": {
+        "jsonData": {
           "title": "ООО ТранспортСервис",
           "fullTitle": "Общество с ограниченной ответственностью 'ТранспортСервис'",
           "type": {
@@ -416,7 +416,7 @@
         "id": "c006",
         "title": "ИП Смирнов С.С.",
         "catalogId": "cat-022",
-        "json-data": {
+        "jsonData": {
           "title": "ИП Смирнов С.С.",
           "fullTitle": "Индивидуальный предприниматель Смирнов Сергей Сергеевич",
           "type": {
@@ -429,7 +429,7 @@
         "id": "v006",
         "title": "Hyundai Porter",
         "catalogId": "cat-023",
-        "json-data": {
+        "jsonData": {
           "plate": "Н123КТ77",
           "type": {
             "id": "vt-006",
@@ -443,7 +443,7 @@
         "id": "d006",
         "title": "Семенов Семен Семенович",
         "catalogId": "cat-024",
-        "json-data": {
+        "jsonData": {
           "docNum": 4510678901,
           "name": "Семен",
           "lastName": "Семенов",
@@ -467,7 +467,7 @@
         "id": "f007",
         "title": "АО ЛогистикГрупп",
         "catalogId": "cat-025",
-        "json-data": {
+        "jsonData": {
           "title": "АО ЛогистикГрупп",
           "fullTitle": "Акционерное общество 'ЛогистикГрупп'",
           "type": {
@@ -480,7 +480,7 @@
         "id": "c007",
         "title": "ООО Грузоперевозки",
         "catalogId": "cat-026",
-        "json-data": {
+        "jsonData": {
           "title": "ООО Грузоперевозки",
           "fullTitle": "Общество с ограниченной ответственностью 'Грузоперевозки'",
           "type": {
@@ -493,7 +493,7 @@
         "id": "v007",
         "title": "Mercedes-Benz Sprinter",
         "catalogId": "cat-027",
-        "json-data": {
+        "jsonData": {
           "plate": "О123АА77",
           "type": {
             "id": "vt-007",
@@ -507,7 +507,7 @@
         "id": "d007",
         "title": "Алексеев Алексей Алексеевич",
         "catalogId": "cat-028",
-        "json-data": {
+        "jsonData": {
           "docNum": 4510789012,
           "name": "Алексей",
           "lastName": "Алексеев",
@@ -532,7 +532,7 @@
         "id": "f008",
         "title": "ООО ГрузТрансСервис",
         "catalogId": "cat-029",
-        "json-data": {
+        "jsonData": {
           "title": "ООО ГрузТрансСервис",
           "fullTitle": "Общество с ограниченной ответственностью 'ГрузТрансСервис'",
           "type": {
@@ -545,7 +545,7 @@
         "id": "c008",
         "title": "ИП Кузнецов К.К.",
         "catalogId": "cat-030",
-        "json-data": {
+        "jsonData": {
           "title": "ИП Кузнецов К.К.",
           "fullTitle": "Индивидуальный предприниматель Кузнецов Кирилл Кириллович",
           "type": {
@@ -558,7 +558,7 @@
         "id": "v008",
         "title": "Renault Master",
         "catalogId": "cat-031",
-        "json-data": {
+        "jsonData": {
           "plate": "Р123КТ77",
           "type": {
             "id": "vt-008",
@@ -572,7 +572,7 @@
         "id": "d008",
         "title": "Сидоров Сидор Сидорович",
         "catalogId": "cat-032",
-        "json-data": {
+        "jsonData": {
           "docNum": 4510890123,
           "name": "Сидор",
           "lastName": "Сидоров",
@@ -596,7 +596,7 @@
         "id": "f009",
         "title": "АО ЛогистикСистемы",
         "catalogId": "cat-033",
-        "json-data": {
+        "jsonData": {
           "title": "АО ЛогистикСистемы",
           "fullTitle": "Акционерное общество 'ЛогистикСистемы'",
           "type": {
@@ -609,7 +609,7 @@
         "id": "c009",
         "title": "ООО Транспортная Компания",
         "catalogId": "cat-034",
-        "json-data": {
+        "jsonData": {
           "title": "ООО Транспортная Компания",
           "fullTitle": "Общество с ограниченной ответственностью 'Транспортная Компания'",
           "type": {
@@ -622,7 +622,7 @@
         "id": "v009",
         "title": "Iveco Daily",
         "catalogId": "cat-035",
-        "json-data": {
+        "jsonData": {
           "plate": "С456ТТ99",
           "type": {
             "id": "vt-009",
@@ -636,7 +636,7 @@
         "id": "d009",
         "title": "Алексеев Алексей Алексеевич",
         "catalogId": "cat-036",
-        "json-data": {
+        "jsonData": {
           "docNum": 4510901234,
           "name": "Алексей",
           "lastName": "Алексеев",

@@ -35,7 +35,7 @@
       "lastModifiedDate": "2023-05-01T10:00:00Z",
       "title": "ООО Логистик Про",
       "catalogId": "8c4666aa-d43d-4196-b78a-f94040b1db76",
-      "json-data": {
+      "jsonData": {
         "title": "ООО Логистик Про",
         "fullTitle": "Общество с ограниченной ответственностью 'Логистик Про'",
         "type": {
@@ -58,7 +58,7 @@
       "lastModifiedDate": "2023-04-15T14:30:00Z",
       "title": "Склад Москва-1",
       "catalogId": "9c4666aa-d43d-4196-b78a-f94040b1db77",
-      "json-data": {
+      "jsonData": {
         "title": "Склад Москва-1",
         "address": "г. Москва, ул. Складская, д. 1",
         "terminals": [
@@ -85,7 +85,7 @@
       "lastModifiedDate": "2023-04-20T09:15:00Z",
       "title": "ЗАО ТехноМаркет",
       "catalogId": "0d4666aa-d43d-4196-b78a-f94040b1db78",
-      "json-data": {
+      "jsonData": {
         "title": "ЗАО ТехноМаркет",
         "fullTitle": "Закрытое акционерное общество 'ТехноМаркет'",
         "type": {
@@ -108,7 +108,7 @@
       "lastModifiedDate": "2023-04-25T11:45:00Z",
       "title": "Склад СПб-2",
       "catalogId": "1e4666aa-d43d-4196-b78a-f94040b1db79",
-      "json-data": {
+      "jsonData": {
         "title": "Склад СПб-2",
         "address": "г. Санкт-Петербург, пр. Индустриальный, д. 10",
         "terminals": [
@@ -136,7 +136,7 @@
         "lastModifiedDate": "2023-05-10T13:20:00Z",
         "title": "Электроника",
         "catalogId": "2f4666aa-d43d-4196-b78a-f94040b1db80",
-        "json-data": {
+        "jsonData": {
           "num": "CARGO-2023-001",
           "desc": "Партия смартфонов",
           "amount": 1000,

@@ -83,7 +83,7 @@
         "id": "cust-001",
         "title": "ООО Электроника-Трейд",
         "catalogId": "cat-contractors-001",
-        "json-data": {
+        "jsonData": {
           "title": "ООО Электроника-Трейд",
           "fullTitle": "Общество с ограниченной ответственностью 'Электроника-Трейд'",
           "type": {
@@ -105,7 +105,7 @@
           "id": "tgt-001",
           "title": "Маршрут Москва-Петербург",
           "catalogId": "cat-targets-001",
-          "json-data": {
+          "jsonData": {
             "num": "TGT-2023-001",
             "route": "Ввоз",
             "sender": {
@@ -149,7 +149,7 @@
         "id": "cust-002",
         "title": "ООО ПродуктыОпт",
         "catalogId": "cat-contractors-002",
-        "json-data": {
+        "jsonData": {
           "title": "ООО ПродуктыОпт",
           "fullTitle": "Общество с ограниченной ответственностью 'ПродуктыОпт'",
           "type": {
@@ -171,7 +171,7 @@
           "id": "tgt-002",
           "title": "Развоз по Москве",
           "catalogId": "cat-targets-002",
-          "json-data": {
+          "jsonData": {
             "num": "TGT-2023-002",
             "route": "Вывоз",
             "sender": {
@@ -215,7 +215,7 @@
         "id": "cust-003",
         "title": "АО СтройМатериалы",
         "catalogId": "cat-contractors-003",
-        "json-data": {
+        "jsonData": {
           "title": "АО СтройМатериалы",
           "fullTitle": "Акционерное общество 'СтройМатериалы'",
           "type": {
@@ -237,7 +237,7 @@
           "id": "tgt-003",
           "title": "Доставка стройматериалов",
           "catalogId": "cat-targets-003",
-          "json-data": {
+          "jsonData": {
             "num": "TGT-2023-003",
             "route": "Ввоз",
             "sender": {
@@ -281,7 +281,7 @@
         "id": "cust-004",
         "title": "ООО ХимПром",
         "catalogId": "cat-contractors-004",
-        "json-data": {
+        "jsonData": {
           "title": "ООО ХимПром",
           "fullTitle": "Общество с ограниченной ответственностью 'ХимПром'",
           "type": {
@@ -303,7 +303,7 @@
           "id": "tgt-004",
           "title": "Доставка химикатов",
           "catalogId": "cat-targets-004",
-          "json-data": {
+          "jsonData": {
             "num": "TGT-2023-004",
             "route": "Вывоз",
             "sender": {
@@ -347,7 +347,7 @@
         "id": "cust-005",
         "title": "АО ТехноСнаб",
         "catalogId": "cat-contractors-005",
-        "json-data": {
+        "jsonData": {
           "title": "АО ТехноСнаб",
           "fullTitle": "Акционерное общество 'ТехноСнаб'",
           "type": {
@@ -369,7 +369,7 @@
           "id": "tgt-005",
           "title": "Доставка оборудования",
           "catalogId": "cat-targets-005",
-          "json-data": {
+          "jsonData": {
             "num": "TGT-2023-005",
             "route": "Ввоз",
             "sender": {
@@ -413,7 +413,7 @@
         "id": "cust-006",
         "title": "ООО АвтоЗапчасти",
         "catalogId": "cat-contractors-006",
-        "json-data": {
+        "jsonData": {
           "title": "ООО АвтоЗапчасти",
           "fullTitle": "Общество с ограниченной ответственностью 'АвтоЗапчасти'",
           "type": {
@@ -435,7 +435,7 @@
           "id": "tgt-006",
           "title": "Доставка автозапчастей",
           "catalogId": "cat-targets-006",
-          "json-data": {
+          "jsonData": {
             "num": "TGT-2023-006",
             "route": "Вывоз",
             "sender": {

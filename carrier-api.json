@@ -16,7 +16,7 @@
   },
   "servers": [
     {
-      "url": "https://stoplight.io/mocks/thehunt/carrier-apidoc/365085546",
+      "url": "https://stoplight.io/mocks/thehunt/yard-apidoc/132102081",
       "description": "Stoplight mocker"
     },
     {

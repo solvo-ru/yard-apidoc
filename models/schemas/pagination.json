@@ -9,7 +9,7 @@
       "currentPage": 1
     }
   ],
-  "title": "page-info",
+  "title": "pageInfo",
   "required": [
     "totalItems",
     "itemCount",

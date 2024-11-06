@@ -694,7 +694,7 @@
                     "$ref": "./models/schemas/shipment-rfp-item.json"
                   }
                 },
-                "page-info": {
+                "pageInfo": {
                   "$ref": "./models/schemas/pagination.json"
                 },
                 "meta": {
@@ -725,7 +725,7 @@
                     "$ref": "./models/schemas/offer-item.json"
                   }
                 },
-                "page-info": {
+                "pageInfo": {
                   "$ref": "./models/schemas/pagination.json"
                 }
               }
@@ -780,7 +780,7 @@
             "schema": {
               "type": "object",
               "properties": {
-                "page-info": {
+                "pageInfo": {
                   "$ref": "./models/schemas/pagination.json"
                 },
                 "catalogs": {
@@ -812,7 +812,7 @@
                 "meta": {
                   "$ref": "./models/schemas/catalog-metaitem.json"
                 },
-                "page-info": {
+                "pageInfo": {
                   "$ref": "./models/schemas/pagination.json"
                 }
               },

@@ -8,8 +8,11 @@
     {
       "type": "object",
       "properties": {
-        "json-data": {
-          "$ref": "./cargo-data.json"
+        "jsonData": {
+          "$ref": "./cargo-data.json",
+          "x-stoplight": {
+            "id": "s2vel1vomayla"
+          }
         }
       }
     }

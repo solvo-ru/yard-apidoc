@@ -4,10 +4,14 @@
     {
       "$ref": "../abstract/domain-item.json"
     },
-    {  "type": "object",
+    {
+      "type": "object",
       "properties": {
-        "json-data": {
-          "$ref": "./shipment-rfp-data.json"
+        "jsonData": {
+          "$ref": "./shipment-rfp-data.json",
+          "x-stoplight": {
+            "id": "qs33zdalcuwwn"
+          }
         }
       }
     }

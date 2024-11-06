@@ -28,6 +28,11 @@
     },
     {
       "type": "object",
+      "required": [
+        "meta",
+        "jsonData",
+        "displayName"
+      ],
       "properties": {
         "meta": {
           "format": "uuid",
@@ -44,8 +49,11 @@
             }
           ]
         },
-        "json-data": {
-          "type": "object"
+        "jsonData": {
+          "type": "object",
+          "x-stoplight": {
+            "id": "qiw8fhjbgnkyr"
+          }
         },
         "displayName": {
           "type": "string",
@@ -53,12 +61,7 @@
             "id": "06himppwpl81d"
           }
         }
-      },
-      "required": [
-        "meta",
-        "json-data",
-        "displayName"
-      ]
+      }
     }
   ],
   "x-tags": [

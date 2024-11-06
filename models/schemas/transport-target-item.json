@@ -8,8 +8,11 @@
     {
       "type": "object",
       "properties": {
-        "json-data": {
-          "$ref": "./transport-target-data.json"
+        "jsonData": {
+          "$ref": "./transport-target-data.json",
+          "x-stoplight": {
+            "id": "kvzomx6sov42c"
+          }
         }
       }
     }

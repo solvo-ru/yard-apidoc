@@ -1,15 +1,21 @@
 {
   "title": "Запись \"Предложение к заявке на перевозку\"",
   "allOf": [
-    {"$ref": "../abstract/domain-item.json"},
     {
-      "type": "object",
+      "$ref": "../abstract/domain-item.json"
+    },
+    {
       "properties": {
-        "json-data": {"$ref": "./offer-data.json"}
+        "jsonData": {
+          "$ref": "./offer-data.json",
+          "x-stoplight": {
+            "id": "j5bmku8yc7me1"
+          }
+        }
       }
     }
   ],
   "description": "Строка таблицы БД",
-  "type": "object",
-  "$schema": "https://json-schema.org/draft/2020-12/schema"
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object"
 }

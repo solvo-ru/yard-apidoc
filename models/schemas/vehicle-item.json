@@ -7,8 +7,11 @@
     {
       "type": "object",
       "properties": {
-        "json-data": {
-          "$ref": "./vehicle-data.json"
+        "jsonData": {
+          "$ref": "./vehicle-data.json",
+          "x-stoplight": {
+            "id": "hvpoi1t1kevee"
+          }
         }
       }
     }

@@ -8,8 +8,11 @@
     {
       "type": "object",
       "properties": {
-        "json-data": {
-          "$ref": "./location-data.json"
+        "jsonData": {
+          "$ref": "./location-data.json",
+          "x-stoplight": {
+            "id": "i83bc6xe7p0om"
+          }
         }
       }
     }

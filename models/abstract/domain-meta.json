@@ -20,25 +20,28 @@
     },
     {
       "type": "object",
+      "required": [
+        "processDefinition"
+      ],
       "properties": {
         "processDefinition": {
           "type": "string"
         }
-      },
-      "required": [
-        "processDefinition"
-      ]
+      }
     },
     {
       "type": "object",
-      "properties": {
-        "json-schema": {
-          "type": "object"
-        }
-      },
       "required": [
-        "json-schema"
-      ]
+        "jsonSchema"
+      ],
+      "properties": {
+        "jsonSchema": {
+          "type": "object",
+          "x-stoplight": {
+            "id": "r7788t32vhhc1"
+          }
+        }
+      }
     }
   ],
   "x-tags": [

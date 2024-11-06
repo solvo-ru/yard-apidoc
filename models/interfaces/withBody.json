@@ -3,24 +3,30 @@
   "title": "withBody",
   "oneOf": [
     {
-      "properties": {
-        "json-schema": {
-          "type": "object"
-        }
-      },
       "required": [
-        "json-schema"
-      ]
+        "jsonSchema"
+      ],
+      "properties": {
+        "jsonSchema": {
+          "type": "object",
+          "x-stoplight": {
+            "id": "2loyiufxl1h3t"
+          }
+        }
+      }
     },
     {
-      "properties": {
-        "json-data": {
-          "type": "object"
-        }
-      },
       "required": [
-        "json-data"
-      ]
+        "jsonData"
+      ],
+      "properties": {
+        "jsonData": {
+          "type": "object",
+          "x-stoplight": {
+            "id": "4k7ij91195zvh"
+          }
+        }
+      }
     }
   ],
   "type": "object"

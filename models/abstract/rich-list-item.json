@@ -10,14 +10,17 @@
     },
     {
       "type": "object",
-      "properties": {
-        "json-data": {
-          "type": "object"
-        }
-      },
       "required": [
-        "json-data"
-      ]
+        "jsonData"
+      ],
+      "properties": {
+        "jsonData": {
+          "type": "object",
+          "x-stoplight": {
+            "id": "er8yxzs1jihp2"
+          }
+        }
+      }
     }
   ],
   "x-tags": [

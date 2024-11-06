@@ -7,8 +7,11 @@
     {
       "type": "object",
       "properties": {
-        "json-data": {
-          "$ref": "./contractor-data.json"
+        "jsonData": {
+          "$ref": "./contractor-data.json",
+          "x-stoplight": {
+            "id": "q08hx4ypyzzs6"
+          }
         }
       }
     }

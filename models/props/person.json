@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Гражданин",
+  "description": "Физическое лицо",
+  "type": "object",
+  "name": {
+    "type": "string",
+    "title": "Имя"
+  },
+  "lastName": {
+    "type": "string",
+    "title": "Фамилия",
+    "description": "Фамилия"
+  },
+  "patronym": {
+    "type": "string",
+    "title": "Отчество",
+    "description": "Отчество"
+  },
+  "birthday": {
+    "type": "string",
+    "format": "date",
+    "description": "Дата рождения"
+  },
+  "docNum": {
+    "type": "integer",
+    "title": "Идентификатор",
+    "description": "Номер документа, удостоверяющего личность"
+  },
+
+  "docType": {
+    "$ref": "../abstract/simple-list-item.json",
+    "title": "Вид документа, удостоверяющего личность",
+    "description": "| **Значение** | **Описание**                   |\n| ------------ | ------------------------------ |\n| **Паспорт**  | Паспорт гражданина РФ.         |\n| **Права**    | Водительское удостоверение РФ. |"
+  },
+  "phone": {
+    "type": "string",
+    "title": "Телефон",
+    "description": "Номер телефона",
+    "pattern": "^((\\+7)|8)\\d{10}$"
+  }
+}

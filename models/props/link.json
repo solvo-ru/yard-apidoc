@@ -1,23 +1,31 @@
 {
-  "title": "link",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Ссылка (ForeignKey)",
+  "description": "Ссылка на объект системы другого класса",
   "type": "object",
+  "required": ["entityHostUri","id"],
   "properties": {
-    "host": {
+    "entityHostUri": {
       "type": "string",
-      "format": "hostname"
+      "format": "uri"
     },
     "id": {
       "type": "string",
+      "title": "Идентификатор объекта данных",
       "format": "uuid"
     },
-    "entity": {
+    "entitySlug": {
       "type": "string",
+      "title": "Псевдоним сущности",
+      "description": "Системное наименование сущности"
+    },
+    "objectType": {
+      "type": "string",
+      "title": "Тип объекта",
       "enum": [
         "item",
-        "meta",
         "collection"
       ]
     }
-  },
-  "description": "Ссылка на другую сущность системы"
+  }
 }

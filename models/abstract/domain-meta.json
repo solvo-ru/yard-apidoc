@@ -1,16 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "domain-meta",
-  "ifNotExist": true,
-  "inherits": [
-    {
-      "id": "5060c873-f50b-4da3-bc3c-2fa0326f6e65",
-      "parentTable": "d91045e4-295c-40f8-88e7-6c5a76fe21ec"
-    }
-  ],
-  "isActivated": true,
-  "memory_optimized": false,
-  "table_tablespace_name": "pg_default",
   "allOf": [
     {
       "$ref": "./abstract-bodied.json"

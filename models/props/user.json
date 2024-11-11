@@ -1,16 +1,22 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "user-profile",
+  "title": "Профиль пользователя",
   "type": "object",
   "required": [
-    "ID"
+    "id","username"
   ],
   "properties": {
-    "ID": {
+    "id": {
       "type": "string",
       "format": "uuid"
     },
-    "Login": {
+    "username": {
+      "type": "string"
+    },
+    "firstName": {
+      "type": "string"
+    },
+    "familyName": {
       "type": "string"
     }
   }

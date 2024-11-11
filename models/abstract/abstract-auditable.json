@@ -89,7 +89,7 @@
         "id": {
           "type": "string"
         },
-        "host": {
+        "entityHostUri": {
           "type": "string"
         },
         "route": {
